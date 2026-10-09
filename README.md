@@ -2,18 +2,21 @@
 
 A working local application for local AI proposals, manual source-backed records, separate input review, exposure calculations, and historical replay. Local extraction remains experimental because its evaluation gate has not passed. New workspaces start empty; synthetic fixtures are optional.
 
-The original workbench UI is restored. Choose **Explore the transaction case** for Riverbend: selecting a site retains $30M instrument exposure; explicit synthetic release review changes it to $18M; withdrawing release support restores $30M. Underlying obligations remain separate at $20M. The walkthrough uses the server solver, current source evidence, explicit decisions, and immutable history. Its initial inputs are authored and pre-reviewed, not AI-extracted or user-approved.
+The workbench opens on the v3 state engine (**Transaction**, **Sources & Review**, **States**, **Decision Brief**): exact, dated enumeration of reviewed contractual rules with separate face, drawable, obligation and reimbursement-debt metrics. See [the state-engine release](docs/state-engine/release.md); its local clause extraction is experimental.
+
+Choose **Explore the transaction case** for Riverbend: selecting a site retains $30M instrument exposure; explicit synthetic release review changes it to $18M; withdrawing release support restores $30M. Underlying obligations remain separate at $20M. The walkthrough uses the server solver, current source evidence, explicit decisions, and immutable history. Its initial inputs are authored and pre-reviewed, not AI-extracted or user-approved.
 
 See [the product brief](docs/transaction/product-brief.md), [90-second demonstration script](docs/transaction/demo-script.md), and [verification record](docs/transaction/verification.json). Earlier videos and submission decks show earlier milestones; they do not depict the current transaction walkthrough. No commercial benefit or legal feasibility has been validated.
 
 ## Run
 
-Requirements: Python 3.12+, Node 22+, pnpm. From this directory:
+Requirements: Python 3.12+, Node 20.9+ (Next.js 16), pnpm (`corepack enable` provides it). From this directory:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r backend/requirements.lock.txt
 cd frontend
+corepack enable
 pnpm install --frozen-lockfile
 cd ..
 .\start.ps1
@@ -41,13 +44,13 @@ cd frontend
 pnpm build
 ```
 
-41 tests pass, including extraction failure atomicity, isolation, review separation and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
+62 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
 
 ## Architecture and compatibility
 
 Next.js → same-origin proxy → FastAPI → project-scoped SQLite entity tables and content-addressed original files. The API validates typed input records, source offsets and cross-project references. Project foreign keys and transaction boundaries are enforced. Record payloads remain JSON within individual entity tables.
 
-V2 API routes are under `/v2`; the browser uses `/api/v2`. Full OpenAPI is available locally at http://127.0.0.1:8000/docs and in `schemas/openapi.json`. Generate schemas with `python -m backend.export_schemas`.
+V2 API routes are under `/v2` and state-engine routes under `/v3`; the browser uses `/api/v2` and `/api/v3`. Full OpenAPI is available locally at http://127.0.0.1:8000/docs and in `schemas/openapi.json`. Generate schemas with `python -m backend.export_schemas`.
 
 Current data lives in `data/workbench.sqlite` and `data/objects`, excluded from Git and the source ZIP. The prior database remains `data/loadbond.sqlite`. Import historical v1 workspace copies its project and original runs into v2 once per token without overwriting it. The old interface is `/legacy`; old snapshots replay with enumeration-1.0 and new ones with enumeration-2.0.
 

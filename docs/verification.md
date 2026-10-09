@@ -1,4 +1,8 @@
-# Current milestone verification — October 9, 2026
+# Re-measured — October 9, 2026, evening
+
+`pytest backend -q`: **62 passed** (50 test functions, some parametrized), one upstream Starlette/httpx deprecation warning. Frontend `tsc --noEmit` passes. The counts below (41, 45, 31, 22) are historical milestone records. The state engine is documented in `state-engine/release.md`.
+
+# Local AI milestone verification — October 9, 2026
 
 41 backend tests and the Next.js production build pass. Actual browser extraction, edited imports, separate reviews, source-to-exposure calculation, evidence download and deterministic replay passed. The new synthetic Cedar agreement produced $650,000 exposure and $240,000 obligations, with unchanged face treatment.
 

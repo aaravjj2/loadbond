@@ -1,6 +1,10 @@
 # Demonstration script
 
-## Current local AI walkthrough
+## Current lead demonstration — Riverbend
+
+Use [transaction/demo-script.md](transaction/demo-script.md) (about 90 seconds): $30M → site selection keeps $30M → reviewed release gives $18M with $20M obligations → withdrawal restores $30M → replay the $18M snapshot. For a longer slot, follow with the state-engine **States** and **Decision Brief** tabs on the synthetic reference package ([state-engine/release.md](state-engine/release.md)), then the local AI walkthrough below with its failed gate disclosed. No current video covers Riverbend or the state engine.
+
+## Local AI walkthrough
 
 Use local-ai-release.md and LoadBond-local-AI-walkthrough.mp4. Upload the new Cedar agreement, extract locally, inspect exact quotations, import unverified inputs, confirm obligation mapping, review separately and calculate. Show $650,000 face exposure and $240,000 obligations, export and replay. Disclose 10/12 synthetic cases and failed 83.33% precision gate; extraction remains experimental. The video is narrated actual captures, not continuous recording.
 

@@ -11,7 +11,7 @@ Owner is Founder unless specified. Effort estimates are remaining focused work, 
 | P0 | Reviewer-visible audit integrity check | Implemented | Hash-linked event history | — | Stored event hashes and prior-event links checked; tampered event detected |
 | P0 | Empty project and manual evidence workflow | Implemented v2 | Typed project records | — | Harbor created from scratch; ordinary prose used without parser syntax |
 | P0 | Editable instruments, constraints and scenarios | Implemented v2 | Independent input reviews | — | Face default retains exposure despite claim cap |
-| P0 | Verify live AI extraction | Deferred by current manual-only scope | Provider choice + spending ceiling | 2–4h later | Real provider evaluation before any AI claim |
+| P0 | Verify live AI extraction | Superseded by local-only AI (D10); paid provider still deferred | — | — | See local-AI milestone below |
 | P0 | Record demo video | Captured narrated walkthrough produced | Actual browser captures | — | LoadBond-walkthrough.mp4; not a continuous recording |
 | P0 | Publish repository and demo | Pending account/deployment | Hosting selection and budget | 3–6h | Signed-out judge links work; synthetic only |
 | P0 | Graphiques submission | Pending founder | Registration + assets | 2h | Complete before Oct 10, 5 p.m. EDT |

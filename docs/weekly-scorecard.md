@@ -4,8 +4,9 @@ Week ending: 2026-10-09. Owner: Founder. Update values and evidence each Friday.
 
 | Measure | Current evidence | Target / decision |
 |---|---|---|
-| Local product | Local extraction + manual workflow implemented; 41 tests pass | Reproducible source-to-assessment workflow |
-| Demo assets | Narrated 3:38 capture video and updated eight-slide deck | Founder review before event use |
+| Local product | v3 state engine, Riverbend case, local extraction and manual workflow; 62 tests pass | Reproducible source-to-assessment workflow |
+| Demo assets | Narrated videos and decks cover earlier milestones only; none show Riverbend or the state engine | Record a current capture before event use |
+| State-engine AI | Development split: clauses P 80% / R 89%, financial P 13% / R 67%; held-out in docs/state-engine/release.md | Gate P ≥ 95%, R ≥ 90% |
 | Live AI extraction | qwen3:4b local: 10/12 cases; precision 83.33%, recall 93.75%; experimental | Precision gate failed; improve using held-out fixtures |
 | Public demo / repo | Not deployed / not published | Signed-out access before submission |
 | Event submissions | None | Complete eligible event requirements |
