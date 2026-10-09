@@ -22,12 +22,14 @@ def main():
         pages=[p.extract_text() for p in PdfReader(io.BytesIO(raw)).pages] if case['file'].endswith('.pdf') else [raw.decode('utf-8')]
         document={'id':case['id'],'pages':pages}
         start=time.monotonic();record={'id':case['id'],'expected':case['expected'],'scored_usd':case['scored_usd']}
-        proposals=[];invalid=[];seen=set()
+        proposals=[];invalid=[];screened=[];seen=set()
         try:
             for page,offset,text in ai.chunks(pages):
                 for candidate in ai.extract_chunk(text,ready['model']):
                     value,error=ai.validate_candidate(candidate,document,page,offset,text)
                     if error:invalid.append(error);continue
+                    reason=ai.screen_reason(value)
+                    if reason:screened.append({'quote':value['quote'],'reason':reason});continue
                     signature=(value['record_type'],page,value['quote'],value['amount_cents'])
                     if signature not in seen:proposals.append(value);seen.add(signature)
             # Match record type, exact amount/currency, and distinct supporting components (via expected quote).
@@ -35,7 +37,7 @@ def main():
             for expected in case['expected']:
                 index=next((i for i,p in enumerate(remaining) if p['record_type']==expected['record_type'] and p['amount_cents']==expected['amount_cents'] and p['currency']==expected['currency'] and expected.get('source_contains','') in p['quote']),None)
                 if index is not None:matched.append(remaining.pop(index))
-            record.update(status='FAILED_SOURCE' if invalid else 'SUCCEEDED',proposals=proposals,invalid_quotes=invalid,
+            record.update(status='FAILED_SOURCE' if invalid else 'SUCCEEDED',proposals=proposals,invalid_quotes=invalid,screened=screened,
                           matched=len(matched),case_passed=not invalid and len(matched)==len(case['expected']) and len(proposals)==len(case['expected']))
             if case['scored_usd']:
                 total_expected+=len(case['expected']);total_proposed+=len(proposals)+len(invalid);total_matched+=len(matched) if not invalid else 0

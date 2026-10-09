@@ -10,6 +10,7 @@ export type Proposal = {
 export type ExtractionJob = {
   id: string; document_id: string; status: string; completed_chunks: number; total_chunks: number;
   model: string; model_digest: string; error?: string; abandoned: boolean; elapsed_seconds?: number;
+  screened?: { page: number; quote: string; record_type: string; reason: string }[];
 };
 type Readiness = { ready: boolean; message: string; model: string; digest: string | null; experimental: boolean };
 type Props = {
@@ -55,6 +56,10 @@ export default function ExtractionPanel({ root, documentId, disabled, jobs, prop
         <strong>{j.status}{j.abandoned ? " · ABANDONED" : ""}</strong> · {j.completed_chunks}/{j.total_chunks} chunks
         {j.elapsed_seconds !== undefined && <> · {j.elapsed_seconds.toFixed(1)}s</>}
         {j.error && <p className="issue">{j.error}</p>}
+        {!!j.screened?.length && <details>
+          <summary>{j.screened.length} source sentence{j.screened.length === 1 ? "" : "s"} withheld as non-financial (not published)</summary>
+          {j.screened.map((s, i) => <p className="muted" key={i}>Page {s.page} · {s.reason}: “{s.quote}”</p>)}
+        </details>}
         {["FAILED", "INTERRUPTED"].includes(j.status) && !j.abandoned && <form onSubmit={(e) => {
           e.preventDefault(); const f = new FormData(e.currentTarget);
           void perform(async () => { await api(root + "/extractions/" + j.id + "/abandon", { reason: f.get("reason") }); await refresh(); });

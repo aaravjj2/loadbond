@@ -23,11 +23,12 @@ def main():
         if digest(text)!=case['text_hash']:raise SystemExit('Corpus changed after labels were frozen')
         row={'id':case['id'],'split':case['split']};doc={'id':case['id'],'pages':[text]}
         for task,module,expected in [('clauses',clauses,case['expected']),('financial',ai,case['financial_expected'])]:
-            started=time.monotonic();proposals=[];invalid=[];failure=None
+            started=time.monotonic();proposals=[];invalid=[];screened=[];failure=None
             try:
                 for candidate in module.extract_chunk(text,status['model']):
                     p,problem=module.validate_candidate(candidate,doc,1,0,text)
                     if problem:invalid.append(problem)
+                    elif module is ai and ai.screen_reason(p):screened.append({'quote':p['quote'],'reason':ai.screen_reason(p)})
                     else:proposals.append(p)
             except Exception as exc:failure=str(exc)
             remain=list(proposals);matched=0
@@ -42,7 +43,7 @@ def main():
             if invalid or failure:matched=0
             t=totals[task];t['expected']+=len(expected);t['proposed']+=len(proposals)+len(invalid);t['matched']+=matched
             if not expected:t['empty_cases']+=1;t['empty_passed']+=int(not proposals and not invalid and not failure)
-            row[task]={'expected':expected,'proposals':proposals,'validation_issues':invalid,'error':failure,'matched':matched,'elapsed_seconds':round(time.monotonic()-started,3),
+            row[task]={'expected':expected,'proposals':proposals,'validation_issues':invalid,'screened':screened,'error':failure,'matched':matched,'elapsed_seconds':round(time.monotonic()-started,3),
                        'passed':not invalid and not failure and matched==len(expected) and len(proposals)==len(expected)}
         if ai.runtime_status().get('digest')!=status['digest']:raise SystemExit('Model changed during evaluation')
         with ai.client(3) as c:row['resident_models']=c.get('/api/ps').json().get('models',[])
