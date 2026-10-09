@@ -46,12 +46,12 @@ try {
     $frontendReady = $false
     for ($attempt = 0; $attempt -lt 60; $attempt++) {
         if ($frontendProcess.HasExited) { throw 'Frontend exited during startup.' }
-        try { $frontendReady = (Invoke-WebRequest "http://127.0.0.1:$FrontendPort" -TimeoutSec 2).StatusCode -eq 200 } catch {}
+        try { $frontendReady = (Invoke-WebRequest "http://127.0.0.1:$FrontendPort" -TimeoutSec 2 -UseBasicParsing).StatusCode -eq 200 } catch {}
         if ($frontendReady) { break }
         Start-Sleep -Milliseconds 250
     }
     if (-not $frontendReady) { throw 'Frontend readiness check failed.' }
-    Write-Host "LoadBond ready: http://127.0.0.1:$FrontendPort — local demo token: local-demo"
+    Write-Host "LoadBond ready: http://127.0.0.1:$FrontendPort - local demo token: local-demo"
     if ($SmokeTest) { return }
     Write-Host 'Leave this terminal running. Ctrl+C stops only the application processes started here.'
     while (-not $frontendProcess.HasExited -and -not $backendProcess.HasExited) { Start-Sleep -Seconds 1 }

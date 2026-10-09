@@ -6,7 +6,7 @@ $runtimePath = [IO.Path]::GetFullPath($RuntimeRoot)
 New-Item -ItemType Directory -Force -Path $runtimePath | Out-Null
 if (-not (Test-Path -LiteralPath (Join-Path $runtimePath 'ollama.exe'))) {
     $archivePath = Join-Path (Split-Path $runtimePath) 'ollama-runtime.zip'
-    Invoke-WebRequest 'https://ollama.com/download/ollama-windows-amd64.zip' -OutFile $archivePath
+    Invoke-WebRequest 'https://ollama.com/download/ollama-windows-amd64.zip' -OutFile $archivePath -UseBasicParsing
     Expand-Archive -LiteralPath $archivePath -DestinationPath $runtimePath -Force
 }
 Write-Host 'Runtime available. In another terminal run .\start-local-ai.ps1, then rerun this script to download the model.'
