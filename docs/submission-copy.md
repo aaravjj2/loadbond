@@ -16,7 +16,7 @@ A Next.js and FastAPI local application that starts with an empty workspace. Use
 
 A state engine models dated events, reviewed contract rules and opening balances. It enumerates every feasible contractual state exactly, reporting instrument face, drawable amount, obligations and reimbursement debt as separate metrics with their own source-backed maximizing states. Unknown rights stay unknown rather than becoming zero.
 
-The current release uses optional local Ollama/qwen3:4b extraction alongside manual entry. Source-sentence selection and numerical validation constrain proposals; explicit import creates unverified records, followed by separate review. A 12-document synthetic evaluation passed 10 cases with 83.33% precision and 93.75% recall on clear USD cases. Precision failed the 90% gate, so extraction stays experimental. AI coding assistance was used during implementation.
+The current release uses optional local Ollama/qwen3:4b extraction alongside manual entry. Source-sentence selection and numerical validation constrain proposals; explicit import creates unverified records, followed by separate review. The extraction pipeline passes all 12 cases of its original synthetic corpus, but that corpus informed the latest fix. On an unseen 20-document held-out set, financial precision is 50% and recall 67%, so extraction stays experimental. AI coding assistance was used during implementation.
 
 ## Demonstration
 

@@ -44,7 +44,7 @@ cd frontend
 pnpm build
 ```
 
-62 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
+74 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
 
 ## Architecture and compatibility
 
@@ -56,7 +56,7 @@ Current data lives in `data/workbench.sqlite` and `data/objects`, excluded from 
 
 ## Boundaries
 
-This release supports manual entry and optional local Ollama extraction. The 12-document synthetic evaluation passed 10 cases with 83.33% precision and 93.75% recall on clear USD cases; the 90% precision gate failed. Proposals require source validation, explicit import, and separate human review. It supports USD, additive liability components, cardinality constraints, and at most 20 conditional dimensions. Ambiguous components, missing amounts and unfinished documents block completed assessments.
+This release supports manual entry and optional local Ollama extraction. Pipeline local-evidence-1.3 passes all 12 cases of the original synthetic corpus (100% precision and recall), but that corpus informed the fix; on the unseen 20-document held-out set, financial precision is 50% and recall 67%, so extraction remains experimental. Proposals require source validation, explicit import, and separate human review. It supports USD, additive liability components, cardinality constraints, and at most 20 conditional dimensions. Ambiguous components, missing amounts and unfinished documents block completed assessments.
 
 Local workspace tokens are not production identity, permissions or MFA. Hash-linked records and immutable snapshots are application behavior, not administrator-proof WORM storage. Use public or synthetic evidence only. Confidential documents, OCR, customer hosting, PostgreSQL, managed storage and production security are deferred.
 

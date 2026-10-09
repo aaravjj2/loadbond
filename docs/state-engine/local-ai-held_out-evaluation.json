@@ -3,10 +3,10 @@
   "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
   "prompt_version": "local-clauses-1.1",
   "schema_version": "clause-proposals-1.0",
-  "financial_prompt_version": "local-evidence-1.2",
+  "financial_prompt_version": "local-evidence-1.3",
   "corpus_hash": "a5dfacb98137d98cf52a831205e5b7c7fdf447b8c3bfd9565291f5e8d3be9ee6",
   "split": "held_out",
-  "started_at": "2026-10-09T23:30:42.507397+00:00",
+  "started_at": "2026-10-09T23:41:54.309950+00:00",
   "notice": "Measured synthetic evaluation, not independent legal or customer validation. Missing gates retain experimental status.",
   "cases": [
     {
@@ -47,18 +47,25 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 6.781,
+        "elapsed_seconds": 2.89,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [
+          {
+            "quote": "At most two of the three candidate-site security obligations may coexist.",
+            "reason": "Instrument quotation states no face amount"
+          }
+        ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.5,
+        "elapsed_seconds": 3.11,
         "passed": true
       },
       "resident_models": [
@@ -77,7 +84,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:35:49.79411-04:00",
+          "expires_at": "2026-10-09T19:47:00.3161723-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -122,18 +129,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.703,
+        "elapsed_seconds": 3.141,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.438,
+        "elapsed_seconds": 0.609,
         "passed": true
       },
       "resident_models": [
@@ -152,7 +161,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:35:52.0161401-04:00",
+          "expires_at": "2026-10-09T19:47:04.1586707-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -197,21 +206,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.578,
+        "elapsed_seconds": 2.891,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "Insolvency of the sponsor requires replacement collateral to become active.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.609,
-        "passed": false
+        "elapsed_seconds": 3.125,
+        "passed": true
       },
       "resident_models": [
         {
@@ -229,7 +243,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:35:55.2970719-04:00",
+          "expires_at": "2026-10-09T19:47:10.3035898-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -274,48 +288,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.719,
+        "elapsed_seconds": 3.141,
         "passed": false
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "No LC can be issued before completion of term conversion.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "No LC can be issued before completion of term conversion.",
-            "evidence": [
-              {
-                "document_id": "held_out-04",
-                "page": 1,
-                "start": 0,
-                "end": 57,
-                "quote": "No LC can be issued before completion of term conversion."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only",
-              "Enter the beneficiary from evidence"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.531,
-        "passed": false
+        "elapsed_seconds": 3.125,
+        "passed": true
       },
       "resident_models": [
         {
@@ -333,7 +325,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:35:58.6496009-04:00",
+          "expires_at": "2026-10-09T19:47:16.6936238-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -378,47 +370,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.687,
+        "elapsed_seconds": 3.157,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "A new security instrument is additional security until the former beneficiary releases the old instrument.",
-            "beneficiary": "former beneficiary",
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "A new security instrument is additional security until the former beneficiary releases the old instrument.",
-            "evidence": [
-              {
-                "document_id": "held_out-05",
-                "page": 1,
-                "start": 0,
-                "end": 106,
-                "quote": "A new security instrument is additional security until the former beneficiary releases the old instrument."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.734,
-        "passed": false
+        "elapsed_seconds": 3.265,
+        "passed": true
       },
       "resident_models": [
         {
@@ -436,7 +407,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:02.1652688-04:00",
+          "expires_at": "2026-10-09T19:47:23.2492213-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -481,21 +452,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.547,
+        "elapsed_seconds": 2.625,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "Delivery and effectiveness of the beneficiary release ends the old instrument exposure.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.563,
-        "passed": false
+        "elapsed_seconds": 2.765,
+        "passed": true
       },
       "resident_models": [
         {
@@ -513,7 +489,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:05.3889899-04:00",
+          "expires_at": "2026-10-09T19:47:28.7505154-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -558,21 +534,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.656,
+        "elapsed_seconds": 2.985,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "Expiration is effective on 2028-03-31 only if the specified documentary expiry requirements are satisfied.",
+            "reason": "Quotation states no monetary amount or payment obligation"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.891,
-        "passed": false
+        "elapsed_seconds": 3.578,
+        "passed": true
       },
       "resident_models": [
         {
@@ -590,7 +571,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:09.0236934-04:00",
+          "expires_at": "2026-10-09T19:47:35.4489309-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -637,21 +618,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.546,
+        "elapsed_seconds": 2.969,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "In aggregate, documentary demands are capped at EUR 310,000.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.954,
-        "passed": false
+        "elapsed_seconds": 3.359,
+        "passed": true
       },
       "resident_models": [
         {
@@ -669,7 +655,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:12.6181069-04:00",
+          "expires_at": "2026-10-09T19:47:41.9337782-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -714,18 +700,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.734,
+        "elapsed_seconds": 3.0,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.422,
+        "elapsed_seconds": 0.61,
         "passed": true
       },
       "resident_models": [
@@ -744,7 +732,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:14.8774567-04:00",
+          "expires_at": "2026-10-09T19:47:45.643853-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -769,7 +757,7 @@
             "rule_kind": "EVERGREEN",
             "event_type": null,
             "quote": "Absent an effective notice to terminate, this credit renews automatically for a further twelve months.",
-            "interpretation": "The credit automatically renews for twelve months without requiring termination notice, indicating an automatic extension clause.",
+            "interpretation": "The credit automatically renews for twelve months unless terminated with effective notice.",
             "source_page": 1,
             "evidence": [
               {
@@ -789,21 +777,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.796,
+        "elapsed_seconds": 3.094,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "Absent an effective notice to terminate, this credit renews automatically for a further twelve months.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.516,
-        "passed": false
+        "elapsed_seconds": 2.844,
+        "passed": true
       },
       "resident_models": [
         {
@@ -821,7 +814,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:18.3078362-04:00",
+          "expires_at": "2026-10-09T19:47:51.6853555-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -866,47 +859,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.578,
+        "elapsed_seconds": 2.782,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "claim",
-            "label": "The beneficiary must deliver a certificate of unpaid amounts before any draw is permitted.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "The beneficiary must deliver a certificate of unpaid amounts before any draw is permitted.",
-            "evidence": [
-              {
-                "document_id": "held_out-11",
-                "page": 1,
-                "start": 0,
-                "end": 90,
-                "quote": "The beneficiary must deliver a certificate of unpaid amounts before any draw is permitted."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only"
-            ]
+            "reason": "Quotation states no monetary amount or payment obligation"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.641,
-        "passed": false
+        "elapsed_seconds": 2.922,
+        "passed": true
       },
       "resident_models": [
         {
@@ -924,7 +896,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:21.6090745-04:00",
+          "expires_at": "2026-10-09T19:47:57.4877232-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -969,9 +941,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.734,
+        "elapsed_seconds": 3.078,
         "passed": true
       },
       "financial": {
@@ -984,12 +957,16 @@
           }
         ],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "Cancellation of the selected construction branch makes a USD 330,000 termination payment payable.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.203,
+        "elapsed_seconds": 3.734,
         "passed": false
       },
       "resident_models": [
@@ -1008,7 +985,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:25.6562216-04:00",
+          "expires_at": "2026-10-09T19:48:04.4164017-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1053,18 +1030,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.922,
+        "elapsed_seconds": 3.375,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.438,
+        "elapsed_seconds": 0.609,
         "passed": true
       },
       "resident_models": [
@@ -1083,7 +1062,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:28.1075399-04:00",
+          "expires_at": "2026-10-09T19:48:08.4972423-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1128,9 +1107,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.14,
+        "elapsed_seconds": 3.953,
         "passed": true
       },
       "financial": {
@@ -1169,9 +1149,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.391,
+        "elapsed_seconds": 4.438,
         "passed": true
       },
       "resident_models": [
@@ -1190,7 +1171,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:32.7192421-04:00",
+          "expires_at": "2026-10-09T19:48:17.0255176-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1235,9 +1216,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.703,
+        "elapsed_seconds": 3.172,
         "passed": true
       },
       "financial": {
@@ -1269,9 +1251,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.063,
+        "elapsed_seconds": 3.39,
         "passed": false
       },
       "resident_models": [
@@ -1290,7 +1273,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:36.5988275-04:00",
+          "expires_at": "2026-10-09T19:48:23.7056645-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1315,7 +1298,7 @@
             "rule_kind": null,
             "event_type": "REIMBURSEMENT",
             "quote": "The developer paid back the outstanding USD 40,000 drawing on 2026-11-10.",
-            "interpretation": "The developer reimbursed the outstanding drawing amount of USD 40,000 on 2026-11-10.",
+            "interpretation": "The developer repaid the drawing amount of USD 40,000 on 2026-11-10.",
             "source_page": 1,
             "evidence": [
               {
@@ -1335,9 +1318,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.172,
+        "elapsed_seconds": 4.093,
         "passed": true
       },
       "financial": {
@@ -1369,9 +1353,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.375,
+        "elapsed_seconds": 4.313,
         "passed": false
       },
       "resident_models": [
@@ -1390,7 +1375,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:41.2197731-04:00",
+          "expires_at": "2026-10-09T19:48:32.215253-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1435,18 +1420,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.953,
+        "elapsed_seconds": 3.641,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.469,
+        "elapsed_seconds": 0.64,
         "passed": true
       },
       "resident_models": [
@@ -1465,7 +1452,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:43.7352785-04:00",
+          "expires_at": "2026-10-09T19:48:36.6575249-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1504,18 +1491,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.562,
+        "elapsed_seconds": 3.141,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.375,
+        "elapsed_seconds": 0.688,
         "passed": true
       },
       "resident_models": [
@@ -1534,7 +1523,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:45.7475794-04:00",
+          "expires_at": "2026-10-09T19:48:40.6076871-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1579,9 +1568,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.812,
+        "elapsed_seconds": 3.344,
         "passed": true
       },
       "financial": {
@@ -1623,9 +1613,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.813,
+        "elapsed_seconds": 3.422,
         "passed": true
       },
       "resident_models": [
@@ -1644,7 +1635,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:49.4773976-04:00",
+          "expires_at": "2026-10-09T19:48:47.5553225-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1660,21 +1651,21 @@
         "validation_issues": [
           "Instruction-like text cannot become a contract proposal"
         ],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.969,
+        "elapsed_seconds": 3.672,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instruction-like text cannot be imported as contractual evidence"
-        ],
+        "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.297,
-        "passed": false
+        "elapsed_seconds": 0.0,
+        "passed": true
       },
       "resident_models": [
         {
@@ -1692,7 +1683,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:36:53.842648-04:00",
+          "expires_at": "2026-10-09T19:48:51.3630517-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1700,7 +1691,7 @@
       ]
     }
   ],
-  "finished_at": "2026-10-09T23:31:53.947936+00:00",
+  "finished_at": "2026-10-09T23:43:51.481075+00:00",
   "scores": {
     "clauses": {
       "expected": 18,
@@ -1714,11 +1705,11 @@
     },
     "financial": {
       "expected": 3,
-      "proposed": 14,
+      "proposed": 4,
       "matched": 2,
       "empty_cases": 17,
-      "empty_passed": 6,
-      "precision": 0.14285714285714285,
+      "empty_passed": 15,
+      "precision": 0.5,
       "recall": 0.6666666666666666,
       "gate_passed": false
     }

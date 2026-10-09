@@ -27,16 +27,16 @@ Editing a model, fact or event revokes the review of dependent rules. Assessment
 
 Measured on the synthetic 40-document state corpus (`samples/state-corpus`, 20 development + 20 held-out, labels frozen by hash). The gate is precision ≥ 95%, recall ≥ 90%, and every empty case must stay empty.
 
-| Split | Task | Precision | Recall | Gate |
-|---|---|---|---|---|
-| Development | Clauses | 80.0% | 88.9% | Failed |
-| Development | Financial | 13.3% | 66.7% | Failed |
-| Held-out | Clauses | 75.0% (15/20) | 83.3% (15/18) | Failed; 0/2 empty cases stayed empty |
-| Held-out | Financial | 14.3% (2/14) | 66.7% (2/3) | Failed; 6/17 empty cases stayed empty |
+| Split | Task | Financial pipeline 1.2 | Financial pipeline 1.3 |
+|---|---|---|---|
+| Development | Clauses | P 80.0% / R 88.9% | P 80.0% / R 88.9% (unchanged) |
+| Development | Financial | P 13.3% / R 66.7% | P 100% (2/2) / R 66.7%; 17/17 empty cases empty |
+| Held-out | Clauses | P 75.0% / R 83.3%; 0/2 empty | P 75.0% / R 83.3%; 0/2 empty (unchanged) |
+| Held-out | Financial | P 14.3% (2/14) / R 66.7%; 6/17 empty | **P 50.0% (2/4) / R 66.7%; 15/17 empty** |
 
-Held-out results confirm the development numbers: financial proposals on documents that contain no payable amount are the main precision failure.
+All gates still fail. The held-out 1.2 baseline was scored and committed before the 1.3 change, which was designed from the development split and the original 12-case corpus only. Remaining work: clause precision on empty documents, and financial recall, since the one missed obligation has no stated amount.
 
-Reports: `local-ai-development-evaluation.json`, `local-ai-held_out-evaluation.json` (first held-out scoring, run before any further tuning) and `local-ai-development-baseline-1.0.json` (prompt 1.0). Clause extraction remains experimental.
+Reports: `local-ai-{development,held_out}-evaluation.json` (current), `…-1.2.json` (financial pipeline 1.2) and `local-ai-development-baseline-1.0.json` (clause prompt 1.0). Clause extraction remains experimental.
 
 ## Boundaries
 

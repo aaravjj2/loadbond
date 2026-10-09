@@ -1,9 +1,9 @@
 {
   "model": "qwen3:4b",
   "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
-  "prompt_version": "local-evidence-1.2",
+  "prompt_version": "local-evidence-1.3",
   "schema_version": "proposals-1.0",
-  "started_at": "2026-10-09T19:32:42.072023+00:00",
+  "started_at": "2026-10-09T23:38:25.242497+00:00",
   "notice": "Synthetic software evaluation; not legal or customer validation.",
   "cases": [
     {
@@ -75,9 +75,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 2,
       "case_passed": true,
-      "elapsed_seconds": 3.703,
+      "elapsed_seconds": 10.781,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -94,7 +95,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:37:45.7684552-04:00",
+          "expires_at": "2026-10-09T19:43:36.0176043-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -170,9 +171,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 2,
       "case_passed": true,
-      "elapsed_seconds": 3.36,
+      "elapsed_seconds": 6.422,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -189,7 +191,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:37:49.1389805-04:00",
+          "expires_at": "2026-10-09T19:43:42.4712375-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -265,9 +267,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 2,
       "case_passed": true,
-      "elapsed_seconds": 3.406,
+      "elapsed_seconds": 6.343,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -284,7 +287,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:37:52.57597-04:00",
+          "expires_at": "2026-10-09T19:43:48.8310368-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -390,9 +393,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 3,
       "case_passed": true,
-      "elapsed_seconds": 5.062,
+      "elapsed_seconds": 9.437,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -409,7 +413,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:37:57.668927-04:00",
+          "expires_at": "2026-10-09T19:43:58.2993345-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -431,12 +435,12 @@
       "proposals": [
         {
           "record_type": "claim",
-          "label": "The developer shall pay for completed engineering.",
-          "beneficiary": null,
+          "label": "Payment for completed engineering",
+          "beneficiary": "The developer",
           "amount_cents": null,
           "amount_text": null,
           "currency": null,
-          "kind": "fixed",
+          "kind": "conditional",
           "quote": "The developer shall pay for completed engineering.",
           "evidence": [
             {
@@ -455,39 +459,18 @@
             "Resolve the amount from supporting evidence",
             "Currency is unresolved or unsupported; this workbench calculates USD only"
           ]
-        },
-        {
-          "record_type": "claim",
-          "label": "The amount will be set in a future agreement.",
-          "beneficiary": null,
-          "amount_cents": null,
-          "amount_text": null,
-          "currency": null,
-          "kind": "conditional",
-          "quote": "The amount will be set in a future agreement.",
-          "evidence": [
-            {
-              "document_id": "05-missing",
-              "page": 1,
-              "start": 51,
-              "end": 96,
-              "quote": "The amount will be set in a future agreement."
-            }
-          ],
-          "source_page": 1,
-          "source_candidates": [
-            51
-          ],
-          "validation_issues": [
-            "Resolve the amount from supporting evidence",
-            "Currency is unresolved or unsupported; this workbench calculates USD only"
-          ]
         }
       ],
       "invalid_quotes": [],
+      "screened": [
+        {
+          "quote": "The amount will be set in a future agreement.",
+          "reason": "Quotation states no monetary amount or payment obligation"
+        }
+      ],
       "matched": 1,
-      "case_passed": false,
-      "elapsed_seconds": 2.375,
+      "case_passed": true,
+      "elapsed_seconds": 4.343,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -504,7 +487,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:00.0772633-04:00",
+          "expires_at": "2026-10-09T19:44:02.6555199-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -552,9 +535,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 1,
       "case_passed": true,
-      "elapsed_seconds": 2.953,
+      "elapsed_seconds": 5.453,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -571,7 +555,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:03.0451445-04:00",
+          "expires_at": "2026-10-09T19:44:08.1532284-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -612,9 +596,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 1,
       "case_passed": true,
-      "elapsed_seconds": 1.657,
+      "elapsed_seconds": 3.375,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -631,7 +616,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:04.7348426-04:00",
+          "expires_at": "2026-10-09T19:44:11.5492002-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -653,8 +638,8 @@
       "proposals": [
         {
           "record_type": "claim",
-          "label": "The developer shall pay EUR 100,000 for completed engineering.",
-          "beneficiary": null,
+          "label": "Payment for completed engineering",
+          "beneficiary": "The developer",
           "amount_cents": 10000000,
           "amount_text": "EUR 100,000",
           "currency": "EUR",
@@ -679,9 +664,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 1,
       "case_passed": true,
-      "elapsed_seconds": 1.734,
+      "elapsed_seconds": 3.281,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -698,7 +684,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:06.5020363-04:00",
+          "expires_at": "2026-10-09T19:44:14.8425334-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -774,9 +760,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 2,
       "case_passed": true,
-      "elapsed_seconds": 3.219,
+      "elapsed_seconds": 6.125,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -793,7 +780,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:09.7335374-04:00",
+          "expires_at": "2026-10-09T19:44:21.0002742-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -807,9 +794,10 @@
       "status": "SUCCEEDED",
       "proposals": [],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 0,
       "case_passed": true,
-      "elapsed_seconds": 0.391,
+      "elapsed_seconds": 0.547,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -826,7 +814,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:10.1380111-04:00",
+          "expires_at": "2026-10-09T19:44:21.6006146-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -844,12 +832,12 @@
         }
       ],
       "scored_usd": true,
-      "status": "FAILED_SOURCE",
+      "status": "SUCCEEDED",
       "proposals": [
         {
           "record_type": "claim",
           "label": "completed engineering",
-          "beneficiary": "developer",
+          "beneficiary": null,
           "amount_cents": 4000000,
           "amount_text": "USD 40,000",
           "currency": "USD",
@@ -871,13 +859,11 @@
           "validation_issues": []
         }
       ],
-      "invalid_quotes": [
-        "Instruction-like text cannot be imported as contractual evidence",
-        "Instruction-like text cannot be imported as contractual evidence"
-      ],
+      "invalid_quotes": [],
+      "screened": [],
       "matched": 1,
-      "case_passed": false,
-      "elapsed_seconds": 3.641,
+      "case_passed": true,
+      "elapsed_seconds": 3.297,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -894,7 +880,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:13.8099422-04:00",
+          "expires_at": "2026-10-09T19:44:24.9382955-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1000,9 +986,10 @@
         }
       ],
       "invalid_quotes": [],
+      "screened": [],
       "matched": 3,
       "case_passed": true,
-      "elapsed_seconds": 4.907,
+      "elapsed_seconds": 9.391,
       "resident_models": [
         {
           "name": "qwen3:4b",
@@ -1019,7 +1006,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T15:38:18.7399067-04:00",
+          "expires_at": "2026-10-09T19:44:34.3517579-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1027,12 +1014,12 @@
       ]
     }
   ],
-  "finished_at": "2026-10-09T19:33:18.780659+00:00",
-  "clear_usd_precision": 0.8333333333333334,
-  "clear_usd_recall": 0.9375,
+  "finished_at": "2026-10-09T23:39:34.391696+00:00",
+  "clear_usd_precision": 1.0,
+  "clear_usd_recall": 1.0,
   "expected_clear_usd": 16,
-  "proposed_clear_usd": 18,
-  "matched_clear_usd": 15,
-  "passed_cases": 10,
-  "release_gate_passed": false
+  "proposed_clear_usd": 16,
+  "matched_clear_usd": 16,
+  "passed_cases": 12,
+  "release_gate_passed": true
 }

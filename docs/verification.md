@@ -1,6 +1,8 @@
 # Re-measured — October 9, 2026, evening
 
-`pytest backend -q`: **62 passed** (50 test functions, some parametrized), one upstream Starlette/httpx deprecation warning. Frontend `tsc --noEmit` passes. The counts below (41, 45, 31, 22) are historical milestone records. The state engine is documented in `state-engine/release.md`.
+`pytest backend -q`: **62 passed** (50 test functions, some parametrized), one upstream Starlette/httpx deprecation warning. Frontend `tsc --noEmit` passes. The counts below (41, 45, 31, 22) are historical milestone records.
+
+After extraction 1.3: **74 passed**. Live qwen3:4b (digest 359d7dd4…): 12/12 original corpus; state-corpus held-out financial P 50% / R 66.7%, clauses P 75% / R 83.3%; gates fail; see `local-ai-release.md`. The state engine is documented in `state-engine/release.md`.
 
 # Local AI milestone verification — October 9, 2026
 

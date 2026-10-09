@@ -3,10 +3,10 @@
   "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
   "prompt_version": "local-clauses-1.1",
   "schema_version": "clause-proposals-1.0",
-  "financial_prompt_version": "local-evidence-1.2",
+  "financial_prompt_version": "local-evidence-1.3",
   "corpus_hash": "a5dfacb98137d98cf52a831205e5b7c7fdf447b8c3bfd9565291f5e8d3be9ee6",
   "split": "development",
-  "started_at": "2026-10-09T23:10:52.239001+00:00",
+  "started_at": "2026-10-09T23:39:52.943684+00:00",
   "notice": "Measured synthetic evaluation, not independent legal or customer validation. Missing gates retain experimental status.",
   "cases": [
     {
@@ -27,7 +27,7 @@
             "rule_kind": "CARDINALITY",
             "event_type": null,
             "quote": "The two alternative security branches may not be outstanding simultaneously.",
-            "interpretation": "This rule states that at most one of the two alternative security branches can be outstanding at any time, enforcing mutual exclusion between the two branches.",
+            "interpretation": "This rule states that at most one of the two alternative security branches can be outstanding at any time, representing a mutual exclusion constraint between the branches.",
             "source_page": 1,
             "evidence": [
               {
@@ -47,47 +47,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.687,
+        "elapsed_seconds": 3.859,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "claim",
-            "label": "The two alternative security branches may not be outstanding simultaneously.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "fixed",
             "quote": "The two alternative security branches may not be outstanding simultaneously.",
-            "evidence": [
-              {
-                "document_id": "development-01",
-                "page": 1,
-                "start": 0,
-                "end": 76,
-                "quote": "The two alternative security branches may not be outstanding simultaneously."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only"
-            ]
+            "reason": "Quotation states no monetary amount or payment obligation"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.141,
-        "passed": false
+        "elapsed_seconds": 2.875,
+        "passed": true
       },
       "resident_models": [
         {
@@ -105,7 +84,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:15:59.069708-04:00",
+          "expires_at": "2026-10-09T19:44:59.6807199-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -150,47 +129,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.312,
+        "elapsed_seconds": 2.954,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "claim",
-            "label": "If construction starts, a valid utility consent must exist.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "If construction starts, a valid utility consent must exist.",
-            "evidence": [
-              {
-                "document_id": "development-02",
-                "page": 1,
-                "start": 0,
-                "end": 59,
-                "quote": "If construction starts, a valid utility consent must exist."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only"
-            ]
+            "reason": "Quotation states no monetary amount or payment obligation"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.766,
-        "passed": false
+        "elapsed_seconds": 3.015,
+        "passed": true
       },
       "resident_models": [
         {
@@ -208,7 +166,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:06.2187426-04:00",
+          "expires_at": "2026-10-09T19:45:05.7506845-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -253,48 +211,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.125,
+        "elapsed_seconds": 2.422,
         "passed": false
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "A default activates the replacement-security requirement.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "A default activates the replacement-security requirement.",
-            "evidence": [
-              {
-                "document_id": "development-03",
-                "page": 1,
-                "start": 0,
-                "end": 57,
-                "quote": "A default activates the replacement-security requirement."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only",
-              "Enter the beneficiary from evidence"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.516,
-        "passed": false
+        "elapsed_seconds": 2.828,
+        "passed": true
       },
       "resident_models": [
         {
@@ -312,7 +248,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:12.9397403-04:00",
+          "expires_at": "2026-10-09T19:45:11.0756166-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -357,48 +293,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.39,
+        "elapsed_seconds": 2.953,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "The utility letter of credit",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "The utility letter of credit may be issued only after site selection.",
-            "evidence": [
-              {
-                "document_id": "development-04",
-                "page": 1,
-                "start": 0,
-                "end": 69,
-                "quote": "The utility letter of credit may be issued only after site selection."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only",
-              "Enter the beneficiary from evidence"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.25,
-        "passed": false
+        "elapsed_seconds": 2.766,
+        "passed": true
       },
       "resident_models": [
         {
@@ -416,7 +330,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:19.6545631-04:00",
+          "expires_at": "2026-10-09T19:45:16.8922048-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -461,48 +375,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.547,
+        "elapsed_seconds": 3.015,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "Posting the successor letter of credit does not cancel the predecessor instrument.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "Posting the successor letter of credit does not cancel the predecessor instrument.",
-            "evidence": [
-              {
-                "document_id": "development-05",
-                "page": 1,
-                "start": 0,
-                "end": 82,
-                "quote": "Posting the successor letter of credit does not cancel the predecessor instrument."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only",
-              "Enter the beneficiary from evidence"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.64,
-        "passed": false
+        "elapsed_seconds": 3.141,
+        "passed": true
       },
       "resident_models": [
         {
@@ -520,7 +412,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:24.9044734-04:00",
+          "expires_at": "2026-10-09T19:45:23.180652-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -565,18 +457,25 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.563,
+        "elapsed_seconds": 2.844,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [
+          {
+            "quote": "The instrument is released when the beneficiary provides its signed release certificate.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
+        ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.406,
+        "elapsed_seconds": 3.078,
         "passed": true
       },
       "resident_models": [
@@ -595,7 +494,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:26.9199759-04:00",
+          "expires_at": "2026-10-09T19:45:29.2105297-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -640,48 +539,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.812,
+        "elapsed_seconds": 3.281,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective.",
-            "evidence": [
-              {
-                "document_id": "development-07",
-                "page": 1,
-                "start": 0,
-                "end": 98,
-                "quote": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only",
-              "Enter the beneficiary from evidence"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.531,
-        "passed": false
+        "elapsed_seconds": 3.969,
+        "passed": true
       },
       "resident_models": [
         {
@@ -699,7 +576,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:32.3283506-04:00",
+          "expires_at": "2026-10-09T19:45:36.5701662-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -724,7 +601,7 @@
             "rule_kind": "LIMIT",
             "event_type": null,
             "quote": "The maximum documentary draw amount is USD 125,000.",
-            "interpretation": "This sets a hard cap on the total amount that can be drawn under the documentary credit.",
+            "interpretation": "This specifies a cap on the documentary draw amount, indicating a maximum limit of USD 125,000.",
             "source_page": 1,
             "evidence": [
               {
@@ -744,21 +621,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.063,
+        "elapsed_seconds": 3.265,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "The maximum documentary draw amount is USD 125,000.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.375,
-        "passed": false
+        "elapsed_seconds": 4.016,
+        "passed": true
       },
       "resident_models": [
         {
@@ -776,7 +658,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:36.8404458-04:00",
+          "expires_at": "2026-10-09T19:45:43.974097-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -821,47 +703,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.015,
+        "elapsed_seconds": 3.407,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "claim",
-            "label": "Following a rating downgrade, the required security increases to 125 percent of the prior amount.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "Following a rating downgrade, the required security increases to 125 percent of the prior amount.",
-            "evidence": [
-              {
-                "document_id": "development-09",
-                "page": 1,
-                "start": 0,
-                "end": 97,
-                "quote": "Following a rating downgrade, the required security increases to 125 percent of the prior amount."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only"
-            ]
+            "reason": "Quotation states no monetary amount or payment obligation"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.063,
-        "passed": false
+        "elapsed_seconds": 3.625,
+        "passed": true
       },
       "resident_models": [
         {
@@ -879,7 +740,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:40.9785118-04:00",
+          "expires_at": "2026-10-09T19:45:51.1096139-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -924,48 +785,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.891,
+        "elapsed_seconds": 3.062,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective.",
-            "beneficiary": null,
-            "amount_cents": null,
-            "amount_text": null,
-            "currency": null,
-            "kind": "conditional",
             "quote": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective.",
-            "evidence": [
-              {
-                "document_id": "development-10",
-                "page": 1,
-                "start": 0,
-                "end": 107,
-                "quote": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": [
-              "Resolve the amount from supporting evidence",
-              "Currency is unresolved or unsupported; this workbench calculates USD only",
-              "Enter the beneficiary from evidence"
-            ]
+            "reason": "Instrument quotation states no face amount"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.078,
-        "passed": false
+        "elapsed_seconds": 2.656,
+        "passed": true
       },
       "resident_models": [
         {
@@ -983,7 +822,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:45.0023048-04:00",
+          "expires_at": "2026-10-09T19:45:56.9587499-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1028,21 +867,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.859,
+        "elapsed_seconds": 1.578,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "A drawing requires the beneficiary to present a signed demand certificate.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.797,
-        "passed": false
+        "elapsed_seconds": 1.625,
+        "passed": true
       },
       "resident_models": [
         {
@@ -1060,7 +904,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:48.7175629-04:00",
+          "expires_at": "2026-10-09T19:46:00.2657396-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1085,7 +929,7 @@
             "rule_kind": "OBLIGATION",
             "event_type": null,
             "quote": "If the selected site enters construction, the developer owes USD 240,000 in construction costs.",
-            "interpretation": "The developer has an obligation to pay USD 240,000 in construction costs upon site construction commencement.",
+            "interpretation": "The developer has an obligation to pay USD 240,000 in construction costs upon the selected site entering construction.",
             "source_page": 1,
             "evidence": [
               {
@@ -1105,9 +949,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.172,
+        "elapsed_seconds": 1.969,
         "passed": true
       },
       "financial": {
@@ -1146,9 +991,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.25,
+        "elapsed_seconds": 1.891,
         "passed": true
       },
       "resident_models": [
@@ -1167,7 +1013,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:53.2001227-04:00",
+          "expires_at": "2026-10-09T19:46:04.1971504-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1212,18 +1058,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.797,
+        "elapsed_seconds": 1.75,
         "passed": true
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.422,
+        "elapsed_seconds": 0.375,
         "passed": true
       },
       "resident_models": [
@@ -1242,7 +1090,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:16:55.5119148-04:00",
+          "expires_at": "2026-10-09T19:46:06.4116561-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1287,9 +1135,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.063,
+        "elapsed_seconds": 3.906,
         "passed": true
       },
       "financial": {
@@ -1328,9 +1177,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.406,
+        "elapsed_seconds": 5.266,
         "passed": true
       },
       "resident_models": [
@@ -1349,7 +1199,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:01.0493145-04:00",
+          "expires_at": "2026-10-09T19:46:15.6783721-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1394,44 +1244,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 4.219,
+        "elapsed_seconds": 4.875,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "instrument",
-            "label": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit.",
-            "beneficiary": "the beneficiary",
-            "amount_cents": 7500000,
-            "amount_text": "USD 75,000",
-            "currency": "USD",
-            "kind": "fixed",
             "quote": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit.",
-            "evidence": [
-              {
-                "document_id": "development-15",
-                "page": 1,
-                "start": 0,
-                "end": 74,
-                "quote": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": []
+            "reason": "Records a past drawing or reimbursement (a dated event), not an instrument face or obligation"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 5.531,
-        "passed": false
+        "elapsed_seconds": 5.86,
+        "passed": true
       },
       "resident_models": [
         {
@@ -1449,7 +1281,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:10.8772992-04:00",
+          "expires_at": "2026-10-09T19:46:26.4817963-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1494,44 +1326,26 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 5.094,
+        "elapsed_seconds": 4.453,
         "passed": true
       },
       "financial": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "record_type": "claim",
-            "label": "Reimbursement of letter-of-credit drawing",
-            "beneficiary": "borrower",
-            "amount_cents": 7500000,
-            "amount_text": "USD 75,000",
-            "currency": "USD",
-            "kind": "fixed",
             "quote": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing.",
-            "evidence": [
-              {
-                "document_id": "development-16",
-                "page": 1,
-                "start": 0,
-                "end": 82,
-                "quote": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing."
-              }
-            ],
-            "source_page": 1,
-            "source_candidates": [
-              0
-            ],
-            "validation_issues": []
+            "reason": "Records a past drawing or reimbursement (a dated event), not an instrument face or obligation"
           }
         ],
-        "validation_issues": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 4.781,
-        "passed": false
+        "elapsed_seconds": 4.625,
+        "passed": true
       },
       "resident_models": [
         {
@@ -1549,7 +1363,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:20.8352554-04:00",
+          "expires_at": "2026-10-09T19:46:35.6452072-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1594,18 +1408,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 4.109,
+        "elapsed_seconds": 3.328,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.61,
+        "elapsed_seconds": 0.547,
         "passed": true
       },
       "resident_models": [
@@ -1624,7 +1440,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:25.6429552-04:00",
+          "expires_at": "2026-10-09T19:46:39.604987-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1663,18 +1479,20 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.328,
+        "elapsed_seconds": 2.875,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.594,
+        "elapsed_seconds": 0.625,
         "passed": true
       },
       "resident_models": [
@@ -1693,7 +1511,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:29.6509791-04:00",
+          "expires_at": "2026-10-09T19:46:43.1886864-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1738,9 +1556,10 @@
           }
         ],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.359,
+        "elapsed_seconds": 3.25,
         "passed": true
       },
       "financial": {
@@ -1753,12 +1572,16 @@
           }
         ],
         "proposals": [],
-        "validation_issues": [
-          "Instrument proposal does not quote an instrument provision"
+        "validation_issues": [],
+        "screened": [
+          {
+            "quote": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified.",
+            "reason": "Instrument proposal does not quote an instrument provision"
+          }
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.0,
+        "elapsed_seconds": 3.172,
         "passed": false
       },
       "resident_models": [
@@ -1777,7 +1600,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:36.1004518-04:00",
+          "expires_at": "2026-10-09T19:46:49.7437824-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1793,18 +1616,20 @@
         "validation_issues": [
           "Instruction-like text cannot become a contract proposal"
         ],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.484,
+        "elapsed_seconds": 3.297,
         "passed": false
       },
       "financial": {
         "expected": [],
         "proposals": [],
         "validation_issues": [],
+        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.531,
+        "elapsed_seconds": 0.0,
         "passed": true
       },
       "resident_models": [
@@ -1823,7 +1648,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:17:40.2146157-04:00",
+          "expires_at": "2026-10-09T19:46:53.1728197-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1831,7 +1656,7 @@
       ]
     }
   ],
-  "finished_at": "2026-10-09T23:12:40.282605+00:00",
+  "finished_at": "2026-10-09T23:41:53.279700+00:00",
   "scores": {
     "clauses": {
       "expected": 18,
@@ -1845,11 +1670,11 @@
     },
     "financial": {
       "expected": 3,
-      "proposed": 15,
+      "proposed": 2,
       "matched": 2,
       "empty_cases": 17,
-      "empty_passed": 5,
-      "precision": 0.13333333333333333,
+      "empty_passed": 17,
+      "precision": 1.0,
       "recall": 0.6666666666666666,
       "gate_passed": false
     }

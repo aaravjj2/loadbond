@@ -6,7 +6,7 @@ Use [transaction/demo-script.md](transaction/demo-script.md) (about 90 seconds):
 
 ## Local AI walkthrough
 
-Use local-ai-release.md and LoadBond-local-AI-walkthrough.mp4. Upload the new Cedar agreement, extract locally, inspect exact quotations, import unverified inputs, confirm obligation mapping, review separately and calculate. Show $650,000 face exposure and $240,000 obligations, export and replay. Disclose 10/12 synthetic cases and failed 83.33% precision gate; extraction remains experimental. The video is narrated actual captures, not continuous recording.
+Use local-ai-release.md and LoadBond-local-AI-walkthrough.mp4. Upload the new Cedar agreement, extract locally, inspect exact quotations, import unverified inputs, confirm obligation mapping, review separately and calculate. Show $650,000 face exposure and $240,000 obligations, export and replay. The video shows prompt 1.2. Disclose current results: 12/12 on the original corpus (which informed the fix), 50% precision on the unseen held-out set; extraction remains experimental. The video is narrated actual captures, not continuous recording.
 
 ## Historical manual v2 walkthrough
 
