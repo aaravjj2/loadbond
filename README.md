@@ -43,7 +43,7 @@ cd frontend
 pnpm build   # or, without pnpm on PATH: node node_modules/next/dist/bin/next build
 ```
 
-74 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
+76 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
 
 ## Architecture and compatibility
 

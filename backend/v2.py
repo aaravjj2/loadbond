@@ -18,8 +18,31 @@ from pypdf import PdfReader
 from .domain import digest, seed, solve as legacy_solve
 
 router = APIRouter(prefix='/v2')
-TABLES = ('sites', 'documents', 'instruments', 'claims', 'dependencies', 'scenarios', 'runs', 'reviews', 'events', 'extractions', 'proposals')
-TABLES += ('state_models','state_facts','transaction_events','contract_rules','state_scenarios','state_runs','state_findings','clause_jobs','clause_proposals','document_links','state_balances')
+# Each version creates only its own tables; versions are stamped after their DDL succeeds.
+# clause_jobs is reserved and unused: clause jobs are stored in extractions with scope STATE_MODEL.
+MIGRATIONS = (
+    (1, ('sites', 'documents', 'instruments', 'claims', 'dependencies', 'scenarios', 'runs', 'reviews', 'events')),
+    (2, ('extractions', 'proposals')),
+    (3, ('state_models','state_facts','transaction_events','contract_rules','state_scenarios','state_runs','state_findings','clause_jobs','clause_proposals','document_links','state_balances')),
+)
+TABLES = tuple(t for _, tables in MIGRATIONS for t in tables)
+
+def migrate(c):
+    c.execute('CREATE TABLE IF NOT EXISTS migrations(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL)')
+    applied = {r[0] for r in c.execute('SELECT version FROM migrations')}
+    for version, tables in MIGRATIONS:
+        if version in applied:
+            continue
+        if version == 1:
+            c.execute('CREATE TABLE IF NOT EXISTS profiles(tenant TEXT PRIMARY KEY, name TEXT NOT NULL)')
+            c.execute('CREATE TABLE IF NOT EXISTS projects(id TEXT PRIMARY KEY, tenant TEXT NOT NULL, revision INTEGER NOT NULL, body TEXT NOT NULL)')
+        for table in tables:
+            c.execute(f'CREATE TABLE IF NOT EXISTS {table}(id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES projects(id), body TEXT NOT NULL)')
+            c.execute(f'CREATE INDEX IF NOT EXISTS idx_{table}_project ON {table}(project_id)')
+        if version == 1:
+            c.execute('CREATE TABLE IF NOT EXISTS legacy_imports(tenant TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES projects(id))')
+        c.execute('INSERT INTO migrations VALUES(?,?)', (version, stamp()))
+        c.commit()
 
 def stamp():
     return datetime.now(timezone.utc).isoformat()
@@ -111,17 +134,7 @@ def install(app, auth, data_path):
         with sqlite3.connect(root / 'workbench.sqlite', timeout=30) as c:
             c.row_factory = sqlite3.Row
             c.execute('PRAGMA foreign_keys=ON')
-            c.execute('CREATE TABLE IF NOT EXISTS migrations(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL)')
-            c.execute('CREATE TABLE IF NOT EXISTS profiles(tenant TEXT PRIMARY KEY, name TEXT NOT NULL)')
-            c.execute('CREATE TABLE IF NOT EXISTS projects(id TEXT PRIMARY KEY, tenant TEXT NOT NULL, revision INTEGER NOT NULL, body TEXT NOT NULL)')
-            for table in TABLES:
-                c.execute(f'CREATE TABLE IF NOT EXISTS {table}(id TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES projects(id), body TEXT NOT NULL)')
-                c.execute(f'CREATE INDEX IF NOT EXISTS idx_{table}_project ON {table}(project_id)')
-            c.execute('CREATE TABLE IF NOT EXISTS legacy_imports(tenant TEXT PRIMARY KEY, project_id TEXT NOT NULL REFERENCES projects(id))')
-            c.execute('INSERT OR IGNORE INTO migrations VALUES(1,?)', (stamp(),))
-            c.execute('INSERT OR IGNORE INTO migrations VALUES(2,?)', (stamp(),))
-            c.execute('INSERT OR IGNORE INTO migrations VALUES(3,?)', (stamp(),))
-            c.commit()
+            migrate(c)
             c.execute('BEGIN IMMEDIATE')
             yield c
 
