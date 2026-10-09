@@ -1,0 +1,40 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "site_id": {
+      "title": "Site Id",
+      "type": "string"
+    },
+    "face_cents": {
+      "minimum": 0,
+      "title": "Face Cents",
+      "type": "integer"
+    },
+    "currency": {
+      "const": "USD",
+      "title": "Currency",
+      "type": "string"
+    },
+    "lifecycle": {
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "release_verified": {
+      "title": "Release Verified",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "site_id",
+    "face_cents",
+    "currency",
+    "lifecycle",
+    "release_verified"
+  ],
+  "title": "InstrumentRecord",
+  "type": "object"
+}

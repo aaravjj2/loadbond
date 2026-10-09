@@ -1,0 +1,259 @@
+{
+  "id": "3ba668ae-6600-4408-8a43-a77f8a5dc81f",
+  "at": "2026-10-09T22:08:06.025349+00:00",
+  "revision": 10,
+  "solver_version": "enumeration-2.0",
+  "scenario_name": "Documented baseline",
+  "snapshot": {
+    "schema_version": 2,
+    "project": {
+      "name": "Riverbend \u2022 site selection and release",
+      "mw": 300,
+      "archived": false,
+      "synthetic": true,
+      "id": "76bff0fc-ea74-47e4-ab20-db739a1e5657",
+      "revision": 10
+    },
+    "scenario": {
+      "id": "970212c7-c8d7-49cf-8fb0-987f98f23b8b",
+      "name": "Documented baseline",
+      "hypothetical": false,
+      "conditional_percent": 100,
+      "ceiling_percent": 100,
+      "dependency_ids": []
+    },
+    "sites": [
+      {
+        "id": "4d6e5fee-9153-432d-abc1-278d083eba07",
+        "name": "Alder",
+        "commercial_status": "ABANDONED"
+      },
+      {
+        "id": "ffd86f57-69cc-4439-8115-46a4dc4bb679",
+        "name": "Birch",
+        "commercial_status": "SELECTED"
+      }
+    ],
+    "documents": [
+      {
+        "id": "a4d50083-0d76-4897-ae9b-eb614b439342",
+        "name": "01-riverbend-alder.txt",
+        "pages": [
+          "SYNTHETIC DEMONSTRATION \u2014 not an operative agreement.\nRiverbend project / Alder site / security agreement version 1.\nAlder Utility is beneficiary of an independent letter of credit with face USD 12,000,000.\nCompleted engineering creates a separate USD 2,000,000 payment obligation.\nAbandoning Alder does not itself cancel or reduce the letter of credit; documentary release must be evidenced separately.\n"
+        ],
+        "sha256": "5173b06f294068c90174f0bca89d5184b399bbb939446f5d43d86f0220e1239d",
+        "agreement_id": "a1e1e23b-3012-4e5e-a9a5-390abce85ab7",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "completion_reason": "Pre-reviewed synthetic fixture; no user or legal review implied.",
+        "transaction_case": {
+          "version": "1.0",
+          "site_a": "4d6e5fee-9153-432d-abc1-278d083eba07",
+          "site_b": "ffd86f57-69cc-4439-8115-46a4dc4bb679",
+          "instrument_a": "811f093b-c59b-49aa-b474-532b31d5b89f",
+          "instrument_b": "f1a4bbda-ca65-4279-8780-6c4b320e5523"
+        }
+      },
+      {
+        "id": "7ba6f1b6-f7f2-4c9b-9d9c-b322fa5104d1",
+        "name": "02-riverbend-birch.txt",
+        "pages": [
+          "SYNTHETIC DEMONSTRATION \u2014 not an operative agreement.\nRiverbend project / Birch site / security agreement version 1.\nBirch Utility is beneficiary of a letter of credit with face USD 18,000,000.\nCompleted engineering creates a USD 3,000,000 payment obligation.\nIf Birch is selected, construction creates an additional USD 15,000,000 obligation.\nBoth Birch obligations are secured by the same USD 18,000,000 letter of credit; they are distinct obligation components, not additional instruments.\n"
+        ],
+        "sha256": "91b47aa90e3421497b7bbf047f709e1e2d7355a917390bbdd613024fd4c111c8",
+        "agreement_id": "d8b47e1c-7af6-425e-b480-2389469f6447",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "completion_reason": "Pre-reviewed synthetic fixture; no user or legal review implied."
+      },
+      {
+        "id": "23ef839f-8b32-4655-8515-b5dae47566d7",
+        "name": "03-riverbend-selection.txt",
+        "pages": [
+          "SYNTHETIC DEMONSTRATION \u2014 not an operative notice.\nRiverbend selects Birch and abandons Alder.\nCommercial site selection does not release the Alder letter of credit.\n"
+        ],
+        "sha256": "cba438d3a3c74d1450bcb33764dace08369ea64a3c12ddba353e17ffacf9c486",
+        "agreement_id": "3712d26c-c21b-4ea8-b531-2c5778b1660c",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "completion_reason": "Demonstration site-selection review: Synthetic walkthrough: Birch selected; Alder abandoned; no beneficiary release exists yet."
+      },
+      {
+        "id": "2f2cdb78-db1f-4372-9b4e-a5d7595615f7",
+        "name": "04-riverbend-release.txt",
+        "pages": [
+          "SYNTHETIC DEMONSTRATION \u2014 not an operative release.\nRiverbend / Alder / beneficiary release version 1.\nAlder Utility authorizes cancellation of the USD 12,000,000 Alder letter of credit in full; this release concerns the instrument only and does not extinguish the separate engineering payment obligation.\n"
+        ],
+        "sha256": "c7263a64c34e47527ea9682ce6c801d8c7c055770bc93e25f357a9e4e5f8248b",
+        "agreement_id": "869b848d-61f9-46a3-81a5-fd96b82e394e",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "completion_reason": "Demonstration release document review: Synthetic release explicitly cancels the Alder LC only; the separate engineering obligation remains. Exact source quotation checked."
+      }
+    ],
+    "instruments": [
+      {
+        "id": "811f093b-c59b-49aa-b474-532b31d5b89f",
+        "label": "Alder LC",
+        "beneficiary": "Alder Utility",
+        "site_id": "4d6e5fee-9153-432d-abc1-278d083eba07",
+        "face_cents": 1200000000,
+        "currency": "USD",
+        "lifecycle": "RELEASED",
+        "governing_law": "",
+        "basis": "FACE",
+        "basis_hypothetical": true,
+        "evidence": [
+          {
+            "document_id": "a4d50083-0d76-4897-ae9b-eb614b439342",
+            "page": 1,
+            "start": 117,
+            "end": 206,
+            "quote": "Alder Utility is beneficiary of an independent letter of credit with face USD 12,000,000."
+          }
+        ],
+        "basis_evidence": [],
+        "release_evidence": [
+          {
+            "document_id": "2f2cdb78-db1f-4372-9b4e-a5d7595615f7",
+            "page": 1,
+            "start": 103,
+            "end": 305,
+            "quote": "Alder Utility authorizes cancellation of the USD 12,000,000 Alder letter of credit in full; this release concerns the instrument only and does not extinguish the separate engineering payment obligation."
+          }
+        ],
+        "facility_usage_cents": null,
+        "cash_collateral_cents": null,
+        "guarantee_cents": null,
+        "surety_cents": null,
+        "verification": "VERIFIED",
+        "release_verified": true
+      },
+      {
+        "id": "f1a4bbda-ca65-4279-8780-6c4b320e5523",
+        "label": "Birch LC",
+        "beneficiary": "Birch Utility",
+        "site_id": "ffd86f57-69cc-4439-8115-46a4dc4bb679",
+        "face_cents": 1800000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "governing_law": "",
+        "basis": "FACE",
+        "basis_hypothetical": true,
+        "evidence": [
+          {
+            "document_id": "7ba6f1b6-f7f2-4c9b-9d9c-b322fa5104d1",
+            "page": 1,
+            "start": 117,
+            "end": 193,
+            "quote": "Birch Utility is beneficiary of a letter of credit with face USD 18,000,000."
+          }
+        ],
+        "basis_evidence": [],
+        "release_evidence": [],
+        "facility_usage_cents": null,
+        "cash_collateral_cents": null,
+        "guarantee_cents": null,
+        "surety_cents": null,
+        "release_verified": false,
+        "verification": "VERIFIED"
+      }
+    ],
+    "claims": [
+      {
+        "id": "0738fb21-254c-4ba3-a59c-e8f600e09ddd",
+        "label": "Alder completed engineering",
+        "amount_cents": 200000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "instrument_id": "811f093b-c59b-49aa-b474-532b31d5b89f",
+        "site_id": "4d6e5fee-9153-432d-abc1-278d083eba07",
+        "legal_status": "REVIEWED_MODEL_INPUT",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "a4d50083-0d76-4897-ae9b-eb614b439342",
+            "page": 1,
+            "start": 207,
+            "end": 281,
+            "quote": "Completed engineering creates a separate USD 2,000,000 payment obligation."
+          }
+        ],
+        "verification": "VERIFIED"
+      },
+      {
+        "id": "0730998a-9286-4951-810e-291738087c45",
+        "label": "Birch completed engineering",
+        "amount_cents": 300000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "instrument_id": "f1a4bbda-ca65-4279-8780-6c4b320e5523",
+        "site_id": "ffd86f57-69cc-4439-8115-46a4dc4bb679",
+        "legal_status": "REVIEWED_MODEL_INPUT",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "7ba6f1b6-f7f2-4c9b-9d9c-b322fa5104d1",
+            "page": 1,
+            "start": 194,
+            "end": 259,
+            "quote": "Completed engineering creates a USD 3,000,000 payment obligation."
+          }
+        ],
+        "verification": "VERIFIED"
+      },
+      {
+        "id": "157692ca-c135-43da-aaa8-c1e5f2b0fb32",
+        "label": "Birch construction",
+        "amount_cents": 1500000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "instrument_id": "f1a4bbda-ca65-4279-8780-6c4b320e5523",
+        "site_id": "ffd86f57-69cc-4439-8115-46a4dc4bb679",
+        "legal_status": "REVIEWED_MODEL_INPUT",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "7ba6f1b6-f7f2-4c9b-9d9c-b322fa5104d1",
+            "page": 1,
+            "start": 260,
+            "end": 343,
+            "quote": "If Birch is selected, construction creates an additional USD 15,000,000 obligation."
+          }
+        ],
+        "verification": "VERIFIED"
+      }
+    ],
+    "dependencies": []
+  },
+  "snapshot_hash": "56fd7f82c2574e02bff05853494dcd88cfca42b903af3645ca887023e8f7142d",
+  "result": {
+    "status": "COMPLETE",
+    "maximum_cents": 1800000000,
+    "gross_cents": 1800000000,
+    "modeled_difference_cents": 0,
+    "maximum_obligations_cents": 2000000000,
+    "gross_obligations_cents": 2000000000,
+    "active_claims": [
+      "0730998a-9286-4951-810e-291738087c45",
+      "0738fb21-254c-4ba3-a59c-e8f600e09ddd",
+      "157692ca-c135-43da-aaa8-c1e5f2b0fb32"
+    ],
+    "instrument_contributions": {
+      "811f093b-c59b-49aa-b474-532b31d5b89f": 0,
+      "f1a4bbda-ca65-4279-8780-6c4b320e5523": 1800000000
+    },
+    "applied_dependencies": [],
+    "ignored_dependencies": [],
+    "feasible_states": 2,
+    "solver_version": "enumeration-2.0",
+    "hypothetical": false,
+    "notice": "User-reviewed model inputs; not a legal opinion or confirmed capital savings."
+  },
+  "result_hash": "be42ef202dbf01eadbeaddb5876d343b8050502a51641d30ba1a337123babea8",
+  "stale": true
+}

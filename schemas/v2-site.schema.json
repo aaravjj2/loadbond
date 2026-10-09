@@ -1,0 +1,26 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "commercial_status": {
+      "default": "CANDIDATE",
+      "enum": [
+        "CANDIDATE",
+        "SELECTED",
+        "ABANDONED"
+      ],
+      "title": "Commercial Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "Site",
+  "type": "object"
+}

@@ -1,0 +1,1 @@
+Payment is due if the switchyard order becomes noncancellable; the cost has not yet been agreed.

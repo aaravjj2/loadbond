@@ -1,0 +1,8 @@
+{
+  "notice": "Empty templates. No real customer evidence or outcome is supplied.",
+  "prospect": {"organization": "", "role": "", "public_contact_source_url": "", "relationship_owner": "Founder", "status": "not_contacted", "last_contact_date": null, "consent_and_data_terms": "", "next_action": ""},
+  "instrument_interval": {"economic_project_id": "", "developer_id": "", "site_id": "", "instrument_id": "", "type": "", "currency": "USD", "face_cents": null, "facility_usage_cents": null, "restricted_cash_cents": null, "parent_guarantee_cents": null, "surety_indemnity_cents": null, "effective_from": null, "effective_until_exclusive": null, "alternative_from": null, "alternative_until_exclusive": null, "beneficiary": "", "issuer": "", "release_evidence": "", "document_version_id": "", "source_section": "", "sha256": "", "reviewer": "", "reviewed_at": null},
+  "bank_comparison": {"project_id": "", "metric": "", "baseline_cents": null, "proposed_cents": null, "as_of": null, "documented_by": "", "conditions": "", "offsetting_cash_or_guarantees": "", "economic_value_method": "", "verified_customer_value_cents": null, "proposed_fee_cents": null},
+  "utility_review": {"project_id": "", "reviewer": "", "counterexample_state": "", "payment_shortfall_cents": null, "payment_delay": "", "draw_right_change": "", "insolvency_risk_change": "", "decision": "pending", "source": ""},
+  "commercial_gate": {"adequately_documented_projects": 0, "unrelated_developers": 0, "qualifying_projects": null, "occurrence_decision": "INCONCLUSIVE", "counsel_decision": "pending", "bank_decision": "pending", "utility_decision": "pending", "economics_decision": "pending"}
+}

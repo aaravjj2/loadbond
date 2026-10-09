@@ -1,0 +1,14 @@
+SYNTHETIC AGREEMENT — NOT EXECUTED
+Harbor renewal / 75 MW
+
+The beneficiary holds a USD 500,000 letter of credit.
+Incurred work is USD 100,000.
+Branch A requires USD 200,000.
+Branch B requires USD 200,000.
+
+For the hypothetical claim-limited structure, at most one branch may coexist.
+The assumed alternative draw basis limits payment to the sum of the active
+additive obligation components, subject to the instrument face ceiling.
+This alternative is hypothetical and is not an executed LC provision.
+
+Commercial withdrawal alone does not establish instrument release.

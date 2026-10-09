@@ -1,0 +1,15 @@
+SYNTHETIC REFERENCE CASE. Not a legal agreement or a customer transaction.
+Juniper is evaluating a replacement infrastructure connection.
+Section 1. On 2026-10-09, Alder Utility holds an issued letter of credit with face USD 9,000,000.
+Section 2. A distinct replacement letter of credit with face USD 15,000,000 may be posted to Birch Utility when replacement is authorized.
+Section 3. Posting the replacement does not cancel the predecessor; both may remain outstanding until the predecessor release becomes effective.
+Section 4. The predecessor is released 30 days after receipt of a valid notice acknowledged by Alder Utility.
+Section 5. On 2026-10-12, Alder Utility acknowledged receipt of a valid release notice.
+Section 6. If a rating downgrade occurs, each effective instrument's face requirement increases to 125 percent of its otherwise applicable amount.
+Section 7. A default does not release security; replacement remains authorized during default.
+Section 8. Documentary drawings require the beneficiary's signed demand. The agreement alone does not establish whether the required demand exists.
+Section 9. The predecessor automatically extends unless a separately verified termination becomes effective.
+Section 10. Completed engineering creates a separate USD 4,000,000 obligation on the predecessor project.
+Section 11. Completed replacement engineering creates a distinct USD 3,000,000 obligation.
+Section 12. When replacement is authorized, construction creates an additional USD 12,000,000 obligation secured by the same replacement LC as section 11.
+Section 13. This agreement establishes modeled security requirements, not bank utilization or restricted cash.

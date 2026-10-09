@@ -1,0 +1,91 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "record_type": {
+      "enum": [
+        "instrument",
+        "claim"
+      ],
+      "title": "Record Type",
+      "type": "string"
+    },
+    "label": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Label",
+      "type": "string"
+    },
+    "beneficiary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Beneficiary"
+    },
+    "amount_cents": {
+      "anyOf": [
+        {
+          "maximum": 1000000000000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Amount Cents"
+    },
+    "amount_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Amount Text"
+    },
+    "currency": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Currency"
+    },
+    "kind": {
+      "enum": [
+        "fixed",
+        "conditional"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "quote": {
+      "maxLength": 8000,
+      "minLength": 1,
+      "title": "Quote",
+      "type": "string"
+    }
+  },
+  "required": [
+    "record_type",
+    "label",
+    "beneficiary",
+    "amount_cents",
+    "amount_text",
+    "currency",
+    "kind",
+    "quote"
+  ],
+  "title": "Candidate",
+  "type": "object"
+}

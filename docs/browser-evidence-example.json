@@ -1,0 +1,418 @@
+{
+  "id": "8d0d33da-2eea-4327-ab85-7e57a0ec7422",
+  "at": "2026-10-09T06:45:12.941018+00:00",
+  "revision": 4,
+  "snapshot_hash": "e3da01592caadfad7c30f8fe09e3d2f1ae29eb2402c0b4856e7d90fb1881e2f2",
+  "result_hash": "7fa9747a2858aa2020ed12058dfbc8e29dd47493f6c61173232d1fe209371d4c",
+  "scenario": "cap",
+  "snapshot": {
+    "project": {
+      "id": "LB-001",
+      "name": "North Ridge portfolio",
+      "mw": 300,
+      "currency": "USD",
+      "synthetic": true
+    },
+    "sites": [
+      {
+        "id": "site-1",
+        "name": "North Ridge",
+        "commercial_status": "FINALIST"
+      },
+      {
+        "id": "site-2",
+        "name": "Cedar Valley",
+        "commercial_status": "FINALIST"
+      },
+      {
+        "id": "site-3",
+        "name": "River Bend",
+        "commercial_status": "FINALIST"
+      },
+      {
+        "id": "site-4",
+        "name": "Mesa Creek",
+        "commercial_status": "FINALIST"
+      }
+    ],
+    "documents": [
+      {
+        "id": "doc-1",
+        "agreement_id": "doc-1",
+        "version": 1,
+        "name": "North Ridge.txt",
+        "pages": [
+          "SYNTHETIC / NOT EXECUTED\nNorth Ridge security agreement\nSection 1: Incurred, non-cancellable obligation: $1,800,000.\nSection 2: Conditional future-service obligation: $18,200,000.\nSection 3: Instrument ceiling: $20,000,000. Withdrawal alone does not release the instrument."
+        ],
+        "sha256": "1eb0e18ac6625405bf16c089123be493b78663553fd69b30877edef958c85c61",
+        "superseded": false,
+        "processing": "REVIEWED",
+        "source": "synthetic"
+      },
+      {
+        "id": "doc-2",
+        "agreement_id": "doc-2",
+        "version": 1,
+        "name": "Cedar Valley.txt",
+        "pages": [
+          "SYNTHETIC / NOT EXECUTED\nCedar Valley security agreement\nSection 1: Incurred, non-cancellable obligation: $4,000,000.\nSection 2: Conditional future-service obligation: $16,000,000.\nSection 3: Instrument ceiling: $20,000,000. Withdrawal alone does not release the instrument."
+        ],
+        "sha256": "15a79889300a3166fcf8a63fae71a8a20af78dcd4a1a23087b9c94d8f92ad52a",
+        "superseded": false,
+        "processing": "REVIEWED",
+        "source": "synthetic"
+      },
+      {
+        "id": "doc-3",
+        "agreement_id": "doc-3",
+        "version": 1,
+        "name": "River Bend.txt",
+        "pages": [
+          "SYNTHETIC / NOT EXECUTED\nRiver Bend security agreement\nSection 1: Incurred, non-cancellable obligation: $5,200,000.\nSection 2: Conditional future-service obligation: $14,800,000.\nSection 3: Instrument ceiling: $20,000,000. Withdrawal alone does not release the instrument."
+        ],
+        "sha256": "a3f71e4fd0989c6291389d9dcf41d3d04498336baab9b2d614032f862b536ad8",
+        "superseded": false,
+        "processing": "REVIEWED",
+        "source": "synthetic"
+      },
+      {
+        "id": "doc-4",
+        "agreement_id": "doc-4",
+        "version": 1,
+        "name": "Mesa Creek.txt",
+        "pages": [
+          "SYNTHETIC / NOT EXECUTED\nMesa Creek security agreement\nSection 1: Incurred, non-cancellable obligation: $7,000,000.\nSection 2: Conditional future-service obligation: $13,000,000.\nSection 3: Instrument ceiling: $20,000,000. Withdrawal alone does not release the instrument."
+        ],
+        "sha256": "6fdca95935bf4aaf5b719afd8fcc75a96287dd1522e8ebe2d63f08ef803dce32",
+        "superseded": false,
+        "processing": "REVIEWED",
+        "source": "synthetic"
+      },
+      {
+        "id": "doc-cap",
+        "agreement_id": "doc-cap",
+        "version": 1,
+        "name": "Hypothetical cap.txt",
+        "pages": [
+          "For this hypothetical restructuring only, no more than two conditional future-service branches may coexist. This clause is synthetic and not an executed agreement."
+        ],
+        "sha256": "07700db9b082c24d3fefa47e4708944bbd21ac5c20f51c9bc97c081cea0ee346",
+        "superseded": false,
+        "processing": "REVIEWED",
+        "source": "synthetic"
+      },
+      {
+        "id": "e369c7c1-c5f7-4e61-bb0e-995166700881",
+        "agreement_id": "e369c7c1-c5f7-4e61-bb0e-995166700881",
+        "version": 1,
+        "name": "new-obligation.txt",
+        "pages": [
+          "SYNTHETIC SAMPLE \u2014 NOT EXECUTED\nThis sample uses the local parser's explicit format. It does not demonstrate AI extraction.\nFIXED: USD 2500000 | Additional incurred work at North Ridge\nReview the source amount and map it to lc-1 before accepting. Instrument ceilings apply separately.\n"
+        ],
+        "sha256": "a809942e6e9e3bb7743ff7596b6364118a499c7850a5060e3cc31a56de222788",
+        "superseded": false,
+        "processing": "EXTRACTED",
+        "source": "uploaded synthetic / public material"
+      }
+    ],
+    "claims": [
+      {
+        "id": "site-1-fixed",
+        "label": "North Ridge / fixed",
+        "site_id": "site-1",
+        "instrument_id": "lc-1",
+        "document_id": "doc-1",
+        "amount_cents": 180000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 1: Incurred, non-cancellable obligation: $1,800,000.",
+          "start": 56,
+          "end": 116,
+          "sha256": "2d4860e7783c33e12e939b4d103e6a8a023e9daeef14b1520520af0f7e9ada20"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-1-conditional",
+        "label": "North Ridge / conditional",
+        "site_id": "site-1",
+        "instrument_id": "lc-1",
+        "document_id": "doc-1",
+        "amount_cents": 1820000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 2: Conditional future-service obligation: $18,200,000.",
+          "start": 117,
+          "end": 179,
+          "sha256": "ed5a098d0d2c837c22188ad2263920da442c4f326e7c088792a1c8ac035c2061"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-2-fixed",
+        "label": "Cedar Valley / fixed",
+        "site_id": "site-2",
+        "instrument_id": "lc-2",
+        "document_id": "doc-2",
+        "amount_cents": 400000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 1: Incurred, non-cancellable obligation: $4,000,000.",
+          "start": 57,
+          "end": 117,
+          "sha256": "48e48c18405f0f55211f59be39a809d6dae117537974fc310fc5e4a942a2559d"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-2-conditional",
+        "label": "Cedar Valley / conditional",
+        "site_id": "site-2",
+        "instrument_id": "lc-2",
+        "document_id": "doc-2",
+        "amount_cents": 1600000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 2: Conditional future-service obligation: $16,000,000.",
+          "start": 118,
+          "end": 180,
+          "sha256": "90e141292086978a4ec3aa0d0a0f76b8f1b3c89cf28363db491d4f3ff9e3a057"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-3-fixed",
+        "label": "River Bend / fixed",
+        "site_id": "site-3",
+        "instrument_id": "lc-3",
+        "document_id": "doc-3",
+        "amount_cents": 520000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 1: Incurred, non-cancellable obligation: $5,200,000.",
+          "start": 55,
+          "end": 115,
+          "sha256": "eea29e7a7293590bc278f3df251902ae3437ee9083836e46498565c0ab2148c3"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-3-conditional",
+        "label": "River Bend / conditional",
+        "site_id": "site-3",
+        "instrument_id": "lc-3",
+        "document_id": "doc-3",
+        "amount_cents": 1480000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 2: Conditional future-service obligation: $14,800,000.",
+          "start": 116,
+          "end": 178,
+          "sha256": "cee3d9bacbcea173e812c57a8317879fb21ecd2689d7a038492a83c92e05e42b"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-4-fixed",
+        "label": "Mesa Creek / fixed",
+        "site_id": "site-4",
+        "instrument_id": "lc-4",
+        "document_id": "doc-4",
+        "amount_cents": 700000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 1: Incurred, non-cancellable obligation: $7,000,000.",
+          "start": 55,
+          "end": 115,
+          "sha256": "d1ab19881e7707003b951dba2fa22ebc6e89c70172323edb39030ca1812eeac5"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "site-4-conditional",
+        "label": "Mesa Creek / conditional",
+        "site_id": "site-4",
+        "instrument_id": "lc-4",
+        "document_id": "doc-4",
+        "amount_cents": 1300000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "legal_status": "CALLABLE",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "Section 2: Conditional future-service obligation: $13,000,000.",
+          "start": 116,
+          "end": 178,
+          "sha256": "8c4388570a6dbb965a1bfeb5136376fecaf86188bcf03ea3b8cdb613c75deae1"
+        },
+        "extraction": {
+          "mode": "curated synthetic fixture",
+          "model": null
+        }
+      },
+      {
+        "id": "0c302319-8c92-4246-b46c-bbe49183499e",
+        "label": "Additional incurred work at North Ridge",
+        "amount_cents": 250000000,
+        "kind": "fixed",
+        "currency": "USD",
+        "document_id": "e369c7c1-c5f7-4e61-bb0e-995166700881",
+        "instrument_id": "lc-1",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "verification": "VERIFIED",
+        "source": {
+          "page": 1,
+          "quote": "FIXED: USD 2500000 | Additional incurred work at North Ridge",
+          "start": 124,
+          "end": 184,
+          "sha256": "6a6e75bc5ec0fbb74b73329bd825353a54c62c1995c8fc937e22acd5ae109400"
+        },
+        "extraction": {
+          "mode": "local",
+          "model": null,
+          "at": "2026-10-09T06:42:57.334824+00:00",
+          "schema_version": 1
+        }
+      }
+    ],
+    "instruments": [
+      {
+        "id": "lc-1",
+        "site_id": "site-1",
+        "face_cents": 2000000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "release_verified": false
+      },
+      {
+        "id": "lc-2",
+        "site_id": "site-2",
+        "face_cents": 2000000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "release_verified": false
+      },
+      {
+        "id": "lc-3",
+        "site_id": "site-3",
+        "face_cents": 2000000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "release_verified": false
+      },
+      {
+        "id": "lc-4",
+        "site_id": "site-4",
+        "face_cents": 2000000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "release_verified": false
+      }
+    ],
+    "dependencies": [
+      {
+        "id": "dep-cap",
+        "label": "Hypothetical two-branch cap",
+        "claim_ids": [
+          "site-1-conditional",
+          "site-2-conditional",
+          "site-3-conditional",
+          "site-4-conditional"
+        ],
+        "max_active": 2,
+        "verification": "VERIFIED",
+        "document_id": "doc-cap",
+        "quote": "For this hypothetical restructuring only, no more than two conditional future-service branches may coexist. This clause is synthetic and not an executed agreement.",
+        "demo_cap": true
+      }
+    ],
+    "scenario": "cap"
+  },
+  "result": {
+    "status": "COMPLETE",
+    "maximum_cents": 5220000000,
+    "gross_cents": 8000000000,
+    "modeled_difference_cents": 2780000000,
+    "active_claims": [
+      "0c302319-8c92-4246-b46c-bbe49183499e",
+      "site-1-conditional",
+      "site-1-fixed",
+      "site-2-conditional",
+      "site-2-fixed",
+      "site-3-fixed",
+      "site-4-fixed"
+    ],
+    "instrument_contributions": {
+      "lc-1": 2000000000,
+      "lc-2": 2000000000,
+      "lc-3": 520000000,
+      "lc-4": 700000000
+    },
+    "applied_dependencies": [
+      "dep-cap"
+    ],
+    "feasible_states": 11,
+    "solver_version": "enumeration-1.0",
+    "metrics": {
+      "beneficiary_face_cents": 8000000000,
+      "maximum_drawable_cents": 5220000000,
+      "bank_facility_usage_cents": null,
+      "restricted_cash_cents": null,
+      "parent_guarantee_cents": null,
+      "surety_indemnity_cents": null
+    },
+    "notice": "Synthetic scenario. Modeled difference is not confirmed cash or bank capacity released."
+  },
+  "stale": false
+}

@@ -1,0 +1,201 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "minimum": 1,
+          "title": "End",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_id",
+        "page",
+        "start",
+        "end",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "label": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Label",
+      "type": "string"
+    },
+    "beneficiary": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Beneficiary",
+      "type": "string"
+    },
+    "site_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Site Id"
+    },
+    "face_cents": {
+      "anyOf": [
+        {
+          "maximum": 1000000000000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Face Cents"
+    },
+    "currency": {
+      "const": "USD",
+      "default": "USD",
+      "title": "Currency",
+      "type": "string"
+    },
+    "lifecycle": {
+      "default": "EFFECTIVE",
+      "enum": [
+        "EFFECTIVE",
+        "RELEASED",
+        "EXPIRED",
+        "CANCELLED"
+      ],
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "governing_law": {
+      "default": "",
+      "title": "Governing Law",
+      "type": "string"
+    },
+    "basis": {
+      "default": "FACE",
+      "enum": [
+        "FACE",
+        "CLAIM_LIMITED"
+      ],
+      "title": "Basis",
+      "type": "string"
+    },
+    "basis_hypothetical": {
+      "default": true,
+      "title": "Basis Hypothetical",
+      "type": "boolean"
+    },
+    "evidence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "basis_evidence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Basis Evidence",
+      "type": "array"
+    },
+    "release_evidence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Release Evidence",
+      "type": "array"
+    },
+    "facility_usage_cents": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Facility Usage Cents"
+    },
+    "cash_collateral_cents": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cash Collateral Cents"
+    },
+    "guarantee_cents": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Guarantee Cents"
+    },
+    "surety_cents": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Surety Cents"
+    }
+  },
+  "required": [
+    "label",
+    "beneficiary"
+  ],
+  "title": "Instrument",
+  "type": "object"
+}

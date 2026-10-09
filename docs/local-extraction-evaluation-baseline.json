@@ -1,0 +1,852 @@
+{
+  "model": "qwen3:4b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "prompt_version": "local-evidence-1.0",
+  "schema_version": "proposals-1.0",
+  "started_at": "2026-10-09T19:30:19.959521+00:00",
+  "notice": "Synthetic software evaluation; not legal or customer validation.",
+  "cases": [
+    {
+      "id": "01-prose",
+      "expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 50000000,
+          "currency": "USD",
+          "source_contains": "letter of credit"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 10000000,
+          "currency": "USD",
+          "source_contains": "incurred work"
+        }
+      ],
+      "scored_usd": true,
+      "status": "FAILED_SOURCE",
+      "proposals": [
+        {
+          "record_type": "claim",
+          "label": "work payment",
+          "beneficiary": "Grid Utility",
+          "amount_cents": 10000000,
+          "amount_text": "USD 100,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The developer shall pay USD 100,000 for incurred work.",
+          "evidence": [
+            {
+              "document_id": "01-prose",
+              "page": 1,
+              "start": 68,
+              "end": 122,
+              "quote": "The developer shall pay USD 100,000 for incurred work."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            68
+          ],
+          "validation_issues": []
+        }
+      ],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 1,
+      "case_passed": false,
+      "elapsed_seconds": 2.844,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:22.799384-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "02-text-pdf",
+      "expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 90000000,
+          "currency": "USD",
+          "source_contains": "letter of credit"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 12000000,
+          "currency": "USD",
+          "source_contains": "completed engineering"
+        }
+      ],
+      "scored_usd": true,
+      "status": "FAILED_SOURCE",
+      "proposals": [
+        {
+          "record_type": "claim",
+          "label": "engineering payment",
+          "beneficiary": "River Power",
+          "amount_cents": 12000000,
+          "amount_text": "USD 120,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The applicant owes USD 120,000 for completed engineering.",
+          "evidence": [
+            {
+              "document_id": "02-text-pdf",
+              "page": 1,
+              "start": 66,
+              "end": 123,
+              "quote": "The applicant owes USD 120,000 for completed engineering."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            66
+          ],
+          "validation_issues": []
+        }
+      ],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 1,
+      "case_passed": false,
+      "elapsed_seconds": 2.657,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:25.4839678-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "03-amendment",
+      "expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 60000000,
+          "currency": "USD",
+          "source_contains": "letter of credit"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 15000000,
+          "currency": "USD",
+          "source_contains": "incurred work"
+        }
+      ],
+      "scored_usd": true,
+      "status": "FAILED_SOURCE",
+      "proposals": [
+        {
+          "record_type": "claim",
+          "label": "Work payment",
+          "beneficiary": "The developer",
+          "amount_cents": 15000000,
+          "amount_text": "USD 150,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The developer shall pay USD 150,000 for incurred work.",
+          "evidence": [
+            {
+              "document_id": "03-amendment",
+              "page": 1,
+              "start": 115,
+              "end": 169,
+              "quote": "The developer shall pay USD 150,000 for incurred work."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            115
+          ],
+          "validation_issues": []
+        }
+      ],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 1,
+      "case_passed": false,
+      "elapsed_seconds": 2.703,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:28.2117544-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "04-shared",
+      "expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 80000000,
+          "currency": "USD",
+          "source_contains": "letter of credit"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 18000000,
+          "currency": "USD",
+          "source_contains": "completed design"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 22000000,
+          "currency": "USD",
+          "source_contains": "construction"
+        }
+      ],
+      "scored_usd": true,
+      "status": "SUCCEEDED",
+      "proposals": [
+        {
+          "record_type": "instrument",
+          "label": "letter of credit",
+          "beneficiary": "West Utility",
+          "amount_cents": null,
+          "amount_text": "USD 800,00:00",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "West Utility is beneficiary of a letter of credit for USD 800,000.",
+          "evidence": [
+            {
+              "document_id": "04-shared",
+              "page": 1,
+              "start": 0,
+              "end": 66,
+              "quote": "West Utility is beneficiary of a letter of credit for USD 800,000."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            0
+          ],
+          "validation_issues": [
+            "Amount is missing, contradictory, or not validated against an explicit source token",
+            "Resolve the amount from supporting evidence"
+          ]
+        },
+        {
+          "record_type": "claim",
+          "label": "design payment",
+          "beneficiary": "The developer",
+          "amount_cents": 18000000,
+          "amount_text": "USD 180,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The developer owes USD 180,000 for completed design secured by this credit.",
+          "evidence": [
+            {
+              "document_id": "04-shared",
+              "page": 1,
+              "start": 68,
+              "end": 143,
+              "quote": "The developer owes USD 180,000 for completed design secured by this credit."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            68
+          ],
+          "validation_issues": []
+        },
+        {
+          "record_type": "claim",
+          "label": "construction payment",
+          "beneficiary": "The developer",
+          "amount_cents": 22000000,
+          "amount_text": "USD 220,000",
+          "currency": "USD",
+          "kind": "conditional",
+          "quote": "If Site B is selected, the developer owes USD 220,000 for construction secured by this same credit.",
+          "evidence": [
+            {
+              "document_id": "04-shared",
+              "page": 1,
+              "start": 145,
+              "end": 244,
+              "quote": "If Site B is selected, the developer owes USD 220,000 for construction secured by this same credit."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            145
+          ],
+          "validation_issues": []
+        }
+      ],
+      "invalid_quotes": [],
+      "matched": 2,
+      "case_passed": false,
+      "elapsed_seconds": 4.187,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:32.4241964-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "05-missing",
+      "expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": null,
+          "currency": null,
+          "source_contains": "completed engineering"
+        }
+      ],
+      "scored_usd": false,
+      "status": "SUCCEEDED",
+      "proposals": [],
+      "invalid_quotes": [],
+      "matched": 0,
+      "case_passed": false,
+      "elapsed_seconds": 0.25,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:32.6996522-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "06-contradictory",
+      "expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": null,
+          "currency": "USD",
+          "source_contains": "engineering"
+        }
+      ],
+      "scored_usd": false,
+      "status": "FAILED_SOURCE",
+      "proposals": [],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 0,
+      "case_passed": false,
+      "elapsed_seconds": 1.64,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:34.3722859-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "07-repeated",
+      "expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": 7500000,
+          "currency": "USD",
+          "source_contains": "completed engineering"
+        }
+      ],
+      "scored_usd": true,
+      "status": "FAILED_SOURCE",
+      "proposals": [
+        {
+          "record_type": "claim",
+          "label": "completed engineering",
+          "beneficiary": "developer",
+          "amount_cents": 7500000,
+          "amount_text": "USD 75,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The developer owes USD 75,000 for completed engineering.",
+          "evidence": [],
+          "source_page": 1,
+          "source_candidates": [
+            0,
+            58
+          ],
+          "validation_issues": [
+            "Repeated quotation: select its source occurrence before importing"
+          ]
+        }
+      ],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 1,
+      "case_passed": false,
+      "elapsed_seconds": 2.563,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:36.9809331-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "08-non-usd",
+      "expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": 10000000,
+          "currency": "EUR",
+          "source_contains": "completed engineering"
+        }
+      ],
+      "scored_usd": false,
+      "status": "SUCCEEDED",
+      "proposals": [
+        {
+          "record_type": "claim",
+          "label": "completed engineering",
+          "beneficiary": null,
+          "amount_cents": 10000000,
+          "amount_text": "EUR 100,000",
+          "currency": "EUR",
+          "kind": "fixed",
+          "quote": "The developer shall pay EUR 100,000 for completed engineering.",
+          "evidence": [
+            {
+              "document_id": "08-non-usd",
+              "page": 1,
+              "start": 0,
+              "end": 62,
+              "quote": "The developer shall pay EUR 100,000 for completed engineering."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            0
+          ],
+          "validation_issues": [
+            "Currency is unresolved or unsupported; this workbench calculates USD only"
+          ]
+        }
+      ],
+      "invalid_quotes": [],
+      "matched": 1,
+      "case_passed": true,
+      "elapsed_seconds": 1.469,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:38.4995657-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "09-scaled",
+      "expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 150000000,
+          "currency": "USD",
+          "source_contains": "letter of credit"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 25000000,
+          "currency": "USD",
+          "source_contains": "completed engineering"
+        }
+      ],
+      "scored_usd": true,
+      "status": "SUCCEEDED",
+      "proposals": [
+        {
+          "record_type": "instrument",
+          "label": "letter of credit",
+          "beneficiary": "South Utility",
+          "amount_cents": 150000000,
+          "amount_text": "USD 1.5 million",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "South Utility is beneficiary of a letter of credit for USD 1.5 million.",
+          "evidence": [
+            {
+              "document_id": "09-scaled",
+              "page": 1,
+              "start": 0,
+              "end": 71,
+              "quote": "South Utility is beneficiary of a letter of credit for USD 1.5 million."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            0
+          ],
+          "validation_issues": []
+        },
+        {
+          "record_type": "claim",
+          "label": "completed engineering",
+          "beneficiary": "The developer",
+          "amount_cents": null,
+          "amount_text": "USD 250,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The developer shall pay USD 250,000 for completed engineering.",
+          "evidence": [
+            {
+              "document_id": "09-scaled",
+              "page": 1,
+              "start": 73,
+              "end": 135,
+              "quote": "The developer shall pay USD 250,000 for completed engineering."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            73
+          ],
+          "validation_issues": [
+            "Amount is missing, contradictory, or not validated against an explicit source token",
+            "Resolve the amount from supporting evidence"
+          ]
+        }
+      ],
+      "invalid_quotes": [],
+      "matched": 1,
+      "case_passed": false,
+      "elapsed_seconds": 2.672,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:38.4995657-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "10-irrelevant",
+      "expected": [],
+      "scored_usd": false,
+      "status": "SUCCEEDED",
+      "proposals": [],
+      "invalid_quotes": [],
+      "matched": 0,
+      "case_passed": true,
+      "elapsed_seconds": 4.219,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:45.4355547-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "11-injection",
+      "expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": 4000000,
+          "currency": "USD",
+          "source_contains": "completed engineering"
+        }
+      ],
+      "scored_usd": true,
+      "status": "FAILED_SOURCE",
+      "proposals": [],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 0,
+      "case_passed": false,
+      "elapsed_seconds": 1.484,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:46.9665102-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "12-unseen",
+      "expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 75000000,
+          "currency": "USD",
+          "source_contains": "letter of credit"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 12500000,
+          "currency": "USD",
+          "source_contains": "completed engineering"
+        },
+        {
+          "record_type": "claim",
+          "amount_cents": 20000000,
+          "currency": "USD",
+          "source_contains": "construction"
+        }
+      ],
+      "scored_usd": true,
+      "status": "FAILED_SOURCE",
+      "proposals": [
+        {
+          "record_type": "claim",
+          "label": "completed engineering",
+          "beneficiary": "the developer",
+          "amount_cents": 12500000,
+          "amount_text": "USD 125,000",
+          "currency": "USD",
+          "kind": "fixed",
+          "quote": "The developer owes USD 125,000 for completed engineering.",
+          "evidence": [
+            {
+              "document_id": "12-unseen",
+              "page": 1,
+              "start": 69,
+              "end": 126,
+              "quote": "The developer owes USD 125,000 for completed engineering."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            69
+          ],
+          "validation_issues": []
+        },
+        {
+          "record_type": "claim",
+          "label": "construction",
+          "beneficiary": "the developer",
+          "amount_cents": 20000000,
+          "amount_text": "USD 200,000",
+          "currency": "USD",
+          "kind": "conditional",
+          "quote": "If Cedar site is selected, the developer owes USD 200,000 for construction.",
+          "evidence": [
+            {
+              "document_id": "12-unseen",
+              "page": 1,
+              "start": 128,
+              "end": 203,
+              "quote": "If Cedar site is selected, the developer owes USD 200,000 for construction."
+            }
+          ],
+          "source_page": 1,
+          "source_candidates": [
+            128
+          ],
+          "validation_issues": []
+        }
+      ],
+      "invalid_quotes": [
+        "Quotation does not match the source chunk"
+      ],
+      "matched": 2,
+      "case_passed": false,
+      "elapsed_seconds": 3.906,
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T15:35:50.9072243-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-10-09T19:30:50.930241+00:00",
+  "clear_usd_precision": 0.17647058823529413,
+  "clear_usd_recall": 0.1875,
+  "expected_clear_usd": 16,
+  "proposed_clear_usd": 17,
+  "matched_clear_usd": 3,
+  "passed_cases": 2,
+  "release_gate_passed": false
+}

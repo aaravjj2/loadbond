@@ -1,0 +1,539 @@
+.v2 .state-app {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.v2 .state-app h2 {
+  font-size: 27px;
+  line-height: 1.2;
+  margin: 8px 0 16px;
+  font-weight: 500;
+}
+.v2 .state-app h3 {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 8px 0;
+}
+.v2 .state-app .panel {
+  margin: 16px 0;
+  padding: 22px;
+  min-width: 0;
+}
+.v2 .state-app .actions {
+  margin: 12px 0;
+}
+.v2 .state-caption {
+  color: #526760;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.v2 .state-badge {
+  padding: 6px 9px;
+  background: var(--cream);
+  color: #3c554b;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  border: 1px solid var(--line);
+}
+.v2 .state-toolbar {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.v2 .state-toolbar label {
+  min-width: 250px;
+  margin: 0;
+  flex: 1;
+}
+.v2 .state-toolbar .state-badge {
+  align-self: center;
+}
+.v2 .state-assess-controls {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+  align-items: end;
+  gap: 12px;
+  margin: 18px 0 12px;
+}
+.v2 .state-assess-controls label {
+  margin: 0;
+}
+.v2 .state-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--white);
+  border: 1px solid var(--line);
+  margin: 20px 0;
+}
+.v2 .state-metric {
+  display: block;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  padding: 22px;
+}
+.v2 .state-metric strong {
+  display: block;
+  font-size: 30px;
+  font-variant-numeric: tabular-nums;
+  margin: 12px 0;
+  letter-spacing: -0.6px;
+}
+.v2 .state-metric small {
+  display: block;
+  color: #526760;
+  font-size: 12px;
+}
+.v2 .state-metric:last-child {
+  border-right: 0;
+}
+.v2 button.state-metric:hover {
+  background: var(--cream);
+}
+.v2 .state-verdict {
+  padding: 18px 22px;
+  background: var(--cream);
+  border-left: 4px solid var(--green);
+}
+.v2 .state-verdict p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+}
+.v2 .state-columns {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 18px;
+}
+.v2 .state-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+.v2 .state-section-heading .actions {
+  margin-top: 0;
+}
+.v2 .state-timeline {
+  border-left: 2px solid var(--green);
+  margin-left: 4px;
+  padding-left: 20px;
+}
+.v2 .state-timeline article {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.v2 .state-instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.v2 .state-instrument {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 18px;
+}
+.v2 .state-instrument:hover {
+  background: var(--cream);
+}
+.v2 .state-instrument strong {
+  display: block;
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+.v2 .state-instrument small {
+  display: block;
+  font-size: 12px;
+  color: #526760;
+}
+.v2 .state-bar {
+  display: block;
+  background: #dce6d9;
+  height: 8px;
+  margin: 12px 0;
+}
+.v2 .state-bar span {
+  display: block;
+  background: var(--green);
+  height: 100%;
+}
+.v2 .state-tags,
+.v2 .state-metric-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+.v2 .state-tag {
+  padding: 7px 10px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+.v2 .state-table-wrap {
+  overflow: auto;
+  max-width: 100%;
+}
+.v2 .state-app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+.v2 .state-app th {
+  color: #526760;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+.v2 .state-app td,
+.v2 .state-app th {
+  padding: 13px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.v2 .state-app td:nth-child(2) {
+  font-variant-numeric: tabular-nums;
+}
+.v2 .state-app td small {
+  display: block;
+  color: #526760;
+}
+.v2 .state-app summary {
+  cursor: pointer;
+  padding: 14px 0;
+}
+.v2 .state-app details {
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+}
+.v2 .state-source-link {
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 14px;
+  text-align: left;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.v2 .state-chart {
+  width: 100%;
+  max-height: 230px;
+  margin: 10px 0;
+}
+.v2 .state-chart text {
+  font:
+    12px Arial,
+    sans-serif;
+  fill: var(--ink);
+}
+.v2 .state-historical {
+  padding: 14px 18px;
+  background: #f5ead5;
+  color: #604819;
+  border: 1px solid #dac69c;
+  margin: 12px 0;
+}
+.v2 .state-history-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: left;
+  color: var(--ink);
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 14px 0;
+}
+.v2 .state-history-row:hover {
+  background: var(--cream);
+}
+.v2 .state-history-row small {
+  display: block;
+  color: #526760;
+}
+.v2 .state-details {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 10px;
+}
+.v2 .state-details dt {
+  color: #526760;
+}
+.v2 .state-details dd {
+  margin: 0;
+}
+.v2 .state-hash {
+  font-family: monospace;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.v2 .state-finding {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.v2 .state-finding .secondary {
+  margin-left: 14px;
+}
+.v2 .state-reader-grid {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1.5fr) minmax(240px, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+.v2 .state-reader-grid .panel {
+  padding: 16px;
+}
+.v2 .state-document-list button {
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+.v2 .state-document-list small,
+.v2 .state-queue-row small {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.v2 .state-reader pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    14px/1.8 Georgia,
+    serif;
+  max-height: 500px;
+  overflow: auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+.v2 .state-reader h2 {
+  font:
+    18px/1.4 Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.v2 .state-reader .state-section-heading label {
+  min-width: 60px;
+}
+.v2 .state-queue-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+}
+.v2 .state-queue-row:hover {
+  background: var(--cream);
+}
+.v2 .state-proposal {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+.v2 .state-proposal small {
+  display: block;
+  color: #526760;
+}
+.v2 .state-job {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.v2 .state-job > span {
+  margin-left: 14px;
+}
+.v2 .state-evidence-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(620px, 95vw);
+  z-index: 30;
+  overflow: auto;
+  box-shadow: -20px 0 60px #213b3d22;
+  margin: 0 !important;
+  padding: 28px !important;
+}
+.v2 .state-app blockquote {
+  margin: 14px 0;
+  padding: 16px 18px;
+  background: var(--paper);
+  border-left: 3px solid var(--line);
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+.v2 .state-app blockquote button {
+  display: block;
+  margin-top: 10px;
+}
+.v2 .state-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.v2 .state-app input,
+.v2 .state-app select,
+.v2 .state-app textarea {
+  max-width: 100%;
+  color: var(--ink);
+}
+.v2 .state-app fieldset {
+  border: 1px solid var(--line);
+  padding: 16px;
+  margin: 16px 0;
+}
+.v2 .state-app legend {
+  font-weight: 600;
+}
+.v2 .state-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.v2 .state-check input {
+  width: auto;
+}
+.v2 .state-condition {
+  display: grid;
+  grid-template-columns: 1fr 100px auto;
+  gap: 10px;
+  margin: 10px 0;
+}
+.v2 .state-sample {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.v2 .state-app button:focus-visible,
+.v2 .state-app input:focus-visible,
+.v2 .state-app select:focus-visible,
+.v2 .state-app textarea:focus-visible,
+.v2 .state-app summary:focus-visible {
+  outline: 3px solid #83a58d;
+  outline-offset: 3px;
+}
+.v2 .state-app .state-editor textarea {
+  min-height: 90px;
+}
+.v2 .state-primary-nav {
+  margin-bottom: 14px;
+}
+.v2 .state-advanced-nav summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #526760;
+}
+.v2 .state-advanced-nav nav {
+  margin-top: 0;
+}
+@media (max-width: 1200px) {
+  .v2 .state-reader-grid {
+    grid-template-columns: 165px minmax(0, 1fr);
+  }
+  .v2 .state-review-queue {
+    grid-column: 1/-1;
+  }
+  .v2 .state-assess-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+  .v2 .state-metric strong {
+    font-size: 25px;
+  }
+}
+@media (max-width: 800px) {
+  .v2 .state-columns,
+  .v2 .state-reader-grid,
+  .v2 .state-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .v2 .state-document-list {
+    display: flex;
+    overflow: auto;
+    gap: 10px;
+  }
+  .v2 .state-document-list h3 {
+    display: none;
+  }
+  .v2 .state-document-list button {
+    min-width: 170px;
+  }
+  .v2 .state-metrics {
+    grid-template-columns: 1fr;
+  }
+  .v2 .state-metric {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .v2 .state-section-heading,
+  .v2 .state-proposal {
+    flex-direction: column;
+  }
+  .v2 .state-condition {
+    grid-template-columns: 1fr 90px;
+  }
+  .v2 .state-condition button {
+    grid-column: 1/-1;
+  }
+  .v2 .state-details {
+    grid-template-columns: 1fr;
+  }
+  .v2 .state-app .state-evidence-drawer {
+    width: 100vw;
+  }
+  .v2 .state-history-row {
+    flex-direction: column;
+  }
+  .v2 .state-primary-nav {
+    display: flex;
+    overflow: auto;
+  }
+  .v2 .state-primary-nav button {
+    min-width: max-content;
+  }
+  .v2 .state-assess-controls {
+    grid-template-columns: 1fr;
+  }
+  .v2 .state-toolbar label {
+    min-width: 0;
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2 .state-app * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .v2 .state-toolbar,
+  .v2 .state-assess-controls,
+  .v2 .state-app .state-editor,
+  .v2 .state-review-form,
+  .v2 .state-evidence-drawer {
+    display: none !important;
+  }
+  .v2 .state-brief .panel {
+    break-inside: avoid;
+  }
+  .v2 .state-app .state-metric {
+    print-color-adjust: exact;
+  }
+  .v2 .state-app .state-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

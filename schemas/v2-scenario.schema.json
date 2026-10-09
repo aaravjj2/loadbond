@@ -1,0 +1,43 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "hypothetical": {
+      "default": false,
+      "title": "Hypothetical",
+      "type": "boolean"
+    },
+    "conditional_percent": {
+      "default": 100,
+      "maximum": 1000,
+      "minimum": 100,
+      "title": "Conditional Percent",
+      "type": "integer"
+    },
+    "ceiling_percent": {
+      "default": 100,
+      "maximum": 1000,
+      "minimum": 100,
+      "title": "Ceiling Percent",
+      "type": "integer"
+    },
+    "dependency_ids": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Dependency Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "Scenario",
+  "type": "object"
+}

@@ -1,0 +1,62 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "agreement_id": {
+      "title": "Agreement Id",
+      "type": "string"
+    },
+    "version": {
+      "minimum": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "pages": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "sha256": {
+      "title": "Sha256",
+      "type": "string"
+    },
+    "superseded": {
+      "title": "Superseded",
+      "type": "boolean"
+    },
+    "processing": {
+      "enum": [
+        "UPLOADED",
+        "EXTRACTED",
+        "REVIEWED"
+      ],
+      "title": "Processing",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "agreement_id",
+    "version",
+    "name",
+    "pages",
+    "sha256",
+    "superseded",
+    "processing",
+    "source"
+  ],
+  "title": "DocumentVersion",
+  "type": "object"
+}

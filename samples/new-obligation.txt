@@ -1,0 +1,4 @@
+SYNTHETIC SAMPLE — NOT EXECUTED
+This sample uses the local parser's explicit format. It does not demonstrate AI extraction.
+FIXED: USD 2500000 | Additional incurred work at North Ridge
+Review the source amount and map it to lc-1 before accepting. Instrument ceilings apply separately.

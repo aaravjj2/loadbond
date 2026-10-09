@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-09",
+  "milestone": "Riverbend evidence-to-decision transaction",
+  "backend_tests": { "passed": 45, "new_tests": 2 },
+  "production_build": "passed",
+  "browser": {
+    "baseline_instrument_cents": 3000000000,
+    "after_site_selection_cents": 3000000000,
+    "after_release_review_cents": 1800000000,
+    "underlying_obligation_maximum_cents": 2000000000,
+    "after_evidence_withdrawal_cents": 3000000000,
+    "historical_replay": "snapshot and result reproduced exactly",
+    "json_download": "browser-historical-evidence.json",
+    "download_snapshot_and_result_hashes": "verified",
+    "release_quote_source_navigation": "passed",
+    "clean_session_direct_project_link": "passed",
+    "desktop_sizes_inspected": ["1440x900", "1280x800"],
+    "captured_console_errors": [],
+    "screenshot": "transaction-1440.png"
+  },
+  "limitations": [
+    "Authored pre-reviewed synthetic fixture, not a live extraction demonstration",
+    "Demonstration input reviews, not legal judgments",
+    "No established bank-capacity or cash benefit",
+    "No real customer transaction or commercial validation",
+    "Existing local AI extraction remains experimental",
+    "Existing desktop workbench preserved; no claim of a complete mobile redesign"
+  ]
+}

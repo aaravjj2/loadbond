@@ -1,0 +1,1833 @@
+{
+  "model": "qwen3:4b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "prompt_version": "local-clauses-1.0",
+  "schema_version": "clause-proposals-1.0",
+  "financial_prompt_version": "local-evidence-1.2",
+  "corpus_hash": "a5dfacb98137d98cf52a831205e5b7c7fdf447b8c3bfd9565291f5e8d3be9ee6",
+  "split": "development",
+  "started_at": "2026-10-09T23:07:24.216407+00:00",
+  "notice": "Measured synthetic evaluation, not independent legal or customer validation. Missing gates retain experimental status.",
+  "cases": [
+    {
+      "id": "development-01",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "CARDINALITY",
+            "source_contains": "The two alternative security branches may not be outstanding simultaneously."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "RULE",
+            "label": "CARDINALITY",
+            "rule_kind": "CARDINALITY",
+            "event_type": null,
+            "quote": "The two alternative security branches may not be outstanding simultaneously.",
+            "interpretation": "This rule enforces that only one security branch can be active at a time, preventing simultaneous existence of two branches.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-01",
+                "page": 1,
+                "start": 0,
+                "end": 76,
+                "quote": "The two alternative security branches may not be outstanding simultaneously."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 10.875,
+        "passed": true
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "The two alternative security branches may not be outstanding simultaneously.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "The two alternative security branches may not be outstanding simultaneously.",
+            "evidence": [
+              {
+                "document_id": "development-01",
+                "page": 1,
+                "start": 0,
+                "end": 76,
+                "quote": "The two alternative security branches may not be outstanding simultaneously."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only",
+              "Enter the beneficiary from evidence"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.141,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:12:38.2353551-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-02",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "PREREQUISITE",
+            "source_contains": "If construction starts, a valid utility consent must exist."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "RULE",
+            "label": "DRAW_CONDITION",
+            "rule_kind": "DRAW_CONDITION",
+            "event_type": null,
+            "quote": "If construction starts, a valid utility consent must exist.",
+            "interpretation": "A condition that a valid utility consent must exist before construction can begin.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-02",
+                "page": 1,
+                "start": 0,
+                "end": 59,
+                "quote": "If construction starts, a valid utility consent must exist."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.953,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 0.532,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:12:41.8131353-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-03",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "IMPLICATION",
+            "source_contains": "A default activates the replacement-security requirement."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "RULE",
+            "label": "default",
+            "rule_kind": "REPLACEMENT",
+            "event_type": null,
+            "quote": "A default activates the replacement-security requirement.",
+            "interpretation": "When a default occurs, the replacement-security requirement is triggered.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-03",
+                "page": 1,
+                "start": 0,
+                "end": 57,
+                "quote": "A default activates the replacement-security requirement."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.531,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "A default activates the replacement-security requirement.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "A default activates the replacement-security requirement.",
+            "evidence": [
+              {
+                "document_id": "development-03",
+                "page": 1,
+                "start": 0,
+                "end": 57,
+                "quote": "A default activates the replacement-security requirement."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only",
+              "Enter the beneficiary from evidence"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.594,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:12:47.0170275-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-04",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "ISSUANCE",
+            "source_contains": "The utility letter of credit may be issued only after site selection."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "SITE_SELECTION",
+            "rule_kind": null,
+            "event_type": "ISSUANCE",
+            "quote": "The utility letter of credit may be issued only after site selection.",
+            "interpretation": "The utility letter of credit may be issued only after site selection.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-04",
+                "page": 1,
+                "start": 0,
+                "end": 69,
+                "quote": "The utility letter of credit may be issued only after site selection."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.766,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "The utility letter of credit",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "The utility letter of credit may be issued only after site selection.",
+            "evidence": [
+              {
+                "document_id": "development-04",
+                "page": 1,
+                "start": 0,
+                "end": 69,
+                "quote": "The utility letter of credit may be issued only after site selection."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only",
+              "Enter the beneficiary from evidence"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.578,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:12:52.4204766-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-05",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "REPLACEMENT",
+            "source_contains": "Posting the successor letter of credit does not cancel the predecessor instrument."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "successor_letter_of_credit_posted",
+            "rule_kind": null,
+            "event_type": "FACT_SET",
+            "quote": "Posting the successor letter of credit does not cancel the predecessor instrument.",
+            "interpretation": "The act of posting a new letter of credit does not terminate the existing letter of credit.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-05",
+                "page": 1,
+                "start": 0,
+                "end": 82,
+                "quote": "Posting the successor letter of credit does not cancel the predecessor instrument."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.109,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "Posting the successor letter of credit does not cancel the predecessor instrument.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "Posting the successor letter of credit does not cancel the predecessor instrument.",
+            "evidence": [
+              {
+                "document_id": "development-05",
+                "page": 1,
+                "start": 0,
+                "end": 82,
+                "quote": "Posting the successor letter of credit does not cancel the predecessor instrument."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only",
+              "Enter the beneficiary from evidence"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.578,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:12:58.2118717-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-06",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "RELEASE",
+            "source_contains": "The instrument is released when the beneficiary provides its signed release certificate."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "RELEASE",
+            "rule_kind": null,
+            "event_type": "RELEASE",
+            "quote": "The instrument is released when the beneficiary provides its signed release certificate.",
+            "interpretation": "The release of the instrument occurs upon the beneficiary providing a signed release certificate.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-06",
+                "page": 1,
+                "start": 0,
+                "end": 88,
+                "quote": "The instrument is released when the beneficiary provides its signed release certificate."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.297,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [
+          "Instrument proposal does not quote an instrument provision"
+        ],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.813,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:03.3999168-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-07",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "EXPIRY",
+            "source_contains": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "EXPIRATION_DATE",
+            "rule_kind": null,
+            "event_type": "EXPIRY",
+            "quote": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective.",
+            "interpretation": "The letter of credit expires on 2:27-06-30 if a separately verified termination becomes effective.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-07",
+                "page": 1,
+                "start": 0,
+                "end": 98,
+                "quote": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.062,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective.",
+            "evidence": [
+              {
+                "document_id": "development-07",
+                "page": 1,
+                "start": 0,
+                "end": 98,
+                "quote": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only",
+              "Enter the beneficiary from evidence"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 2.563,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:09.1077109-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-08",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "LIMIT",
+            "source_contains": "The maximum documentary draw amount is USD 125,000."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "DRAW_CONDITION",
+            "rule_kind": null,
+            "event_type": "DRAW",
+            "quote": "The maximum documentary draw amount is USD 125,000.",
+            "interpretation": "This specifies the upper limit for documentary draws under the LC.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-08",
+                "page": 1,
+                "start": 0,
+                "end": 51,
+                "quote": "The maximum documentary draw amount is USD 125,000."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 1.563,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [
+          "Instrument proposal does not quote an instrument provision"
+        ],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 1.937,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:12.6517086-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-09",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "STEP_UP",
+            "source_contains": "Following a rating downgrade, the required security increases to 125 percent of the prior amount."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "RULE",
+            "label": "STEP_UP",
+            "rule_kind": "STEP_UP",
+            "event_type": null,
+            "quote": "Following a rating downgrade, the required security increases to 125 percent of the prior amount.",
+            "interpretation": "A rating downgrade triggers an increase in required security to 125% of the prior amount.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-09",
+                "page": 1,
+                "start": 0,
+                "end": 97,
+                "quote": "Following a rating downgrade, the required security increases to 125 percent of the prior amount."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 1.562,
+        "passed": true
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "claim",
+            "label": "Following a rating downgrade, the required security increases to 125 percent of the prior amount.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "Following a rating downgrade, the required security increases to 125 percent of the prior amount.",
+            "evidence": [
+              {
+                "document_id": "development-09",
+                "page": 1,
+                "start": 0,
+                "end": 97,
+                "quote": "Following a rating downgrade, the required security increases to 125 percent of the prior amount."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 1.75,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:16.056506-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-10",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "EVERGREEN",
+            "source_contains": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "EVERGREEN",
+            "rule_kind": null,
+            "event_type": "EXPIRY",
+            "quote": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective.",
+            "interpretation": "The letter of credit automatically extends for another year unless a timely nonrenew: The automatic extension of the letter of credit for another year is a recurring event that occurs unless a timely nonrenewal notice is provided.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-10",
+                "page": 1,
+                "start": 0,
+                "end": 107,
+                "quote": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 4.14,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
+            "quote": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective.",
+            "evidence": [
+              {
+                "document_id": "development-10",
+                "page": 1,
+                "start": 0,
+                "end": 107,
+                "quote": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only",
+              "Enter the beneficiary from evidence"
+            ]
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 4.516,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:24.7964331-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-11",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "DRAW_CONDITION",
+            "source_contains": "A drawing requires the beneficiary to present a signed demand certificate."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "DRAW_CONDITION",
+            "rule_kind": null,
+            "event_type": "DRAW",
+            "quote": "A drawing requires the beneficiary to present a signed demand certificate.",
+            "interpretation": "The beneficiary must present a signed demand certificate to initiate a drawing under the terms of the letter of credit.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-11",
+                "page": 1,
+                "start": 0,
+                "end": 74,
+                "quote": "A drawing requires the beneficiary to present a signed demand certificate."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.813,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [
+          "Instrument proposal does not quote an instrument provision"
+        ],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.281,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:31.973381-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-12",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "OBLIGATION",
+            "source_contains": "If the selected site enters construction, the developer owes USD 240,000 in construction costs."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "RULE",
+            "label": "DRAW_CONDITION",
+            "rule_kind": "DRAW_CONDITION",
+            "event_type": null,
+            "quote": "If the selected site enters construction, the developer owes USD 240,000 in construction costs.",
+            "interpretation": "The developer's obligation to pay USD 240,000 in construction costs is triggered upon the site entering construction.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-12",
+                "page": 1,
+                "start": 0,
+                "end": 95,
+                "quote": "If the selected site enters construction, the developer owes USD 240,000 in construction costs."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 4.125,
+        "passed": false
+      },
+      "financial": {
+        "expected": [
+          {
+            "record_type": "claim",
+            "amount_cents": 24000000,
+            "currency": "USD",
+            "source_contains": "If the selected site enters construction, the developer owes USD 240,000 in construction costs."
+          }
+        ],
+        "proposals": [
+          {
+            "record_type": "claim",
+            "label": "construction costs",
+            "beneficiary": "developer",
+            "amount_cents": 24000000,
+            "amount_text": "USD 240,000",
+            "currency": "USD",
+            "kind": "conditional",
+            "quote": "If the selected site enters construction, the developer owes USD 240,000 in construction costs.",
+            "evidence": [
+              {
+                "document_id": "development-12",
+                "page": 1,
+                "start": 0,
+                "end": 95,
+                "quote": "If the selected site enters construction, the developer owes USD 240,000 in construction costs."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": []
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 3.812,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:40.0002635-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-13",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "FACT",
+            "kind": null,
+            "source_contains": "As of 2026-10-09, the Birch site has been selected."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "site_selection",
+            "rule_kind": null,
+            "event_type": "FACT_SET",
+            "quote": "As of 2026-10-09, the Birch site has been selected.",
+            "interpretation": "The Birch site was selected on 2026-10-09.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-13",
+                "page": 1,
+                "start": 0,
+                "end": 51,
+                "quote": "As of 2026-10-09, the Birch site has been selected."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.062,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 0.563,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:43.7296566-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-14",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "EVENT",
+            "kind": "ISSUANCE",
+            "source_contains": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "ISSUANCE",
+            "rule_kind": null,
+            "event_type": "ISSUANCE",
+            "quote": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility.",
+            "interpretation": "Alder Utility issued a letter of credit with face value USD 900,000 to Birch Utility on 2026-10-10.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-14",
+                "page": 1,
+                "start": 0,
+                "end": 94,
+                "quote": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 4.14,
+        "passed": true
+      },
+      "financial": {
+        "expected": [
+          {
+            "record_type": "instrument",
+            "amount_cents": 90000000,
+            "currency": "USD",
+            "source_contains": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility."
+          }
+        ],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "Letter of credit issued by Alder Utility to Birch Utility",
+            "beneficiary": "Birch Utility",
+            "amount_cents": 90000000,
+            "amount_text": "USD 900,000",
+            "currency": "USD",
+            "kind": "fixed",
+            "quote": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility.",
+            "evidence": [
+              {
+                "document_id": "development-14",
+                "page": 1,
+                "start": 0,
+                "end": 94,
+                "quote": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": []
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 3.828,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:13:51.7816592-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-15",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "EVENT",
+            "kind": "DRAW",
+            "source_contains": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "DRAWDOWN",
+            "rule_kind": null,
+            "event_type": "DRAW",
+            "quote": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit.",
+            "interpretation": "The beneficiary executed a drawdown of USD 75,000 under the letter of credit on 2026-10-11.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-15",
+                "page": 1,
+                "start": 0,
+                "end": 74,
+                "quote": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 4.078,
+        "passed": true
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "instrument",
+            "label": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit.",
+            "beneficiary": "the beneficiary",
+            "amount_cents": 7500000,
+            "amount_text": "USD 75,000",
+            "currency": "USD",
+            "kind": "fixed",
+            "quote": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit.",
+            "evidence": [
+              {
+                "document_id": "development-15",
+                "page": 1,
+                "start": 0,
+                "end": 74,
+                "quote": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": []
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 5.203,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:14:01.1398395-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-16",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "EVENT",
+            "kind": "REIMBURSEMENT",
+            "source_contains": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "DRAW",
+            "rule_kind": null,
+            "event_type": "DRAW",
+            "quote": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing.",
+            "interpretation": "Borrower repaid a portion of the LC drawing amount on 2026-10-12",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-16",
+                "page": 1,
+                "start": 0,
+                "end": 82,
+                "quote": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.781,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [
+          {
+            "record_type": "claim",
+            "label": "Reimbursement of letter-of-credit drawing",
+            "beneficiary": "borrower",
+            "amount_cents": 7500000,
+            "amount_text": "USD 75,000",
+            "currency": "USD",
+            "kind": "fixed",
+            "quote": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing.",
+            "evidence": [
+              {
+                "document_id": "development-16",
+                "page": 1,
+                "start": 0,
+                "end": 82,
+                "quote": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": []
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 4.422,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:14:09.4251147-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-17",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "EVENT",
+            "kind": "NOTICE",
+            "source_contains": "On 2026-10-13, the utility acknowledged receipt of the cancellation notice."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "RECEIPT",
+            "rule_kind": null,
+            "event_type": "RELEASE",
+            "quote": "On 2026-10-13, the utility acknowledged receipt of the cancellation notice.",
+            "interpretation": "The utility acknowledged receipt of the cancellation notice on 2026-10-13.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-17",
+                "page": 1,
+                "start": 0,
+                "end": 75,
+                "quote": "On 2026-10-13, the utility acknowledged receipt of the cancellation notice."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.766,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 0.562,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:14:13.8349557-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-18",
+      "split": "development",
+      "clauses": {
+        "expected": [],
+        "proposals": [
+          {
+            "category": "EVENT",
+            "label": "meeting room opens",
+            "rule_kind": null,
+            "event_type": "DRAW",
+            "quote": "The meeting room opens at nine and refreshments will be served.",
+            "interpretation": "The meeting room opens at nine (time-specific event) and refreshments will be served (separate event).",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-18",
+                "page": 1,
+                "start": 0,
+                "end": 63,
+                "quote": "The meeting room opens at nine and refreshments will be served."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.281,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 0.5,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:14:17.7154657-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-19",
+      "split": "development",
+      "clauses": {
+        "expected": [
+          {
+            "category": "RULE",
+            "kind": "OBLIGATION",
+            "source_contains": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
+          }
+        ],
+        "proposals": [
+          {
+            "category": "RULE",
+            "label": "OBLIGATION",
+            "rule_kind": "OBLIGATION",
+            "event_type": null,
+            "quote": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified.",
+            "interpretation": "The developer has an obligation to make a payment upon acceptance of commissioning, but the payment amount is not specified.",
+            "source_page": 1,
+            "evidence": [
+              {
+                "document_id": "development-19",
+                "page": 1,
+                "start": 0,
+                "end": 92,
+                "quote": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
+              }
+            ],
+            "validation_issues": [],
+            "unresolved_fields": [
+              "target records and condition mapping",
+              "operative date and governing context"
+            ],
+            "experimental": true
+          }
+        ],
+        "validation_issues": [],
+        "error": null,
+        "matched": 1,
+        "elapsed_seconds": 3.531,
+        "passed": true
+      },
+      "financial": {
+        "expected": [
+          {
+            "record_type": "claim",
+            "amount_cents": null,
+            "currency": null,
+            "source_contains": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
+          }
+        ],
+        "proposals": [],
+        "validation_issues": [
+          "Instrument proposal does not quote an instrument provision"
+        ],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 3.875,
+        "passed": false
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:14:25.2002376-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    {
+      "id": "development-20",
+      "split": "development",
+      "clauses": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [
+          "Instruction-like text cannot become a contract proposal"
+        ],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 4.797,
+        "passed": false
+      },
+      "financial": {
+        "expected": [],
+        "proposals": [],
+        "validation_issues": [],
+        "error": null,
+        "matched": 0,
+        "elapsed_seconds": 0.594,
+        "passed": true
+      },
+      "resident_models": [
+        {
+          "name": "qwen3:4b",
+          "model": "qwen3:4b",
+          "size": 3873366343,
+          "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-09T19:14:30.6926458-04:00",
+          "size_vram": 3873366343,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-10-09T23:09:30.777467+00:00",
+  "scores": {
+    "clauses": {
+      "expected": 18,
+      "proposed": 20,
+      "matched": 5,
+      "empty_cases": 2,
+      "empty_passed": 0,
+      "precision": 0.25,
+      "recall": 0.2777777777777778,
+      "gate_passed": false
+    },
+    "financial": {
+      "expected": 3,
+      "proposed": 15,
+      "matched": 2,
+      "empty_cases": 17,
+      "empty_passed": 5,
+      "precision": 0.13333333333333333,
+      "recall": 0.6666666666666666,
+      "gate_passed": false
+    }
+  },
+  "release_gate_passed": false
+}

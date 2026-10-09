@@ -1,0 +1,197 @@
+.v2 .transaction-case {
+  margin-bottom: 30px;
+}
+.v2 .case-reviewer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; margin-bottom: 12px; color: #526760; border-bottom: 1px solid var(--line); }
+.v2 .case-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+}
+.v2 .case-heading h2 {
+  font-size: 32px;
+  line-height: 1.15;
+  margin: 10px 0;
+  letter-spacing: -0.7px;
+}
+.v2 .case-label {
+  padding: 10px 14px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.v2 .case-stages {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 24px 0;
+}
+.v2 .case-stages li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2px solid var(--line);
+  padding: 10px 0;
+  color: #526760;
+}
+.v2 .case-stages li.current {
+  border-color: var(--green);
+  color: var(--ink);
+  font-weight: 700;
+}
+.v2 .case-stages li span {
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 22px;
+  flex-shrink: 0;
+}
+.v2 .case-summary {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.v2 .case-summary > div {
+  padding: 22px;
+  border-right: 1px solid var(--line);
+}
+.v2 .case-summary strong {
+  display: block;
+  font-size: 31px;
+  font-variant-numeric: tabular-nums;
+  margin: 10px 0;
+}
+.v2 .case-summary strong.case-unknown {
+  font-size: 20px;
+}
+.v2 .case-summary small {
+  display: block;
+  color: #526760;
+  line-height: 1.5;
+}
+.v2 .case-verdict {
+  border-left: 4px solid var(--green);
+  background: var(--cream);
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+.v2 .case-verdict p {
+  margin: 8px 0 0;
+  max-width: 850px;
+  line-height: 1.6;
+}
+.v2 .case-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+.v2 .case-body .panel {
+  margin: 0;
+}
+.v2 .case-body h3,
+.v2 .case-evidence h3 {
+  margin-top: 0;
+}
+.v2 .case-contribution {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin: 12px 0;
+  padding: 14px;
+}
+.v2 .case-contribution.selected {
+  border-color: var(--green);
+  background: var(--cream);
+}
+.v2 .case-contribution small {
+  display: block;
+  font-size: 12px;
+  margin-top: 6px;
+  color: #526760;
+}
+.v2 .case-contribution strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.v2 .case-bar {
+  grid-column: 1/-1;
+  background: var(--cream);
+  height: 7px;
+}
+.v2 .case-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--green);
+}
+.v2 .case-note {
+  color: #526760;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.v2 .case-evidence,
+.v2 .case-review {
+  margin-top: 16px;
+}
+.v2 .case-evidence-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.v2 .transaction-case blockquote {
+  margin: 12px 0;
+  border-left: 3px solid var(--line);
+  padding: 12px 18px;
+  background: var(--paper);
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+.v2 .case-check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.v2 .case-check input {
+  width: auto;
+}
+.v2 .case-history {
+  padding-left: 20px;
+}
+.v2 .case-history li {
+  margin: 12px 0;
+}
+.v2 .case-history li span {
+  display: block;
+  color: #526760;
+  font-size: 12px;
+}
+.v2 .transaction-case button:focus-visible {
+  outline: 3px solid #9bbdad;
+  outline-offset: 3px;
+}
+@media (max-width: 800px) {
+  .v2 .case-summary,
+  .v2 .case-body {
+    grid-template-columns: 1fr;
+  }
+  .v2 .case-summary > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .v2 .case-stages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .v2 .case-heading {
+    display: block;
+  }
+}

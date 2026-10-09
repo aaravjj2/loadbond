@@ -1,0 +1,19 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "scenario_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 4,
+      "minItems": 2,
+      "title": "Scenario Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "scenario_ids"
+  ],
+  "title": "Comparison",
+  "type": "object"
+}

@@ -1,0 +1,136 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "minimum": 1,
+          "title": "End",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_id",
+        "page",
+        "start",
+        "end",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "label": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Label",
+      "type": "string"
+    },
+    "amount_cents": {
+      "anyOf": [
+        {
+          "maximum": 1000000000000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Amount Cents"
+    },
+    "currency": {
+      "const": "USD",
+      "default": "USD",
+      "title": "Currency",
+      "type": "string"
+    },
+    "kind": {
+      "default": "fixed",
+      "enum": [
+        "fixed",
+        "conditional"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "instrument_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Instrument Id"
+    },
+    "site_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Site Id"
+    },
+    "legal_status": {
+      "default": "UNKNOWN",
+      "enum": [
+        "UNKNOWN",
+        "REVIEWED_MODEL_INPUT"
+      ],
+      "title": "Legal Status",
+      "type": "string"
+    },
+    "mapping": {
+      "default": "UNCERTAIN",
+      "enum": [
+        "ADDITIVE",
+        "UNCERTAIN"
+      ],
+      "title": "Mapping",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "minItems": 1,
+      "title": "Evidence",
+      "type": "array"
+    }
+  },
+  "required": [
+    "label",
+    "evidence"
+  ],
+  "title": "Claim",
+  "type": "object"
+}

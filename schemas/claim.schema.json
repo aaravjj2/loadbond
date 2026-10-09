@@ -1,0 +1,138 @@
+{
+  "$defs": {
+    "SourceSpan": {
+      "properties": {
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "page",
+        "quote",
+        "start",
+        "end",
+        "sha256"
+      ],
+      "title": "SourceSpan",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "label": {
+      "title": "Label",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "instrument_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Instrument Id"
+    },
+    "site_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Site Id"
+    },
+    "amount_cents": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Amount Cents"
+    },
+    "currency": {
+      "const": "USD",
+      "title": "Currency",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "fixed",
+        "conditional"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "legal_status": {
+      "title": "Legal Status",
+      "type": "string"
+    },
+    "verification": {
+      "enum": [
+        "UNVERIFIED",
+        "VERIFIED",
+        "REJECTED"
+      ],
+      "title": "Verification",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/SourceSpan"
+    },
+    "extraction": {
+      "additionalProperties": true,
+      "title": "Extraction",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "label",
+    "document_id",
+    "instrument_id",
+    "site_id",
+    "amount_cents",
+    "currency",
+    "kind",
+    "legal_status",
+    "verification",
+    "source",
+    "extraction"
+  ],
+  "title": "ClaimRecord",
+  "type": "object"
+}

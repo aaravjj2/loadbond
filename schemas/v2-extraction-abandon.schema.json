@@ -1,0 +1,16 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "reason": {
+      "maxLength": 2000,
+      "minLength": 3,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reason"
+  ],
+  "title": "Abandon",
+  "type": "object"
+}

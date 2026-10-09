@@ -1,0 +1,1 @@
+No LC can be issued before completion of term conversion.

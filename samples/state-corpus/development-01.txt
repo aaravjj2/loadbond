@@ -1,0 +1,1 @@
+The two alternative security branches may not be outstanding simultaneously.

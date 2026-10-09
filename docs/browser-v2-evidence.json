@@ -1,0 +1,206 @@
+{
+  "id": "cbf370d5-5976-4df3-8772-19c83d6c7fb3",
+  "at": "2026-10-09T16:02:21.808253+00:00",
+  "revision": 17,
+  "solver_version": "enumeration-2.0",
+  "scenario_name": "Proposed one-branch structure",
+  "snapshot": {
+    "schema_version": 2,
+    "project": {
+      "name": "Harbor renewal",
+      "mw": 75,
+      "archived": false,
+      "synthetic": true,
+      "id": "e67d7860-c274-454e-8a33-2b2fe715b8d1",
+      "revision": 17
+    },
+    "scenario": {
+      "id": "dcadb03e-37c2-4959-a041-69e3a720140a",
+      "name": "Proposed one-branch structure",
+      "hypothetical": true,
+      "conditional_percent": 100,
+      "ceiling_percent": 100,
+      "dependency_ids": [
+        "c8bfcdcf-085a-483a-98bb-e76fd95b13c3"
+      ]
+    },
+    "sites": [
+      {
+        "id": "0ed39f44-3a93-4360-9d96-6621d7b787a1",
+        "name": "Harbor",
+        "commercial_status": "CANDIDATE"
+      }
+    ],
+    "documents": [
+      {
+        "id": "5b97d653-5237-4c21-81d1-659176387625",
+        "name": "harbor-agreement.txt",
+        "pages": [
+          "SYNTHETIC AGREEMENT \u2014 NOT EXECUTED\nHarbor renewal / 75 MW\n\nThe beneficiary holds a USD 500,000 letter of credit.\nIncurred work is USD 100,000.\nBranch A requires USD 200,000.\nBranch B requires USD 200,000.\n\nFor the hypothetical claim-limited structure, at most one branch may coexist.\nThe assumed alternative draw basis limits payment to the sum of the active\nadditive obligation components, subject to the instrument face ceiling.\nThis alternative is hypothetical and is not an executed LC provision.\n\nCommercial withdrawal alone does not establish instrument release.\n"
+        ],
+        "sha256": "4631dbe68722301f092efdf11c3f3364cb0d6452b3a2f58422868524f1975e68",
+        "agreement_id": "5ef5d122-7f71-4308-9f77-ff44a84f82cd",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "completion_reason": "Instrument face and all three obligations entered and reviewed."
+      }
+    ],
+    "instruments": [
+      {
+        "id": "d14cf175-1a3b-4700-8f18-b89014e5771d",
+        "label": "Harbor LC",
+        "beneficiary": "Synthetic utility",
+        "site_id": "0ed39f44-3a93-4360-9d96-6621d7b787a1",
+        "face_cents": 50000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "governing_law": "",
+        "basis": "CLAIM_LIMITED",
+        "basis_hypothetical": true,
+        "evidence": [
+          {
+            "document_id": "5b97d653-5237-4c21-81d1-659176387625",
+            "page": 1,
+            "start": 0,
+            "end": 569,
+            "quote": "SYNTHETIC AGREEMENT \u2014 NOT EXECUTED\nHarbor renewal / 75 MW\n\nThe beneficiary holds a USD 500,000 letter of credit.\nIncurred work is USD 100,000.\nBranch A requires USD 200,000.\nBranch B requires USD 200,000.\n\nFor the hypothetical claim-limited structure, at most one branch may coexist.\nThe assumed alternative draw basis limits payment to the sum of the active\nadditive obligation components, subject to the instrument face ceiling.\nThis alternative is hypothetical and is not an executed LC provision.\n\nCommercial withdrawal alone does not establish instrument release.\n"
+          }
+        ],
+        "basis_evidence": [
+          {
+            "document_id": "5b97d653-5237-4c21-81d1-659176387625",
+            "page": 1,
+            "start": 284,
+            "end": 430,
+            "quote": "The assumed alternative draw basis limits payment to the sum of the active\nadditive obligation components, subject to the instrument face ceiling."
+          }
+        ],
+        "release_evidence": [],
+        "facility_usage_cents": null,
+        "cash_collateral_cents": null,
+        "guarantee_cents": null,
+        "surety_cents": null,
+        "verification": "VERIFIED",
+        "release_verified": false
+      }
+    ],
+    "claims": [
+      {
+        "id": "cc7a45de-3db9-4656-a7d8-d111f045efdd",
+        "label": "Incurred work",
+        "amount_cents": 10000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "instrument_id": "d14cf175-1a3b-4700-8f18-b89014e5771d",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "5b97d653-5237-4c21-81d1-659176387625",
+            "page": 1,
+            "start": 113,
+            "end": 142,
+            "quote": "Incurred work is USD 100,000."
+          }
+        ],
+        "verification": "VERIFIED",
+        "release_verified": false
+      },
+      {
+        "id": "eb5273f6-df04-4d36-bd60-f74ccdc42a7e",
+        "label": "Branch A",
+        "amount_cents": 20000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "instrument_id": "d14cf175-1a3b-4700-8f18-b89014e5771d",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "5b97d653-5237-4c21-81d1-659176387625",
+            "page": 1,
+            "start": 143,
+            "end": 173,
+            "quote": "Branch A requires USD 200,000."
+          }
+        ],
+        "verification": "VERIFIED",
+        "release_verified": false
+      },
+      {
+        "id": "357f52af-524b-43ff-9a4e-bc021cc83147",
+        "label": "Branch B",
+        "amount_cents": 20000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "instrument_id": "d14cf175-1a3b-4700-8f18-b89014e5771d",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "5b97d653-5237-4c21-81d1-659176387625",
+            "page": 1,
+            "start": 174,
+            "end": 204,
+            "quote": "Branch B requires USD 200,000."
+          }
+        ],
+        "verification": "VERIFIED",
+        "release_verified": false
+      }
+    ],
+    "dependencies": [
+      {
+        "id": "c8bfcdcf-085a-483a-98bb-e76fd95b13c3",
+        "label": "One active branch",
+        "claim_ids": [
+          "eb5273f6-df04-4d36-bd60-f74ccdc42a7e",
+          "357f52af-524b-43ff-9a4e-bc021cc83147"
+        ],
+        "max_active": 1,
+        "hypothetical": true,
+        "evidence": [
+          {
+            "document_id": "5b97d653-5237-4c21-81d1-659176387625",
+            "page": 1,
+            "start": 206,
+            "end": 283,
+            "quote": "For the hypothetical claim-limited structure, at most one branch may coexist."
+          }
+        ],
+        "verification": "VERIFIED",
+        "release_verified": false
+      }
+    ]
+  },
+  "snapshot_hash": "870e1ac30c13641ea4e59fc7b4b7e6428dc8dd499e399590dbd435e80024caf6",
+  "result": {
+    "status": "COMPLETE",
+    "maximum_cents": 30000000,
+    "gross_cents": 50000000,
+    "modeled_difference_cents": 20000000,
+    "maximum_obligations_cents": 30000000,
+    "gross_obligations_cents": 50000000,
+    "active_claims": [
+      "cc7a45de-3db9-4656-a7d8-d111f045efdd",
+      "eb5273f6-df04-4d36-bd60-f74ccdc42a7e"
+    ],
+    "instrument_contributions": {
+      "d14cf175-1a3b-4700-8f18-b89014e5771d": 30000000
+    },
+    "applied_dependencies": [
+      "c8bfcdcf-085a-483a-98bb-e76fd95b13c3"
+    ],
+    "ignored_dependencies": [],
+    "feasible_states": 3,
+    "solver_version": "enumeration-2.0",
+    "hypothetical": true,
+    "notice": "User-reviewed model inputs; not a legal opinion or confirmed capital savings."
+  },
+  "result_hash": "1baa6ef73e5d99e782d5c66404180a0ef91d8ab00b5cde9c28a1a23333a6ae49",
+  "stale": true
+}

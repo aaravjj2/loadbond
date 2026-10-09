@@ -1,0 +1,174 @@
+{
+  "id": "d7ba3971-676f-4b6c-a1bf-f7d543a413ac",
+  "at": "2026-10-09T19:37:57.073951+00:00",
+  "revision": 12,
+  "solver_version": "enumeration-2.0",
+  "scenario_name": "Documented baseline",
+  "snapshot": {
+    "schema_version": 2,
+    "project": {
+      "name": "Cedar local AI verification",
+      "mw": null,
+      "archived": false,
+      "synthetic": true,
+      "id": "64d4588b-0d2e-4d8f-9bb6-cc539ec25e87",
+      "revision": 12
+    },
+    "scenario": {
+      "id": "b22989bc-72ac-4d56-99d0-7fa2b689390a",
+      "name": "Documented baseline",
+      "hypothetical": false,
+      "conditional_percent": 100,
+      "ceiling_percent": 100,
+      "dependency_ids": []
+    },
+    "sites": [],
+    "documents": [
+      {
+        "id": "31586d4f-d4f4-404d-bc75-b7d5662d67aa",
+        "name": "browser-local-ai-agreement.txt",
+        "pages": [
+          "Cedar Utility is beneficiary of a letter of credit for USD 650,000.\nThe developer owes USD 90,000 for completed engineering.\nIf Cedar site is selected, the developer owes USD 150,000 for construction.\n"
+        ],
+        "sha256": "a5c051a0063aac1fa73bd896f0a3a83564717777bae0512afa7f5b41c58991eb",
+        "agreement_id": "82cffbb2-3fb6-4ec4-9258-67887779c304",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "completion_reason": "All three extracted proposals reconciled; record review remains separate."
+      }
+    ],
+    "instruments": [
+      {
+        "label": "Cedar LC",
+        "beneficiary": "Cedar Utility",
+        "site_id": null,
+        "face_cents": 65000000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "governing_law": "",
+        "basis": "FACE",
+        "basis_hypothetical": false,
+        "evidence": [
+          {
+            "document_id": "31586d4f-d4f4-404d-bc75-b7d5662d67aa",
+            "page": 1,
+            "start": 0,
+            "end": 67,
+            "quote": "Cedar Utility is beneficiary of a letter of credit for USD 650,000."
+          }
+        ],
+        "basis_evidence": [],
+        "release_evidence": [],
+        "facility_usage_cents": null,
+        "cash_collateral_cents": null,
+        "guarantee_cents": null,
+        "surety_cents": null,
+        "id": "b6a4df84-e5bc-47c4-ab99-2dd941fc6e8f",
+        "verification": "VERIFIED",
+        "release_verified": false,
+        "extraction_provenance": {
+          "model": "qwen3:4b",
+          "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "prompt_version": "local-evidence-1.2",
+          "schema_version": "proposals-1.0",
+          "document_hash": "a5c051a0063aac1fa73bd896f0a3a83564717777bae0512afa7f5b41c58991eb",
+          "job_id": "d9633bed-a161-450b-8fc8-03a7bc4fbf58",
+          "proposal_id": "84c7daf9-1fc2-44a1-bdc1-bafaa3293304",
+          "import_reason": "Edited proposal imported for separate input review"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "f5e9d4a1-5cc9-4451-bad4-09e4ec68654a",
+        "label": "Engineering",
+        "amount_cents": 9000000,
+        "currency": "USD",
+        "kind": "fixed",
+        "instrument_id": "b6a4df84-e5bc-47c4-ab99-2dd941fc6e8f",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "31586d4f-d4f4-404d-bc75-b7d5662d67aa",
+            "page": 1,
+            "start": 68,
+            "end": 124,
+            "quote": "The developer owes USD 90,000 for completed engineering."
+          }
+        ],
+        "extraction_provenance": {
+          "model": "qwen3:4b",
+          "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "prompt_version": "local-evidence-1.2",
+          "schema_version": "proposals-1.0",
+          "document_hash": "a5c051a0063aac1fa73bd896f0a3a83564717777bae0512afa7f5b41c58991eb",
+          "job_id": "d9633bed-a161-450b-8fc8-03a7bc4fbf58",
+          "proposal_id": "e9d8caf4-156e-4b89-b93d-c4c3678ab94a",
+          "import_reason": "Edited proposal imported for separate input review"
+        },
+        "verification": "VERIFIED",
+        "release_verified": false
+      },
+      {
+        "id": "95d3de10-ab38-4ad5-9d0c-23fd90a7a146",
+        "label": "Construction",
+        "amount_cents": 15000000,
+        "currency": "USD",
+        "kind": "conditional",
+        "instrument_id": "b6a4df84-e5bc-47c4-ab99-2dd941fc6e8f",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "31586d4f-d4f4-404d-bc75-b7d5662d67aa",
+            "page": 1,
+            "start": 125,
+            "end": 200,
+            "quote": "If Cedar site is selected, the developer owes USD 150,000 for construction."
+          }
+        ],
+        "extraction_provenance": {
+          "model": "qwen3:4b",
+          "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "prompt_version": "local-evidence-1.2",
+          "schema_version": "proposals-1.0",
+          "document_hash": "a5c051a0063aac1fa73bd896f0a3a83564717777bae0512afa7f5b41c58991eb",
+          "job_id": "d9633bed-a161-450b-8fc8-03a7bc4fbf58",
+          "proposal_id": "9c2deb7c-961f-405d-bbbc-2da50bc4eae0",
+          "import_reason": "Edited proposal imported for separate input review"
+        },
+        "verification": "VERIFIED",
+        "release_verified": false
+      }
+    ],
+    "dependencies": []
+  },
+  "snapshot_hash": "3cb167956af081effd1ffc541f199dcafbc4e5711aec8006885f61842c97af17",
+  "result": {
+    "status": "COMPLETE",
+    "maximum_cents": 65000000,
+    "gross_cents": 65000000,
+    "modeled_difference_cents": 0,
+    "maximum_obligations_cents": 24000000,
+    "gross_obligations_cents": 24000000,
+    "active_claims": [
+      "95d3de10-ab38-4ad5-9d0c-23fd90a7a146",
+      "f5e9d4a1-5cc9-4451-bad4-09e4ec68654a"
+    ],
+    "instrument_contributions": {
+      "b6a4df84-e5bc-47c4-ab99-2dd941fc6e8f": 65000000
+    },
+    "applied_dependencies": [],
+    "ignored_dependencies": [],
+    "feasible_states": 2,
+    "solver_version": "enumeration-2.0",
+    "hypothetical": false,
+    "notice": "User-reviewed model inputs; not a legal opinion or confirmed capital savings."
+  },
+  "result_hash": "6d994941c37d6144cb6abe4469c35984450bbd4e577a8d9c4602d7d75541b95f",
+  "stale": false
+}

@@ -1,0 +1,585 @@
+{
+  "version": "state-corpus-1.0",
+  "notice": "Authored synthetic classification labels. Not independently validated legal interpretations or customer documents. Held-out prompts must not be tuned after scoring.",
+  "cases": [
+    {
+      "id": "development-01",
+      "file": "development-01.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "CARDINALITY",
+          "source_contains": "The two alternative security branches may not be outstanding simultaneously."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "c35e4bd532bd63822ad130f721561fb89719b5ad3489fcd148a06230d1583391"
+    },
+    {
+      "id": "development-02",
+      "file": "development-02.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "PREREQUISITE",
+          "source_contains": "If construction starts, a valid utility consent must exist."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "4af3173e8fff8d68ae5c87f78efd6a12854f3b7d1e7e8ae408759b933fc48f73"
+    },
+    {
+      "id": "development-03",
+      "file": "development-03.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "IMPLICATION",
+          "source_contains": "A default activates the replacement-security requirement."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "c1d80be288df61eafd6b8b6e3bc9b0c5f65255dab6d2389680a0e55e2e9a9f85"
+    },
+    {
+      "id": "development-04",
+      "file": "development-04.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "ISSUANCE",
+          "source_contains": "The utility letter of credit may be issued only after site selection."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "a478dad7b843a0f83267e5e71805223aa2bbc06578dd30ee0add1b311df071cb"
+    },
+    {
+      "id": "development-05",
+      "file": "development-05.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "REPLACEMENT",
+          "source_contains": "Posting the successor letter of credit does not cancel the predecessor instrument."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "15c18fa47f58fca59b339b4a4074f22eea2aa26639ba7352c67c59eeaf597689"
+    },
+    {
+      "id": "development-06",
+      "file": "development-06.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "RELEASE",
+          "source_contains": "The instrument is released when the beneficiary provides its signed release certificate."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "7ac6afecbded791b532370d75af1261be0e65aa46b0da14031d9971544c140d8"
+    },
+    {
+      "id": "development-07",
+      "file": "development-07.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "EXPIRY",
+          "source_contains": "The letter of credit expires on 2027-06-30 if a separately verified termination becomes effective."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "77aae011f509c9da84cbe5e8f5ed2010bc7929ff74eb105e79535dcce328a60b"
+    },
+    {
+      "id": "development-08",
+      "file": "development-08.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "LIMIT",
+          "source_contains": "The maximum documentary draw amount is USD 125,000."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "951ce4cfa75fa83d84444eebaa48abd8d7fb9faed579844cfa0bc1d07b859870"
+    },
+    {
+      "id": "development-09",
+      "file": "development-09.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "STEP_UP",
+          "source_contains": "Following a rating downgrade, the required security increases to 125 percent of the prior amount."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "788d58ca273283a9678bf15492d414b028d483b77194e33b6781fbff0cf89ecc"
+    },
+    {
+      "id": "development-10",
+      "file": "development-10.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "EVERGREEN",
+          "source_contains": "The letter of credit automatically extends for another year unless a timely nonrenewal notice is effective."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "bbcc59d8162638986287621f3e158422d57b74fd0d4caea92bc717526eb90690"
+    },
+    {
+      "id": "development-11",
+      "file": "development-11.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "DRAW_CONDITION",
+          "source_contains": "A drawing requires the beneficiary to present a signed demand certificate."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "5aa0a987a1b4abbd1b4d0e43ef61e39cdb60c8362f44082986fd87c6d52ed65d"
+    },
+    {
+      "id": "development-12",
+      "file": "development-12.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "OBLIGATION",
+          "source_contains": "If the selected site enters construction, the developer owes USD 240,000 in construction costs."
+        }
+      ],
+      "financial_expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": 24000000,
+          "currency": "USD",
+          "source_contains": "If the selected site enters construction, the developer owes USD 240,000 in construction costs."
+        }
+      ],
+      "text_hash": "75e14755e43942063cafc77add5517b94078ba3bb3e83d6018e580a569889224"
+    },
+    {
+      "id": "development-13",
+      "file": "development-13.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "FACT",
+          "kind": null,
+          "source_contains": "As of 2026-10-09, the Birch site has been selected."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "699590a7bf52c360886ddfa44096c8c9b4bdeebb3f804706d625d24850d4c7c9"
+    },
+    {
+      "id": "development-14",
+      "file": "development-14.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "ISSUANCE",
+          "source_contains": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility."
+        }
+      ],
+      "financial_expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 90000000,
+          "currency": "USD",
+          "source_contains": "On 2026-10-10, Alder Utility issued a letter of credit with face USD 900,000 to Birch Utility."
+        }
+      ],
+      "text_hash": "119c3101523b0376cdf5d1777d634a67a314eedb413e62950c07b1763bbe03e8"
+    },
+    {
+      "id": "development-15",
+      "file": "development-15.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "DRAW",
+          "source_contains": "On 2026-10-11, the beneficiary drew USD 75,000 under the letter of credit."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "b553a757ed9b92d7c8f20a876f3d66563021688f7d7f712d9afb4c2b35f43d26"
+    },
+    {
+      "id": "development-16",
+      "file": "development-16.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "REIMBURSEMENT",
+          "source_contains": "On 2026-10-12, the borrower reimbursed USD 75,000 of the letter-of-credit drawing."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "88f46257ac5bf6aced4c7579f05f919a3aa1b6eb727bca286ff91e08e9f93f04"
+    },
+    {
+      "id": "development-17",
+      "file": "development-17.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "NOTICE",
+          "source_contains": "On 2026-10-13, the utility acknowledged receipt of the cancellation notice."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "b4494b6e86d3bdb7e9cb56e318b4c161afe3e83f5e7924efe31b4aaa47ea43fb"
+    },
+    {
+      "id": "development-18",
+      "file": "development-18.txt",
+      "split": "development",
+      "expected": [],
+      "financial_expected": [],
+      "text_hash": "ae8e4ae9842e99c8ae2cfc31ed7437c41c136df5b31a8e4e275403bdba1944ef"
+    },
+    {
+      "id": "development-19",
+      "file": "development-19.txt",
+      "split": "development",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "OBLIGATION",
+          "source_contains": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
+        }
+      ],
+      "financial_expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": null,
+          "currency": null,
+          "source_contains": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
+        }
+      ],
+      "text_hash": "d2caa2adea2955f4aac22e4d3dd041e8d1f89920ee779a9ea46420082d30b908"
+    },
+    {
+      "id": "development-20",
+      "file": "development-20.txt",
+      "split": "development",
+      "expected": [],
+      "financial_expected": [],
+      "text_hash": "687a6288a987c6f27caa6b3edd817348b2e2693e2dbaf9e27b58ad1d00bd8dbe"
+    },
+    {
+      "id": "held_out-01",
+      "file": "held_out-01.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "CARDINALITY",
+          "source_contains": "At most two of the three candidate-site security obligations may coexist."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "8949251487c711b437981bd185127b45d10151427199fa50babd32fa2d62c2ca"
+    },
+    {
+      "id": "held_out-02",
+      "file": "held_out-02.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "PREREQUISITE",
+          "source_contains": "Mobilization is prohibited unless the interconnection study has been approved."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "78badfe99ea494953d560f186fca2b3d7b7f07245201fd6ae80899d460120500"
+    },
+    {
+      "id": "held_out-03",
+      "file": "held_out-03.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "IMPLICATION",
+          "source_contains": "Insolvency of the sponsor requires replacement collateral to become active."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "248beba34dfd448120d24b6c7e181e89af7a929dee4365afab481a43299545dc"
+    },
+    {
+      "id": "held_out-04",
+      "file": "held_out-04.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "ISSUANCE",
+          "source_contains": "No LC can be issued before completion of term conversion."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "47b4b90d3f5984b40314684474f24dbb44f4a595f7b695e5af0d31ef7159c316"
+    },
+    {
+      "id": "held_out-05",
+      "file": "held_out-05.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "REPLACEMENT",
+          "source_contains": "A new security instrument is additional security until the former beneficiary releases the old instrument."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "aa9d83e52877a8b8456665244c4066ec729dba84a653b8381aa3a03ae472eca0"
+    },
+    {
+      "id": "held_out-06",
+      "file": "held_out-06.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "RELEASE",
+          "source_contains": "Delivery and effectiveness of the beneficiary release ends the old instrument exposure."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "00c63e7bfe7fe63d65de517de7b023be93f593f6eab71f37ea513c6556d59c40"
+    },
+    {
+      "id": "held_out-07",
+      "file": "held_out-07.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "EXPIRY",
+          "source_contains": "Expiration is effective on 2028-03-31 only if the specified documentary expiry requirements are satisfied."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "d207f178ed3b83f94070caf04ce397387b5697df5f65f44bc3f3483a63a3aed1"
+    },
+    {
+      "id": "held_out-08",
+      "file": "held_out-08.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "LIMIT",
+          "source_contains": "In aggregate, documentary demands are capped at EUR 310,000."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "ac05b04607b2b9c0a99b23431f1ea3c9d14fbc8484666f4bb63cae17ea151902"
+    },
+    {
+      "id": "held_out-09",
+      "file": "held_out-09.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "STEP_UP",
+          "source_contains": "A lower credit rating changes the required security to 150 percent of its original requirement."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "da6c1b749fbcd6c8ad90eb052ac6c6ed9626724cc26e477b7beba75be6e0b4be"
+    },
+    {
+      "id": "held_out-10",
+      "file": "held_out-10.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "EVERGREEN",
+          "source_contains": "Absent an effective notice to terminate, this credit renews automatically for a further twelve months."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "069a45725d2b5bedbae9486c6a08395d72a785c1da7e58b427ef8556340403e3"
+    },
+    {
+      "id": "held_out-11",
+      "file": "held_out-11.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "DRAW_CONDITION",
+          "source_contains": "The beneficiary must deliver a certificate of unpaid amounts before any draw is permitted."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "bc1ce502409b3adfe3853a72af0875c410fc6abc6b70a5961b13c6e0750dbf29"
+    },
+    {
+      "id": "held_out-12",
+      "file": "held_out-12.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "OBLIGATION",
+          "source_contains": "Cancellation of the selected construction branch makes a USD 330,000 termination payment payable."
+        }
+      ],
+      "financial_expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": 33000000,
+          "currency": "USD",
+          "source_contains": "Cancellation of the selected construction branch makes a USD 330,000 termination payment payable."
+        }
+      ],
+      "text_hash": "27ce64b66743bb910f62af02e9d091a40df3eb3d7dc25952bcfe33641e8823e8"
+    },
+    {
+      "id": "held_out-13",
+      "file": "held_out-13.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "FACT",
+          "kind": null,
+          "source_contains": "The engineering study is complete as of 2026-11-07."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "2e3ce3fcc65bf26ab67e0be540b40637dd910ad18792d3dcf71ac022df9efd4d"
+    },
+    {
+      "id": "held_out-14",
+      "file": "held_out-14.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "ISSUANCE",
+          "source_contains": "The bank issued the USD 1,450,000 letter of credit on 2026-11-08, for Juniper Utility as beneficiary."
+        }
+      ],
+      "financial_expected": [
+        {
+          "record_type": "instrument",
+          "amount_cents": 145000000,
+          "currency": "USD",
+          "source_contains": "The bank issued the USD 1,450,000 letter of credit on 2026-11-08, for Juniper Utility as beneficiary."
+        }
+      ],
+      "text_hash": "8757ca3d2eec9f505f14ecf027ab6e19434099871a48993d1bd1e8662d562d41"
+    },
+    {
+      "id": "held_out-15",
+      "file": "held_out-15.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "DRAW",
+          "source_contains": "A USD 40,000 draw occurred on 2026-11-09 against the utility credit."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "69fd0a536b367b7b479a0c51eee914686cf017ddbbefe85e35884887dcffca98"
+    },
+    {
+      "id": "held_out-16",
+      "file": "held_out-16.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "REIMBURSEMENT",
+          "source_contains": "The developer paid back the outstanding USD 40,000 drawing on 2026-11-10."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "5380bd11f35ec3d4d448a40ce41d7aef844d20eae7b20fd29959ca0441b0d129"
+    },
+    {
+      "id": "held_out-17",
+      "file": "held_out-17.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "EVENT",
+          "kind": "NOTICE",
+          "source_contains": "The issuer received the nonrenewal notice on 2026-11-11."
+        }
+      ],
+      "financial_expected": [],
+      "text_hash": "d91ce1e9fca641e2544e6767fe12e0c353f2971c7f49c946391f8d45538dfcf6"
+    },
+    {
+      "id": "held_out-18",
+      "file": "held_out-18.txt",
+      "split": "held_out",
+      "expected": [],
+      "financial_expected": [],
+      "text_hash": "7fd59dd77ab8cfaa8a4324689d78e198fc4828961a5bf188b6e6f4d4c50bdd03"
+    },
+    {
+      "id": "held_out-19",
+      "file": "held_out-19.txt",
+      "split": "held_out",
+      "expected": [
+        {
+          "category": "RULE",
+          "kind": "OBLIGATION",
+          "source_contains": "Payment is due if the switchyard order becomes noncancellable; the cost has not yet been agreed."
+        }
+      ],
+      "financial_expected": [
+        {
+          "record_type": "claim",
+          "amount_cents": null,
+          "currency": null,
+          "source_contains": "Payment is due if the switchyard order becomes noncancellable; the cost has not yet been agreed."
+        }
+      ],
+      "text_hash": "642ae0c6cfea664371118901fe3328b116928d8ce493784a50d94b4e564224ec"
+    },
+    {
+      "id": "held_out-20",
+      "file": "held_out-20.txt",
+      "split": "held_out",
+      "expected": [],
+      "financial_expected": [],
+      "text_hash": "1d21aa802e68ad784a2a57ca0068c8df694073c2b542e592878c1eeb046fc861"
+    }
+  ],
+  "corpus_hash": "a5dfacb98137d98cf52a831205e5b7c7fdf447b8c3bfd9565291f5e8d3be9ee6"
+}
