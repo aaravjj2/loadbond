@@ -1,4 +1,4 @@
-﻿# Weekly scorecard
+# Weekly scorecard
 
 Week ending: 2026-10-09. Owner: Founder. Update values and evidence each Friday.
 
