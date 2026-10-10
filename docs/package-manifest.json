@@ -294,6 +294,10 @@
       "sha256": "8fa335e22eb54e60af77f2b20f9bde0ac1206f459d76a6e4bf18d6e9ea5d1bdc"
     },
     {
+      "path": "docs/transaction/release-reviewed-1.3.png",
+      "sha256": "b52077a89def1605bfb7733890b04901280e42f81712b1de8764481203f45bff"
+    },
+    {
       "path": "docs/transaction/transaction-1440.png",
       "sha256": "432148044680c4c455844cd6bec0f0106f30a3ea5068c3b00478999d24ba2f24"
     },
@@ -311,7 +315,7 @@
     },
     {
       "path": "docs/verification.md",
-      "sha256": "ac1d2305858a2e12a0244bc329d9c8d0e40d32421d0257cc0b71cfa4e7672891"
+      "sha256": "3f727734fa4763da13f99798f43378080187a89a009068ed85466da4d7d93e62"
     },
     {
       "path": "docs/walkthrough/01-empty.jpg",
