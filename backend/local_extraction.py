@@ -22,6 +22,15 @@ JOB_TIMEOUT = 1200
 SECONDS_PER_CHUNK = 60
 MAX_JOB_TIMEOUT = 4*3600
 
+class IncompleteResponse(ValueError):
+    pass
+
+def halves(text):
+    middle = len(text)//2
+    cut = max(text.rfind('. ', 0, middle), text.rfind('\n', 0, middle))
+    cut = cut+1 if cut > len(text)//4 else middle
+    return text[:cut], text[cut:]
+
 def job_budget(chunk_count):
     return min(MAX_JOB_TIMEOUT, max(JOB_TIMEOUT, SECONDS_PER_CHUNK*chunk_count))
 
@@ -126,7 +135,7 @@ def extract_chunk(text, model, timeout=CHUNK_TIMEOUT):
         r.raise_for_status()
         payload = r.json()
         if not payload.get('done') or payload.get('done_reason') not in (None, 'stop'):
-            raise ValueError('Incomplete extraction response')
+            raise IncompleteResponse('Incomplete extraction response')
         return Output.model_validate_json(payload['message']['content']).records
 
 def chunks(pages):
@@ -266,22 +275,30 @@ def install(app, router, auth, db, get_project, get, rows, put, audit, evidence,
                         if remaining <= 0:
                             raise over_budget(index)
                         state_scope=job.get('scope')=='STATE_MODEL'
-                        try:
-                            if state_scope:
-                                from . import clause_extraction as clauses
-                                candidates=clauses.extract_chunk(text,job['model'],min(CHUNK_TIMEOUT,remaining))
-                            else:
-                                candidates = extract_chunk(text, job['model'], min(CHUNK_TIMEOUT, remaining))
-                        except httpx.TimeoutException:
-                            if remaining < CHUNK_TIMEOUT:
-                                raise over_budget(index) from None
-                            raise TimeoutError(f'The local model did not answer within {CHUNK_TIMEOUT} seconds on page {page} (chunk {index+1} of {len(parts)}); no proposals published') from None
+                        if state_scope:
+                            from . import clause_extraction as clauses
+                        call = clauses.extract_chunk if state_scope else extract_chunk
+                        # A runaway or truncated answer is retried on smaller pieces instead of discarding the document.
+                        def attempt(piece, at, depth=0):
+                            left = budget-(time.monotonic()-started)
+                            if left <= 0:
+                                raise over_budget(index)
+                            try:
+                                return [(found, at, piece) for found in call(piece, job['model'], min(CHUNK_TIMEOUT, left))]
+                            except (httpx.TimeoutException, IncompleteResponse) as exc:
+                                if isinstance(exc, httpx.TimeoutException) and left < CHUNK_TIMEOUT:
+                                    raise over_budget(index) from None
+                                if depth >= 2 or len(piece) < 400:
+                                    raise TimeoutError(f'The local model did not finish page {page} (chunk {index+1} of {len(parts)}), even after splitting it; no proposals published') from None
+                                first, second = halves(piece)
+                                return attempt(first, at, depth+1)+attempt(second, at+len(first), depth+1)
+                        candidates = attempt(text, offset)
                         if self.stopping:
                             raise ValueError('Backend stopped during extraction; no proposals published')
                         if runtime_status().get('digest') != job['model_digest']:
                             raise ValueError('Local model changed during extraction; no proposals published')
-                        for candidate in candidates:
-                            value, problem = clauses.validate_candidate(candidate,doc,page,offset,text) if state_scope else validate_candidate(candidate, doc, page, offset, text)
+                        for candidate, piece_offset, piece in candidates:
+                            value, problem = clauses.validate_candidate(candidate,doc,page,piece_offset,piece) if state_scope else validate_candidate(candidate, doc, page, piece_offset, piece)
                             if problem:
                                 invalid.append({'page':page,'issue':problem})
                                 continue

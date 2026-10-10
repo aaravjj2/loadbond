@@ -70,7 +70,7 @@ def extract_chunk(text,model,timeout=ai.CHUNK_TIMEOUT):
             'options':{'temperature':0,'num_ctx':8192,'num_predict':4096},
             'messages':[{'role':'system','content':PROMPT},{'role':'user','content':json.dumps({'untrusted_document_text':text})}]})
         r.raise_for_status();payload=r.json()
-        if not payload.get('done') or payload.get('done_reason') not in (None,'stop'):raise ValueError('Incomplete local clause response')
+        if not payload.get('done') or payload.get('done_reason') not in (None,'stop'):raise ai.IncompleteResponse('Incomplete local clause response')
         return ClauseOutput.model_validate_json(payload['message']['content']).proposals
 
 def validate_candidate(candidate,doc,page,offset,text):

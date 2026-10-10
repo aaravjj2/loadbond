@@ -228,4 +228,21 @@ def test_model_timeout_is_reported_plainly(fixture,monkeypatch):
     def slow(*args):raise httpx.ReadTimeout('timed out')
     monkeypatch.setattr(local,'extract_chunk',slow)
     j=wait(c,root,enqueue(c,root,d)['id'])
-    assert j['status']=='FAILED' and 'did not answer within 120 seconds on page 1' in j['error'] and j['time_budget_seconds']==local.JOB_TIMEOUT
+    assert j['status']=='FAILED' and 'did not finish page 1' in j['error'] and j['time_budget_seconds']==local.JOB_TIMEOUT
+
+def test_runaway_chunk_is_retried_in_halves(fixture,monkeypatch):
+    import httpx
+    c,root,_=fixture
+    filler='The parties will meet quarterly to discuss schedules and reporting formats. '*8
+    text=filler+'\nIncurred work is USD 100,000.\n'+filler
+    doc=c.post(root+'/documents',files={'file':('long.txt',text.encode())}).json()
+    calls=[]
+    def flaky(piece,model,timeout):
+        calls.append(len(piece))
+        if len(calls)==1:raise httpx.ReadTimeout('runaway')
+        return [candidate('claim','Incurred work is USD 100,000.')] if 'Incurred work is USD 100,000.' in piece else []
+    monkeypatch.setattr(local,'extract_chunk',flaky)
+    j=wait(c,root,enqueue(c,root,doc)['id'])
+    assert j['status']=='SUCCEEDED',(j.get('error'),j.get('validation_issues'))
+    assert len(calls)==3 and calls[1]+calls[2]==calls[0]
+    assert [p['quote'] for p in j['proposals']]==['Incurred work is USD 100,000.']
