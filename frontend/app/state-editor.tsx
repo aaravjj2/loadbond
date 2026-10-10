@@ -174,9 +174,21 @@ export default function StateEditor({
           assumptions: Object.fromEntries(
             facts
               .map((fa) => [fa.key, str("assumption:" + fa.key)])
-              .filter(([, v]) => v !== "")
+              .filter(([k, v]) => v !== "" && !str("assumption_on:" + k))
               .map(([k, v]) => [k, v === "true"]),
           ),
+          events: facts
+            .filter(
+              (fa) =>
+                str("assumption:" + fa.key) !== "" &&
+                str("assumption_on:" + fa.key),
+            )
+            .map((fa) => ({
+              label: fa.label,
+              fact_key: fa.key,
+              fact_value: str("assumption:" + fa.key) === "true",
+              effective_on: str("assumption_on:" + fa.key),
+            })),
           excluded_rule_ids: f.getAll("excluded_rule_ids"),
           face_percent: Number(str("face_percent") || 100),
           obligation_percent: Number(str("obligation_percent") || 100),
@@ -355,23 +367,39 @@ export default function StateEditor({
               </div>
               <fieldset>
                 <legend>Explicit hypothetical assumptions</legend>
-                {facts.map((f) => (
-                  <label key={f.id}>
-                    {f.label}
-                    <select
-                      name={"assumption:" + f.key}
-                      defaultValue={
-                        initial.assumptions?.[f.key] === undefined
-                          ? ""
-                          : String(initial.assumptions[f.key])
-                      }
-                    >
-                      <option value="">No override</option>
-                      <option value="true">True</option>
-                      <option value="false">False</option>
-                    </select>
-                  </label>
-                ))}
+                {facts.map((f) => {
+                  const dated = initial.events?.find(
+                    (e: Entity) => e.fact_key === f.key,
+                  );
+                  const assumed = dated
+                    ? dated.fact_value
+                    : initial.assumptions?.[f.key];
+                  return (
+                    <div className="state-form-grid" key={f.id}>
+                      <label>
+                        {f.label}
+                        <select
+                          name={"assumption:" + f.key}
+                          defaultValue={
+                            assumed === undefined ? "" : String(assumed)
+                          }
+                        >
+                          <option value="">No override</option>
+                          <option value="true">True</option>
+                          <option value="false">False</option>
+                        </select>
+                      </label>
+                      <label>
+                        From date (blank: throughout)
+                        <input
+                          type="date"
+                          name={"assumption_on:" + f.key}
+                          defaultValue={dated?.effective_on || ""}
+                        />
+                      </label>
+                    </div>
+                  );
+                })}
               </fieldset>
               <fieldset>
                 <legend>Exclude rules for this hypothetical preview</legend>
@@ -890,7 +918,8 @@ export default function StateEditor({
                     </select>
                   </label>
                   <label>
-                    Days after prerequisite
+                    Days after prerequisite (release or expiry without one:
+                    after its conditions have dated occurrences)
                     <input
                       name="lag_days"
                       type="number"

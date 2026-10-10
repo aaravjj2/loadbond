@@ -254,3 +254,34 @@ def test_outcomes_name_the_conditions_behind_each_amount_without_changing_result
     assert client.get('/v3/'+root).json()['runs'][-1]['outcomes']==run['outcomes']
     assert outcomes({**run['result'],'states_truncated':True})['available'] is False
     assert outcomes({**run['result'],'status':'INCOMPLETE'}) is None
+
+def test_release_lag_from_dated_conditions_and_hypothetical_occurrences(client):
+    root,m,req,doc,i,claims,ev=make(client)
+    base={'model_id':m['id'],'kind':'RELEASE','label':'Cancel after termination','interpretation':'Synthetic cancellation within thirty days.','target_id':i['id'],'evidence':i['evidence']}
+    assert client.post('/v3/'+root+'/rules',json={**base,'kind':'ISSUANCE','lag_days':30,'when':[{'key':'branch_a','value':True}]}).status_code==422
+    assert client.post('/v3/'+root+'/rules',json={**base,'lag_days':30}).status_code==422
+    rule=p(client,root,'rules',{**base,'lag_days':30,'when':[{'key':'branch_a','value':True}]})
+    p(client,root,'rules/'+rule['id']+'/review',{'decision':'VERIFIED','reason':'Synthetic release lag reviewed'})
+    undated=p(client,root,'assessments',{**req,'horizon_end':'2027-06-01'})['result']
+    assert all(e['maxima']['instrument_face']==50000000 for e in undated['envelope'])
+    event={'label':'Termination','fact_key':'branch_a','fact_value':True,'effective_on':'2027-03-01'}
+    assert client.post('/v3/'+root+'/scenarios',json={'model_id':m['id'],'name':'x','view':'FUTURE','events':[event]}).status_code==422
+    assert client.post('/v3/'+root+'/scenarios',json={'model_id':m['id'],'name':'x','view':'HYPOTHETICAL','events':[{**event,'fact_key':'nope'}]}).status_code==422
+    assert client.post('/v3/'+root+'/scenarios',json={'model_id':m['id'],'name':'x','view':'HYPOTHETICAL','assumptions':{'branch_a':True},'events':[event]}).status_code==422
+    sc=p(client,root,'scenarios',{'model_id':m['id'],'name':'Terminate','view':'HYPOTHETICAL','events':[event]})
+    run=p(client,root,'assessments',{**req,'scenario_id':sc['id'],'horizon_end':'2027-06-01'})
+    face={e['as_of']:e['maxima']['instrument_face'] for e in run['result']['envelope']}
+    assert face['2027-03-01']==50000000 and face['2027-03-31']==0 and face['2027-06-01']==0
+    assert p(client,root,'assessments/'+run['id']+'/replay',{})['result_matches']
+    assert all('events' not in s for s in client.get('/v3/'+root).json()['scenarios'] if s['id']!=sc['id'])
+
+def test_outcomes_cover_every_state_beyond_the_stored_samples(client):
+    from .state_outcomes import Collector
+    root,m,req,doc,i,claims,ev=make(client)
+    snap=json.loads(json.dumps(p(client,root,'assessments',req)['snapshot']))
+    snap['facts']+=[{**snap['facts'][0],'id':'extra%d'%n,'key':'extra_%d'%n,'label':'extra %d'%n} for n in range(6)]
+    collector=Collector();result=evaluate(snap,observe=collector)
+    assert result['states_truncated'] and result==evaluate(snap)
+    summary=collector.summary()
+    assert sum(r['states'] for r in summary['metrics']['instrument_face'])==result['feasible_states']==256
+    assert len(summary['conditions'])==8

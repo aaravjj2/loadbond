@@ -12,7 +12,7 @@ from . import evidence_match
 from .v2 import Decision, stamp
 from .state_types import StateModel, DatedFact, TransactionEvent, ContractRule, StateScenario, StateAssessment, StateComparison, FindingDisposition,SourceSelection,DocumentLink,OpeningBalance
 from .state_engine import evaluate, VERSION
-from .state_outcomes import outcomes
+from .state_outcomes import Collector, for_run
 
 TABLES=('state_models','state_facts','transaction_events','contract_rules','state_scenarios','state_runs','state_findings','clause_jobs','clause_proposals','document_links')
 ALIASES={'models':'state_models','facts':'state_facts','events':'transaction_events','rules':'contract_rules','scenarios':'state_scenarios','document-links':'document_links','balances':'state_balances'}
@@ -49,7 +49,7 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
             if value.get('successor_id') and (value['successor_id'] not in m['instrument_ids'] or value['successor_id']==target): raise HTTPException(422,'Choose a different successor instrument in the same model')
             if value.get('event_id') and get(c,'transaction_events',pid,value['event_id'])['model_id']!=m['id']: raise HTTPException(422,'Event is from another model')
         elif table=='state_scenarios':
-            if set(value['assumptions'])-fs: raise HTTPException(422,'Scenario assumptions reference undefined facts')
+            if set(value['assumptions'])-fs or {e['fact_key'] for e in value.get('events',[])}-fs: raise HTTPException(422,'Scenario assumptions reference undefined facts')
             for rid in value['excluded_rule_ids']:
                 if get(c,'contract_rules',pid,rid)['model_id']!=m['id']: raise HTTPException(422,'Rule belongs to another model')
         elif table=='document_links':
@@ -65,7 +65,7 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
             out={'project':p,**{t:rows(c,t,pid) for t in ('sites','documents','instruments','claims','reviews')}}
             out.update({alias:rows(c,table,pid) for alias,table in ALIASES.items()})
             out['document_links']=out.pop('document-links')
-            out['runs']=[{k:v for k,v in r.items() if k!='snapshot'} | {'stale':r['revision']!=p['revision'],'outcomes':outcomes(r['result'])} for r in rows(c,'state_runs',pid)]
+            out['runs']=[{k:v for k,v in r.items() if k!='snapshot'} | {'stale':r['revision']!=p['revision'],'outcomes':for_run(r)} for r in rows(c,'state_runs',pid)]
             out['findings']=rows(c,'state_findings',pid)
             out['clause_jobs']=[j for j in rows(c,'extractions',pid) if j.get('scope')=='STATE_MODEL']; out['clause_proposals']=rows(c,'clause_proposals',pid)
             out['input_jobs']=[j for j in rows(c,'extractions',pid) if j.get('scope')!='STATE_MODEL'];out['input_proposals']=rows(c,'proposals',pid)
@@ -166,21 +166,21 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
                 prior=next((r for r in rows(c,'state_runs',pid) if r.get('request_id')==req.request_id),None)
                 if prior:
                     if prior['request_hash']!=signature: raise HTTPException(409,'Request identifier already used with another assessment')
-                    return {**prior,'stale':prior['revision']!=get_project(c,pid,tenant)['revision'],'outcomes':outcomes(prior['result'])}
+                    return {**prior,'stale':prior['revision']!=get_project(c,pid,tenant)['revision'],'outcomes':for_run(prior)}
             frozen=snapshot(c,pid,tenant,req)
-        started=time.perf_counter(); result=evaluate(frozen)
+        started=time.perf_counter(); collector=Collector(); result=evaluate(frozen,observe=collector)
         run={'id':str(uuid4()),'at':stamp(),'revision':frozen['project']['revision'],'model_id':req.model_id,
              'scenario_id':req.scenario_id,'as_of':frozen['as_of'],'horizon_end':frozen['horizon_end'],
              'model_name':frozen['model']['name'],'scenario_name':frozen['scenario']['name'],'solver_version':VERSION,
              'snapshot':frozen,'snapshot_hash':digest(frozen),'result':result,'result_hash':digest(result),
-             'request_id':req.request_id,'request_hash':signature,'elapsed_ms':round((time.perf_counter()-started)*1000,3)}
+             'request_id':req.request_id,'request_hash':signature,'outcomes':collector.summary() if result['status']=='COMPLETE' else None,'elapsed_ms':round((time.perf_counter()-started)*1000,3)}
         with db() as c:
             p=mutable(c,pid,tenant)
             if req.request_id:
                 concurrent=next((r for r in rows(c,'state_runs',pid) if r.get('request_id')==req.request_id),None)
                 if concurrent:
                     if concurrent['request_hash']!=signature: raise HTTPException(409,'Conflicting request identifier')
-                    return {**concurrent,'stale':concurrent['revision']!=p['revision'],'outcomes':outcomes(concurrent['result'])}
+                    return {**concurrent,'stale':concurrent['revision']!=p['revision'],'outcomes':for_run(concurrent)}
             put(c,'state_runs',pid,run)
             if p['revision']==run['revision']:
                 prior={f['key']:f for f in rows(c,'state_findings',pid) if f['model_id']==req.model_id}
@@ -191,7 +191,7 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
                            'history':previous.get('history',[])}
                     put(c,'state_findings',pid,value)
             audit(c,pid,tenant,'State assessment computed',{'run_id':run['id'],'snapshot_hash':run['snapshot_hash']},False)
-            return {**run,'stale':p['revision']!=run['revision'],'outcomes':outcomes(result)}
+            return {**run,'stale':p['revision']!=run['revision'],'outcomes':run['outcomes']}
 
     @router.post('/projects/{pid}/comparisons')
     def compare(pid:str,req:StateComparison,tenant=Depends(auth)):
@@ -211,7 +211,7 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
     def read(pid:str,key:str,tenant=Depends(auth)):
         with db() as c:
             p=get_project(c,pid,tenant);r=get(c,'state_runs',pid,key)
-            return {**r,'stale':r['revision']!=p['revision'],'outcomes':outcomes(r['result'])}
+            return {**r,'stale':r['revision']!=p['revision'],'outcomes':for_run(r)}
 
     @router.post('/projects/{pid}/assessments/{key}/replay')
     def replay(pid:str,key:str,tenant=Depends(auth)):

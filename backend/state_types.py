@@ -85,9 +85,15 @@ class ContractRule(Strict):
             raise ValueError('Replacement requires a successor instrument')
         if self.kind=='LIMIT' and self.amount_cents is None:
             raise ValueError('Limit amount is unresolved')
-        if self.lag_days and not self.event_id:
-            raise ValueError('Release lag requires a dated source event')
+        if self.lag_days and not self.event_id and not (self.kind in ('RELEASE','EXPIRY') and self.when and not self.any_of):
+            raise ValueError('A lag needs a dated source event, or a release or expiry measured from its required conditions')
         return self
+
+class ScenarioEvent(Strict):
+    label: str = Field(min_length=1, max_length=160)
+    fact_key: str = Field(pattern=r'^[a-z][a-z0-9_]{0,63}$')
+    fact_value: bool
+    effective_on: date
 
 class StateScenario(Strict):
     model_id: str
@@ -97,10 +103,15 @@ class StateScenario(Strict):
     excluded_rule_ids: list[str] = Field(default_factory=list)
     face_percent: int = Field(default=100, ge=100, le=1000, strict=True)
     obligation_percent: int = Field(default=100, ge=100, le=1000, strict=True)
+    events: list[ScenarioEvent] = Field(default_factory=list, max_length=12, exclude_if=lambda v: not v)
     @model_validator(mode='after')
     def shape(self):
-        if self.view!='HYPOTHETICAL' and (self.assumptions or self.excluded_rule_ids or self.face_percent!=100 or self.obligation_percent!=100):
-            raise ValueError('Overrides and stress multipliers require a hypothetical scenario')
+        if self.view!='HYPOTHETICAL' and (self.assumptions or self.excluded_rule_ids or self.face_percent!=100 or self.obligation_percent!=100 or self.events):
+            raise ValueError('Overrides, dated occurrences and stress multipliers require a hypothetical scenario')
+        if len({(e.fact_key,e.effective_on) for e in self.events})!=len(self.events):
+            raise ValueError('One hypothetical occurrence per fact and date')
+        if set(self.assumptions) & {e.fact_key for e in self.events}:
+            raise ValueError('A fact is either assumed throughout or given a dated occurrence, not both')
         return self
 
 class StateAssessment(Strict):

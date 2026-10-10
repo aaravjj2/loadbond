@@ -26,7 +26,18 @@ def applies(rule, day, events):
         return day>=threshold.isoformat()
     return True
 
-def evaluate(snapshot):
+def condition_lag(rule):
+    return bool(rule.get('lag_days')) and not rule.get('event_id')
+
+def lag_elapsed(rule, set_on, day):
+    # Conditions without an established date never start the lag: exposure is retained.
+    if not condition_lag(rule): return True
+    keys=[c['key'] for c in rule['when']]
+    if any(k not in set_on for k in keys): return False
+    start=max(set_on[k] for k in keys)
+    return day>=(date.fromisoformat(start)+timedelta(days=rule['lag_days'])).isoformat()
+
+def evaluate(snapshot, observe=None):
     docs={d['id']:d for d in snapshot['documents']}
     model, scenario = snapshot['model'], snapshot['scenario']
     instruments=sorted([i for i in snapshot['instruments'] if i['id'] in model['instrument_ids']],key=lambda i:i['id'])
@@ -93,7 +104,8 @@ def evaluate(snapshot):
     for r in rules:
         refs={c['key'] for c in r['when']+r['any_of']} | set(r['member_keys']) | ({r['requires_key']} if r.get('requires_key') else set())
         if refs-keys: issues.append('Missing fact definitions: '+', '.join(sorted(refs-keys)))
-    if set(scenario['assumptions'])-keys: issues.append('Scenario references undefined facts')
+    hypothetical=sorted(scenario.get('events',[]),key=lambda e:(e['effective_on'],e['fact_key']))
+    if set(scenario['assumptions'])-keys or {e['fact_key'] for e in hypothetical}-keys: issues.append('Scenario references undefined facts')
     if issues:
         return {'status':'INCOMPLETE','solver_version':VERSION,'issues':sorted(set(issues)),'findings':findings,'metrics':{},'envelope':[]}
     days={snapshot['as_of']}
@@ -109,6 +121,14 @@ def evaluate(snapshot):
         if r.get('valid_to'): boundary((date.fromisoformat(r['valid_to'])+timedelta(days=1)).isoformat())
         if r.get('event_id') and r['event_id'] in events and events[r['event_id']].get('effective_on'):
             boundary((date.fromisoformat(events[r['event_id']]['effective_on'])+timedelta(days=r['lag_days'])).isoformat())
+    for e in hypothetical: boundary(e['effective_on'])
+    dated={}
+    for k,d in [(f['key'],f.get('observed_on')) for f in facts]+[(e['fact_key'],e.get('effective_on')) for e in event_rows if e['event_type']=='FACT_SET']+[(e['fact_key'],e['effective_on']) for e in hypothetical]:
+        if d: dated.setdefault(k,set()).add(d)
+    for r in rules:
+        if condition_lag(r):
+            for c in r['when']:
+                for d in dated.get(c['key'],()): boundary((date.fromisoformat(d)+timedelta(days=r['lag_days'])).isoformat())
     if len(days)>256:
         return {'status':'UNSUPPORTED','solver_version':VERSION,'issues':['More than 256 time boundaries; split the model'],'metrics':{},'findings':findings,'envelope':[]}
     best={m:None for m in METRICS}; envelope=[]; all_states=[]; total_states=0; unknown_draw=False; unknown_metrics=set(); lower_bound=set()
@@ -116,25 +136,29 @@ def evaluate(snapshot):
     total_dimensions=set()
     def day_state(day):
         values={f['key']:f['value'] if eligible(f,docs) and f.get('observed_on') and f['observed_on']<=day else None for f in facts}
+        set_on={k:next(f['observed_on'] for f in facts if f['key']==k) for k,v in values.items() if v is not None}
         ordered=sorted([e for e in event_rows if e.get('effective_on') and e['effective_on']<=day],key=lambda e:(e['effective_on'],e.get('sequence',0),e['id']))
         by_time={}
         for e in ordered:
             if e['event_type']=='FACT_SET':
                 sig=(e['effective_on'],e.get('sequence',0),e['fact_key'])
                 if sig in by_time and by_time[sig]!=e['fact_value']: raise ValueError('Conflicting same-date fact events: '+e['fact_key'])
-                by_time[sig]=e['fact_value']; values[e['fact_key']]=e['fact_value']
+                by_time[sig]=e['fact_value']; values[e['fact_key']]=e['fact_value']; set_on[e['fact_key']]=e['effective_on']
         for f in facts:
-            if scenario['view']!='RECORDED' and f['future_mutable']: values[f['key']]=None
+            if scenario['view']!='RECORDED' and f['future_mutable']: values[f['key']]=None; set_on.pop(f['key'],None)
         values.update(scenario['assumptions'])
+        for k in scenario['assumptions']: set_on.pop(k,None)
+        for e in hypothetical:
+            if e['effective_on']<=day: values[e['fact_key']]=e['fact_value']; set_on[e['fact_key']]=e['effective_on']
         dimensions=sorted(k for k,v in values.items() if v is None)
         conditional=[c for c in claims if c['kind']=='conditional' and c['id'] not in claim_rules]
         dimensions += ['claim:'+c['id'] for c in conditional]
         if len(dimensions)>12: raise OverflowError('More than 12 independent dimensions; split the model')
         total_dimensions.update(dimensions)
-        return values,ordered,dimensions
+        return values,ordered,dimensions,set_on
     try:
         for day in sorted(days):
-            values, ordered,dimensions=day_state(day)
+            values,ordered,dimensions,set_on=day_state(day)
             usable=[r for r in rules if applies(r,day,events)]
             maxima={m:None for m in METRICS}; feasible=0; gross_face=0; day_unknown_draw=False; day_lower=set()
             for bits in product((False,True),repeat=len(dimensions)):
@@ -193,7 +217,7 @@ def evaluate(snapshot):
                 for r in unquantified:
                     finding('UNQUANTIFIED_INCREASE','Required security can increase by an unstated amount: '+r['label'],[r['id']],r['evidence'])
                 if unquantified: day_lower.update(('instrument_face','drawable')); lower_bound.update(('instrument_face','drawable'))
-                active=[r for r in usable if predicate(r,state)]
+                active=[r for r in usable if predicate(r,state) and lag_elapsed(r,set_on,day)]
                 for iid in face:
                     rs=[r for r in usable if r.get('target_id')==iid]
                     issuance=[r for r in rs if r['kind']=='ISSUANCE']
@@ -241,6 +265,7 @@ def evaluate(snapshot):
                     record['applied_rules']=sorted(set(record['applied_rules']) | {r['id'] for r in usable if r['kind'] in ('CARDINALITY','IMPLICATION','PREREQUISITE','ISSUANCE','OBLIGATION','DRAW_CONDITION')})
                     if maxima[metric] is None or value>maxima[metric]['maximum_cents']: maxima[metric]=record
                     if best[metric] is None or value>best[metric]['maximum_cents']: best[metric]=record
+                if observe: observe(day,state,totals)
                 if len(all_states)<128: all_states.append({'as_of':day,'state':state,'totals':totals})
             if not feasible: raise ValueError('No feasible state; resolve contradictory reviewed rules')
             envelope.append({'as_of':day,'feasible_states':feasible,'gross_instrument_face_cents':gross_face,

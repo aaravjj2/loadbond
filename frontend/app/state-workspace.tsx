@@ -997,6 +997,7 @@ export default function StateWorkspace({
                           <th>Date</th>
                           <th>Instrument maximum</th>
                           <th>Gross, same stress</th>
+                          <th>Drawable</th>
                           <th>Obligations</th>
                           <th>Feasible states</th>
                         </tr>
@@ -1007,6 +1008,7 @@ export default function StateWorkspace({
                             <td>{row.as_of}</td>
                             <td>{dollars(row.maxima.instrument_face)}</td>
                             <td>{dollars(row.gross_instrument_face_cents)}</td>
+                            <td>{dollars(row.maxima.drawable)}</td>
                             <td>{dollars(row.maxima.obligations)}</td>
                             <td>{row.feasible_states}</td>
                           </tr>
