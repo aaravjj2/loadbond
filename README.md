@@ -2,7 +2,7 @@
 
 **What can become payable or drawable, under which conditions, and which documents support that answer?** LoadBond connects exact source quotations, explicit human review, bounded contractual states and reproducible exposure assessments.
 
-**[Open the public case explorer](https://loadbond.vercel.app/)** · **[Watch the narrated demonstration](https://loadbond.vercel.app/demo/loadbond-forgehacks.mp4)** · **[Screenshots and release evidence](docs/forgehacks/)**
+**[Open the public case explorer](https://loadbond.vercel.app/)** · **[Video player and screenshot gallery](https://loadbond.vercel.app/demo/index.html)** · **[Release evidence](docs/forgehacks/)**
 
 The Vercel deployment is a **read-only explorer of published public/synthetic reference cases**. Scenario comparisons and historical replay compute on the server. Upload, local Ollama inference, editing and review run in the local application below. No laptop endpoint is exposed, and no confidential customer evidence is hosted. Reference identifiers and snapshots are deterministic across cold starts. The video shows actual local extraction and browser interactions with edited pacing; it is not continuous screen recording.
 
@@ -49,7 +49,7 @@ cd frontend
 pnpm build   # or, without pnpm on PATH: node node_modules/next/dist/bin/next build
 ```
 
-85 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial and off-topic sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
+86 tests pass (October 10), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial and off-topic sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing, legacy regressions and reproducible read-only public cold starts. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
 
 ## Architecture and compatibility
 
