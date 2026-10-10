@@ -321,7 +321,12 @@
   if (s) {
     document.body.classList.add("solo");
     const slides = document.querySelectorAll(".slide");
-    slides[Number(s) - 1]?.classList.add("on");
+    const slide = slides[Number(s) - 1];
+    slide?.classList.add("on");
+    if (slide && new URLSearchParams(location.search).has("pad")) {
+      document.documentElement.style.background = getComputedStyle(slide).backgroundColor;
+      Object.assign(document.body.style, { background: "transparent", display: "flex", alignItems: "center", height: "100vh" });
+    }
   }
 </script>
 </body>
