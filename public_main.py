@@ -18,6 +18,9 @@ def fixture_uuid():
     _counter += 1
     return uuid5(NAMESPACE_URL, 'loadbond-public-v1:' + str(_counter))
 _originals = {module: module.uuid4 for module in (main, v2, state_api, state_fixtures)}
+_stamps = {module: module.stamp for module in (v2, state_api, state_fixtures)}
+for module in _stamps:
+    module.stamp = lambda: '2026-10-10T15:00:00+00:00'
 for module in _originals:
     module.uuid4 = fixture_uuid
 with TestClient(app, headers={'Authorization': 'Bearer local-demo'}) as client:
@@ -35,6 +38,8 @@ with TestClient(app, headers={'Authorization': 'Bearer local-demo'}) as client:
             result.raise_for_status()
 for module, original in _originals.items():
     module.uuid4 = original
+for module, original in _stamps.items():
+    module.stamp = original
 app.middleware_stack = None
 
 @app.middleware('http')
