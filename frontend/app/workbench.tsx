@@ -481,11 +481,16 @@ export default function Workbench() {
             <>
               <div className="actions">
                 {['public','synthetic'].map(kind=><button key={kind} className={kind==='public'?'':'secondary'} disabled={busy} onClick={()=>void act(async()=>{
+                  if (process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1') {
+                    const existing = projects.find(p => p.synthetic === (kind === 'synthetic'));
+                    if (existing) await open(existing.id);
+                    return;
+                  }
                   const r=await fetch('/api/v3/references/'+kind,{method:'POST',headers:{Authorization:'Bearer '+token}});
                   if(!r.ok){const e=await r.json();throw new Error(typeof e.detail==='string'?e.detail:JSON.stringify(e.detail));}
                   const value=await r.json();await open(value.project.id);
                 })}>{kind==='public'?'Explore public commitment phases':'Explore synthetic adverse states'}</button>)}
-                <button disabled={busy} onClick={() => void act(async () => {
+                <button disabled={busy || process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1'} onClick={() => void act(async () => {
                   const p = await api("transaction-case", {});
                   await open(p.id);
                   const next = await api("projects/" + p.id);
@@ -494,12 +499,12 @@ export default function Workbench() {
                   await refresh(p.id);
                   setTab('transaction');
                 })}>Explore the transaction case</button>
-                <button onClick={() => setEditor({ kind: "project" })}>
+                <button disabled={process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1'} onClick={() => setEditor({ kind: "project" })}>
                   Create project
                 </button>
                 <button
                   className="secondary"
-                  disabled={busy}
+                  disabled={busy || process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1'}
                   onClick={() =>
                     void act(async () => {
                       const p = await api("sample", {});
@@ -511,7 +516,7 @@ export default function Workbench() {
                 </button>
                 <button
                   className="secondary"
-                  disabled={busy}
+                  disabled={busy || process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1'}
                   onClick={() =>
                     void act(async () => {
                       const p = await api("import-legacy", {});
