@@ -19,6 +19,11 @@ PROMPT_VERSION = 'local-evidence-1.4'
 SCHEMA_VERSION = 'proposals-1.0'
 CHUNK_TIMEOUT = 120
 JOB_TIMEOUT = 1200
+SECONDS_PER_CHUNK = 60
+MAX_JOB_TIMEOUT = 4*3600
+
+def job_budget(chunk_count):
+    return min(MAX_JOB_TIMEOUT, max(JOB_TIMEOUT, SECONDS_PER_CHUNK*chunk_count))
 
 class Strict(BaseModel):
     model_config = ConfigDict(extra='forbid')
@@ -250,19 +255,27 @@ def install(app, router, auth, db, get_project, get, rows, put, audit, evidence,
                     if not ready['ready'] or ready['digest'] != job['model_digest']:
                         raise ValueError('Local model unavailable or changed since enqueue; retry after checking readiness')
                     parts = list(chunks(doc['pages']))
+                    budget = job_budget(len(parts))
+                    job['time_budget_seconds'] = budget
+                    over_budget = lambda done: TimeoutError(f'Extraction exceeded its {budget//60}-minute time budget after {done} of {len(parts)} chunks; no proposals published')
                     proposals, invalid, screened, seen = [], [], [], set()
                     for index, (page, offset, text) in enumerate(parts):
                         if self.stopping:
                             raise ValueError('Backend stopping; retry extraction')
-                        remaining = JOB_TIMEOUT-(time.monotonic()-started)
+                        remaining = budget-(time.monotonic()-started)
                         if remaining <= 0:
-                            raise TimeoutError('Extraction exceeded the 20-minute job limit')
+                            raise over_budget(index)
                         state_scope=job.get('scope')=='STATE_MODEL'
-                        if state_scope:
-                            from . import clause_extraction as clauses
-                            candidates=clauses.extract_chunk(text,job['model'],min(CHUNK_TIMEOUT,remaining))
-                        else:
-                            candidates = extract_chunk(text, job['model'], min(CHUNK_TIMEOUT, remaining))
+                        try:
+                            if state_scope:
+                                from . import clause_extraction as clauses
+                                candidates=clauses.extract_chunk(text,job['model'],min(CHUNK_TIMEOUT,remaining))
+                            else:
+                                candidates = extract_chunk(text, job['model'], min(CHUNK_TIMEOUT, remaining))
+                        except httpx.TimeoutException:
+                            if remaining < CHUNK_TIMEOUT:
+                                raise over_budget(index) from None
+                            raise TimeoutError(f'The local model did not answer within {CHUNK_TIMEOUT} seconds on page {page} (chunk {index+1} of {len(parts)}); no proposals published') from None
                         if self.stopping:
                             raise ValueError('Backend stopped during extraction; no proposals published')
                         if runtime_status().get('digest') != job['model_digest']:
@@ -289,8 +302,8 @@ def install(app, router, auth, db, get_project, get, rows, put, audit, evidence,
                                 raise ValueError('Evidence was superseded or project archived during extraction')
                             job.update(completed_chunks=index+1, total_chunks=len(parts), elapsed_seconds=round(time.monotonic()-started,3))
                             put(c, 'extractions', pid, job)
-                    if time.monotonic()-started > JOB_TIMEOUT:
-                        raise TimeoutError('Extraction exceeded the 20-minute job limit')
+                    if time.monotonic()-started > budget:
+                        raise over_budget(len(parts))
                     if invalid:
                         raise ValueError('Extraction contained invalid source quotations; no proposals published')
                     with db() as c:

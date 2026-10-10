@@ -1,0 +1,24 @@
+﻿{
+    "id":  "a6a54c8b-b9d6-4391-bfd8-49bedfed21df",
+    "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+    "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+    "status":  "FAILED",
+    "model":  "qwen3:4b",
+    "model_digest":  "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "prompt_version":  "local-evidence-1.4",
+    "schema_version":  "proposals-1.0",
+    "created_at":  "2026-10-10T03:22:45.344346+00:00",
+    "completed_chunks":  121,
+    "total_chunks":  162,
+    "abandoned":  false,
+    "started_at":  "2026-10-10T03:22:45.352869+00:00",
+    "elapsed_seconds":  1200.047,
+    "finished_at":  "2026-10-10T03:42:45.405036+00:00",
+    "validation_issues":  [
+
+                          ],
+    "error":  "Local extraction failed (runtime, response validation, or timeout). No proposals published.",
+    "proposals":  [
+
+                  ]
+}

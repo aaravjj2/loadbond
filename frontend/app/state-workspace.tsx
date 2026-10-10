@@ -87,6 +87,7 @@ export default function StateWorkspace({
   const [docId, setDocId] = useState("");
   const [page, setPage] = useState(1);
   const [sourceSpan, setSourceSpan] = useState<Span | null>(null);
+  const [findStatus, setFindStatus] = useState("");
   const [comparison, setComparison] = useState<Entity | null>(null);
   const [compareIds, setCompareIds] = useState<string[]>([]);
   const [decisionReason, setDecisionReason] = useState("");
@@ -336,6 +337,43 @@ export default function StateWorkspace({
     } catch (e) {
       setError(String(e));
     }
+  }
+  function findNext(query: string) {
+    if (!doc || !query.trim()) return;
+    const needle = query.trim().toLowerCase();
+    const n = doc.pages.length;
+    const from =
+      sourceSpan?.document_id === doc.id && sourceSpan.page === page
+        ? sourceSpan.end
+        : 0;
+    for (let k = 0; k <= n; k++) {
+      const p = ((page - 1 + k) % n) + 1;
+      const text: string = doc.pages[p - 1] || "";
+      const chars = Array.from(text);
+      const offset = k === 0 ? chars.slice(0, from).join("").length : 0;
+      const at = text.toLowerCase().indexOf(needle, offset);
+      if (at < 0) continue;
+      const start = Array.from(text.slice(0, at)).length;
+      const quote = text.slice(at, at + needle.length);
+      setPage(p);
+      setSourceSpan({
+        document_id: doc.id,
+        page: p,
+        start,
+        end: start + Array.from(quote).length,
+        quote,
+      });
+      setFindStatus("Page " + p);
+      setTimeout(
+        () =>
+          document
+            .querySelector(".state-reader mark")
+            ?.scrollIntoView({ block: "center" }),
+        0,
+      );
+      return;
+    }
+    setFindStatus("No match in this document");
   }
   function showSource(span: Span) {
     setDocId(span.document_id);
@@ -1372,6 +1410,30 @@ export default function StateWorkspace({
                   </label>
                 )}
               </div>
+              {doc && doc.pages.length > 1 && (
+                <form
+                  className="actions"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    findNext(
+                      String(new FormData(e.currentTarget).get("find") || ""),
+                    );
+                  }}
+                >
+                  <label>
+                    Find in document
+                    <input
+                      name="find"
+                      type="search"
+                      onChange={() => setFindStatus("")}
+                    />
+                  </label>
+                  <button className="secondary" type="submit">
+                    Find next
+                  </button>
+                  {findStatus && <small>{findStatus}</small>}
+                </form>
+              )}
               {doc?.source_url && (
                 <a href={doc.source_url} target="_blank" rel="noreferrer">
                   Primary-source reference ↗

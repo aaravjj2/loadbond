@@ -217,3 +217,15 @@ def test_model_digest_change_publishes_nothing(fixture,monkeypatch):
     monkeypatch.setattr(local,'extract_chunk',swapped)
     j=wait(c,root,enqueue(c,root,d)['id'])
     assert j['status']=='FAILED' and not j['proposals'] and 'model changed' in j['error']
+
+def test_time_budget_scales_with_document_length():
+    assert local.job_budget(5)==local.JOB_TIMEOUT and local.job_budget(162)==162*local.SECONDS_PER_CHUNK
+    assert local.job_budget(10000)==local.MAX_JOB_TIMEOUT
+
+def test_model_timeout_is_reported_plainly(fixture,monkeypatch):
+    import httpx
+    c,root,d=fixture
+    def slow(*args):raise httpx.ReadTimeout('timed out')
+    monkeypatch.setattr(local,'extract_chunk',slow)
+    j=wait(c,root,enqueue(c,root,d)['id'])
+    assert j['status']=='FAILED' and 'did not answer within 120 seconds on page 1' in j['error'] and j['time_budget_seconds']==local.JOB_TIMEOUT
