@@ -164,6 +164,7 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
             frozen=snapshot(c,pid,tenant,req)
         started=time.perf_counter(); result=evaluate(frozen)
         run={'id':str(uuid4()),'at':stamp(),'revision':frozen['project']['revision'],'model_id':req.model_id,
+             'scenario_id':req.scenario_id,'as_of':frozen['as_of'],'horizon_end':frozen['horizon_end'],
              'model_name':frozen['model']['name'],'scenario_name':frozen['scenario']['name'],'solver_version':VERSION,
              'snapshot':frozen,'snapshot_hash':digest(frozen),'result':result,'result_hash':digest(result),
              'request_id':req.request_id,'request_hash':signature,'elapsed_ms':round((time.perf_counter()-started)*1000,3)}
