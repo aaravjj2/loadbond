@@ -35,6 +35,7 @@ with TestClient(app, headers={'Authorization': 'Bearer local-demo'}) as client:
             result.raise_for_status()
 for module, original in _originals.items():
     module.uuid4 = original
+app.middleware_stack = None
 
 @app.middleware('http')
 async def public_demo_boundary(request, call_next):
