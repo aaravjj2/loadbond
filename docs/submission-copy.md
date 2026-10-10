@@ -1,5 +1,7 @@
 # LoadBond submission copy
 
+> Superseded for the Graphiques Innovation Challenge by `docs/graphiques/submission.md`, which leads with the real PJM agreement trial and current evaluation results. The text below describes earlier synthetic milestones.
+
 ## Title and tagline
 
 LoadBond — Know what your security actually secures.

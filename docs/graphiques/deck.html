@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LoadBond — Graphiques Innovation Challenge</title>
+<style>
+  :root {
+    --paper: #f3f2ec; --card: #fbfaf6; --ink: #1f2a26; --muted: #5d6762;
+    --green: #2d5b4b; --green-soft: #e1e8e2; --amber: #b8742a; --amber-soft: #f6ead9;
+    --line: #d9dbd3; --red: #a2422f;
+  }
+  @page { size: 1920px 1080px; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #888; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+  .slide {
+    width: 1920px; height: 1080px; background: var(--paper); position: relative;
+    padding: 96px 120px 90px; overflow: hidden; page-break-after: always; break-after: page;
+    display: flex; flex-direction: column;
+  }
+  .solo .slide { display: none; }
+  .solo .slide.on { display: flex; }
+  h1, h2, .serif { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -0.01em; }
+  h1 { font-size: 112px; line-height: 1.02; margin: 0; }
+  h2 { font-size: 68px; line-height: 1.08; margin: 0 0 40px; max-width: 1560px; }
+  .kicker { font-family: Consolas, "Courier New", monospace; font-size: 22px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 28px; }
+  p, li { font-size: 30px; line-height: 1.45; }
+  .muted { color: var(--muted); }
+  .foot { position: absolute; left: 120px; right: 120px; bottom: 36px; display: flex; justify-content: space-between; font-size: 17px; color: var(--muted); font-family: Consolas, monospace; }
+  .brand { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 600; }
+  .bars { display: inline-flex; gap: 5px; height: 40px; }
+  .bars i { width: 7px; background: var(--ink); display: block; }
+  .grid { display: grid; gap: 36px; }
+  .g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 40px 40px 36px; }
+  .stat { font-family: Georgia, serif; font-size: 92px; line-height: 1; color: var(--green); white-space: nowrap; }
+  .stat small { font-size: 46px; }
+  .label { font-size: 27px; line-height: 1.35; margin-top: 18px; }
+  .src { font-size: 18px; color: var(--muted); margin-top: 14px; font-family: Consolas, monospace; line-height: 1.4; }
+  .pill { display: inline-block; padding: 8px 18px; border-radius: 999px; background: var(--green-soft); color: var(--green); font-size: 22px; font-family: Consolas, monospace; letter-spacing: 0.06em; }
+  .amber { color: var(--amber); }
+  .band { background: var(--green); color: #f3f2ec; }
+  .band .kicker { color: #bcd3c7; }
+  .band .muted { color: #c9d6cf; }
+  .shot { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; box-shadow: 0 18px 50px rgba(31,42,38,.14); }
+  .shot img { display: block; }
+  .quote { font-family: Georgia, serif; font-size: 34px; line-height: 1.4; border-left: 6px solid var(--amber); padding: 6px 0 6px 32px; margin: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 27px; }
+  td, th { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: Consolas, monospace; font-size: 19px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+  .ok { color: var(--green); font-weight: 600; } .bad { color: var(--red); font-weight: 600; } .warn { color: var(--amber); font-weight: 600; }
+  ul.clean { list-style: none; padding: 0; margin: 0; }
+  ul.clean li { padding-left: 40px; position: relative; margin-bottom: 18px; }
+  ul.clean li::before { content: ""; position: absolute; left: 0; top: 17px; width: 18px; height: 3px; background: var(--green); }
+  .step { display: flex; flex-direction: column; gap: 14px; }
+  .step b { font-family: Consolas, monospace; font-size: 22px; color: var(--green); letter-spacing: .1em; }
+  .step h3 { font-family: Georgia, serif; font-weight: 400; font-size: 38px; margin: 0; line-height: 1.15; }
+  .step p { font-size: 25px; margin: 0; color: var(--muted); line-height: 1.4; }
+  .arrow { font-size: 40px; color: var(--line); align-self: center; }
+  .ladder { display: flex; align-items: flex-end; gap: 22px; height: 360px; margin-top: 10px; }
+  .rung { flex: 1; background: var(--green); color: #f3f2ec; border-radius: 4px 4px 0 0; padding: 18px 20px; display: flex; align-items: flex-start; }
+  .rung b { font-family: Georgia, serif; font-weight: 400; font-size: 44px; }
+  .captions { display: flex; gap: 22px; margin-top: 16px; }
+  .captions span { flex: 1; font-size: 22px; line-height: 1.3; color: var(--muted); }
+  .big-answer { font-family: Georgia, serif; font-size: 92px; line-height: 1.05; }
+  .strike { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 6px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- 1. Title -->
+<section class="slide band">
+  <div class="brand" style="color:#f3f2ec"><span class="bars"><i style="background:#f3f2ec"></i><i style="background:#f3f2ec"></i><i style="background:#f3f2ec"></i><i style="background:#f3f2ec"></i></span>LoadBond</div>
+  <div style="margin-top:auto">
+    <div class="kicker">Graphiques Innovation Challenge · Finance &amp; FinTech</div>
+    <h1>Know what your<br>security actually secures.</h1>
+    <p style="font-size:36px;max-width:1450px;margin-top:40px;color:#dfe8e2">Clean-energy projects post millions in letters of credit to keep their grid connection. LoadBond reads the filed agreement, links every number to its source sentence, and computes the most that security can become, including when the honest answer is “at least” or “unknown”.</p>
+  </div>
+  <div class="foot" style="color:#bcd3c7"><span>Working prototype · tested on a real FERC-accepted PJM agreement</span><span>01</span></div>
+</section>
+
+<!-- 2. Scale of the queue -->
+<section class="slide">
+  <div class="kicker">The problem · scale</div>
+  <h2>The grid connection queue is where clean energy waits, and waiting costs collateral.</h2>
+  <div class="grid g4" style="margin-top:20px">
+    <div class="card"><div class="stat">2,061<small> GW</small></div><div class="label">of generation and storage actively seeking interconnection at the end of 2025, across 8,244 projects.</div></div>
+    <div class="card"><div class="stat">549<small> GW</small></div><div class="label">already hold a draft or executed interconnection agreement but are not yet operating.</div></div>
+    <div class="card"><div class="stat">61<small> mo</small></div><div class="label">median time from interconnection request to operation for projects completed in 2025 (22 months in 2008).</div></div>
+    <div class="card"><div class="stat">13<small>%</small></div><div class="label">of capacity requested 2000–2020 was operating by 2025. 75% withdrew.</div></div>
+  </div>
+  <p class="muted" style="margin-top:44px;margin-bottom:0;max-width:1600px">Every one of those projects must post financial security at each stage, and keep it posted for years while amounts change with milestones, scope, tax status and withdrawals.</p>
+  <div class="src">Source: Lawrence Berkeley National Laboratory, “Queued Up: 2026 Edition” (data through end of 2025), emp.lbl.gov/queues</div>
+  <div class="foot"><span>LoadBond</span><span>02</span></div>
+</section>
+
+<!-- 3. Security escalates -->
+<section class="slide">
+  <div class="kicker">The problem · rules got stricter</div>
+  <h2>FERC Order 2023 made security escalate at every step.</h2>
+  <div class="grid" style="grid-template-columns: 1.35fr 1fr; gap: 70px">
+    <div>
+      <div class="ladder">
+        <div class="rung" style="height:24%"><b>$</b></div>
+        <div class="rung" style="height:38%"><b>2×</b></div>
+        <div class="rung" style="height:55%"><b>5%</b></div>
+        <div class="rung" style="height:75%"><b>10%</b></div>
+        <div class="rung" style="height:100%;background:var(--amber)"><b>20%</b></div>
+      </div>
+      <div class="captions">
+        <span>Study deposit: $35k–$250k by project size</span>
+        <span>Readiness deposit: twice the study deposit</span>
+        <span>of network-upgrade cost at restudy</span>
+        <span>of network-upgrade cost at facilities study</span>
+        <span><b style="color:var(--amber)">of network-upgrade cost when the agreement is signed</b></span>
+      </div>
+      <div class="src">Sources: FERC, “Explainer on the Interconnection Final Rule” (Order No. 2023, July 2023); Orrick summary of deposit schedule (Aug 2023); FERC Order 2023-A explainer (cash, letters of credit or surety bonds)</div>
+    </div>
+    <div>
+      <ul class="clean">
+        <li>Posted as cash, a bank letter of credit, or (since Order 2023-A) a surety bond.</li>
+        <li>Withdrawal penalties apply if leaving the queue harms other projects.</li>
+        <li>Letters of credit cost about <b>1–3% of face per year</b> and use up the developer’s bank credit lines.</li>
+        <li>One developer’s portfolio averaged <b>$0.05 per watt</b> of security across interconnection, PPAs, purchase orders and swaps, ranging up to $0.37/W.</li>
+      </ul>
+      <div class="src">Sources: Segue Infrastructure, “The Cash Cow That No American Bank Seems To Want” and “Deposits, Deposits, Deposits…”; Evergreen Surety, “Posting Collateral…” (a surety provider; reports 100 bp rising to 200–275 bp)</div>
+    </div>
+  </div>
+  <div class="foot"><span>LoadBond</span><span>03</span></div>
+</section>
+
+<!-- 4. Real example -->
+<section class="slide">
+  <div class="kicker">A real agreement</div>
+  <h2>One question a treasury team must answer: what is the most this security can become?</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 70px">
+    <div>
+      <p style="margin-top:0"><b>Chestnut Solar, 74.9 MW, Virginia.</b> Interconnection Service Agreement with PJM and Dominion Energy Virginia, accepted by FERC (Docket ER17-1701) in 2017. Public filing, 163 pages.</p>
+      <table>
+        <tr><th>Where</th><th>What it says</th></tr>
+        <tr><td>Page 14, §5.0</td><td>Security “in the amount of $2,111,149”</td></tr>
+        <tr><td>Appendix 2, §24.4</td><td>More security required if tax safe-harbor documentation is missing. <span class="warn">Amount not stated.</span></td></tr>
+        <tr><td>§11.2.1</td><td>Reduced as work completes; changed with scope. <span class="warn">Amounts not stated.</span></td></tr>
+        <tr><td>PJM Tariff §212.4</td><td>When it can be drawn or returned. <span class="bad">A different document.</span></td></tr>
+      </table>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:44px">
+      <div class="card"><div class="kicker" style="margin-bottom:12px">A spreadsheet says</div><div class="big-answer strike">$2,111,149</div></div>
+      <div class="card" style="border-color:var(--green)"><div class="kicker" style="margin-bottom:12px">The correct answer</div><div class="big-answer" style="color:var(--green)">At least $2,111,149</div><p class="muted" style="margin:16px 0 0;font-size:26px">because §24.4 can raise it by an amount the agreement never states.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: pjm.com/pjmfiles/pub/planning/project-queues/isa/aa2_165_isa.pdf · SHA-256 562a469f…</span><span>04</span></div>
+</section>
+
+<!-- 5. Why current approaches fail -->
+<section class="slide">
+  <div class="kicker">Why current approaches fail</div>
+  <h2>Contracts are conditional. The tools that track them are not.</h2>
+  <div class="grid g3">
+    <div class="card"><h3 class="serif" style="font-size:40px;margin:0 0 18px">Spreadsheets hold one number</h3><p class="muted" style="margin:0;font-size:27px">A cell can say $2,111,149. It cannot say “unless documentation is missing” or “until an unstated reduction applies”, so a false maximum looks exactly like a real one.</p></div>
+    <div class="card"><h3 class="serif" style="font-size:40px;margin:0 0 18px">Contract tools store, not compute</h3><p class="muted" style="margin:0;font-size:27px">Document repositories find the PDF. They do not combine releases, step-ups, expiries and draw conditions into the exposure that can actually exist on a date.</p></div>
+    <div class="card"><h3 class="serif" style="font-size:40px;margin:0 0 18px">AI summaries guess</h3><p class="muted" style="margin:0;font-size:27px">A chatbot will happily turn an unstated amount into a number. In collateral, a confident wrong figure is worse than “unknown”: it either strands capital or hides a draw.</p></div>
+  </div>
+  <p style="margin-top:50px;max-width:1650px">The cost of being wrong runs both ways: <b>overstating</b> keeps credit lines tied up at 1–3% a year; <b>understating</b> means a surprise demand for more security or a draw.</p>
+  <div class="src">Our characterization of current practice is a hypothesis from public sources and has not yet been validated with treasury teams (see slide 11).</div>
+  <div class="foot"><span>LoadBond</span><span>05</span></div>
+</section>
+
+<!-- 6. Solution -->
+<section class="slide">
+  <div class="kicker">The solution</div>
+  <h2>From a 163-page filing to a defensible number, every figure traced to its sentence.</h2>
+  <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;gap:22px;margin-top:30px">
+    <div class="step"><b>01 · UPLOAD</b><h3>Load the filed agreement</h3><p>PDFs up to 500 pages; pages without text are flagged, not silently skipped.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>02 · FIND</b><h3>Local AI proposes</h3><p>A small model on the user’s own machine flags sentences with money and conditions. Nothing leaves the computer.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>03 · REVIEW</b><h3>A person approves exact quotes</h3><p>Nothing counts until a named reviewer accepts the verbatim source sentence.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>04 · ENUMERATE</b><h3>Every feasible state</h3><p>A rules engine checks every combination of events and conditions the contract allows, exactly.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>05 · DECIDE</b><h3>A brief you can replay</h3><p>The maximum, the state that produces it, the sources, and a frozen snapshot that recomputes identically.</p></div>
+  </div>
+  <div class="card" style="margin-top:60px;display:flex;gap:60px;align-items:center">
+    <div class="pill">FOUR SEPARATE ANSWERS</div>
+    <p style="margin:0;font-size:28px">Instrument face · amount that can be drawn · underlying obligations · reimbursement debt. Merging them is how exposure gets miscounted.</p>
+  </div>
+  <div class="foot"><span>LoadBond</span><span>06</span></div>
+</section>
+
+<!-- 7. Product screenshot -->
+<section class="slide">
+  <div class="kicker">The prototype on the real agreement</div>
+  <div class="grid" style="grid-template-columns: 1.15fr 1fr; gap: 70px; flex:1">
+    <div class="shot" style="height:850px;width:880px;position:relative">
+      <img src="../../samples/public-isa/transaction-at-least.png" style="width:1160px;margin-left:-288px;margin-top:-336px" alt="LoadBond assessment showing At least $2,111,149">
+      <div style="position:absolute;left:30px;top:498px;width:270px;height:318px;border:5px solid var(--amber);border-radius:8px"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center">
+      <h2 style="font-size:60px">Three answers. Only one is a plain number.</h2>
+      <ul class="clean">
+        <li><b>At least $2,111,149</b> for the letter of credit, with a finding naming §24.4 as the reason.</li>
+        <li><b>$7,160,843</b> in cost obligations, the two estimates in Specifications §4.1 and §4.2.</li>
+        <li><b>Unknown</b> drawable amount, because draw terms live in the PJM Tariff, which is not loaded. LoadBond says so instead of guessing zero.</li>
+      </ul>
+      <p class="muted" style="font-size:24px">32 feasible contract states checked for May 2017 to Dec 2018. Re-running the saved snapshot reproduces the result byte for byte.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Screenshot of the running prototype · samples/public-isa/trial-result.json</span><span>07</span></div>
+</section>
+
+<!-- 8. Innovation -->
+<section class="slide">
+  <div class="kicker">Innovation &amp; uniqueness</div>
+  <h2>Built to be wrong out loud, never quietly.</h2>
+  <div class="grid g2" style="gap:40px 70px">
+    <div><h3 class="serif" style="font-size:42px;margin:0 0 10px">Unknown stays unknown</h3><p class="muted" style="margin:0">Missing facts, unreviewed claims and unloaded documents block completion or are shown as unknown. They never default to zero.</p></div>
+    <div><h3 class="serif" style="font-size:42px;margin:0 0 10px">Lower bounds, not false maximums</h3><p class="muted" style="margin:0">When a clause can raise security by an unstated amount, the answer becomes “at least”. This rule came directly from testing the real agreement.</p></div>
+    <div><h3 class="serif" style="font-size:42px;margin:0 0 10px">Exact, not simulated</h3><p class="muted" style="margin:0">Every feasible state is enumerated, not sampled. The maximum comes with the exact combination of events that produces it.</p></div>
+    <div><h3 class="serif" style="font-size:42px;margin:0 0 10px">AI finds, people decide</h3><p class="muted" style="margin:0">The local model only proposes source sentences. Calculation uses reviewed records alone, so a model error cannot reach the number unseen.</p></div>
+  </div>
+  <div class="card" style="margin-top:56px"><p style="margin:0">Together these make LoadBond an <b>auditable calculator for conditional collateral</b>: a category between document storage and generic AI, where the output can be defended to a bank, an auditor or a utility.</p></div>
+  <div class="foot"><span>LoadBond</span><span>08</span></div>
+</section>
+
+<!-- 9. Evidence: what testing found -->
+<section class="slide">
+  <div class="kicker">Quality of research · what testing found</div>
+  <h2>We tested on a real filing and published the failures.</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 70px">
+    <div>
+      <table>
+        <tr><th>Real-agreement trial found</th><th>Status</th></tr>
+        <tr><td>163-page filing rejected by upload limits</td><td class="ok">Fixed</td></tr>
+        <tr><td>Reported “maximum” was silently too low</td><td class="ok">Fixed: “at least”</td></tr>
+        <tr><td>74.9 MW rejected as not a whole number</td><td class="ok">Fixed</td></tr>
+        <tr><td>Local AI timed out on a long filing</td><td class="ok">Fixed: 162/162 chunks</td></tr>
+        <tr><td>No way to search 163 pages</td><td class="ok">Fixed: find in document</td></tr>
+        <tr><td>Security terms sit in a separate tariff</td><td class="warn">Open</td></tr>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr><th>Local AI, scored once on unseen documents</th><th>Result</th></tr>
+        <tr><td>Real amounts it found (recall)</td><td class="ok">100%</td></tr>
+        <tr><td>Proposals that were right (precision)</td><td class="bad">60%</td></tr>
+        <tr><td>Contract clauses: precision / recall</td><td class="warn">88% / 83%</td></tr>
+        <tr><td>Real filing: found the $2,111,149</td><td class="ok">Yes</td></tr>
+        <tr><td>Real filing: told totals from components</td><td class="bad">No</td></tr>
+      </table>
+      <p class="muted" style="font-size:25px;margin-top:26px">Verdict: the AI is a good finder of money in long documents, not a reliable source of structured data. That is why review is mandatory, and why the engine, not the model, produces the number.</p>
+    </div>
+  </div>
+  <div class="src" style="margin-top:auto">85 automated tests · held-out sets were never used for tuning · full write-up in docs/public-agreement-trial.md</div>
+  <div class="foot"><span>LoadBond</span><span>09</span></div>
+</section>
+
+<!-- 10. Impact & business model -->
+<section class="slide">
+  <div class="kicker">Potential impact &amp; business model</div>
+  <h2>Collateral that sits idle is capital not building clean energy.</h2>
+  <div class="grid g3">
+    <div class="card"><div class="stat" style="font-size:84px">$21k–$63k</div><div class="label">yearly letter-of-credit fees on Chestnut’s $2.11M security alone, at 1–3% of face.</div><div class="src">Arithmetic on sourced fee range</div></div>
+    <div class="card"><div class="stat" style="font-size:84px">~$27B</div><div class="label">order-of-magnitude illustration: 549 GW with agreements × $0.05/W average security.</div><div class="src">Combines LBNL and Segue figures; not a measured market size</div></div>
+    <div class="card"><div class="stat" style="font-size:84px">75%</div><div class="label">of queued capacity historically withdraws. Each exit needs a clear answer on what security returns and what is owed.</div><div class="src">LBNL Queued Up 2026</div></div>
+  </div>
+  <div class="grid g2" style="margin-top:44px;gap:70px">
+    <div><p style="margin:0"><b>First customer:</b> treasury and finance teams at mid-size renewable and storage developers, with several projects in queues and limited bank credit lines.</p></div>
+    <div><p style="margin:0"><b>Model (hypothesis):</b> annual subscription per project under management, priced below one month of fees on the security it tracks; counsel and lenders as referral partners.</p></div>
+  </div>
+  <div class="foot"><span>LoadBond</span><span>10</span></div>
+</section>
+
+<!-- 11. Feasibility & roadmap -->
+<section class="slide">
+  <div class="kicker">Feasibility · roadmap · honest limits</div>
+  <h2>It runs today. Here is what must be true next.</h2>
+  <div class="grid g3" style="gap:50px">
+    <div>
+      <div class="pill" style="margin-bottom:24px">BUILT</div>
+      <ul class="clean">
+        <li>Working web app with a Python rules engine and audit trail</li>
+        <li>Local AI on a laptop (4-billion-parameter model, free)</li>
+        <li>Tested end to end on a 163-page FERC filing</li>
+      </ul>
+    </div>
+    <div>
+      <div class="pill" style="margin-bottom:24px;background:var(--amber-soft);color:var(--amber)">NEXT 90 DAYS</div>
+      <ul class="clean">
+        <li>Interview 10 developer treasury teams; reconstruct one real security history each</li>
+        <li>Load agreement + tariff as one package</li>
+        <li>Mark estimates subject to true-up; stop double-counting totals</li>
+      </ul>
+    </div>
+    <div>
+      <div class="pill" style="margin-bottom:24px;background:#f1e1dc;color:var(--red)">NOT YET TRUE</div>
+      <ul class="clean">
+        <li>No customers, banks or utilities have validated the value</li>
+        <li>Not legal advice; one real agreement tested</li>
+        <li>AI extraction is experimental and below our own quality gate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:auto;margin-bottom:20px;border-left:6px solid var(--green)"><p style="margin:0"><b>Stop rule.</b> If treasury teams cannot show a real case where conditional security was misjudged, we stop investing in this thesis. The test is designed to be failable.</p></div>
+  <div class="foot"><span>LoadBond</span><span>11</span></div>
+</section>
+
+<!-- 12. Close -->
+<section class="slide band">
+  <div class="brand" style="color:#f3f2ec"><span class="bars"><i style="background:#f3f2ec"></i><i style="background:#f3f2ec"></i><i style="background:#f3f2ec"></i><i style="background:#f3f2ec"></i></span>LoadBond</div>
+  <div style="margin-top:auto">
+    <div class="kicker">In one line</div>
+    <h1 style="font-size:96px">“At least $2,111,149”<br>is the honest answer.<br>LoadBond is built to give it.</h1>
+    <p style="font-size:32px;max-width:1500px;margin-top:44px;color:#dfe8e2">Exact exposure for the security that keeps clean-energy projects in the queue, traced to the source, with every unknown left visible.</p>
+  </div>
+  <div class="foot" style="color:#bcd3c7"><span>Prototype built with AI coding assistance; started from an earlier synthetic prototype and research report (disclosed)</span><span>12</span></div>
+</section>
+
+<script>
+  const s = new URLSearchParams(location.search).get("s");
+  if (s) {
+    document.body.classList.add("solo");
+    const slides = document.querySelectorAll(".slide");
+    slides[Number(s) - 1]?.classList.add("on");
+  }
+</script>
+</body>
+</html>

@@ -18,6 +18,12 @@ Reviewed October 9, 2026. This register identifies which claims are supported an
 | Pelicans Jaw amounts / non-concurrency | Research report contains unresolved citation IDs | NOT independently substantiated here; obtain SEC filing and full operative clauses before citing as precedent |
 | Model names, latency and pricing in report | Research report | NOT assumed current or accessible; configure and verify against account and provider documentation |
 | Customer occurrence, bank acceptance, utility protection | No actual records supplied | OPEN commercial hypotheses; no positive outcome claimed |
+| Queue size, agreements, durations, completion rates | https://emp.lbl.gov/queues and LBNL “Queued Up: 2026 Edition” slide deck (data through end of 2025) | ~2,061 GW active (1,312 GW generation, 749 GW storage), 8,244 projects; 549 GW with draft or executed IA not yet operating; median IR→COD 61 months for 2025 (22 in 2008); 13% of 2000–2020 capacity reached COD, 75% withdrawn |
+| Order 2023 security ladder | https://www.ferc.gov/explainer-interconnection-final-rule; https://www.orrick.com/en/Insights/2023/08/FERC-Finalizes-Rule-Adopting-Interconnection-Reforms | Study deposit $35k + $1k/MW (20–80 MW), $150k (80–200 MW), $250k (≥200 MW); readiness deposit 2× study deposit, then 5%, 10%, 20% of network-upgrade costs at LGIA; withdrawal penalties when material |
+| Forms of security | https://www.ferc.gov/explainer-interconnection-final-rule-2023-A | Order 2023-A allows surety bonds in addition to cash and irrevocable letters of credit |
+| LC cost ~1% of face historically; ~3% practical ceiling | https://segueinfra.com/articles/the-cash-cow-that-no-american-bank-seems-to-want; https://segueinfra.com/articles/deposits-deposits-deposits | Developer-authored blog; also gives a portfolio average of ~$0.05/W of security (range $0–0.37/W) across IX, PPAs, purchase orders and swaps. Its ~$22B annual total is NOT used: the stated inputs do not reproduce it |
+| LC pricing 100 bp rising to 200–275 bp | https://evergreensurety.com/posting-collateral-generation-transmission-distribution-projects/ | Surety provider with a commercial interest; used only alongside Segue for the 1–3% range |
+| $21k–$63k/yr fees; ~$27B illustration | Arithmetic: $2,111,149 × 1–3%; 549 GW × $0.05/W | Labelled in the deck as arithmetic and as an order-of-magnitude illustration, not a measured market size |
 
 Original input files remain in the user's Downloads folder. Local hashes and import provenance are recorded in provenance.json; originals were not modified.
 
