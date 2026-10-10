@@ -52,7 +52,7 @@ class Strict(BaseModel):
 
 class Project(Strict):
     name: str = Field(min_length=1, max_length=160)
-    mw: int | None = Field(default=None, ge=0)
+    mw: int | float | None = Field(default=None, ge=0, le=100000)
     archived: bool = False
     synthetic: bool = False
 
@@ -350,11 +350,11 @@ def install(app, auth, data_path):
         try:
             if name.lower().endswith('.pdf'):
                 reader = PdfReader(io.BytesIO(raw))
-                if len(reader.pages) > 100:
-                    raise ValueError('Maximum 100 pages')
+                if len(reader.pages) > 500:
+                    raise ValueError('Maximum 500 pages')
                 pages = [p.extract_text() or '' for p in reader.pages]
-                if any(not p.strip() for p in pages):
-                    raise ValueError('PDF contains a page without text; OCR is not supported')
+                if not any(p.strip() for p in pages):
+                    raise ValueError('PDF has no extractable text; scanned documents need OCR, which is not supported')
             elif name.lower().endswith(('.html','.htm')):
                 from .ingestion import html_pages
                 pages=html_pages(raw)
@@ -362,8 +362,7 @@ def install(app, auth, data_path):
                 pages = [raw.decode('utf-8-sig')]
             else:
                 raise ValueError('Use text PDF, TXT, MD or HTML')
-            limit=2_000_000 if name.lower().endswith(('.html','.htm')) else 200_000
-            if not ''.join(pages).strip() or sum(map(len, pages)) > limit:
+            if not ''.join(pages).strip() or sum(map(len, pages)) > 2_000_000:
                 raise ValueError('Document text exceeds supported size or is empty')
             if source_url and not source_url.startswith('https://'):
                 raise ValueError('Primary-source reference must be an HTTPS URL; no URL is fetched automatically')
@@ -401,8 +400,9 @@ def install(app, auth, data_path):
                 target.write_bytes(raw)
             value = {'id': str(uuid4()), 'name': name, 'pages': pages, 'sha256': sha, 'agreement_id': old['agreement_id'] if old else str(uuid4()), 'version': old['version']+1 if old else 1, 'superseded': False, 'processing': 'UPLOADED'}
             value['source_url']=source_url
+            value['textless_pages']=[n for n, text in enumerate(pages, 1) if not text.strip()]
             put(c, 'documents', pid, value)
-            audit(c, pid, tenant, 'Document uploaded', {'document_id': value['id'], 'replaces': replaces, 'sha256': sha})
+            audit(c, pid, tenant, 'Document uploaded', {'document_id': value['id'], 'replaces': replaces, 'sha256': sha, 'textless_pages': value['textless_pages']})
             return value
 
     @router.post('/projects/{pid}/documents/{key}/complete')
@@ -419,7 +419,7 @@ def install(app, auth, data_path):
                 raise HTTPException(409, 'Wait for extraction, or explicitly abandon failed/interrupted attempts before manual completion')
             d['processing'], d['completion_reason'] = 'REVIEWED', req.reason
             put(c, 'documents', pid, d)
-            audit(c, pid, tenant, 'Document review completed', {'document_id': key, 'reason': req.reason})
+            audit(c, pid, tenant, 'Document review completed', {'document_id': key, 'reason': req.reason, 'textless_pages': d.get('textless_pages', [])})
             return d
 
     def snapshot(c, pid, tenant, scenario_id):

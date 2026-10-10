@@ -1,0 +1,54 @@
+{
+  "source": {
+    "url": "https://www.pjm.com/pjmfiles/pub/planning/project-queues/isa/aa2_165_isa.pdf",
+    "sha256": "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+    "pages": 163,
+    "characters": 377697,
+    "textless_pages": [
+      20
+    ]
+  },
+  "status": "COMPLETE",
+  "issues": [],
+  "metrics": {
+    "instrument_face": {
+      "maximum_cents": 211114900,
+      "basis": "LOWER_BOUND"
+    },
+    "drawable": {
+      "maximum_cents": null,
+      "basis": "UNKNOWN"
+    },
+    "obligations": {
+      "maximum_cents": 716084300,
+      "basis": "REVIEWED_MODEL"
+    },
+    "reimbursement_debt": {
+      "maximum_cents": null,
+      "basis": "UNKNOWN"
+    }
+  },
+  "dimensions": [
+    "customer_terminated",
+    "safe_harbor_documentation_provided",
+    "scope_change_increases_cost",
+    "upgrade_work_completed"
+  ],
+  "feasible_states": 32,
+  "findings": [
+    "DOCUMENT_MISMATCH: Referenced evidence unresolved: Final cost accounting after construction (Appendix 2 Section 11.2.3)",
+    "DOCUMENT_MISMATCH: Referenced evidence unresolved: PJM Tariff Section 212.4 - form of security, draw and return terms",
+    "DOCUMENT_MISMATCH: Referenced evidence unresolved: PJM notice of additional tax gross-up Security amount (Appendix 2 Section 24.4)",
+    "UNQUANTIFIED_INCREASE: Required security can increase by an unstated amount: Security increase after scope change",
+    "UNQUANTIFIED_INCREASE: Required security can increase by an unstated amount: Tax gross-up additional Security",
+    "UNRESOLVED_TRIGGER: Documentary draw rights or remaining availability unresolved",
+    "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Customer terminated on 60 days notice",
+    "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Scope change increases cost responsibility",
+    "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Tax safe-harbor documentation provided",
+    "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Upgrade work completed (security reduction trigger)"
+  ],
+  "replay": {
+    "snapshot_matches": true,
+    "result_matches": true
+  }
+}

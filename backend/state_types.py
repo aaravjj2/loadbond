@@ -85,8 +85,6 @@ class ContractRule(Strict):
             raise ValueError('Replacement requires a successor instrument')
         if self.kind=='LIMIT' and self.amount_cents is None:
             raise ValueError('Limit amount is unresolved')
-        if self.kind=='STEP_UP' and self.percent is None:
-            raise ValueError('Step-up percentage is unresolved')
         if self.lag_days and not self.event_id:
             raise ValueError('Release lag requires a dated source event')
         return self

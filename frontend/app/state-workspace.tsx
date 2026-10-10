@@ -592,13 +592,17 @@ export default function StateWorkspace({
                   >
                     <span>{labels[key]} maximum</span>
                     <strong>
+                      {result?.metrics?.[key]?.basis === "LOWER_BOUND" &&
+                        "At least "}
                       {dollars(result?.metrics?.[key]?.maximum_cents)}
                     </strong>
                     <small>
                       {key === "drawable" &&
                       result?.metrics?.drawable?.maximum_cents == null
                         ? "Documentary rights or balances unresolved"
-                        : current
+                        : result?.metrics?.[key]?.basis === "LOWER_BOUND"
+                          ? "Can rise by an unstated amount"
+                          : current
                           ? current.scenario_name
                           : "No saved assessment"}
                     </small>
@@ -1049,8 +1053,13 @@ export default function StateWorkspace({
                   <div className="state-metric" key={key}>
                     <span>{labels[key]} maximum</span>
                     <strong>
+                      {result?.metrics?.[key]?.basis === "LOWER_BOUND" &&
+                        "At least "}
                       {dollars(result?.metrics?.[key]?.maximum_cents)}
                     </strong>
+                    {result?.metrics?.[key]?.basis === "LOWER_BOUND" && (
+                      <small>{result.metrics[key].notice}</small>
+                    )}
                   </div>
                 ))}
               </div>
@@ -1335,6 +1344,8 @@ export default function StateWorkspace({
                   {d.name}
                   <small>
                     v{d.version} · {d.superseded ? "SUPERSEDED" : d.processing}
+                    {!!d.textless_pages?.length &&
+                      ` · ${d.textless_pages.length} textless`}
                   </small>
                 </button>
               ))}
@@ -1369,6 +1380,14 @@ export default function StateWorkspace({
               {doc?.superseded && (
                 <p className="state-historical">
                   Historical source · cannot support a new review.
+                </p>
+              )}
+              {!!doc?.textless_pages?.length && (
+                <p role="alert">
+                  No extractable text on page
+                  {doc.textless_pages.length === 1 ? "" : "s"}{" "}
+                  {doc.textless_pages.join(", ")}. Check the original file for
+                  scanned or image-only content before completing review.
                 </p>
               )}
               <pre>

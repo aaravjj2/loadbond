@@ -151,3 +151,41 @@ def test_clause_instruction_sentences_unselectable_and_notice_not_release(monkey
     ('The letter of credit may be issued only after site selection.',False),('If construction starts, a valid utility consent must exist.',False)])
 def test_clauses_without_transaction_subject_are_withheld(quote,withheld):
     assert bool(clauses.screen_reason({'quote':quote}))==withheld
+
+def test_unstated_increase_reports_lower_bound_not_maximum(client):
+    root,m,req,doc,i,claims,ev=make(client)
+    base=p(client,root,'assessments',req)['result']
+    assert base['metrics']['instrument_face']['basis']=='REVIEWED_MODEL' and 'lower_bound_metrics' not in base['envelope'][0]
+    step=p(client,root,'rules',{'model_id':m['id'],'kind':'STEP_UP','label':'Tax gross-up','interpretation':'More security is required; no amount is stated.','target_id':i['id'],'percent':None,'when':[{'key':'branch_a','value':True}],'evidence':i['evidence']})
+    p(client,root,'rules/'+step['id']+'/review',{'decision':'VERIFIED','reason':'Increase explicit, size unstated'})
+    r=p(client,root,'assessments',req)['result']
+    face=r['metrics']['instrument_face']
+    assert r['status']=='COMPLETE' and face['maximum_cents']==50000000 and face['basis']=='LOWER_BOUND' and 'at least' in face['notice']
+    assert r['envelope'][0]['lower_bound_metrics']==['drawable','instrument_face']
+    assert any(f['kind']=='UNQUANTIFIED_INCREASE' for f in r['findings'])
+    known=p(client,root,'rules',{'model_id':m['id'],'kind':'STEP_UP','label':'Downgrade','interpretation':'Explicit 125 percent.','target_id':i['id'],'percent':125,'when':[{'key':'branch_a','value':True}],'evidence':i['evidence']})
+    p(client,root,'rules/'+known['id']+'/review',{'decision':'VERIFIED','reason':'Explicit step-up reviewed'})
+    r=p(client,root,'assessments',req)['result']
+    assert r['metrics']['instrument_face']['maximum_cents']==62500000 and r['metrics']['instrument_face']['basis']=='LOWER_BOUND'
+
+def _pdf(pages):
+    from io import BytesIO
+    from pypdf import PdfWriter
+    from pypdf.generic import DecodedStreamObject,DictionaryObject,NameObject
+    w=PdfWriter()
+    font=w._add_object(DictionaryObject({NameObject('/Type'):NameObject('/Font'),NameObject('/Subtype'):NameObject('/Type1'),NameObject('/BaseFont'):NameObject('/Helvetica')}))
+    for text in pages:
+        page=w.add_blank_page(612,792)
+        if text:
+            page[NameObject('/Resources')]=DictionaryObject({NameObject('/Font'):DictionaryObject({NameObject('/F1'):font})})
+            s=DecodedStreamObject();s.set_data(b'BT /F1 12 Tf 72 720 Td ('+text.encode()+b') Tj ET');page[NameObject('/Contents')]=w._add_object(s)
+    out=BytesIO();w.write(out);return out.getvalue()
+
+def test_long_pdfs_with_textless_pages_upload_and_flag_those_pages(client):
+    post(client,'profile',{'name':'Alice reviewer'})
+    project=post(client,'projects',{'name':'Filed agreement','mw':74.9});root='/v2/projects/'+project['id']
+    assert project['mw']==74.9
+    pages=['Security of USD 5,000']*150+['']+['Section 6 milestones']
+    r=client.post(root+'/documents',files={'file':('filed.pdf',_pdf(pages))});assert r.status_code==200,r.text
+    assert r.json()['textless_pages']==[151] and len(r.json()['pages'])==152
+    assert client.post(root+'/documents',files={'file':('scan.pdf',_pdf(['','']))}).status_code==422

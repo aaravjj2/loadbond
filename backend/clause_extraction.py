@@ -145,7 +145,7 @@ def install(router,auth,db,get_project,get,rows,put,audit,evidence,validate,app)
                 usd_amounts={n for currency,n,_ in ai.amounts(p['quote']) if currency=='USD'}
                 amounts_to_check=([body.get('amount_cents')] if p['category']=='RULE' and body['kind']=='LIMIT' else [body.get('amount_cents'),body.get('remaining_available_cents')] if p['category']=='EVENT' else [])
                 if any(n is not None and n not in usd_amounts for n in amounts_to_check):raise HTTPException(422,'An imported USD amount must match an explicit USD source token; missing/non-USD values cannot be fabricated')
-                if p['category']=='RULE' and body['kind']=='STEP_UP' and not re.search(r'\b'+str(body['percent'])+r'\s*(?:percent|%)',p['quote'],re.I):raise HTTPException(422,'The imported step-up percentage is not explicit in the quotation')
+                if p['category']=='RULE' and body['kind']=='STEP_UP' and body.get('percent') is not None and not re.search(r'\b'+str(body['percent'])+r'\s*(?:percent|%)',p['quote'],re.I):raise HTTPException(422,'The imported step-up percentage is not explicit in the quotation')
                 value={'id':str(uuid4()),**body,'verification':'UNVERIFIED'}
                 validate(c,pid,table,value)
                 job=get(c,'extractions',pid,p['job_id'])

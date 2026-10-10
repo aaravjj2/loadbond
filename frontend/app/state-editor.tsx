@@ -156,7 +156,8 @@ export default function StateEditor({
           requires_value: str("requires_value") !== "false",
           metric: str("metric") || "FACE",
           amount_cents: kind === "LIMIT" ? minor(str("amount")) : null,
-          percent: kind === "STEP_UP" ? Number(str("percent")) : null,
+          percent:
+            kind === "STEP_UP" && str("percent") ? Number(str("percent")) : null,
           valid_from: dateValue(f, "valid_from"),
           valid_to: dateValue(f, "valid_to"),
           event_id: str("event_id") || null,
@@ -844,14 +845,14 @@ export default function StateEditor({
               )}
               {kind === "STEP_UP" && (
                 <label>
-                  Required percentage
+                  Required percentage (leave blank if the source states no
+                  amount)
                   <input
                     name="percent"
                     type="number"
-                    defaultValue={initial.percent || 125}
+                    defaultValue={initial.percent ?? ""}
                     min={100}
                     max={1000}
-                    required
                   />
                 </label>
               )}

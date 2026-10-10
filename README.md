@@ -6,7 +6,7 @@ The workbench opens on the v3 state engine (**Transaction**, **Sources & Review*
 
 Choose **Explore the transaction case** for Riverbend: selecting a site retains $30M instrument exposure; explicit synthetic release review changes it to $18M; withdrawing release support restores $30M. Underlying obligations remain separate at $20M. The walkthrough uses the server solver, current source evidence, explicit decisions, and immutable history. Its initial inputs are authored and pre-reviewed, not AI-extracted or user-approved.
 
-See [the product brief](docs/transaction/product-brief.md), [90-second demonstration script](docs/transaction/demo-script.md), and [verification record](docs/transaction/verification.json). Earlier videos and submission decks show earlier milestones; they do not depict the current transaction walkthrough. No commercial benefit or legal feasibility has been validated.
+See [the product brief](docs/transaction/product-brief.md), [90-second demonstration script](docs/transaction/demo-script.md), and [verification record](docs/transaction/verification.json). Earlier videos and submission decks show earlier milestones; they do not depict the current transaction walkthrough. No commercial benefit or legal feasibility has been validated. The first trial on a real executed agreement (PJM Service Agreement No. 4704) is in [docs/public-agreement-trial.md](docs/public-agreement-trial.md).
 
 ## Run
 
@@ -43,7 +43,7 @@ cd frontend
 pnpm build   # or, without pnpm on PATH: node node_modules/next/dist/bin/next build
 ```
 
-80 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial and off-topic sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
+82 tests pass (October 9), covering the v1/v2/v3 solvers, extraction failure atomicity, non-financial and off-topic sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing and legacy regressions. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
 
 ## Architecture and compatibility
 

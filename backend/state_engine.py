@@ -104,7 +104,7 @@ def evaluate(snapshot):
             boundary((date.fromisoformat(events[r['event_id']]['effective_on'])+timedelta(days=r['lag_days'])).isoformat())
     if len(days)>256:
         return {'status':'UNSUPPORTED','solver_version':VERSION,'issues':['More than 256 time boundaries; split the model'],'metrics':{},'findings':findings,'envelope':[]}
-    best={m:None for m in METRICS}; envelope=[]; all_states=[]; total_states=0; unknown_draw=False; unknown_metrics=set()
+    best={m:None for m in METRICS}; envelope=[]; all_states=[]; total_states=0; unknown_draw=False; unknown_metrics=set(); lower_bound=set()
     claim_rules={r['target_id'] for r in rules if r['kind']=='OBLIGATION'}
     total_dimensions=set()
     def day_state(day):
@@ -129,7 +129,7 @@ def evaluate(snapshot):
         for day in sorted(days):
             values, ordered,dimensions=day_state(day)
             usable=[r for r in rules if applies(r,day,events)]
-            maxima={m:None for m in METRICS}; feasible=0; gross_face=0; day_unknown_draw=False
+            maxima={m:None for m in METRICS}; feasible=0; gross_face=0; day_unknown_draw=False; day_lower=set()
             for bits in product((False,True),repeat=len(dimensions)):
                 state={**values,**dict(zip(dimensions,bits))}
                 if any((r['kind'] in ('IMPLICATION','PREREQUISITE') and predicate(r,state) and state.get(r['requires_key'])!=r['requires_value']) or
@@ -175,11 +175,17 @@ def evaluate(snapshot):
                         balance_last[sig]=e['event_type']
                 gross=dict(face)
                 # Increasing stress applies to gross and constrained exposure under the same state.
+                unquantified=[]
                 for iid in face:
                     step=[r for r in usable if r['kind']=='STEP_UP' and r['target_id']==iid and predicate(r,state)]
-                    if len({r['percent'] for r in step})>1: raise ValueError('Conflicting step-up interpretations')
-                    if step:
-                        face[iid]=face[iid]*step[0]['percent']//100; gross[iid]=gross[iid]*step[0]['percent']//100
+                    known=[r for r in step if r['percent'] is not None]
+                    if len({r['percent'] for r in known})>1: raise ValueError('Conflicting step-up interpretations')
+                    if known:
+                        face[iid]=face[iid]*known[0]['percent']//100; gross[iid]=gross[iid]*known[0]['percent']//100
+                    unquantified+=[r for r in step if r['percent'] is None]
+                for r in unquantified:
+                    finding('UNQUANTIFIED_INCREASE','Required security can increase by an unstated amount: '+r['label'],[r['id']],r['evidence'])
+                if unquantified: day_lower.update(('instrument_face','drawable')); lower_bound.update(('instrument_face','drawable'))
                 active=[r for r in usable if predicate(r,state)]
                 for iid in face:
                     rs=[r for r in usable if r.get('target_id')==iid]
@@ -232,6 +238,7 @@ def evaluate(snapshot):
             if not feasible: raise ValueError('No feasible state; resolve contradictory reviewed rules')
             envelope.append({'as_of':day,'feasible_states':feasible,'gross_instrument_face_cents':gross_face,
                              'maxima':{m:maxima[m]['maximum_cents'] if maxima[m] and not (m=='drawable' and day_unknown_draw) else None for m in METRICS}})
+            if day_lower: envelope[-1]['lower_bound_metrics']=sorted(day_lower)
             total_states+=feasible
     except (ValueError,OverflowError) as exc:
         return {'status':'UNSUPPORTED' if isinstance(exc,OverflowError) else 'INCOMPLETE','solver_version':VERSION,'issues':[str(exc)],'findings':findings,'metrics':{},'envelope':[]}
@@ -246,6 +253,8 @@ def evaluate(snapshot):
         if iid not in best['instrument_face']['contributions']:
             finding('DOCUMENT_MISMATCH','Obligation is not mapped to a modeled instrument',[c['id']],c['evidence'])
     metrics={m:({'maximum_cents':None,'basis':'UNKNOWN','notice':'Documentary rights or balances are not sufficiently established.'} if best[m] is None else {**best[m],'basis':'REVIEWED_MODEL'}) for m in METRICS}
+    for m in lower_bound:
+        if best[m] is not None: metrics[m].update(basis='LOWER_BOUND',notice='A reviewed provision can increase this amount by an unstated size; the true maximum is at least this figure.')
     gross=max(e['gross_instrument_face_cents'] for e in envelope)
     return {'status':'COMPLETE','solver_version':VERSION,'issues':[],'metrics':metrics,'findings':findings,
             'gross_instrument_face_cents':gross,'modeled_difference_cents':gross-metrics['instrument_face']['maximum_cents'],

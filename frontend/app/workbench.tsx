@@ -755,6 +755,8 @@ export default function Workbench() {
                           <small>
                             v{d.version} ·{" "}
                             {d.superseded ? "SUPERSEDED" : d.processing}
+                            {!!d.textless_pages?.length &&
+                              ` · no text on page ${d.textless_pages.join(", ")}`}
                           </small>
                         </button>
                       ))}
@@ -1338,6 +1340,7 @@ function Editor({
         defaultValue={item?.[name] ?? ""}
         required={required}
         min={type === "number" ? 0 : undefined}
+        step={type === "number" ? "any" : undefined}
       />
     </label>
   );
