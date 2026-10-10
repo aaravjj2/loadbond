@@ -49,7 +49,7 @@ cd frontend
 pnpm build   # or, without pnpm on PATH: node node_modules/next/dist/bin/next build
 ```
 
-89 tests pass (October 10), covering tolerant quotation location against PDF text artifacts, total/component double-count flags, the v1/v2/v3 solvers, extraction failure atomicity, non-financial and off-topic sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing, legacy regressions and reproducible read-only public cold starts. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
+91 tests pass (October 10), covering referenced-document version status, estimated obligations, tolerant quotation location against PDF text artifacts, total/component double-count flags, the v1/v2/v3 solvers, extraction failure atomicity, non-financial and off-topic sentence withholding, isolation, review separation, the Riverbend case, state-engine release timing, legacy regressions and reproducible read-only public cold starts. Production build and browser verification passed. See `docs/local-ai-release.md` and `docs/verification.md` for evidence and boundaries. Run `python -m backend.evaluate_local` separately for live model evaluation.
 
 ## Architecture and compatibility
 

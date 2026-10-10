@@ -21,7 +21,7 @@
     },
     "obligations": {
       "maximum_cents": 716084300,
-      "basis": "REVIEWED_MODEL"
+      "basis": "ESTIMATE"
     },
     "reimbursement_debt": {
       "maximum_cents": null,
@@ -37,7 +37,6 @@
   "feasible_states": 32,
   "findings": [
     "DOCUMENT_MISMATCH: Referenced evidence unresolved: Final cost accounting after construction (Appendix 2 Section 11.2.3)",
-    "DOCUMENT_MISMATCH: Referenced evidence unresolved: PJM Tariff Section 212.4 - form of security, draw and return terms",
     "DOCUMENT_MISMATCH: Referenced evidence unresolved: PJM notice of additional tax gross-up Security amount (Appendix 2 Section 24.4)",
     "UNQUANTIFIED_INCREASE: Required security can increase by an unstated amount: Security increase after scope change",
     "UNQUANTIFIED_INCREASE: Required security can increase by an unstated amount: Tax gross-up additional Security",
@@ -45,7 +44,8 @@
     "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Customer terminated on 60 days notice",
     "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Scope change increases cost responsibility",
     "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Tax safe-harbor documentation provided",
-    "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Upgrade work completed (security reduction trigger)"
+    "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Upgrade work completed (security reduction trigger)",
+    "VERSION_MISMATCH: Attached text is a later version than the one governing PJM Tariff Section 212.4 - form of security, draw and return terms: attached text took effect 4/1/2020 (ER19-1958); the ISA took effect 5/3/2017"
   ],
   "replay": {
     "snapshot_matches": true,

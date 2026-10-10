@@ -1449,6 +1449,7 @@ function Editor({
           site_id: get("site_id") || null,
           legal_status: "UNKNOWN",
           mapping: get("mapping"),
+          estimate: f.get("estimate") === "on",
           evidence: evidence.evidence,
         };
       if (kind === "dependencies")
@@ -1574,6 +1575,11 @@ function Editor({
                   "Component mapping",
                   ["UNCERTAIN", "ADDITIVE"],
                   "UNCERTAIN",
+                )}
+                {checkbox(
+                  "estimate",
+                  "Estimate subject to true-up (final amount may be greater or lesser)",
+                  false,
                 )}
               </>
             )}

@@ -13,8 +13,10 @@ Assessed 2017-05-03 to 2018-12-31, possible future states, 32 feasible states. R
 | Metric | Result | Source |
 |---|---|---|
 | Letter of credit (Security) | **At least $2,111,149**: lower bound | ISA §5.0; Specifications §4.6 |
-| Cost obligations (estimates) | $7,160,843 | Specifications §4.1 ($519,511) and §4.2 ($6,641,332) |
-| Drawable amount | Unknown | Draw terms are in PJM Tariff §212.4, which is not loaded |
+| Cost obligations | $7,160,843, labelled **estimate, subject to true-up** | Specifications §4.1 ($519,511) and §4.2 ($6,641,332); Appendix 2 §11.2.3 |
+| Drawable amount | Unknown | Neither the ISA nor PJM Tariff §212.4 states when the security may be drawn; that is in the issued letter of credit, which is not public |
+
+The package has two documents: the ISA and a three-page excerpt of the current PJM Tariff §212.4 (see "Loading the tariff" below).
 
 The security covers about 29% of the customer's estimated cost responsibility. The rest is billed quarterly in advance (Appendix 2 §11.2.2).
 
@@ -60,10 +62,22 @@ Verdict: extraction works as a way to find the money in a long filing. It surfac
 - **Pasted quotations now match PDF text artifacts.** Extracted text contains splits such as "bene fit" and "Int erconnection", line-break hyphens, doubled spaces and curly quotes. A quotation copied cleanly from a PDF viewer used to fail. Locating a quotation now ignores whitespace, line-break hyphens, soft hyphens and quotation-mark or dash styles. The stored evidence is still the page's own characters, `page_text[start:end]`, so review and replay are unchanged. Folding needs at least 8 meaningful characters, and a quotation that is on a different page reports that page. `samples/public-isa/check_quotes.py` confirms clean quotations of the §5.0 sentence (page 14) and the security total (page 25) now locate in this filing.
 - **Totals, components and repeats are flagged before review.** Proposals whose amount equals the sum of a consecutive run of nearby proposals are flagged on both sides ("import the total or its components, not both"), and an amount proposed from different sentences is flagged as a repeat. On this filing's saved extraction, the check flags the $7,160,843 total and its four cost lines on page 24, and the $3,157,592 line repeated from FERC's letter on page 6. It does not flag the $2,111,149 security. Flags are review issues, not automatic deletions.
 
+## Loading the tariff (October 10)
+
+The ISA says its security is provided "in accord with Section 212.4 of the Tariff". The consolidated PJM Open Access Transmission Tariff is public, but it is one 146 MB PDF of 6,606 pages ([pjm.com](https://www.pjm.com/directory/merged-tariffs/oatt.pdf), SHA-256 `d9daac65…`). That exceeds the upload limit, so `samples/public-isa/make_tariff_excerpt.py` cuts out the three pages of §212.4 (pages 553–555) and records their provenance in `pjm-oatt-212.4-excerpt.json`.
+
+What the tariff text showed:
+
+- **It is the wrong version.** Its header says it took effect on April 1, 2020 (Docket ER19-1958). The Chestnut ISA took effect on May 3, 2017, so this is not necessarily the text that governed it. Before this trial, attaching any document resolved a reference. Links now record whether the attached text is the governing version, an unconfirmed one, or a later one. This trial marks it as later, which raises a `VERSION_MISMATCH` finding for counsel. Had the reference been required, the assessment would stay incomplete.
+- **It states no draw conditions.** §212.4(b)(3) says the provider "shall hold the security related to construction until as-built drawings are received and settlement of the final invoice", and that it "may be reduced as construction progresses". It does not say when the security may be drawn. The draw terms belong to the issued letter of credit, which is not public, so the drawable amount stays unknown, now for a specific and documented reason.
+- **No rules were taken from it.** Using a later version to model a 2017 agreement would be the kind of silent error LoadBond exists to prevent.
+
+The two cost charges are now marked as estimates. The ISA calls them estimates, and Appendix 2 §11.2.3 trues them up "whether greater or lesser". The obligations metric keeps the same amount but is labelled `ESTIMATE` with that notice.
+
 ## Remaining gaps (not fixed)
 
-- **Security terms live in other documents.** Form of security, draw conditions and return on termination are in PJM Tariff §212.4. Cost responsibility is in Tariff §217 and the construction service agreement. A real assessment needs a multi-document package, and the Tariff is far longer than this agreement.
-- **Estimates are not marked as estimates.** Obligations that can be "greater or lesser" are displayed like settled amounts. Adding a field to obligations changes every new snapshot's contents, so it is deferred until the hosted reference snapshots can be regenerated deliberately.
+- **The governing 2017 text of §212.4 is not loaded.** Historical tariff versions are on FERC's eTariff system; this trial did not retrieve one. Cost responsibility is also in Tariff §217 and the construction service agreement, neither of which is loaded.
+- **Very large references must be excerpted by hand.** The product has no way to load a page range of a 6,606-page document; the excerpt and its provenance are made outside the product.
 - **Boilerplate obligations without amounts** (about 20 on this filing) are still proposed; the reviewer must dismiss them.
 - **The current status of the project is unknown.** The agreement is from 2017, and this trial reconstructs nothing that happened after execution.
 

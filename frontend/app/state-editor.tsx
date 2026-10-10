@@ -189,6 +189,8 @@ export default function StateEditor({
           relationship: str("relationship"),
           target_document_id: str("target_document_id") || null,
           required_for_assessment: f.has("required_for_assessment"),
+          target_version: str("target_version") || null,
+          target_version_note: str("target_version_note") || null,
           evidence: spans,
         };
       await onSave(body, str("import_reason"));
@@ -959,6 +961,35 @@ export default function StateEditor({
                 Assessment must remain incomplete until this reference is
                 resolved
               </label>
+              <div className="state-form-grid">
+                <label>
+                  Attached version
+                  <select
+                    name="target_version"
+                    defaultValue={initial.target_version || ""}
+                  >
+                    <option value="">Not assessed</option>
+                    <option value="GOVERNING">
+                      Confirmed governing version
+                    </option>
+                    <option value="UNCONFIRMED">
+                      Governing version not confirmed
+                    </option>
+                    <option value="LATER">
+                      Later version than the one that governs
+                    </option>
+                  </select>
+                </label>
+                <label>
+                  Version note
+                  <input
+                    name="target_version_note"
+                    maxLength={300}
+                    defaultValue={initial.target_version_note || ""}
+                    placeholder="e.g. effective 4/1/2020; agreement effective 5/3/2017"
+                  />
+                </label>
+              </div>
             </>
           )}
           <fieldset>

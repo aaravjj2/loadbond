@@ -142,7 +142,14 @@ class DocumentLink(Strict):
     relationship: Literal['REFERENCES','AMENDS','SUPPLEMENTS','NOTICE_FOR','RELEASE_FOR'] = 'REFERENCES'
     target_document_id: str | None = None
     required_for_assessment: bool = True
+    target_version: Literal['GOVERNING','UNCONFIRMED','LATER'] | None = Field(default=None, exclude_if=lambda v: v is None)
+    target_version_note: str | None = Field(default=None, max_length=300, exclude_if=lambda v: v is None)
     evidence: list[Evidence] = Field(min_length=1)
+    @model_validator(mode='after')
+    def version_needs_target(self):
+        if (self.target_version or self.target_version_note) and not self.target_document_id:
+            raise ValueError('A version status describes an attached target document; attach one first')
+        return self
 
 class OpeningBalance(Strict):
     model_id: str

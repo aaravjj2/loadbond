@@ -83,6 +83,13 @@ def evaluate(snapshot):
         if not target or target.get('superseded') or not eligible(link,docs):
             finding('DOCUMENT_MISMATCH','Referenced evidence unresolved: '+link['reference_label'],[link['id']],link['evidence'])
             if link['required_for_assessment']:issues.append('Required reference unresolved: '+link['reference_label'])
+        elif link.get('target_version') in ('UNCONFIRMED','LATER'):
+            note=(': '+link['target_version_note']) if link.get('target_version_note') else ''
+            if link['target_version']=='LATER':
+                finding('VERSION_MISMATCH','Attached text is a later version than the one governing '+link['reference_label']+note,[link['id']],link['evidence'],None,'COUNSEL')
+                if link['required_for_assessment']:issues.append('Required reference is attached only in a later version: '+link['reference_label'])
+            else:
+                finding('VERSION_MISMATCH','Governing version not confirmed for '+link['reference_label']+note,[link['id']],link['evidence'],None,'COUNSEL')
     for r in rules:
         refs={c['key'] for c in r['when']+r['any_of']} | set(r['member_keys']) | ({r['requires_key']} if r.get('requires_key') else set())
         if refs-keys: issues.append('Missing fact definitions: '+', '.join(sorted(refs-keys)))
@@ -255,6 +262,9 @@ def evaluate(snapshot):
     metrics={m:({'maximum_cents':None,'basis':'UNKNOWN','notice':'Documentary rights or balances are not sufficiently established.'} if best[m] is None else {**best[m],'basis':'REVIEWED_MODEL'}) for m in METRICS}
     for m in lower_bound:
         if best[m] is not None: metrics[m].update(basis='LOWER_BOUND',notice='A reviewed provision can increase this amount by an unstated size; the true maximum is at least this figure.')
+    estimated=sorted(c['id'] for c in claims if c.get('estimate') and best['obligations'] and c['id'] in best['obligations']['active_claims'])
+    if estimated:
+        metrics['obligations'].update(basis='ESTIMATE',estimated_claim_ids=estimated,notice='Includes estimated amounts subject to final true-up; the settled figure may be greater or lesser.')
     gross=max(e['gross_instrument_face_cents'] for e in envelope)
     return {'status':'COMPLETE','solver_version':VERSION,'issues':[],'metrics':metrics,'findings':findings,
             'gross_instrument_face_cents':gross,'modeled_difference_cents':gross-metrics['instrument_face']['maximum_cents'],

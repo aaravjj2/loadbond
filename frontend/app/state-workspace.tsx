@@ -664,6 +664,8 @@ export default function StateWorkspace({
                         ? "Documentary rights or balances unresolved"
                         : result?.metrics?.[key]?.basis === "LOWER_BOUND"
                           ? "Can rise by an unstated amount"
+                          : result?.metrics?.[key]?.basis === "ESTIMATE"
+                          ? "Estimate · subject to final true-up"
                           : current
                           ? current.scenario_name
                           : "No saved assessment"}
@@ -1119,9 +1121,9 @@ export default function StateWorkspace({
                         "At least "}
                       {dollars(result?.metrics?.[key]?.maximum_cents)}
                     </strong>
-                    {result?.metrics?.[key]?.basis === "LOWER_BOUND" && (
-                      <small>{result.metrics[key].notice}</small>
-                    )}
+                    {["LOWER_BOUND", "ESTIMATE"].includes(
+                      result?.metrics?.[key]?.basis,
+                    ) && <small>{result.metrics[key].notice}</small>}
                   </div>
                 ))}
               </div>

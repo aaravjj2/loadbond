@@ -42,6 +42,36 @@ def test_stress_monotonicity_default_and_contradictions(client):
     p(client,root,'rules/'+zero['id']+'/review',{'decision':'VERIFIED','reason':'Explicit synthetic contradictory constraint test'})
     assert p(client,root,'assessments',req)['result']['status']=='INCOMPLETE'
 
+def test_estimated_obligations_are_labelled_and_old_records_are_unchanged(client):
+    root,m,req,doc,i,claims,ev=make(client)
+    assert all('estimate' not in c for c in client.get('/v2/'+root).json()['claims'])
+    run=p(client,root,'assessments',req)
+    assert run['result']['metrics']['obligations']['basis']=='REVIEWED_MODEL'
+    assert p(client,root,'assessments/'+run['id']+'/replay',{})['result_matches']
+    snap=json.loads(json.dumps(run['snapshot']))
+    snap['claims'][0]['estimate']=True
+    r=evaluate(snap)['metrics']['obligations']
+    assert r['basis']=='ESTIMATE' and r['estimated_claim_ids']==[snap['claims'][0]['id']] and 'true-up' in r['notice']
+    assert r['maximum_cents']==run['result']['metrics']['obligations']['maximum_cents']
+    stored=post(client,'projects/'+root.split('/')[1]+'/claims',{'label':'Estimated upgrade cost','amount_cents':100,'kind':'fixed','instrument_id':i['id'],'mapping':'ADDITIVE','estimate':True,'evidence':i['evidence']})
+    assert stored['estimate'] is True
+
+def test_linked_reference_version_controls_completion(client):
+    root,m,req,doc,i,claims,ev=make(client)
+    tariff=client.post('/v2/'+root+'/documents',files={'file':('tariff-2020.txt',b'212.4 Retaining Priority and Security. Effective Date: 4/1/2020.')}).json()
+    base={'model_id':m['id'],'source_document_id':doc['id'],'reference_label':'Tariff section 212.4','target_document_id':tariff['id'],'evidence':i['evidence']}
+    assert client.post('/v3/'+root+'/document-links',json={**base,'target_document_id':None,'target_version':'LATER'}).status_code==422
+    link=p(client,root,'document-links',{**base,'target_version':'LATER','target_version_note':'Attached 2020 text; agreement executed 2017'})
+    p(client,root,'document-links/'+link['id']+'/review',{'decision':'VERIFIED','reason':'Version comparison reviewed'})
+    r=p(client,root,'assessments',req)['result']
+    assert r['status']=='INCOMPLETE' and any('later version' in x for x in r['issues'])
+    for version,complete in [('UNCONFIRMED',True),('GOVERNING',True)]:
+        assert client.patch('/v3/'+root+'/document-links/'+link['id'],json={**base,'target_version':version}).status_code==200
+        p(client,root,'document-links/'+link['id']+'/review',{'decision':'VERIFIED','reason':'Version status reviewed'})
+        r=p(client,root,'assessments',req)['result']
+        assert r['status']=='COMPLETE',r['issues']
+        assert any(f['kind']=='VERSION_MISMATCH' for f in r['findings'])==(version=='UNCONFIRMED')
+
 def test_opening_unknowns_date_reviews_and_reference_gaps(client):
     root,m,req,doc,i,claims,ev=make(client)
     r=p(client,root,'assessments',req)['result'];assert r['metrics']['reimbursement_debt']['maximum_cents'] is None

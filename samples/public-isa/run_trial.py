@@ -16,6 +16,8 @@ from backend import main  # noqa: E402
 
 SOURCE_URL = 'https://www.pjm.com/pjmfiles/pub/planning/project-queues/isa/aa2_165_isa.pdf'
 PDF = HERE / 'pjm-sa4704-chestnut-solar-isa.pdf'
+TARIFF_URL = 'https://www.pjm.com/pjmfiles/directory/merged-tariffs/oatt.pdf'
+TARIFF = HERE / 'pjm-oatt-212.4-excerpt.pdf'
 
 
 def call(c, method, path, **kw):
@@ -62,13 +64,13 @@ def enter(c, report_path=None):
     for label, cents, needle in [('Attachment Facilities Charge (estimate)', 51951100, '4.1 Attachment Facilities Charge: $519,511'),
                                  ('Network Upgrades Charge (estimate)', 664133200, '4.2 Network Upgrades Charge: $6,641,332')]:
         claim = v2(root + '/claims', {'label': label, 'amount_cents': cents, 'kind': 'fixed', 'instrument_id': lc['id'],
-                                      'mapping': 'ADDITIVE', 'legal_status': 'REVIEWED_MODEL_INPUT', 'evidence': ev(needle)})
+                                      'mapping': 'ADDITIVE', 'legal_status': 'REVIEWED_MODEL_INPUT', 'estimate': True, 'evidence': ev(needle)})
         review('v2', 'claims', claim, 'Specifications charge checked; estimate subject to final true-up')
         claims.append(claim)
 
     model = v3('models', {'name': 'ISA security and cost responsibility', 'basis': 'CONTRACTUAL_CAPACITY',
                           'instrument_ids': [lc['id']], 'claim_ids': [c_['id'] for c_ in claims],
-                          'scope_notes': 'Public filed ISA only. The PJM Tariff, the Interconnection Construction Service Agreement, issued LC terms and PJM notices are not loaded.'})
+                          'scope_notes': 'Public filed ISA plus the current text of PJM Tariff section 212.4, which postdates the ISA. The governing 2017 tariff text, the Interconnection Construction Service Agreement, issued LC terms and PJM notices are not loaded.'})
     unmodeled = {
         'upgrade_work_completed': ('Upgrade work completed (security reduction trigger)', 'shall be reduced as portions of the work on required Local Upgrades'),
         'safe_harbor_documentation_provided': ('Tax safe-harbor documentation provided', 'required under Section 24.1 prior to execution of the Interconnection Service Agreement'),
@@ -85,8 +87,14 @@ def enter(c, report_path=None):
                             'when': [{'key': key, 'value': value}], 'evidence': ev(needle),
                             'interpretation': 'The agreement requires more Security in this condition but states no amount or percentage.'})
         review('v3', 'rules', rule, 'Increase is explicit; its size is not stated in the agreement')
+    tariff = call(c, 'post', '/v2/' + root + '/documents', files={'file': (TARIFF.name, TARIFF.read_bytes())}, data={'source_url': TARIFF_URL})
+    review('v3', 'document-links', v3('document-links', {
+        'model_id': model['id'], 'source_document_id': doc['id'], 'target_document_id': tariff['id'], 'required_for_assessment': False,
+        'reference_label': 'PJM Tariff Section 212.4 - form of security, draw and return terms', 'evidence': ev('In accord with Section 212.4 of the Tariff'),
+        'target_version': 'LATER', 'target_version_note': 'attached text took effect 4/1/2020 (ER19-1958); the ISA took effect 5/3/2017'}),
+        'Attached current tariff text; its own header shows it postdates the agreement')
+    call(c, 'post', f'/v2/{root}/documents/{tariff["id"]}/complete', json={'reason': 'Section 212.4 read in full; no draw conditions are stated in it'})
     references = [
-        ('PJM Tariff Section 212.4 - form of security, draw and return terms', 'In accord with Section 212.4 of the Tariff'),
         ('PJM notice of additional tax gross-up Security amount (Appendix 2 Section 24.4)', 'writing of the amount of additional Security'),
         ('Final cost accounting after construction (Appendix 2 Section 11.2.3)', 'Within 120 days after the Interconnected Transmission Owner completes construction'),
     ]
@@ -105,6 +113,7 @@ def enter(c, report_path=None):
         'source': {'url': SOURCE_URL, 'sha256': doc['sha256'], 'pages': len(doc['pages']), 'characters': sum(map(len, doc['pages'])),
                    'textless_pages': doc['textless_pages']},
         'status': result['status'], 'issues': result['issues'],
+        'package': [{'name': d['name'], 'sha256': d['sha256'], 'pages': len(d['pages']), 'source_url': d.get('source_url')} for d in (doc, tariff)],
         'metrics': {m: {'maximum_cents': v['maximum_cents'], 'basis': v['basis']} for m, v in result.get('metrics', {}).items()},
         'dimensions': result.get('dimensions'), 'feasible_states': result.get('feasible_states'),
         'findings': sorted(f['kind'] + ': ' + f['label'] for f in result['findings']),

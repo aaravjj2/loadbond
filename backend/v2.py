@@ -94,6 +94,7 @@ class Claim(Strict):
     site_id: str | None = None
     legal_status: Literal['UNKNOWN', 'REVIEWED_MODEL_INPUT'] = 'UNKNOWN'
     mapping: Literal['ADDITIVE', 'UNCERTAIN'] = 'UNCERTAIN'
+    estimate: bool = Field(default=False, exclude_if=lambda v: v is False)
     evidence: list[Evidence] = Field(min_length=1)
 
 class Dependency(Strict):
