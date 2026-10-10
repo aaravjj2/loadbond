@@ -2,7 +2,7 @@
 
 `pytest backend -q`: **62 passed** (50 test functions, some parametrized), one upstream Starlette/httpx deprecation warning. Frontend `tsc --noEmit` passes. The counts below (41, 45, 31, 22) are historical milestone records.
 
-After extraction 1.3 and versioned migrations: **76 passed**. A copy of the local workspace database replayed all 14 stored v2 runs exactly; it contains no v3 assessments. Live qwen3:4b (digest 359d7dd4…): 12/12 original corpus; state-corpus held-out financial P 50% / R 66.7%, clauses P 75% / R 83.3%; gates fail; see `local-ai-release.md`. The state engine is documented in `state-engine/release.md`.
+After extraction 1.3 and versioned migrations: **76 passed**. A copy of the local workspace database replayed all 14 stored v2 runs exactly; it contains no v3 assessments. Production build via the fixed launcher (ports 3004/8004, throwaway data folder): Riverbend browser walkthrough passed: \ baseline, \ after site selection, \ after release review with \ obligations, \ after withdrawal, and an exact replay of the \ snapshot. All four state-engine tabs rendered with no console errors. Capture: transaction/release-reviewed-1.3.png. Live qwen3:4b (digest 359d7dd4…): 12/12 original corpus; state-corpus held-out financial P 50% / R 66.7%, clauses P 75% / R 83.3%; gates fail; see `local-ai-release.md`. The state engine is documented in `state-engine/release.md`.
 
 # Local AI milestone verification — October 9, 2026
 
