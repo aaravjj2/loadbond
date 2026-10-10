@@ -1,5 +1,11 @@
 # LoadBond — evidence workbench with experimental local AI
 
+**What can become payable or drawable, under which conditions, and which documents support that answer?** LoadBond connects exact source quotations, explicit human review, bounded contractual states and reproducible exposure assessments.
+
+**[Open the public case explorer](https://loadbond.vercel.app/)** · **[Watch the narrated demonstration](https://loadbond.vercel.app/demo/loadbond-forgehacks.mp4)** · **[Screenshots and release evidence](docs/forgehacks/)**
+
+The Vercel deployment is a **read-only explorer of published public/synthetic reference cases**. Scenario comparisons and historical replay compute on the server. Upload, local Ollama inference, editing and review run in the local application below. No laptop endpoint is exposed, and no confidential customer evidence is hosted. Reference identifiers and snapshots are deterministic across cold starts. The video shows actual local extraction and browser interactions with edited pacing; it is not continuous screen recording.
+
 A working local application for local AI proposals, manual source-backed records, separate input review, exposure calculations, and historical replay. Local extraction remains experimental because its evaluation gate has not passed. New workspaces start empty; synthetic fixtures are optional.
 
 The workbench opens on the v3 state engine (**Transaction**, **Sources & Review**, **States**, **Decision Brief**): exact, dated enumeration of reviewed contractual rules with separate face, drawable, obligation and reimbursement-debt metrics. See [the state-engine release](docs/state-engine/release.md); its local clause extraction is experimental.
@@ -59,4 +65,4 @@ This release supports manual entry and optional local Ollama extraction. Pipelin
 
 Local workspace tokens are not production identity, permissions or MFA. Hash-linked records and immutable snapshots are application behavior, not administrator-proof WORM storage. Use public or synthetic evidence only. Confidential documents, OCR, customer hosting, PostgreSQL, managed storage and production security are deferred.
 
-No event submission, public deployment or commercial validation is claimed complete. The narrated walkthrough video uses actual browser captures rather than a continuous screen recording. Submission drafts and the updated eight-slide deck remain reviewable local assets.
+No event submission or commercial validation is claimed complete. The public explorer has narrower capabilities than the local application. Older videos and decks describe earlier releases; use the ForgeHacks assets linked above for the current build.

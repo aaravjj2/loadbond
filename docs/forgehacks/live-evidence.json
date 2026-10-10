@@ -1,0 +1,555 @@
+{
+  "id": "05a93511-214d-49a1-bffe-7f5e1cd1c8ca",
+  "at": "2026-10-10T15:24:11.393503+00:00",
+  "revision": 13,
+  "model_id": "c2d6c4d7-793f-4df4-95ab-9e2facafd9df",
+  "model_name": "Sequoia \u2022 live extraction demonstration state model",
+  "scenario_name": "Possible future states",
+  "solver_version": "state-enumeration-3.0",
+  "snapshot": {
+    "schema_version": 3,
+    "project": {
+      "name": "Sequoia \u2022 live extraction demonstration",
+      "mw": null,
+      "archived": false,
+      "synthetic": true,
+      "id": "d9fe68ed-d79f-4638-9d53-ead78bf17017",
+      "revision": 13
+    },
+    "model": {
+      "id": "c2d6c4d7-793f-4df4-95ab-9e2facafd9df",
+      "name": "Sequoia \u2022 live extraction demonstration state model",
+      "basis": "RECORDED_POSITION",
+      "instrument_ids": [
+        "cbd1aeff-416b-40bb-b8b4-22ce4350d077"
+      ],
+      "claim_ids": [
+        "06ac9b85-b71d-4873-82b3-63600d86965c",
+        "142b56c4-cfbf-40f1-8679-e05b9d7a17ec"
+      ],
+      "version": "1.0",
+      "scope_notes": "Synthetic demonstration: one face-based LC and two distinct fixed obligations. Actual issuance date, documentary draw rights, reimbursement balance, facility usage and capital savings are not established.",
+      "verification": "UNVERIFIED",
+      "model_revision": 1
+    },
+    "scenario": {
+      "id": "99fb66df-ded7-45b7-90c6-55ee7fee6452",
+      "model_id": "c2d6c4d7-793f-4df4-95ab-9e2facafd9df",
+      "name": "Possible future states",
+      "view": "FUTURE",
+      "assumptions": {},
+      "excluded_rule_ids": [],
+      "face_percent": 100,
+      "obligation_percent": 100
+    },
+    "as_of": "2026-10-10",
+    "horizon_end": null,
+    "documents": [
+      {
+        "id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+        "name": "forgehacks-live.txt",
+        "pages": [
+          "SYNTHETIC UNEXECUTED AGREEMENT \u2014 ForgeHacks demonstration\nSequoia Utility is beneficiary of a USD 725,000 letter of credit.\nThe developer owes USD 145,000 for completed engineering work.\nA fixed mobilization fee of USD 95,000 is payable to Sequoia Utility.\nCommercial cancellation alone does not release the letter of credit.\r\n"
+        ],
+        "sha256": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+        "agreement_id": "a769fd0a-f49d-4dc4-b663-d7ddc332e032",
+        "version": 1,
+        "superseded": false,
+        "processing": "REVIEWED",
+        "source_url": "",
+        "textless_pages": [],
+        "completion_reason": "All three synthetic financial proposals imported and individually reviewed. Cancellation clause does not establish release or restrict documentary LC rights."
+      }
+    ],
+    "instruments": [
+      {
+        "label": "USD 725,000 letter of credit",
+        "beneficiary": "Sequoia Utility",
+        "site_id": null,
+        "face_cents": 72500000,
+        "currency": "USD",
+        "lifecycle": "EFFECTIVE",
+        "governing_law": "",
+        "basis": "FACE",
+        "basis_hypothetical": false,
+        "evidence": [
+          {
+            "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+            "page": 1,
+            "start": 58,
+            "end": 123,
+            "quote": "Sequoia Utility is beneficiary of a USD 725,000 letter of credit."
+          }
+        ],
+        "basis_evidence": [],
+        "release_evidence": [],
+        "facility_usage_cents": null,
+        "cash_collateral_cents": null,
+        "guarantee_cents": null,
+        "surety_cents": null,
+        "id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+        "verification": "VERIFIED",
+        "release_verified": false,
+        "extraction_provenance": {
+          "model": "qwen3:4b",
+          "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "prompt_version": "local-evidence-1.4",
+          "schema_version": "proposals-1.0",
+          "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+          "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+          "proposal_id": "810f2e31-cf22-4f74-b73c-1ab69f10b630",
+          "import_reason": "Edited proposal imported for separate input review"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "06ac9b85-b71d-4873-82b3-63600d86965c",
+        "label": "USD 145,000 engineering work",
+        "amount_cents": 14500000,
+        "currency": "USD",
+        "kind": "fixed",
+        "instrument_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+            "page": 1,
+            "start": 124,
+            "end": 186,
+            "quote": "The developer owes USD 145,000 for completed engineering work."
+          }
+        ],
+        "extraction_provenance": {
+          "model": "qwen3:4b",
+          "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "prompt_version": "local-evidence-1.4",
+          "schema_version": "proposals-1.0",
+          "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+          "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+          "proposal_id": "246d85ba-f00d-4a80-96a9-de7e843751d7",
+          "import_reason": "Edited proposal imported for separate input review"
+        },
+        "verification": "VERIFIED",
+        "release_verified": false
+      },
+      {
+        "id": "142b56c4-cfbf-40f1-8679-e05b9d7a17ec",
+        "label": "USD 95,000 mobilization fee",
+        "amount_cents": 9500000,
+        "currency": "USD",
+        "kind": "fixed",
+        "instrument_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+        "site_id": null,
+        "legal_status": "UNKNOWN",
+        "mapping": "ADDITIVE",
+        "evidence": [
+          {
+            "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+            "page": 1,
+            "start": 187,
+            "end": 256,
+            "quote": "A fixed mobilization fee of USD 95,000 is payable to Sequoia Utility."
+          }
+        ],
+        "extraction_provenance": {
+          "model": "qwen3:4b",
+          "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+          "prompt_version": "local-evidence-1.4",
+          "schema_version": "proposals-1.0",
+          "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+          "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+          "proposal_id": "317d86a4-0d93-46fd-b74f-61691e3545f4",
+          "import_reason": "Edited proposal imported for separate input review"
+        },
+        "verification": "VERIFIED",
+        "release_verified": false
+      }
+    ],
+    "sites": [],
+    "facts": [],
+    "rules": [],
+    "transaction_events": [],
+    "document_links": [],
+    "balances": [],
+    "reviews": [
+      {
+        "id": "83aa59eb-bc1b-4d62-8458-39eff33686b6",
+        "type": "instruments",
+        "record_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+        "before": {
+          "label": "USD 725,000 letter of credit",
+          "beneficiary": "Sequoia Utility",
+          "site_id": null,
+          "face_cents": 72500000,
+          "currency": "USD",
+          "lifecycle": "EFFECTIVE",
+          "governing_law": "",
+          "basis": "FACE",
+          "basis_hypothetical": false,
+          "evidence": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 58,
+              "end": 123,
+              "quote": "Sequoia Utility is beneficiary of a USD 725,000 letter of credit."
+            }
+          ],
+          "basis_evidence": [],
+          "release_evidence": [],
+          "facility_usage_cents": null,
+          "cash_collateral_cents": null,
+          "guarantee_cents": null,
+          "surety_cents": null,
+          "id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+          "verification": "UNVERIFIED",
+          "release_verified": false,
+          "extraction_provenance": {
+            "model": "qwen3:4b",
+            "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+            "prompt_version": "local-evidence-1.4",
+            "schema_version": "proposals-1.0",
+            "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+            "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+            "proposal_id": "810f2e31-cf22-4f74-b73c-1ab69f10b630",
+            "import_reason": "Edited proposal imported for separate input review"
+          }
+        },
+        "after": {
+          "label": "USD 725,000 letter of credit",
+          "beneficiary": "Sequoia Utility",
+          "site_id": null,
+          "face_cents": 72500000,
+          "currency": "USD",
+          "lifecycle": "EFFECTIVE",
+          "governing_law": "",
+          "basis": "FACE",
+          "basis_hypothetical": false,
+          "evidence": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 58,
+              "end": 123,
+              "quote": "Sequoia Utility is beneficiary of a USD 725,000 letter of credit."
+            }
+          ],
+          "basis_evidence": [],
+          "release_evidence": [],
+          "facility_usage_cents": null,
+          "cash_collateral_cents": null,
+          "guarantee_cents": null,
+          "surety_cents": null,
+          "id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+          "verification": "VERIFIED",
+          "release_verified": false,
+          "extraction_provenance": {
+            "model": "qwen3:4b",
+            "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+            "prompt_version": "local-evidence-1.4",
+            "schema_version": "proposals-1.0",
+            "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+            "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+            "proposal_id": "810f2e31-cf22-4f74-b73c-1ab69f10b630",
+            "import_reason": "Edited proposal imported for separate input review"
+          }
+        },
+        "reason": "Demonstration operator checked exact synthetic face and beneficiary quotation. Not legal approval.",
+        "reviewer": "Demonstration operator",
+        "at": "2026-10-10T15:23:24.973711+00:00"
+      },
+      {
+        "id": "874d18e2-4f2a-444d-8d70-2d36076779b9",
+        "type": "claims",
+        "record_id": "06ac9b85-b71d-4873-82b3-63600d86965c",
+        "before": {
+          "id": "06ac9b85-b71d-4873-82b3-63600d86965c",
+          "label": "USD 145,000 engineering work",
+          "amount_cents": 14500000,
+          "currency": "USD",
+          "kind": "fixed",
+          "instrument_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+          "site_id": null,
+          "legal_status": "UNKNOWN",
+          "mapping": "ADDITIVE",
+          "evidence": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 124,
+              "end": 186,
+              "quote": "The developer owes USD 145,000 for completed engineering work."
+            }
+          ],
+          "extraction_provenance": {
+            "model": "qwen3:4b",
+            "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+            "prompt_version": "local-evidence-1.4",
+            "schema_version": "proposals-1.0",
+            "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+            "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+            "proposal_id": "246d85ba-f00d-4a80-96a9-de7e843751d7",
+            "import_reason": "Edited proposal imported for separate input review"
+          },
+          "verification": "UNVERIFIED",
+          "release_verified": false
+        },
+        "after": {
+          "id": "06ac9b85-b71d-4873-82b3-63600d86965c",
+          "label": "USD 145,000 engineering work",
+          "amount_cents": 14500000,
+          "currency": "USD",
+          "kind": "fixed",
+          "instrument_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+          "site_id": null,
+          "legal_status": "UNKNOWN",
+          "mapping": "ADDITIVE",
+          "evidence": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 124,
+              "end": 186,
+              "quote": "The developer owes USD 145,000 for completed engineering work."
+            }
+          ],
+          "extraction_provenance": {
+            "model": "qwen3:4b",
+            "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+            "prompt_version": "local-evidence-1.4",
+            "schema_version": "proposals-1.0",
+            "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+            "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+            "proposal_id": "246d85ba-f00d-4a80-96a9-de7e843751d7",
+            "import_reason": "Edited proposal imported for separate input review"
+          },
+          "verification": "VERIFIED",
+          "release_verified": false
+        },
+        "reason": "Synthetic completed engineering amount and additive mapping checked against source. No claim-limited draw right inferred.",
+        "reviewer": "Demonstration operator",
+        "at": "2026-10-10T15:23:35.500980+00:00"
+      },
+      {
+        "id": "ed87a60d-0fe9-4401-93b6-812fa78f12bc",
+        "type": "claims",
+        "record_id": "142b56c4-cfbf-40f1-8679-e05b9d7a17ec",
+        "before": {
+          "id": "142b56c4-cfbf-40f1-8679-e05b9d7a17ec",
+          "label": "USD 95,000 mobilization fee",
+          "amount_cents": 9500000,
+          "currency": "USD",
+          "kind": "fixed",
+          "instrument_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+          "site_id": null,
+          "legal_status": "UNKNOWN",
+          "mapping": "ADDITIVE",
+          "evidence": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 187,
+              "end": 256,
+              "quote": "A fixed mobilization fee of USD 95,000 is payable to Sequoia Utility."
+            }
+          ],
+          "extraction_provenance": {
+            "model": "qwen3:4b",
+            "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+            "prompt_version": "local-evidence-1.4",
+            "schema_version": "proposals-1.0",
+            "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+            "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+            "proposal_id": "317d86a4-0d93-46fd-b74f-61691e3545f4",
+            "import_reason": "Edited proposal imported for separate input review"
+          },
+          "verification": "UNVERIFIED",
+          "release_verified": false
+        },
+        "after": {
+          "id": "142b56c4-cfbf-40f1-8679-e05b9d7a17ec",
+          "label": "USD 95,000 mobilization fee",
+          "amount_cents": 9500000,
+          "currency": "USD",
+          "kind": "fixed",
+          "instrument_id": "cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+          "site_id": null,
+          "legal_status": "UNKNOWN",
+          "mapping": "ADDITIVE",
+          "evidence": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 187,
+              "end": 256,
+              "quote": "A fixed mobilization fee of USD 95,000 is payable to Sequoia Utility."
+            }
+          ],
+          "extraction_provenance": {
+            "model": "qwen3:4b",
+            "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+            "prompt_version": "local-evidence-1.4",
+            "schema_version": "proposals-1.0",
+            "document_hash": "51d5a1f1bf9c69ce4ab949831dbbbd0107d3469ac335a7a6ba0ac684e21080d2",
+            "job_id": "d050f123-28e4-41a5-97bc-6fcd6b4cfb1a",
+            "proposal_id": "317d86a4-0d93-46fd-b74f-61691e3545f4",
+            "import_reason": "Edited proposal imported for separate input review"
+          },
+          "verification": "VERIFIED",
+          "release_verified": false
+        },
+        "reason": "Synthetic fixed mobilization fee checked; distinct from engineering work. Additive mapping confirmed for this demonstration.",
+        "reviewer": "Demonstration operator",
+        "at": "2026-10-10T15:23:47.055461+00:00"
+      }
+    ]
+  },
+  "snapshot_hash": "a33f9fcad0b8d122e807b7878ab78ad9cd1f5266f4ce091dbb234f839be5ecbb",
+  "result": {
+    "status": "COMPLETE",
+    "solver_version": "state-enumeration-3.0",
+    "issues": [],
+    "metrics": {
+      "instrument_face": {
+        "maximum_cents": 72500000,
+        "state": {},
+        "as_of": "2026-10-10",
+        "contributions": {
+          "cbd1aeff-416b-40bb-b8b4-22ce4350d077": 72500000
+        },
+        "active_claims": [
+          "06ac9b85-b71d-4873-82b3-63600d86965c",
+          "142b56c4-cfbf-40f1-8679-e05b9d7a17ec"
+        ],
+        "applied_rules": [],
+        "evidence_by_instrument": {
+          "cbd1aeff-416b-40bb-b8b4-22ce4350d077": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 58,
+              "end": 123,
+              "quote": "Sequoia Utility is beneficiary of a USD 725,000 letter of credit."
+            }
+          ]
+        },
+        "rule_trace": [],
+        "basis": "REVIEWED_MODEL"
+      },
+      "drawable": {
+        "maximum_cents": null,
+        "basis": "UNKNOWN",
+        "notice": "Documentary rights or balances are not sufficiently established."
+      },
+      "obligations": {
+        "maximum_cents": 24000000,
+        "state": {},
+        "as_of": "2026-10-10",
+        "contributions": {
+          "06ac9b85-b71d-4873-82b3-63600d86965c": 14500000,
+          "142b56c4-cfbf-40f1-8679-e05b9d7a17ec": 9500000
+        },
+        "active_claims": [
+          "06ac9b85-b71d-4873-82b3-63600d86965c",
+          "142b56c4-cfbf-40f1-8679-e05b9d7a17ec"
+        ],
+        "applied_rules": [],
+        "evidence_by_instrument": {
+          "cbd1aeff-416b-40bb-b8b4-22ce4350d077": [
+            {
+              "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+              "page": 1,
+              "start": 58,
+              "end": 123,
+              "quote": "Sequoia Utility is beneficiary of a USD 725,000 letter of credit."
+            }
+          ]
+        },
+        "rule_trace": [],
+        "basis": "REVIEWED_MODEL"
+      },
+      "reimbursement_debt": {
+        "maximum_cents": null,
+        "basis": "UNKNOWN",
+        "notice": "Documentary rights or balances are not sufficiently established."
+      }
+    },
+    "findings": [
+      {
+        "key": "UNRESOLVED_TRIGGER:cbd1aeff-416b-40bb-b8b4-22ce4350d077",
+        "kind": "UNRESOLVED_TRIGGER",
+        "label": "Documentary draw rights or remaining availability unresolved",
+        "record_ids": [
+          "cbd1aeff-416b-40bb-b8b4-22ce4350d077"
+        ],
+        "evidence": [
+          {
+            "document_id": "42f10dd7-483d-4e1c-8060-519a33460ae9",
+            "page": 1,
+            "start": 58,
+            "end": 123,
+            "quote": "Sequoia Utility is beneficiary of a USD 725,000 letter of credit."
+          }
+        ],
+        "affected_exposure_cents": 72500000,
+        "owner": "COUNSEL",
+        "status": "OPEN",
+        "notice": "Investigation required; not a release authorization or savings claim."
+      }
+    ],
+    "gross_instrument_face_cents": 72500000,
+    "modeled_difference_cents": 0,
+    "envelope": [
+      {
+        "as_of": "2026-10-10",
+        "feasible_states": 1,
+        "gross_instrument_face_cents": 72500000,
+        "maxima": {
+          "instrument_face": 72500000,
+          "drawable": null,
+          "obligations": 24000000,
+          "reimbursement_debt": null
+        }
+      }
+    ],
+    "feasible_states": 1,
+    "dimensions": [],
+    "states": [
+      {
+        "as_of": "2026-10-10",
+        "state": {},
+        "totals": {
+          "instrument_face": 72500000,
+          "drawable": null,
+          "obligations": 24000000,
+          "reimbursement_debt": null
+        }
+      }
+    ],
+    "states_truncated": false,
+    "ignored_rules": [],
+    "basis": "RECORDED_POSITION",
+    "view": "FUTURE",
+    "evidence_scope": {
+      "document_ids": [
+        "42f10dd7-483d-4e1c-8060-519a33460ae9"
+      ],
+      "reviewed_rule_ids": [],
+      "unknown_fact_keys": []
+    },
+    "economic_metrics": {
+      "facility_usage": null,
+      "cash_released": null,
+      "capital_saved": null
+    },
+    "notice": "Exact within the reviewed bounded model. Not a legal opinion, complete legal-state inventory, or confirmed economic benefit."
+  },
+  "result_hash": "7d663c00816f64553e1b5d838267cf7a744093d684d6e060048f4e0e59bf164d",
+  "request_id": "ccdafe5f-1774-4cd7-a26f-f237e06a14f9",
+  "request_hash": "c45325e5ed8e9461e60f02c366c3fc7419624aa71c2573a387b4b20af23f72b7",
+  "elapsed_ms": 0.878,
+  "stale": false
+}

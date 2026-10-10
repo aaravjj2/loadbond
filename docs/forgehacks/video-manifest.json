@@ -1,0 +1,146 @@
+{
+  "duration_seconds": 220.89492294092778,
+  "bytes": 4720165,
+  "capture_kind": "Actual browser screenshots at interaction checkpoints; not continuous video",
+  "chapters": [
+    {
+      "start_seconds": 0.0,
+      "label": "Fresh synthetic agreement; local-only Qwen model"
+    },
+    {
+      "start_seconds": 12.82,
+      "label": "Actual local inference started"
+    },
+    {
+      "start_seconds": 19.96,
+      "label": "Extraction result"
+    },
+    {
+      "start_seconds": 31.7,
+      "label": "Instrument proposal requires explicit import"
+    },
+    {
+      "start_seconds": 39.95,
+      "label": "Imported records remain unverified"
+    },
+    {
+      "start_seconds": 47.44,
+      "label": "Obligation mapping remains uncertain on import"
+    },
+    {
+      "start_seconds": 53.55,
+      "label": "First obligation imported unverified"
+    },
+    {
+      "start_seconds": 58.5,
+      "label": "Both obligations require separate mapping and review"
+    },
+    {
+      "start_seconds": 64.58,
+      "label": "Human review checks the source quotation"
+    },
+    {
+      "start_seconds": 71.25,
+      "label": "Reviewer confirms additive mapping"
+    },
+    {
+      "start_seconds": 76.99,
+      "label": "Each input received its own human decision"
+    },
+    {
+      "start_seconds": 83.63,
+      "label": "Explicit document completion"
+    },
+    {
+      "start_seconds": 90.97,
+      "label": "A general transaction model uses the reviewed inputs"
+    },
+    {
+      "start_seconds": 99.69,
+      "label": "Server calculation separates LC face from obligations"
+    },
+    {
+      "start_seconds": 110.98,
+      "label": "Decision brief with explicit unknowns"
+    },
+    {
+      "start_seconds": 118.3,
+      "label": "Export downloaded and financial replay matched"
+    },
+    {
+      "start_seconds": 126.52,
+      "label": "Amendment upload retains the original historical snapshot"
+    },
+    {
+      "start_seconds": 133.11,
+      "label": "A revised source invalidates affected reviews"
+    },
+    {
+      "start_seconds": 138.58,
+      "label": "Historical result preserved after amendment"
+    },
+    {
+      "start_seconds": 144.22,
+      "label": "Amendments require re-review; old results remain historical"
+    },
+    {
+      "start_seconds": 150.81,
+      "label": "Published synthetic case: adverse states and release timing"
+    },
+    {
+      "start_seconds": 159.75,
+      "label": "Release takes effect after the reviewed 30-day lag"
+    },
+    {
+      "start_seconds": 170.23,
+      "label": "Live preview compares identical frozen inputs"
+    },
+    {
+      "start_seconds": 176.74,
+      "label": "Scenario previews report gross exposure under the same stress"
+    },
+    {
+      "start_seconds": 186.72,
+      "label": "Public financing terms, not historical balances"
+    },
+    {
+      "start_seconds": 198.15,
+      "label": "Exact public source and reviewed phase rule"
+    },
+    {
+      "start_seconds": 206.48,
+      "label": "Public evidence replay and unknown economic metrics"
+    }
+  ],
+  "narration": [
+    "Infrastructure treasury teams must reconstruct security positions from agreements, notices and amendments. LoadBond asks what can become payable or drawable, under which conditions, and which documents support the answer. This is a new synthetic agreement uploaded to the local app.",
+    "Here we start actual local inference with Qwen three, four billion parameters, through Ollama. No paid inference or cloud fallback is used.",
+    "The run succeeded in thirteen point nine seconds. It proposed a seven hundred twenty five thousand dollar letter of credit and two obligations: one hundred forty five thousand and ninety five thousand dollars. Exact quotations are validated by the server.",
+    "The operator opens the instrument proposal, checks its amount and beneficiary, and explicitly imports it. Source offsets and model provenance follow the imported record.",
+    "Import does not approve the record. It appears in the review queue as unverified. The model cannot release security or approve a contractual interpretation.",
+    "Obligation proposals are imported separately. Their component mapping remains uncertain until the reviewer confirms its treatment.",
+    "The first obligation is associated with the instrument, but association alone is not verification.",
+    "Both proposed obligations now await their own review decisions. Nothing overwrites an existing verified record automatically.",
+    "The operator checks the exact synthetic quotation and records a reason. This is demonstration review, not an independent legal opinion.",
+    "The engineering amount is confirmed as a distinct additive obligation. That does not make the letter of credit claim limited.",
+    "The mobilization fee receives a separate mapping decision and separate review. The two obligations must not be confused with the instrument face.",
+    "Document completion is explicit. Pending proposals and unfinished attempts block completion. An empty extraction would not approve the document.",
+    "The general model selects its instruments and obligations and documents its limits. Actual issuance dates, documentary draw rights, debt and bank utilization remain unestablished.",
+    "The server returns seven hundred twenty five thousand dollars of instrument face and two hundred forty thousand dollars of underlying obligations. Drawable exposure stays unknown. A smaller obligation total does not establish released capital.",
+    "The decision brief explains the scope, maximizing state, evidence gaps and next investigation. It does not authorize a financial transaction.",
+    "The evidence export downloads successfully, and replay reproduces the frozen financial result. Model digest, source versions and review decisions remain inspectable.",
+    "Now a synthetic amendment is uploaded through the in-app browser. It changes the stated instrument amount to seven hundred thirty thousand dollars.",
+    "The upload replaces the original evidence version. It does not silently update approved financial records.",
+    "Affected records return to unverified status. The preceding result remains available as historical evidence.",
+    "The historical label prevents an old assessment from being mistaken for the current position. Re-review is required before a new supported result.",
+    "The public hosted explorer contains published synthetic and public cases. Editing and AI extraction remain local. This synthetic case models replacement overlap and a potential downgrade.",
+    "Exact enumeration tests unknown conditions at contractual boundaries. After the reviewed thirty day release lag, the predecessor no longer contributes. This is a synthetic modeled result, not a demonstrated saving.",
+    "Scenario comparison computes a live preview from one common frozen input set. It creates no saved assessments or review decisions.",
+    "The future-state maximum is thirty million dollars. Hypothetical twenty five percent stress gives thirty seven point five million. Gross exposure uses that same stress, so the comparison is consistent.",
+    "The same screens also analyze selected public Pelicans Jaw financing provisions. The phase ceiling is thirty five million six hundred fifty six thousand seven hundred forty nine dollars and forty three cents. Actual issued balances are unknown.",
+    "A contribution opens its exact public source passage. The public fixture is authored and pre-reviewed. It is not an AI success claim or independent counsel validation.",
+    "Replay also succeeds for the public case. Eighty five backend tests pass. Extraction remains experimental: held-out financial precision is sixty percent; clause precision is eighty eight percent. LoadBond is a technical prototype, with customer value and legal feasibility still to validate."
+  ],
+  "full_walkthrough_duration_seconds": 260.6560090702948,
+  "presentation_speed": 1.18
+}
