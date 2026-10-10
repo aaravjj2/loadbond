@@ -15,7 +15,7 @@ from fastapi import Depends, HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 
 BASE_URL = 'http://127.0.0.1:11434'
-PROMPT_VERSION = 'local-evidence-1.3'
+PROMPT_VERSION = 'local-evidence-1.4'
 SCHEMA_VERSION = 'proposals-1.0'
 CHUNK_TIMEOUT = 120
 JOB_TIMEOUT = 1200
@@ -158,6 +158,9 @@ def validate_candidate(candidate, document, page, start, text):
         return None, 'Quotation does not match the source chunk'
     if INSTRUCTION.search(quote):
         return None, 'Instruction-like text cannot be imported as contractual evidence'
+    if value['record_type'] == 'instrument' and not INSTRUMENT_TERMS.search(quote) and PAYMENT_TERMS.search(quote):
+        value.update(record_type='claim', beneficiary=None)
+        issues.append('Reclassified as an obligation: the quotation has payment language but no instrument')
     ev = None
     if len(offsets) == 1:
         ev = {'document_id': document['id'], 'page': page, 'start': offsets[0], 'end': offsets[0]+len(quote), 'quote': quote}
@@ -269,9 +272,9 @@ def install(app, router, auth, db, get_project, get, rows, put, audit, evidence,
                             if problem:
                                 invalid.append({'page':page,'issue':problem})
                                 continue
-                            withheld = None if state_scope else screen_reason(value)
+                            withheld = clauses.screen_reason(value) if state_scope else screen_reason(value)
                             if withheld:
-                                screened.append({'page':page,'quote':value['quote'],'record_type':value['record_type'],'reason':withheld})
+                                screened.append({'page':page,'quote':value['quote'],'record_type':value.get('record_type') or value['category'],'reason':withheld})
                                 continue
                             signature = (value['category'],page,value['quote']) if state_scope else (value['record_type'], page, value['quote'], value['amount_cents'])
                             if signature in seen:

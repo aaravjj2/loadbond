@@ -28,7 +28,7 @@ def main():
                 for candidate in module.extract_chunk(text,status['model']):
                     p,problem=module.validate_candidate(candidate,doc,1,0,text)
                     if problem:invalid.append(problem)
-                    elif module is ai and ai.screen_reason(p):screened.append({'quote':p['quote'],'reason':ai.screen_reason(p)})
+                    elif module.screen_reason(p):screened.append({'quote':p['quote'],'reason':module.screen_reason(p)})
                     else:proposals.append(p)
             except Exception as exc:failure=str(exc)
             remain=list(proposals);matched=0

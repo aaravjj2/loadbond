@@ -9,7 +9,10 @@ from .v2 import Strict, stamp
 from .state_types import DatedFact, ContractRule, TransactionEvent
 from . import local_extraction as ai
 
-PROMPT_VERSION='local-clauses-1.1'
+PROMPT_VERSION='local-clauses-1.2'
+INSTRUCTION=re.compile(r'ignore .*instructions|system message|instructions? (?:to|for) (?:an? )?AI|invent an approved',re.I)
+DOMAIN_TERMS=re.compile(r'\b(letters? of credit|LCs?|bonds?|security|guarantee\w*|instruments?|beneficiar\w*|issu\w*|bank|developer|utility|borrower|site\w*|project|obligation\w*|pay\w*|draw\w*|drew|reimburs\w*|releas\w*|expir\w*|renew\w*|nonrenewal|extend\w*|terminat\w*|cancel\w*|default\w*|notice|consent|construction|commissioning|interconnection|study|amend\w*|replacement|successor|predecessor|downgrade|rating|collateral|cap|limit|maximum|percent)\b|\$|USD',re.I)
+RECORDED_RELEASE=re.compile(r'\b(released|expired|discharged|returned|terminated|cancell?ed)\b',re.I)
 SCHEMA_VERSION='clause-proposals-1.0'
 class ClauseCandidate(Strict):
     category: Literal['RULE','EVENT','FACT']
@@ -59,7 +62,8 @@ Relevant text without a specified amount may still be an OBLIGATION rule; do not
 For each source sentence return at most one closest classification. Never return a rule and event for the same normative sentence.'''
 
 def extract_chunk(text,model,timeout=ai.CHUNK_TIMEOUT):
-    quotes=list(dict.fromkeys(s.strip() for s in re.split(r'(?<=[.!?])\s+|\n+',text) if s.strip()))
+    quotes=[q for q in ai.sentences(text) if not INSTRUCTION.search(q) and not ai.INSTRUCTION.search(q)]
+    if not quotes:return []
     schema=ClauseOutput.model_json_schema();schema['$defs']['ClauseCandidate']['properties']['quote']['enum']=quotes
     with ai.client(timeout) as c:
         r=c.post('/api/chat',json={'model':model,'stream':False,'think':False,'format':schema,
@@ -73,14 +77,23 @@ def validate_candidate(candidate,doc,page,offset,text):
     p=candidate.model_dump();q=p['quote']
     occurrences=[m for m in re.finditer(re.escape(q),doc['pages'][page-1])]
     if not occurrences or q not in text: return None,'Exact quotation does not match the source chunk'
-    if re.search(r'ignore .*instructions|system message|instructions? (?:to|for) (?:an? )?AI|invent an approved',q,re.I):return None,'Instruction-like text cannot become a contract proposal'
+    if INSTRUCTION.search(q) or ai.INSTRUCTION.search(q):return None,'Instruction-like text cannot become a contract proposal'
     if p['category']=='RULE' and (not p['rule_kind'] or p['event_type']) or p['category']=='EVENT' and (not p['event_type'] or p['rule_kind']) or p['category']=='FACT' and (p['rule_kind'] or p['event_type']):return None,'Proposal classification is inconsistent'
     p.update(source_page=page,evidence=[{'document_id':doc['id'],'page':page,'start':m.start(),'end':m.end(),'quote':q} for m in occurrences],
              validation_issues=['Select a source occurrence'] if len(occurrences)>1 else [],
              unresolved_fields=['target records and condition mapping','operative date and governing context'],experimental=True)
     money=ai.amounts(q)
     if money and not any(currency=='USD' for currency,_,_ in money):p['validation_issues'].append('Non-USD monetary evidence cannot populate USD amount fields')
+    if p['category']=='EVENT' and p['event_type'] in ('RELEASE','EXPIRY') and not RECORDED_RELEASE.search(q):
+        p['event_type']='NOTICE'
+        p['validation_issues'].append('Reclassified as a notice: the quotation does not record a completed release or expiry')
     return p,None
+
+def screen_reason(p):
+    """Source-verified sentences with no transaction subject are withheld, never published."""
+    if not DOMAIN_TERMS.search(p['quote']):
+        return 'Quotation does not concern the instruments, obligations or project'
+    return None
 
 def install(router,auth,db,get_project,get,rows,put,audit,evidence,validate,app):
     @router.post('/projects/{pid}/documents/{did}/clause-extractions')

@@ -1518,6 +1518,25 @@ export default function StateWorkspace({
                       {j.elapsed_seconds ?? 0}s · {j.model}
                     </span>
                     {j.error && <p role="alert">{j.error}</p>}
+                    {!!j.screened?.length && (
+                      <details>
+                        <summary>
+                          {j.screened.length} source sentence
+                          {j.screened.length === 1 ? "" : "s"} withheld as
+                          off-topic (not proposed)
+                        </summary>
+                        {j.screened.map(
+                          (
+                            s: { page: number; quote: string; reason: string },
+                            i: number,
+                          ) => (
+                            <p className="muted" key={i}>
+                              Page {s.page} · {s.reason}: “{s.quote}”
+                            </p>
+                          ),
+                        )}
+                      </details>
+                    )}
                     {["FAILED", "INTERRUPTED"].includes(j.status) &&
                       !j.abandoned && (
                         <button
