@@ -7,3 +7,27 @@ __pycache__/
 .env
 .env.local
 *.tsbuildinfo
+
+# Credentials, local workspaces, runtime downloads and build output
+.env.*
+!.env.example
+.vercel/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+*.pem
+*.pfx
+*.key
+.coverage
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+venv/
+dist/
+coverage/
+ollama/
+models/
+.DS_Store
+Thumbs.db

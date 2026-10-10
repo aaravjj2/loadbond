@@ -140,6 +140,7 @@ export default function Workbench() {
   }
   async function refresh(id = w?.project.id) {
     const list = await api("projects");
+    if (!id && process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1') id = list.projects[0]?.id;
     setProjects(list.projects);
     setReviewer(list.reviewer);
     if (id) {
@@ -166,7 +167,7 @@ export default function Workbench() {
     setTab("model");
   }
   useEffect(() => {
-    const t = sessionStorage.getItem("loadbond-v2-token");
+    const t = process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1' ? 'local-demo' : sessionStorage.getItem("loadbond-v2-token");
     if (t) setToken(t);
   }, []);
   useEffect(() => {
@@ -318,6 +319,7 @@ export default function Workbench() {
     );
   return (
     <div className="shell v2">
+      {process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1' && <div role="status" style={{position:'fixed',bottom:12,left:250,right:20,zIndex:60,padding:'12px 18px',background:'#213e43',color:'#fff',borderRadius:8,fontSize:13}}>Public case explorer · Read-only synthetic/public evidence · AI extraction and editing run locally. <a href="https://github.com/aaravjj2/loadbond" style={{color:'#fff'}}>Source & run instructions</a></div>}
       <aside className="sidebar">
         <div className="brand">▥ LoadBond</div>
         <div className="workspace-label">

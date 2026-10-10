@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "nextjs",
+      "buildCommand": "NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO=1 pnpm build",
+      "bindings": [{"type": "service", "service": "backend", "format": "url", "env": "LOADBOND_API_URL"}]
+    },
+    "backend": {"root": ".", "framework": "fastapi", "entrypoint": "public_main:app"}
+  },
+  "rewrites": [{"source": "/(.*)", "destination": {"service": "frontend"}}]
+}
