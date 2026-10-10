@@ -12,7 +12,7 @@ Application startup defaults to frontend port 3001 and backend port 8000. Occupi
 
 ## Workflow and compatibility
 
-Choose Extract with local AI on a current document. One local worker processes persistent jobs outside database transactions. Chunk timeout is 120 seconds; whole-job timeout is 20 minutes. Incomplete processing, invalid evidence, changed documents and archived projects publish no proposals. Failed/interrupted attempts require explicit abandonment before manual completion. Restart interrupts unfinished running attempts; queued attempts resume.
+Choose Extract with local AI on a current document. One local worker processes persistent jobs outside database transactions. Chunk timeout is 120 seconds. A chunk that times out or returns a truncated answer is retried in halves, up to two levels deep. The whole-job budget is 60 seconds per chunk, at least 20 minutes and at most 4 hours. Incomplete processing, invalid evidence, changed documents and archived projects publish no proposals. Failed/interrupted attempts require explicit abandonment before manual completion. Restart interrupts unfinished running attempts; queued attempts resume.
 
 Import instruments first. Imported inputs remain UNVERIFIED; obligations retain UNCERTAIN mapping. Separate review accepts model inputs. Releases, constraints and claim-limited rights remain separate manual workflows. Resolve or dismiss every proposal before document completion; zero proposals never automatically complete review. Repeated quotations require manual occurrence selection. Non-USD proposals cannot enter USD calculations.
 

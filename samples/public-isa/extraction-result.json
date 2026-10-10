@@ -1,0 +1,2661 @@
+﻿{
+    "job":  {
+                "id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                "status":  "SUCCEEDED",
+                "model":  "qwen3:4b",
+                "model_digest":  "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+                "prompt_version":  "local-evidence-1.4",
+                "schema_version":  "proposals-1.0",
+                "created_at":  "2026-10-10T04:49:03.084581+00:00",
+                "completed_chunks":  162,
+                "total_chunks":  162,
+                "abandoned":  false,
+                "started_at":  "2026-10-10T04:49:03.096677+00:00",
+                "time_budget_seconds":  9720,
+                "elapsed_seconds":  1887.266,
+                "proposal_count":  32,
+                "screened":  [
+                                 {
+                                     "page":  1,
+                                     "quote":  "On May 30, 2017, you submitted on behalf of PJM Interconnection, L.L.C.",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  1,
+                                     "quote":  "Pursuant to the authority delegated to the Director, Division of Electric Power",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Docket No.",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "This acceptance for filing shall not be construed as constituting approval of any",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "service, rate, charge, classification, or any rule, regulation, or practice affecting such rate",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "or service provided for in the filed documents; nor shall such action be deemed as",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "recognition of any claimed contractual right or obligation affecting or relating to such",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "service or rate; and such acceptance is without prejudice to any findings or orders which",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "have been or may hereafter be made by the Commission in any proceeding now pending",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "or hereafter instituted by or against PJM.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "This order constitutes final agency action.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Requests for rehearing by the",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Commission may be filed within 30 days of the date of issuance of this order, pursuant to",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "18 C.F.R.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Sincerely,",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Kurt M.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Division of Electric Power",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "Regulation â East",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  2,
+                                     "quote":  "20170720-3036 FERC PDF (Unofficial) 07/20/2017",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  3,
+                                     "quote":  "ER17-1701-000 Delegated Letter .DOCX..................................1-2",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  3,
+                                     "quote":  "20170720-3036 FERC PDF (Unofficial) 07/20/2017",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  4,
+                                     "quote":  "Interconnection, L.L.C.",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  4,
+                                     "quote":  "Original Service Agreement No.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  5,
+                                     "quote":  "The Chestnut Solar  ISA indicates that Chestnut Solar  shall have",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  5,
+                                     "quote":  "Specifications section 2.1 further states that this 50 MW of Capacity Interconnection",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  6,
+                                     "quote":  "The Chestnut Solar ISA further specifies an Attachment",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  6,
+                                     "quote":  "The Chestnut Solar ISA further specifies an Attachment",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  6,
+                                     "quote":  "The total amount of security required",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  7,
+                                     "quote":  "Schedule E of the Chestnut Solar ISA describes the Monthly Charge that Chestnut",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  7,
+                                     "quote":  "Schedule E of the Chestnut Solar ISA describes the Monthly Charge that Chestnut",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  8,
+                                     "quote":  "Implementing the above-described calculation utilizing the information contained",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  9,
+                                     "quote":  "The Commission previously has accepted for filing ISAs that implement VEPCOâs",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  9,
+                                     "quote":  "Consistent with the Com missionâs prior notice requirements, PJM requests an",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  9,
+                                     "quote":  "The requested effective date is",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  9,
+                                     "quote":  "Attachment D: Cost Support for Monthly Facility Charge Set Forth in",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Kimberly D.",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Bose, Secretary",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "May 30, 2017",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Page 7",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Correspondence and Communications",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Correspondence and communications with respect to this filing should be sent to,",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "and PJM requests the Secretary to include on the official service list, the following:12",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Craig Glazer",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Vice President â Federal Government",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Policy",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "PJM Interconnection, L.L.C.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "1200 G Street, NW, Suite 600",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Washington, DC  20005",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "(202) 423-4743 (phone)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "(202) 393-7741(fax)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Craig.Glazer@pjm.com",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Carrie L.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Bumgarner",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "David S.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Berman",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Wright \u0026 Talisman, P.C.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "1200 G Street, NW, Suite 600",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Washington, DC  20005",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "(202) 393-1200 (phone)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "(202) 393-1240 (fax)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "bumgarner@wrightlaw.com",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "berman@wrightlaw.com",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Steven R.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Pincus",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Associate General Counsel",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "PJM Interconnection, L.L.C.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "2750 Monroe Boulevard",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Audubon, PA  19403",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "(610) 666-4370 (phone)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "(610) 666-4281 (fax)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Steven.Pincus@pjm.com",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "12 To the extent necessary, PJM requests waiver of Rule 203(b)(3) of the",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Commissionâs Rules of Practice and Procedure, 18 C.F.R.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "Â§  385.203(b)(3), to",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "permit all of the persons listed to be placed on the official service list for this",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  10,
+                                     "quote":  "proceeding.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Kimberly D.",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Bose, Secretary",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "May 30, 2017",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Page 8",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "VI.",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Service",
+                                     "record_type":  "instrument",
+                                     "reason":  "Instrument proposal does not quote an instrument provision"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "PJM has served a copy of this filing on Chestnut Solar, VEPCO, and the affected",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "state regulatory commissions within the PJM Region.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Respectfully submitted,",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "/s/ David S.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Craig Glazer",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Vice President â Federal Government",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Policy",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "PJM Interconnection, L.L.C.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "1200 G Street, NW, Suite 600",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Washington, DC  20005",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "(202) 423-4743 (phone)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "(202) 393-7741(fax)",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Craig.Glazer@pjm.com",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Carrie L.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "David S.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Wright \u0026 Talisman, P.C.",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "1200 G Street, NW, Suite 600",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 },
+                                 {
+                                     "page":  11,
+                                     "quote":  "Washington, DC  20005",
+                                     "record_type":  "claim",
+                                     "reason":  "Quotation states no monetary amount or payment obligation"
+                                 }
+                             ],
+                "finished_at":  "2026-10-10T05:20:30.352396+00:00",
+                "proposals":  [
+                                  {
+                                      "id":  "499fb88f-9869-404f-9cbf-c2bec54e0453",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Direct labor costs",
+                                      "beneficiary":  "Chestnut Solar",
+                                      "amount_cents":  315759200,
+                                      "amount_text":  "$3,157,592",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "These charges consist of : $3,157,592 in direct labor costs ;",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  6,
+                                                           "start":  529,
+                                                           "end":  590,
+                                                           "quote":  "These charges consist of : $3,157,592 in direct labor costs ;"
+                                                       }
+                                                   ],
+                                      "source_page":  6,
+                                      "source_candidates":  [
+                                                                529
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "a23a454c-44ea-4815-8633-7a124e7a3aac",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Direct material costs",
+                                      "beneficiary":  "Chestnut Solar",
+                                      "amount_cents":  null,
+                                      "amount_text":  "$2,743,600",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$2,743,600 in direct material costs ; $741,096 in indirect labor costs ; and $518,555 in",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  6,
+                                                           "start":  592,
+                                                           "end":  680,
+                                                           "quote":  "$2,743,600 in direct material costs ; $741,096 in indirect labor costs ; and $518,555 in"
+                                                       }
+                                                   ],
+                                      "source_page":  6,
+                                      "source_candidates":  [
+                                                                592
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Amount is missing, contradictory, or not validated against an explicit source token",
+                                                                "Resolve the amount from supporting evidence"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "d196277e-459b-4142-ba26-e853ff8d3a1d",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Monthly Charge",
+                                      "beneficiary":  "VEPCO",
+                                      "amount_cents":  null,
+                                      "amount_text":  "$ 851.88",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "Equals the Monthly Charge    $851.88",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  8,
+                                                           "start":  1644,
+                                                           "end":  1680,
+                                                           "quote":  "Equals the Monthly Charge    $851.88"
+                                                       }
+                                                   ],
+                                      "source_page":  8,
+                                      "source_candidates":  [
+                                                                1644
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Amount is missing, contradictory, or not validated against an explicit source token",
+                                                                "Resolve the amount from supporting evidence"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "aa4f991b-5d18-4ea4-abe4-29d53b58e670",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Direct Labor",
+                                      "beneficiary":  null,
+                                      "amount_cents":  315759200,
+                                      "amount_text":  "$3,157,592",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$3,157,592  Direct Labor",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1200,
+                                                           "end":  1224,
+                                                           "quote":  "$3,157,592  Direct Labor"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1200
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "5437cf50-d60b-43f1-a236-07b4a820d1a7",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Direct Material",
+                                      "beneficiary":  null,
+                                      "amount_cents":  274360000,
+                                      "amount_text":  "$2,743,600",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$2,743,600  Direct Material",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1226,
+                                                           "end":  1253,
+                                                           "quote":  "$2,743,600  Direct Material"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1226
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "f4521834-75ac-4a03-bbc8-9b81c3c581df",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Indirect Labor",
+                                      "beneficiary":  null,
+                                      "amount_cents":  74109600,
+                                      "amount_text":  "$   741,096",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$   741,096  Indirect Labor",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1255,
+                                                           "end":  1282,
+                                                           "quote":  "$   741,096  Indirect Labor"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1255
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "2aadb205-d016-4d27-9fa6-672014d1ae7b",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Indirect Material",
+                                      "beneficiary":  null,
+                                      "amount_cents":  51855500,
+                                      "amount_text":  "$   518,555",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$   518,555  Indirect Material",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1284,
+                                                           "end":  1314,
+                                                           "quote":  "$   518,555  Indirect Material"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1284
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "20d53a31-e68c-4136-86c4-4fa71eccc29c",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Total",
+                                      "beneficiary":  null,
+                                      "amount_cents":  716084300,
+                                      "amount_text":  "$7,160,843",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$7,160,843  Total",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1319,
+                                                           "end":  1336,
+                                                           "quote":  "$7,160,843  Total"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1319
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "a8caf7c4-7bbf-482f-9f65-6e6356ddd5f7",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Estimated Cost of Non -Direct Connection Local Upgrades and/or Non-Direct Connection Network Upgrades",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  "$1,220,026",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$1,220,026 Estimated Cost of Non -Direct Connection Local Upgrades and/or",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1374,
+                                                           "end":  1447,
+                                                           "quote":  "$1,220,026 Estimated Cost of Non -Direct Connection Local Upgrades and/or"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1374
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Amount is missing, contradictory, or not validated against an explicit source token",
+                                                                "Resolve the amount from supporting evidence"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "467566da-4efb-4011-bbf4-2b457840c6cc",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Estimated cost of the work (for the first three months) on the required Attachment Facilities, Direct Connection Local Upgrades, and Direct Connection NetworkUp",
+                                      "beneficiary":  null,
+                                      "amount_cents":  89112300,
+                                      "amount_text":  "$891,123",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "plus $891,123 Estimated cost of the work (for the first three months) on the",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  24,
+                                                           "start":  1491,
+                                                           "end":  1567,
+                                                           "quote":  "plus $891,123 Estimated cost of the work (for the first three months) on the"
+                                                       }
+                                                   ],
+                                      "source_page":  24,
+                                      "source_candidates":  [
+                                                                1491
+                                                            ],
+                                      "validation_issues":  [
+
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "2d98fa3f-8968-427f-8200-54f6b81bed57",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "instrument",
+                                      "label":  "plus $0  Option to Build Security for Attachment Facilities, Direct",
+                                      "beneficiary":  null,
+                                      "amount_cents":  0,
+                                      "amount_text":  "$0",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "plus $0  Option to Build Security for Attachment Facilities, Direct",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  25,
+                                                           "start":  6,
+                                                           "end":  73,
+                                                           "quote":  "plus $0  Option to Build Security for Attachment Facilities, Direct"
+                                                       }
+                                                   ],
+                                      "source_page":  25,
+                                      "source_candidates":  [
+                                                                6
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Enter the beneficiary from evidence"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "ef272eab-8b12-4cd5-8ab3-92b00b41a8b9",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "instrument",
+                                      "label":  "$2,111,149  Total Security required with ISA",
+                                      "beneficiary":  null,
+                                      "amount_cents":  211114900,
+                                      "amount_text":  "$2,111,149",
+                                      "currency":  "USD",
+                                      "kind":  "fixed",
+                                      "quote":  "$2,111,149  Total Security required with ISA",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  25,
+                                                           "start":  236,
+                                                           "end":  280,
+                                                           "quote":  "$2,111,149  Total Security required with ISA"
+                                                       }
+                                                   ],
+                                      "source_page":  25,
+                                      "source_candidates":  [
+                                                                236
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Enter the beneficiary from evidence"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "7d359b98-4a9f-4dca-ae63-e2276a28cbcc",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Payment for Reactive Power",
+                                      "beneficiary":  "Interconnection Customer",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "4.7.4 Payment for Reactive Power:",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  120,
+                                                           "start":  1526,
+                                                           "end":  1559,
+                                                           "quote":  "4.7.4 Payment for Reactive Power:"
+                                                       }
+                                                   ],
+                                      "source_page":  120,
+                                      "source_candidates":  [
+                                                                1526
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "2ebc5ac9-0fc2-4364-b213-72dba51c6c30",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Interconnected Entity may seek compensation from Transmission Provider for any costs related",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "Interconnected Entity may seek compensation from Transmission Provider for any costs related",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  123,
+                                                           "start":  1634,
+                                                           "end":  1726,
+                                                           "quote":  "Interconnected Entity may seek compensation from Transmission Provider for any costs related"
+                                                       }
+                                                   ],
+                                      "source_page":  123,
+                                      "source_candidates":  [
+                                                                1634
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Reclassified as an obligation: the quotation has payment language but no instrument",
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "3b222b0c-fa32-4815-a72e-8dd4b8f5c54f",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "9.3 Obligation to Make Payments:",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "9.3 Obligation to Make Payments:",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  129,
+                                                           "start":  1370,
+                                                           "end":  1402,
+                                                           "quote":  "9.3 Obligation to Make Payments:"
+                                                       }
+                                                   ],
+                                      "source_page":  129,
+                                      "source_candidates":  [
+                                                                1370
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "7fa2f07e-37d9-4631-81b2-6a084f926565",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Any Interconnection Party\u0027s obligation to make payments for services shall not be suspended by",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "Any Interconnection Party\u0027s obligation to make payments for services shall not be suspended by",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  129,
+                                                           "start":  1408,
+                                                           "end":  1502,
+                                                           "quote":  "Any Interconnection Party\u0027s obligation to make payments for services shall not be suspended by"
+                                                       }
+                                                   ],
+                                      "source_page":  129,
+                                      "source_candidates":  [
+                                                                1408
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "aa6cfdbc-19b2-459c-96e6-297499a2b645",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Operation of the Customer Facility, Interconnection Customer shall pay one or more of the types of recurring charges described in this section to compensate the",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "Operation of the Customer Facility, Interconnection Customer shall pay one or more of the types",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  130,
+                                                           "start":  124,
+                                                           "end":  219,
+                                                           "quote":  "Operation of the Customer Facility, Interconnection Customer shall pay one or more of the types"
+                                                       }
+                                                   ],
+                                      "source_page":  130,
+                                      "source_candidates":  [
+                                                                124
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "d4e60481-13c3-4681-9007-ebc1741086e5",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "11.1.1 General",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "11 Security, Billing And Payments",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  131,
+                                                           "start":  1135,
+                                                           "end":  1168,
+                                                           "quote":  "11 Security, Billing And Payments"
+                                                       }
+                                                   ],
+                                      "source_page":  131,
+                                      "source_candidates":  [
+                                                                1135
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "5c157987-f78a-4793-a697-5be93e201e41",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Payment obligation for disputed invoice",
+                                      "beneficiary":  "Interconnection Party that owes money",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "the Interconnection Party that owes money to the other Interconnection Party shall pay the",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  132,
+                                                           "start":  581,
+                                                           "end":  671,
+                                                           "quote":  "the Interconnection Party that owes money to the other Interconnection Party shall pay the"
+                                                       }
+                                                   ],
+                                      "source_page":  132,
+                                      "source_candidates":  [
+                                                                581
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "44d1f8e0-f8d1-4c41-9e35-1ac452fb7b3d",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Interconnection Customer shall pay each bill within twenty (20) days after receipt thereof.",
+                                      "beneficiary":  "Transmission Provider",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "Interconnection Customer shall pay each bill  within",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  133,
+                                                           "start":  222,
+                                                           "end":  274,
+                                                           "quote":  "Interconnection Customer shall pay each bill  within"
+                                                       }
+                                                   ],
+                                      "source_page":  133,
+                                      "source_candidates":  [
+                                                                222
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "134f6a5d-33bd-4cb5-9f10-c0601d12f1cd",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Payment obligation for documents and certificates",
+                                      "beneficiary":  "Transmission Provider and/or the Interconnected Transmission Owner",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "Interconnection Customer shall pay the Transmission Provider and/or the Interconnected",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  135,
+                                                           "start":  1211,
+                                                           "end":  1297,
+                                                           "quote":  "Interconnection Customer shall pay the Transmission Provider and/or the Interconnected"
+                                                       }
+                                                   ],
+                                      "source_page":  135,
+                                      "source_candidates":  [
+                                                                1211
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "1860ba1f-249a-4148-8587-5cbcfa73878e",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Indemnification obligation for Loss",
+                                      "beneficiary":  "Indemnified Person",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "Promptly after receipt by a Person entitled to indemnity (âIndemnified Personâ) of any claim or",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  139,
+                                                           "start":  1576,
+                                                           "end":  1671,
+                                                           "quote":  "Promptly after receipt by a Person entitled to indemnity (âIndemnified Personâ) of any claim or"
+                                                       }
+                                                   ],
+                                      "source_page":  139,
+                                      "source_candidates":  [
+                                                                1576
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "a1ae4763-c9b7-429c-a2ea-f1ce21b6cddc",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Indemnification obligation for Loss",
+                                      "beneficiary":  "Indemnified Person",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "The Indemnified Person shall be entitled, at its expense, to participate in any action, suit or",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  139,
+                                                           "start":  3304,
+                                                           "end":  3399,
+                                                           "quote":  "The Indemnified Person shall be entitled, at its expense, to participate in any action, suit or"
+                                                       }
+                                                   ],
+                                      "source_page":  139,
+                                      "source_candidates":  [
+                                                                3304
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "57a1e80f-4102-4619-90b6-08d774d60507",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "14.3 Indemnified Person",
+                                      "beneficiary":  "the Indemnified Person",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "If an Indemnified Person is entitled to indemnification under this Section 14 as a result of a claim",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  140,
+                                                           "start":  276,
+                                                           "end":  376,
+                                                           "quote":  "If an Indemnified Person is entitled to indemnification under this Section 14 as a result of a claim"
+                                                       }
+                                                   ],
+                                      "source_page":  140,
+                                      "source_candidates":  [
+                                                                276
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "000ac8a2-1dc5-4f0e-b4a1-c51aa619471e",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "14.4 Amount Owing",
+                                      "beneficiary":  "the Indemnified Person",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "If an indemnifying Interconnection Party is obligated to indemnify and hold any I ndemnified",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  140,
+                                                           "start":  790,
+                                                           "end":  882,
+                                                           "quote":  "If an indemnifying Interconnection Party is obligated to indemnify and hold any I ndemnified"
+                                                       }
+                                                   ],
+                                      "source_page":  140,
+                                      "source_candidates":  [
+                                                                790
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "e48be68b-6740-429d-9a40-963f3d7c1b79",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "hereunder in accordance with the terms and conditions hereof, (b) withhold payments, (c)",
+                                      "beneficiary":  "Interconnection Party",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "hereunder in accordance with the terms and conditions hereof, (b) withhold payments, (c)",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  142,
+                                                           "start":  2171,
+                                                           "end":  2259,
+                                                           "quote":  "hereunder in accordance with the terms and conditions hereof, (b) withhold payments, (c)"
+                                                       }
+                                                   ],
+                                      "source_page":  142,
+                                      "source_candidates":  [
+                                                                2171
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "0f6ad59d-d726-47fe-9c1f-6183ffbf0667",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "payment hereunder unless such failure could reasonably be expected to have a material adverse",
+                                      "beneficiary":  "Interconnection Party",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "payment hereunder unless such failure could reasonably be expected to have a material adverse",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  142,
+                                                           "start":  2547,
+                                                           "end":  2640,
+                                                           "quote":  "payment hereunder unless such failure could reasonably be expected to have a material adverse"
+                                                       }
+                                                   ],
+                                      "source_page":  142,
+                                      "source_candidates":  [
+                                                                2547
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "240afd4c-e233-4b06-ae52-0f12a326aba2",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "The Interconnection Parties agree that monetary damages would be inadequate to compensate an Interconnection Party for another Inte rconnection Party\u0027s Breach",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "The Interconnection Parties agree that monetary damages would be inadequate to compensate an",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  147,
+                                                           "start":  934,
+                                                           "end":  1026,
+                                                           "quote":  "The Interconnection Parties agree that monetary damages would be inadequate to compensate an"
+                                                       }
+                                                   ],
+                                      "source_page":  147,
+                                      "source_candidates":  [
+                                                                934
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "7c55c6a3-d464-4197-bbe0-1e74b0bf3a5c",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "18.3 Indemnification by Subcontractors:",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "18.3 Indemnification by Subcontractors:",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  149,
+                                                           "start":  344,
+                                                           "end":  383,
+                                                           "quote":  "18.3 Indemnification by Subcontractors:"
+                                                       }
+                                                   ],
+                                      "source_page":  149,
+                                      "source_candidates":  [
+                                                                344
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Reclassified as an obligation: the quotation has payment language but no instrument",
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "34e77040-c614-40a2-bca6-263e0be7800f",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "subcontractors to indemnify, hold harmless and defend each other Interconnection Party, its",
+                                      "beneficiary":  null,
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "fixed",
+                                      "quote":  "subcontractors to indemnify, hold harmless and defend each other Interconnection Party, its",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  149,
+                                                           "start":  591,
+                                                           "end":  682,
+                                                           "quote":  "subcontractors to indemnify, hold harmless and defend each other Interconnection Party, its"
+                                                       }
+                                                   ],
+                                      "source_page":  149,
+                                      "source_candidates":  [
+                                                                591
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "b741886c-5c60-4e38-8115-3dee33a35da5",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Tax indemnification obligation",
+                                      "beneficiary":  "Interconnected Transmission Owner",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "Interconnection Customer shall indemnify the Interconnected Transmission Owner for any costs",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  154,
+                                                           "start":  161,
+                                                           "end":  253,
+                                                           "quote":  "Interconnection Customer shall indemnify the Interconnected Transmission Owner for any costs"
+                                                       }
+                                                   ],
+                                      "source_page":  154,
+                                      "source_candidates":  [
+                                                                161
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  },
+                                  {
+                                      "id":  "246ad9d5-a2ea-445c-8a37-346782012c35",
+                                      "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                                      "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                      "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                                      "disposition":  "PENDING",
+                                      "record_type":  "claim",
+                                      "label":  "Income tax payment obligation",
+                                      "beneficiary":  "Interconnected Transmission Owner",
+                                      "amount_cents":  null,
+                                      "amount_text":  null,
+                                      "currency":  null,
+                                      "kind":  "conditional",
+                                      "quote":  "Interconnection Customer shall pay to the Interconnected Transmission Owner on a periodic",
+                                      "evidence":  [
+                                                       {
+                                                           "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                                           "page":  154,
+                                                           "start":  2277,
+                                                           "end":  2366,
+                                                           "quote":  "Interconnection Customer shall pay to the Interconnected Transmission Owner on a periodic"
+                                                       }
+                                                   ],
+                                      "source_page":  154,
+                                      "source_candidates":  [
+                                                                2277
+                                                            ],
+                                      "validation_issues":  [
+                                                                "Resolve the amount from supporting evidence",
+                                                                "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                            ]
+                                  }
+                              ]
+            },
+    "proposals":  [
+                      {
+                          "id":  "499fb88f-9869-404f-9cbf-c2bec54e0453",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Direct labor costs",
+                          "beneficiary":  "Chestnut Solar",
+                          "amount_cents":  315759200,
+                          "amount_text":  "$3,157,592",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "These charges consist of : $3,157,592 in direct labor costs ;",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  6,
+                                               "start":  529,
+                                               "end":  590,
+                                               "quote":  "These charges consist of : $3,157,592 in direct labor costs ;"
+                                           }
+                                       ],
+                          "source_page":  6,
+                          "source_candidates":  [
+                                                    529
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "a23a454c-44ea-4815-8633-7a124e7a3aac",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Direct material costs",
+                          "beneficiary":  "Chestnut Solar",
+                          "amount_cents":  null,
+                          "amount_text":  "$2,743,600",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$2,743,600 in direct material costs ; $741,096 in indirect labor costs ; and $518,555 in",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  6,
+                                               "start":  592,
+                                               "end":  680,
+                                               "quote":  "$2,743,600 in direct material costs ; $741,096 in indirect labor costs ; and $518,555 in"
+                                           }
+                                       ],
+                          "source_page":  6,
+                          "source_candidates":  [
+                                                    592
+                                                ],
+                          "validation_issues":  [
+                                                    "Amount is missing, contradictory, or not validated against an explicit source token",
+                                                    "Resolve the amount from supporting evidence"
+                                                ]
+                      },
+                      {
+                          "id":  "d196277e-459b-4142-ba26-e853ff8d3a1d",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Monthly Charge",
+                          "beneficiary":  "VEPCO",
+                          "amount_cents":  null,
+                          "amount_text":  "$ 851.88",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "Equals the Monthly Charge    $851.88",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  8,
+                                               "start":  1644,
+                                               "end":  1680,
+                                               "quote":  "Equals the Monthly Charge    $851.88"
+                                           }
+                                       ],
+                          "source_page":  8,
+                          "source_candidates":  [
+                                                    1644
+                                                ],
+                          "validation_issues":  [
+                                                    "Amount is missing, contradictory, or not validated against an explicit source token",
+                                                    "Resolve the amount from supporting evidence"
+                                                ]
+                      },
+                      {
+                          "id":  "aa4f991b-5d18-4ea4-abe4-29d53b58e670",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Direct Labor",
+                          "beneficiary":  null,
+                          "amount_cents":  315759200,
+                          "amount_text":  "$3,157,592",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$3,157,592  Direct Labor",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1200,
+                                               "end":  1224,
+                                               "quote":  "$3,157,592  Direct Labor"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1200
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "5437cf50-d60b-43f1-a236-07b4a820d1a7",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Direct Material",
+                          "beneficiary":  null,
+                          "amount_cents":  274360000,
+                          "amount_text":  "$2,743,600",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$2,743,600  Direct Material",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1226,
+                                               "end":  1253,
+                                               "quote":  "$2,743,600  Direct Material"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1226
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "f4521834-75ac-4a03-bbc8-9b81c3c581df",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Indirect Labor",
+                          "beneficiary":  null,
+                          "amount_cents":  74109600,
+                          "amount_text":  "$   741,096",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$   741,096  Indirect Labor",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1255,
+                                               "end":  1282,
+                                               "quote":  "$   741,096  Indirect Labor"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1255
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "2aadb205-d016-4d27-9fa6-672014d1ae7b",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Indirect Material",
+                          "beneficiary":  null,
+                          "amount_cents":  51855500,
+                          "amount_text":  "$   518,555",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$   518,555  Indirect Material",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1284,
+                                               "end":  1314,
+                                               "quote":  "$   518,555  Indirect Material"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1284
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "20d53a31-e68c-4136-86c4-4fa71eccc29c",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Total",
+                          "beneficiary":  null,
+                          "amount_cents":  716084300,
+                          "amount_text":  "$7,160,843",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$7,160,843  Total",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1319,
+                                               "end":  1336,
+                                               "quote":  "$7,160,843  Total"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1319
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "a8caf7c4-7bbf-482f-9f65-6e6356ddd5f7",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Estimated Cost of Non -Direct Connection Local Upgrades and/or Non-Direct Connection Network Upgrades",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  "$1,220,026",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$1,220,026 Estimated Cost of Non -Direct Connection Local Upgrades and/or",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1374,
+                                               "end":  1447,
+                                               "quote":  "$1,220,026 Estimated Cost of Non -Direct Connection Local Upgrades and/or"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1374
+                                                ],
+                          "validation_issues":  [
+                                                    "Amount is missing, contradictory, or not validated against an explicit source token",
+                                                    "Resolve the amount from supporting evidence"
+                                                ]
+                      },
+                      {
+                          "id":  "467566da-4efb-4011-bbf4-2b457840c6cc",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Estimated cost of the work (for the first three months) on the required Attachment Facilities, Direct Connection Local Upgrades, and Direct Connection NetworkUp",
+                          "beneficiary":  null,
+                          "amount_cents":  89112300,
+                          "amount_text":  "$891,123",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "plus $891,123 Estimated cost of the work (for the first three months) on the",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  24,
+                                               "start":  1491,
+                                               "end":  1567,
+                                               "quote":  "plus $891,123 Estimated cost of the work (for the first three months) on the"
+                                           }
+                                       ],
+                          "source_page":  24,
+                          "source_candidates":  [
+                                                    1491
+                                                ],
+                          "validation_issues":  [
+
+                                                ]
+                      },
+                      {
+                          "id":  "2d98fa3f-8968-427f-8200-54f6b81bed57",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "instrument",
+                          "label":  "plus $0  Option to Build Security for Attachment Facilities, Direct",
+                          "beneficiary":  null,
+                          "amount_cents":  0,
+                          "amount_text":  "$0",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "plus $0  Option to Build Security for Attachment Facilities, Direct",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  25,
+                                               "start":  6,
+                                               "end":  73,
+                                               "quote":  "plus $0  Option to Build Security for Attachment Facilities, Direct"
+                                           }
+                                       ],
+                          "source_page":  25,
+                          "source_candidates":  [
+                                                    6
+                                                ],
+                          "validation_issues":  [
+                                                    "Enter the beneficiary from evidence"
+                                                ]
+                      },
+                      {
+                          "id":  "ef272eab-8b12-4cd5-8ab3-92b00b41a8b9",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "instrument",
+                          "label":  "$2,111,149  Total Security required with ISA",
+                          "beneficiary":  null,
+                          "amount_cents":  211114900,
+                          "amount_text":  "$2,111,149",
+                          "currency":  "USD",
+                          "kind":  "fixed",
+                          "quote":  "$2,111,149  Total Security required with ISA",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  25,
+                                               "start":  236,
+                                               "end":  280,
+                                               "quote":  "$2,111,149  Total Security required with ISA"
+                                           }
+                                       ],
+                          "source_page":  25,
+                          "source_candidates":  [
+                                                    236
+                                                ],
+                          "validation_issues":  [
+                                                    "Enter the beneficiary from evidence"
+                                                ]
+                      },
+                      {
+                          "id":  "7d359b98-4a9f-4dca-ae63-e2276a28cbcc",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Payment for Reactive Power",
+                          "beneficiary":  "Interconnection Customer",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "4.7.4 Payment for Reactive Power:",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  120,
+                                               "start":  1526,
+                                               "end":  1559,
+                                               "quote":  "4.7.4 Payment for Reactive Power:"
+                                           }
+                                       ],
+                          "source_page":  120,
+                          "source_candidates":  [
+                                                    1526
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "2ebc5ac9-0fc2-4364-b213-72dba51c6c30",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Interconnected Entity may seek compensation from Transmission Provider for any costs related",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "Interconnected Entity may seek compensation from Transmission Provider for any costs related",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  123,
+                                               "start":  1634,
+                                               "end":  1726,
+                                               "quote":  "Interconnected Entity may seek compensation from Transmission Provider for any costs related"
+                                           }
+                                       ],
+                          "source_page":  123,
+                          "source_candidates":  [
+                                                    1634
+                                                ],
+                          "validation_issues":  [
+                                                    "Reclassified as an obligation: the quotation has payment language but no instrument",
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "3b222b0c-fa32-4815-a72e-8dd4b8f5c54f",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "9.3 Obligation to Make Payments:",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "9.3 Obligation to Make Payments:",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  129,
+                                               "start":  1370,
+                                               "end":  1402,
+                                               "quote":  "9.3 Obligation to Make Payments:"
+                                           }
+                                       ],
+                          "source_page":  129,
+                          "source_candidates":  [
+                                                    1370
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "7fa2f07e-37d9-4631-81b2-6a084f926565",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Any Interconnection Party\u0027s obligation to make payments for services shall not be suspended by",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "Any Interconnection Party\u0027s obligation to make payments for services shall not be suspended by",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  129,
+                                               "start":  1408,
+                                               "end":  1502,
+                                               "quote":  "Any Interconnection Party\u0027s obligation to make payments for services shall not be suspended by"
+                                           }
+                                       ],
+                          "source_page":  129,
+                          "source_candidates":  [
+                                                    1408
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "aa6cfdbc-19b2-459c-96e6-297499a2b645",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Operation of the Customer Facility, Interconnection Customer shall pay one or more of the types of recurring charges described in this section to compensate the",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "Operation of the Customer Facility, Interconnection Customer shall pay one or more of the types",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  130,
+                                               "start":  124,
+                                               "end":  219,
+                                               "quote":  "Operation of the Customer Facility, Interconnection Customer shall pay one or more of the types"
+                                           }
+                                       ],
+                          "source_page":  130,
+                          "source_candidates":  [
+                                                    124
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "d4e60481-13c3-4681-9007-ebc1741086e5",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "11.1.1 General",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "11 Security, Billing And Payments",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  131,
+                                               "start":  1135,
+                                               "end":  1168,
+                                               "quote":  "11 Security, Billing And Payments"
+                                           }
+                                       ],
+                          "source_page":  131,
+                          "source_candidates":  [
+                                                    1135
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "5c157987-f78a-4793-a697-5be93e201e41",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Payment obligation for disputed invoice",
+                          "beneficiary":  "Interconnection Party that owes money",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "the Interconnection Party that owes money to the other Interconnection Party shall pay the",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  132,
+                                               "start":  581,
+                                               "end":  671,
+                                               "quote":  "the Interconnection Party that owes money to the other Interconnection Party shall pay the"
+                                           }
+                                       ],
+                          "source_page":  132,
+                          "source_candidates":  [
+                                                    581
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "44d1f8e0-f8d1-4c41-9e35-1ac452fb7b3d",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Interconnection Customer shall pay each bill within twenty (20) days after receipt thereof.",
+                          "beneficiary":  "Transmission Provider",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "Interconnection Customer shall pay each bill  within",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  133,
+                                               "start":  222,
+                                               "end":  274,
+                                               "quote":  "Interconnection Customer shall pay each bill  within"
+                                           }
+                                       ],
+                          "source_page":  133,
+                          "source_candidates":  [
+                                                    222
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "134f6a5d-33bd-4cb5-9f10-c0601d12f1cd",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Payment obligation for documents and certificates",
+                          "beneficiary":  "Transmission Provider and/or the Interconnected Transmission Owner",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "Interconnection Customer shall pay the Transmission Provider and/or the Interconnected",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  135,
+                                               "start":  1211,
+                                               "end":  1297,
+                                               "quote":  "Interconnection Customer shall pay the Transmission Provider and/or the Interconnected"
+                                           }
+                                       ],
+                          "source_page":  135,
+                          "source_candidates":  [
+                                                    1211
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "1860ba1f-249a-4148-8587-5cbcfa73878e",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Indemnification obligation for Loss",
+                          "beneficiary":  "Indemnified Person",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "Promptly after receipt by a Person entitled to indemnity (âIndemnified Personâ) of any claim or",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  139,
+                                               "start":  1576,
+                                               "end":  1671,
+                                               "quote":  "Promptly after receipt by a Person entitled to indemnity (âIndemnified Personâ) of any claim or"
+                                           }
+                                       ],
+                          "source_page":  139,
+                          "source_candidates":  [
+                                                    1576
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "a1ae4763-c9b7-429c-a2ea-f1ce21b6cddc",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Indemnification obligation for Loss",
+                          "beneficiary":  "Indemnified Person",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "The Indemnified Person shall be entitled, at its expense, to participate in any action, suit or",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  139,
+                                               "start":  3304,
+                                               "end":  3399,
+                                               "quote":  "The Indemnified Person shall be entitled, at its expense, to participate in any action, suit or"
+                                           }
+                                       ],
+                          "source_page":  139,
+                          "source_candidates":  [
+                                                    3304
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "57a1e80f-4102-4619-90b6-08d774d60507",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "14.3 Indemnified Person",
+                          "beneficiary":  "the Indemnified Person",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "If an Indemnified Person is entitled to indemnification under this Section 14 as a result of a claim",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  140,
+                                               "start":  276,
+                                               "end":  376,
+                                               "quote":  "If an Indemnified Person is entitled to indemnification under this Section 14 as a result of a claim"
+                                           }
+                                       ],
+                          "source_page":  140,
+                          "source_candidates":  [
+                                                    276
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "000ac8a2-1dc5-4f0e-b4a1-c51aa619471e",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "14.4 Amount Owing",
+                          "beneficiary":  "the Indemnified Person",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "If an indemnifying Interconnection Party is obligated to indemnify and hold any I ndemnified",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  140,
+                                               "start":  790,
+                                               "end":  882,
+                                               "quote":  "If an indemnifying Interconnection Party is obligated to indemnify and hold any I ndemnified"
+                                           }
+                                       ],
+                          "source_page":  140,
+                          "source_candidates":  [
+                                                    790
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "e48be68b-6740-429d-9a40-963f3d7c1b79",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "hereunder in accordance with the terms and conditions hereof, (b) withhold payments, (c)",
+                          "beneficiary":  "Interconnection Party",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "hereunder in accordance with the terms and conditions hereof, (b) withhold payments, (c)",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  142,
+                                               "start":  2171,
+                                               "end":  2259,
+                                               "quote":  "hereunder in accordance with the terms and conditions hereof, (b) withhold payments, (c)"
+                                           }
+                                       ],
+                          "source_page":  142,
+                          "source_candidates":  [
+                                                    2171
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "0f6ad59d-d726-47fe-9c1f-6183ffbf0667",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "payment hereunder unless such failure could reasonably be expected to have a material adverse",
+                          "beneficiary":  "Interconnection Party",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "payment hereunder unless such failure could reasonably be expected to have a material adverse",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  142,
+                                               "start":  2547,
+                                               "end":  2640,
+                                               "quote":  "payment hereunder unless such failure could reasonably be expected to have a material adverse"
+                                           }
+                                       ],
+                          "source_page":  142,
+                          "source_candidates":  [
+                                                    2547
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "240afd4c-e233-4b06-ae52-0f12a326aba2",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "The Interconnection Parties agree that monetary damages would be inadequate to compensate an Interconnection Party for another Inte rconnection Party\u0027s Breach",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "The Interconnection Parties agree that monetary damages would be inadequate to compensate an",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  147,
+                                               "start":  934,
+                                               "end":  1026,
+                                               "quote":  "The Interconnection Parties agree that monetary damages would be inadequate to compensate an"
+                                           }
+                                       ],
+                          "source_page":  147,
+                          "source_candidates":  [
+                                                    934
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "7c55c6a3-d464-4197-bbe0-1e74b0bf3a5c",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "18.3 Indemnification by Subcontractors:",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "18.3 Indemnification by Subcontractors:",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  149,
+                                               "start":  344,
+                                               "end":  383,
+                                               "quote":  "18.3 Indemnification by Subcontractors:"
+                                           }
+                                       ],
+                          "source_page":  149,
+                          "source_candidates":  [
+                                                    344
+                                                ],
+                          "validation_issues":  [
+                                                    "Reclassified as an obligation: the quotation has payment language but no instrument",
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "34e77040-c614-40a2-bca6-263e0be7800f",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "subcontractors to indemnify, hold harmless and defend each other Interconnection Party, its",
+                          "beneficiary":  null,
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "fixed",
+                          "quote":  "subcontractors to indemnify, hold harmless and defend each other Interconnection Party, its",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  149,
+                                               "start":  591,
+                                               "end":  682,
+                                               "quote":  "subcontractors to indemnify, hold harmless and defend each other Interconnection Party, its"
+                                           }
+                                       ],
+                          "source_page":  149,
+                          "source_candidates":  [
+                                                    591
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "b741886c-5c60-4e38-8115-3dee33a35da5",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Tax indemnification obligation",
+                          "beneficiary":  "Interconnected Transmission Owner",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "Interconnection Customer shall indemnify the Interconnected Transmission Owner for any costs",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  154,
+                                               "start":  161,
+                                               "end":  253,
+                                               "quote":  "Interconnection Customer shall indemnify the Interconnected Transmission Owner for any costs"
+                                           }
+                                       ],
+                          "source_page":  154,
+                          "source_candidates":  [
+                                                    161
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      },
+                      {
+                          "id":  "246ad9d5-a2ea-445c-8a37-346782012c35",
+                          "job_id":  "29fba306-6600-43b3-b47e-8a9c28a06f04",
+                          "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                          "document_hash":  "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+                          "disposition":  "PENDING",
+                          "record_type":  "claim",
+                          "label":  "Income tax payment obligation",
+                          "beneficiary":  "Interconnected Transmission Owner",
+                          "amount_cents":  null,
+                          "amount_text":  null,
+                          "currency":  null,
+                          "kind":  "conditional",
+                          "quote":  "Interconnection Customer shall pay to the Interconnected Transmission Owner on a periodic",
+                          "evidence":  [
+                                           {
+                                               "document_id":  "99722b9a-1dc4-415a-9491-560a8eb176eb",
+                                               "page":  154,
+                                               "start":  2277,
+                                               "end":  2366,
+                                               "quote":  "Interconnection Customer shall pay to the Interconnected Transmission Owner on a periodic"
+                                           }
+                                       ],
+                          "source_page":  154,
+                          "source_candidates":  [
+                                                    2277
+                                                ],
+                          "validation_issues":  [
+                                                    "Resolve the amount from supporting evidence",
+                                                    "Currency is unresolved or unsupported; this workbench calculates USD only"
+                                                ]
+                      }
+                  ]
+}

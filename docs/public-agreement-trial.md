@@ -36,12 +36,31 @@ The security covers about 29% of the customer's estimated cost responsibility. T
 1. **Upload rejected the real filing.** The file had 163 pages (limit 100), 377,697 characters (limit 200,000), and one page with no extractable text, which rejected the whole file. Fixed: limits are now 500 pages and 2,000,000 characters. Textless pages are recorded on the document and shown as a warning, and only a fully textless file is rejected (OCR is still unsupported).
 2. **"Maximum" understated the exposure.** §24.4 requires more security of an unstated amount, but the model could only express increases with an explicit percentage, so the reported "maximum" was silently too low. Fixed: a step-up rule may leave the percentage blank. When it can apply, the face (and drawable) metric is marked `LOWER_BOUND`, the interface shows "At least $X", and an `UNQUANTIFIED_INCREASE` finding names the provision. Earlier assessments contain no such rule, so they replay unchanged.
 3. **Project capacity had to be a whole number.** 74.9 MW was rejected. Fixed for both the API and the form.
+4. **Local AI extraction could not finish a long filing.** First run: it stopped at the fixed 20-minute job limit after 121 of 162 chunks and reported only a generic error. Fixed: the time budget scales with document length (60 seconds per chunk, at least 20 minutes and at most 4 hours), and timeouts name the page and chunk. Second run: on page 114, an ordinary prose page with no amounts, the model ran past the 120-second chunk limit while every other call took 0.4–28 seconds, and 112 finished chunks were discarded. Fixed: a runaway or truncated chunk is retried in two halves, then in quarters. A document still publishes nothing unless every part is processed.
+5. **No way to find text in 163 pages.** Fixed: **Find in document** searches all pages, jumps to the next match and highlights it (`samples/public-isa/find-in-document.png`).
+
+## Local AI extraction on the real filing
+
+Third run, after the fixes above: it **succeeded** on all 162 chunks in 31 minutes (qwen3:4b, local-evidence-1.4). It produced 32 proposals and withheld more than 100 sentences; the stored list is capped at 100. The full output is in `samples/public-isa/extraction-result.json`. This is a single real-world data point, not a scored evaluation. It was not used for tuning.
+
+Compared with the manual entry (one $2,111,149 letter of credit and two charges, $519,511 and $6,641,332):
+
+- **Found:** the $2,111,149 security, quoted from the Specifications total on page 25. The §5.0 sentence was not proposed.
+- **Missed:** the two charges as stated in Specifications §4.1 and §4.2. Instead it proposed the four cost-breakdown lines (labor and material) and their $7,160,843 total. That total equals the sum of the two charges, so importing the lines and the total together would double count.
+- **Double-counting risks:** the two security-sizing components, $1,220,026 and $891,123, were proposed as separate obligations, though they only explain the security amount. The cost lines were also proposed twice, once from FERC's acceptance letter and once from the Specifications.
+- **Noise:**
+  - A $0 "Option to Build Security" instrument.
+  - A $851.88 monthly charge from the cover letter.
+  - 20 obligations with no amount, which are standard payment and indemnity boilerplate from Appendix 2.
+
+Verdict: extraction works as a way to find the money in a long filing. It surfaced every dollar figure in the security and cost sections without a reviewer reading 163 pages. It is not yet reliable as structured input: it cannot tell components from totals, a cover letter from the agreement, or boilerplate from a quantified obligation. Separate human review of every proposal remains essential.
 
 ## Remaining gaps (not fixed)
 
+- **Extraction double counts:** components and totals, and repeated figures, are proposed as independent records.
+
 - **Security terms live in other documents.** Form of security, draw conditions and return on termination are in PJM Tariff §212.4. Cost responsibility is in Tariff §217 and the construction service agreement. A real assessment needs a multi-document package, and the Tariff is far longer than this agreement.
 - **Exact-quote matching against PDF text is brittle.** Extracted text contains artifacts such as "bene fit", "Int erconnection" and doubled spaces, and quotations must reproduce them exactly.
-- **163 pages are navigated through a page dropdown.** There is no full-text search.
 - **Estimates are not marked as estimates.** Obligations that can be "greater or lesser" are displayed like settled amounts.
 - **The current status of the project is unknown.** The agreement is from 2017, and this trial reconstructs nothing that happened after execution.
 

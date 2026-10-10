@@ -2,6 +2,8 @@
 
 `pytest backend -q`: **62 passed** (50 test functions, some parametrized), one upstream Starlette/httpx deprecation warning. Frontend `tsc --noEmit` passes. The counts below (41, 45, 31, 22) are historical milestone records.
 
+After extraction resilience fixes: **85 passed**. Live local extraction on PJM SA No. 4704 (162 chunks) succeeded in 31 minutes with 32 proposals. The first run hit the old 20-minute limit; the second failed on one runaway page and is now retried in halves. See `public-agreement-trial.md`. Find in document verified in the browser on the 163-page filing: matches on pages 6, 14 and 25, the same as an independent Python scan.
+
 After the public agreement trial: **82 passed**; typecheck and production build pass. `samples/public-isa/run_trial.py` enters PJM SA No. 4704 through the API: COMPLETE, face at least $2,111,149 (lower bound), obligations $7,160,843, drawable unknown, replay byte-identical. Browser check on a production build (ports 3005/8005, throwaway data folder): the Transaction view shows "At least $2,111,149.00", and Sources & Review shows the page-20 textless warning and 74.9 MW. Captures are in `samples/public-isa/`. See `public-agreement-trial.md`.
 
 After financial extraction 1.4 and clause extraction 1.2: **80 passed**; frontend typecheck passes. Live qwen3:4b: original corpus 12/12; held-out financial P 60% / R 100%, clauses P 88.2% / R 83.3% with both empty documents empty; gates fail (`state-engine/release.md`). The browser walkthrough below was not repeated for this change, which touches extraction only.
