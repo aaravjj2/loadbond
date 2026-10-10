@@ -267,6 +267,16 @@ export default function StateWorkspace({
   }
   async function assess() {
     await action(async () => {
+      if (process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1') {
+        const saved = w?.runs.find((r: Entity) => r.model_id === modelId && r.scenario_id === scenarioId);
+        if (!saved) throw new Error('No published reference assessment for this scenario.');
+        const full = await api('assessments/' + saved.id);
+        setRun(full);
+        setAsOf(full.snapshot.as_of);
+        setHorizon(full.snapshot.horizon_end || '');
+        setNotice('Published reference assessment loaded. Replay recomputes its frozen inputs; comparisons are live previews.');
+        return;
+      }
       const r = await api("assessments", {
         model_id: modelId,
         scenario_id: scenarioId,
@@ -566,6 +576,7 @@ export default function StateWorkspace({
               <input
                 type="date"
                 value={asOf}
+                disabled={process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1'}
                 onChange={(e) => setAsOf(e.target.value)}
               />
             </label>
@@ -574,6 +585,7 @@ export default function StateWorkspace({
               <input
                 type="date"
                 min={asOf}
+                disabled={process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1'}
                 value={horizon}
                 onChange={(e) => setHorizon(e.target.value)}
               />
@@ -582,7 +594,7 @@ export default function StateWorkspace({
               disabled={blocked || !scenarioId || !asOf}
               onClick={() => void assess()}
             >
-              {busy ? "Working…" : "Assess reviewed model"}
+              {busy ? "Working…" : process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1' ? 'Open reference assessment' : "Assess reviewed model"}
             </button>
           </div>
           <p className="state-caption">
