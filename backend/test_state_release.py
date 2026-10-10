@@ -60,6 +60,26 @@ def test_repeated_quotations_require_explicit_occurrence_and_unicode_offsets(cli
     assert r['requires_selection'] and len(r['occurrences'])==2
     for e in r['occurrences']:assert text[e['start']:e['end']]==e['quote']
 
+def test_pasted_quotations_match_pdf_text_artifacts_and_store_page_text(client):
+    project=post(client,'projects',{'name':'PDF artifacts'});root='projects/'+project['id']
+    text='5.0 Security. The Inter-\nconnection Customer shall provide security for the bene fit of Transmission\nProvider (\u201cSecurity\u201d) in the amount of  $2,111,149.  This amount'
+    d=client.post('/v2/'+root+'/documents',files={'file':('isa.txt',text.encode())}).json()
+    pasted='The Interconnection Customer shall provide security for the benefit of Transmission Provider ("Security") in the amount of $2,111,149.'
+    r=p(client,root,'source-spans',{'document_id':d['id'],'page':1,'quote':pasted})
+    assert r['normalized'] and len(r['occurrences'])==1
+    e=r['occurrences'][0];assert e['quote']==text[e['start']:e['end']]
+    assert e['quote'].startswith('The Inter-\nconnection') and e['quote'].endswith('$2,111,149.')
+    exact=p(client,root,'source-spans',{'document_id':d['id'],'page':1,'quote':'in the amount of  $2,111,149.'})
+    assert not exact['normalized']
+    for short in ['$2 ,111','an elephant in the amount of $2,111,149.']:
+        assert client.post('/v3/'+root+'/source-spans',json={'document_id':d['id'],'page':1,'quote':short}).status_code==422
+
+def test_quotation_on_another_page_names_that_page(client):
+    project=post(client,'projects',{'name':'Wrong page'});root='projects/'+project['id']
+    d=client.post('/v2/'+root+'/documents',files={'file':('filed.pdf',_pdf(['Cover letter','Recitals','Total Security required with ISA']))}).json()
+    r=client.post('/v3/'+root+'/source-spans',json={'document_id':d['id'],'page':1,'quote':'Total Security required'})
+    assert r.status_code==422 and 'occurs on page 3' in r.json()['detail']
+
 def mocked_runtime(monkeypatch):
     monkeypatch.setattr(ai,'runtime_status',lambda:{'ready':True,'model':'qwen3:4b','digest':'test-local-digest'})
 

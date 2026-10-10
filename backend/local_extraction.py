@@ -200,6 +200,35 @@ def validate_candidate(candidate, document, page, start, text):
                  source_candidates=offsets, validation_issues=issues)
     return value, None
 
+def dollars(cents):
+    return f'${cents/100:,.2f}'.replace('.00', '')
+
+def overlap_issues(proposals, page_window=2, max_parts=12):
+    """Flag proposals that restate another amount or add up to another proposal, so neither is imported twice."""
+    priced = sorted((p for p in proposals if p.get('amount_cents')), key=lambda p: (p['source_page'], (p['evidence'] or [{'start': 0}])[0]['start']))
+    notes = {p['id']: [] for p in priced}
+    for p in priced:
+        others = sorted({q['source_page'] for q in priced if q is not p and q['amount_cents'] == p['amount_cents'] and q['quote'] != p['quote']})
+        if others:
+            notes[p['id']].append(f'The same amount is also proposed on page {", ".join(map(str, others))}; import it once')
+    for total in priced:
+        near = [q for q in priced if q is not total and abs(q['source_page']-total['source_page']) <= page_window and q['amount_cents'] < total['amount_cents']]
+        for i in range(len(near)):
+            run, sum_ = [], 0
+            for q in near[i:i+max_parts]:
+                run.append(q); sum_ += q['amount_cents']
+                if sum_ >= total['amount_cents']:
+                    break
+            if sum_ == total['amount_cents'] and len(run) > 1:
+                pages = ', '.join(map(str, sorted({q['source_page'] for q in run})))
+                notes[total['id']].append(f'Equals the sum of {len(run)} other proposals on page {pages}; import the total or its components, not both')
+                for q in run:
+                    notes[q['id']].append(f'Part of a {dollars(total["amount_cents"])} total proposed on page {total["source_page"]}; import the total or its components, not both')
+                break
+    for p in priced:
+        for note in dict.fromkeys(notes[p['id']]):
+            p['validation_issues'].append(note)
+
 def screen_reason(value):
     """Source-verified sentences that are not financial records are withheld, never published."""
     quote = value['quote']
@@ -329,6 +358,8 @@ def install(app, router, auth, db, get_project, get, rows, put, audit, evidence,
                             raise ValueError('Document/project changed during extraction; no proposals published')
                         if state_scope and get(c,'state_models',pid,job['model_id'])['model_revision']!=job['model_revision']:
                             raise ValueError('State model changed during extraction; no proposals published')
+                        if not state_scope:
+                            overlap_issues(proposals)
                         for p in proposals:
                             table = 'contract_rules' if state_scope else 'instruments' if p['record_type']=='instrument' else 'claims'
                             if any(any(e['document_id']==doc['id'] and e['quote']==p['quote'] for e in item.get('evidence',[])) for item in rows(c,table,pid)):

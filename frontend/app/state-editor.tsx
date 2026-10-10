@@ -74,6 +74,7 @@ export default function StateEditor({
     initial.evidence?.length > 1 ? initial.evidence : [],
   );
   const [locating, setLocating] = useState(false);
+  const [normalized, setNormalized] = useState(false);
   const doc = w.documents.find((d) => d.id === docId);
   const facts = w.facts.filter((f) => f.model_id === modelId);
   const events = w.events.filter((e) => e.model_id === modelId);
@@ -86,6 +87,7 @@ export default function StateEditor({
       const r = await api("source-spans", { document_id: docId, page, quote });
       setOccurrences(r.occurrences);
       setSpans(r.occurrences.length === 1 ? r.occurrences : []);
+      setNormalized(Boolean(r.normalized));
     } catch (e) {
       onError(e instanceof Error ? e.message : String(e));
     } finally {
@@ -1013,8 +1015,18 @@ export default function StateEditor({
               disabled={locating || !docId || !quote}
               onClick={() => void locate()}
             >
-              {locating ? "Locating…" : "Locate exact quotation"}
+              {locating ? "Locating…" : "Locate quotation"}
             </button>
+            {normalized && occurrences.length > 0 && (
+              <div className="state-caption">
+                <p>
+                  Matched after ignoring spacing, line-break hyphens or
+                  quotation-mark styles. The page&apos;s own text is stored as
+                  the evidence:
+                </p>
+                <blockquote>{(spans[0] || occurrences[0]).quote}</blockquote>
+              </div>
+            )}
             {occurrences.length > 1 && (
               <div>
                 <p>This quotation repeats. Select its intended occurrence.</p>

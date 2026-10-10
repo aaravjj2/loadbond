@@ -55,13 +55,16 @@ Compared with the manual entry (one $2,111,149 letter of credit and two charges,
 
 Verdict: extraction works as a way to find the money in a long filing. It surfaced every dollar figure in the security and cost sections without a reviewer reading 163 pages. It is not yet reliable as structured input: it cannot tell components from totals, a cover letter from the agreement, or boilerplate from a quantified obligation. Separate human review of every proposal remains essential.
 
+## Fixed after the trial (October 10)
+
+- **Pasted quotations now match PDF text artifacts.** Extracted text contains splits such as "bene fit" and "Int erconnection", line-break hyphens, doubled spaces and curly quotes. A quotation copied cleanly from a PDF viewer used to fail. Locating a quotation now ignores whitespace, line-break hyphens, soft hyphens and quotation-mark or dash styles. The stored evidence is still the page's own characters, `page_text[start:end]`, so review and replay are unchanged. Folding needs at least 8 meaningful characters, and a quotation that is on a different page reports that page. `samples/public-isa/check_quotes.py` confirms clean quotations of the §5.0 sentence (page 14) and the security total (page 25) now locate in this filing.
+- **Totals, components and repeats are flagged before review.** Proposals whose amount equals the sum of a consecutive run of nearby proposals are flagged on both sides ("import the total or its components, not both"), and an amount proposed from different sentences is flagged as a repeat. On this filing's saved extraction, the check flags the $7,160,843 total and its four cost lines on page 24, and the $3,157,592 line repeated from FERC's letter on page 6. It does not flag the $2,111,149 security. Flags are review issues, not automatic deletions.
+
 ## Remaining gaps (not fixed)
 
-- **Extraction double counts:** components and totals, and repeated figures, are proposed as independent records.
-
 - **Security terms live in other documents.** Form of security, draw conditions and return on termination are in PJM Tariff §212.4. Cost responsibility is in Tariff §217 and the construction service agreement. A real assessment needs a multi-document package, and the Tariff is far longer than this agreement.
-- **Exact-quote matching against PDF text is brittle.** Extracted text contains artifacts such as "bene fit", "Int erconnection" and doubled spaces, and quotations must reproduce them exactly.
-- **Estimates are not marked as estimates.** Obligations that can be "greater or lesser" are displayed like settled amounts.
+- **Estimates are not marked as estimates.** Obligations that can be "greater or lesser" are displayed like settled amounts. Adding a field to obligations changes every new snapshot's contents, so it is deferred until the hosted reference snapshots can be regenerated deliberately.
+- **Boilerplate obligations without amounts** (about 20 on this filing) are still proposed; the reviewer must dismiss them.
 - **The current status of the project is unknown.** The agreement is from 2017, and this trial reconstructs nothing that happened after execution.
 
 ## What this says about real-world use

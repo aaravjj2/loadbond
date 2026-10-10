@@ -8,6 +8,7 @@ from uuid import uuid4
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
 from .domain import digest
+from . import evidence_match
 from .v2 import Decision, stamp
 from .state_types import StateModel, DatedFact, TransactionEvent, ContractRule, StateScenario, StateAssessment, StateComparison, FindingDisposition,SourceSelection,DocumentLink,OpeningBalance
 from .state_engine import evaluate, VERSION
@@ -112,9 +113,13 @@ def install(app,auth,db,get_project,get,rows,put,audit,evidence,create_project,d
         with db() as c:
             get_project(c,pid,tenant);d=get(c,'documents',pid,req.document_id)
             if d['superseded'] or req.page>len(d['pages']):raise HTTPException(422,'Select a current document page')
-            matches=[{'document_id':d['id'],'page':req.page,'start':m.start(),'end':m.end(),'quote':req.quote} for m in re.finditer(re.escape(req.quote),d['pages'][req.page-1])]
-            if not matches:raise HTTPException(422,'Quotation does not occur verbatim on this page')
-            return {'occurrences':matches,'requires_selection':len(matches)>1}
+            text=d['pages'][req.page-1];found,normalized=evidence_match.spans(text,req.quote)
+            if not found:
+                elsewhere=[n for n,other in enumerate(d['pages'],1) if n!=req.page and evidence_match.spans(other,req.quote)[0]]
+                if elsewhere:raise HTTPException(422,'Quotation is not on page %d; it occurs on page %s'%(req.page,', '.join(map(str,elsewhere[:10]))+(' and others' if len(elsewhere)>10 else '')))
+                raise HTTPException(422,'Quotation does not occur on this page, even ignoring spacing, line-break hyphens and quotation-mark styles')
+            matches=[{'document_id':d['id'],'page':req.page,'start':s,'end':e,'quote':text[s:e]} for s,e in found]
+            return {'occurrences':matches,'requires_selection':len(matches)>1,'normalized':normalized}
 
     @router.post('/projects/{pid}/{table}/{key}/review')
     def review(pid:str,table:str,key:str,req:Decision,tenant=Depends(auth)):

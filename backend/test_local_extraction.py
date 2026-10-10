@@ -201,6 +201,21 @@ def test_withheld_sentences_are_recorded_not_published(fixture,monkeypatch):
     assert j['status']=='SUCCEEDED' and [p['quote'] for p in j['proposals']]==[text.splitlines()[0]]
     assert j['screened']==[{'page':1,'quote':withheld,'record_type':'claim','reason':'Quotation states no monetary amount or payment obligation'}]
 
+def test_totals_components_and_repeated_amounts_are_flagged(fixture,monkeypatch):
+    c,root,_=fixture
+    lines=['Cover letter: the estimated cost is USD 300,000.','Labor costs are USD 100,000.','Material costs are USD 200,000.',
+           'Total cost responsibility is USD 300,000.','Unrelated deposit is USD 50,000.']
+    doc=c.post(root+'/documents',files={'file':('costs.txt','\n'.join(lines).encode())}).json()
+    token=lambda q:q[q.index('USD'):-1]
+    found=[candidate('claim',q,int(token(q)[4:].replace(',',''))*100,token=token(q)) for q in lines]
+    monkeypatch.setattr(local,'extract_chunk',lambda *args:found)
+    j=wait(c,root,enqueue(c,root,doc)['id']);assert j['status']=='SUCCEEDED',j.get('error')
+    issues={p['quote']:p['validation_issues'] for p in j['proposals']}
+    assert any('Equals the sum of 2 other proposals' in i for i in issues[lines[3]])
+    assert all(any('Part of a $300,000 total' in i for i in issues[q]) for q in lines[1:3])
+    assert any('also proposed on page 1' in i for i in issues[lines[0]])
+    assert not any('total' in i or 'also proposed' in i for i in issues[lines[4]])
+
 def test_model_and_endpoint_restrictions(monkeypatch):
     for name in ['qwen3:4b-cloud','https://remote/model','org/model']:
         monkeypatch.setenv('LOADBOND_LOCAL_MODEL',name)
