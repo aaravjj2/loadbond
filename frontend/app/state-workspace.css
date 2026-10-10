@@ -183,6 +183,13 @@
   overflow: auto;
   max-width: 100%;
 }
+.v2 .state-outcomes td {
+  white-space: normal;
+  vertical-align: top;
+}
+.v2 .state-outcomes td:first-child {
+  white-space: nowrap;
+}
 .v2 .state-app table {
   border-collapse: collapse;
   width: 100%;

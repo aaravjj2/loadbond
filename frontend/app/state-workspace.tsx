@@ -942,6 +942,50 @@ export default function StateWorkspace({
                   </button>
                 </section>
               )}
+              {current?.outcomes && (
+                <section className="panel">
+                  <p className="eyebrow">CONDITIONS BEHIND EACH AMOUNT</p>
+                  <h2>When {labels[metric].toLowerCase()} takes each value</h2>
+                  {current.outcomes.available ? (
+                    <div className="state-table-wrap">
+                      <table className="state-outcomes">
+                        <thead>
+                          <tr>
+                            <th>Amount</th>
+                            <th>Holds whenever</th>
+                            <th>States</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {current.outcomes.metrics[metric]?.map(
+                            (row: Entity) => (
+                              <tr key={String(row.cents)}>
+                                <td>{dollars(row.cents)}</td>
+                                <td>
+                                  {Object.keys(row.requires).length ? (
+                                    <div className="state-tags">
+                                      {stateCells(row.requires)}
+                                    </div>
+                                  ) : (
+                                    "Any other combination of the open conditions"
+                                  )}
+                                </td>
+                                <td>{row.states}</td>
+                              </tr>
+                            ),
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p>{current.outcomes.reason}</p>
+                  )}
+                  <p className="state-caption">
+                    Every listed condition holds in all states producing that
+                    amount. Unlisted conditions vary.
+                  </p>
+                </section>
+              )}
               {result?.envelope?.length > 0 && (
                 <section className="panel">
                   <h2>Exposure across modeled boundaries</h2>

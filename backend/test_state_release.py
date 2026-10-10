@@ -239,3 +239,18 @@ def test_long_pdfs_with_textless_pages_upload_and_flag_those_pages(client):
     r=client.post(root+'/documents',files={'file':('filed.pdf',_pdf(pages))});assert r.status_code==200,r.text
     assert r.json()['textless_pages']==[151] and len(r.json()['pages'])==152
     assert client.post(root+'/documents',files={'file':('scan.pdf',_pdf(['','']))}).status_code==422
+
+def test_outcomes_name_the_conditions_behind_each_amount_without_changing_results(client):
+    from .state_outcomes import outcomes
+    root,m,req,doc,i,claims,ev=make(client)
+    for rule in [{'kind':'DRAW_CONDITION','label':'Draw only on default','when':[{'key':'branch_a','value':True}]},
+                 {'kind':'LIMIT','metric':'DRAWABLE','amount_cents':i['face_cents'],'label':'Draw covers stated amount','when':[{'key':'branch_a','value':True}]}]:
+        r=p(client,root,'rules',{'model_id':m['id'],'target_id':i['id'],'interpretation':'Synthetic draw right on default.','evidence':i['evidence'],**rule})
+        p(client,root,'rules/'+r['id']+'/review',{'decision':'VERIFIED','reason':'Synthetic draw right reviewed'})
+    run=p(client,root,'assessments',req)
+    assert 'outcomes' not in run['result'] and p(client,root,'assessments/'+run['id']+'/replay',{})['result_matches']
+    rows=run['outcomes']['metrics']['drawable']
+    assert [(x['cents'],x['requires']) for x in rows]==[(i['face_cents'],{'branch_a':True}),(0,{'branch_a':False})]
+    assert client.get('/v3/'+root).json()['runs'][-1]['outcomes']==run['outcomes']
+    assert outcomes({**run['result'],'states_truncated':True})['available'] is False
+    assert outcomes({**run['result'],'status':'INCOMPLETE'}) is None

@@ -1,0 +1,286 @@
+{
+  "as_of": "2026-10-10",
+  "use_cases": [
+    {
+      "name": "Potomac Edison DEA security (PJM 2024 Window 1)",
+      "sources": [
+        {
+          "entity": "Potomac Edison Company",
+          "projects": "b4000.11-.13, b4000.110",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-poted-regional-projects.pdf",
+          "sha256": "1ec4967238177ba2ed2f2ca2bc6aa48ef991630f09935358776deaa4ba87bdb1",
+          "pages": 24
+        }
+      ],
+      "status": "COMPLETE",
+      "issues": [],
+      "metrics": {
+        "instrument_face": {
+          "maximum_cents": 132690000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "drawable": {
+          "maximum_cents": 132690000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "obligations": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        },
+        "reimbursement_debt": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        }
+      },
+      "feasible_states": 8,
+      "conditions": [
+        "poted_default",
+        "poted_no_fault_termination",
+        "poted_security_exempt"
+      ],
+      "outcomes": {
+        "instrument_face": [
+          {
+            "cents": 132690000,
+            "states": 4,
+            "requires": {
+              "poted_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 4,
+            "requires": {
+              "poted_security_exempt": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ],
+        "drawable": [
+          {
+            "cents": 132690000,
+            "states": 1,
+            "requires": {
+              "poted_default": true,
+              "poted_no_fault_termination": false,
+              "poted_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 7,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ]
+      },
+      "findings": [
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: Potomac Edison Company: FERC determination distributing drawn funds (Section 3.1)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: Potomac Edison Company: Issued Designated Entity Letter of Credit (issuer, expiry, draw documents, amounts drawn)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: Potomac Edison Company: PJM Operating Agreement Schedule 6 Section 1.5.8 (security, selection route, re-evaluation)",
+        "DOCUMENT_MISMATCH: Underlying obligations are outside the supplied model",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Potomac Edison Company DEA terminated under Section 8.0(ii) or (iii)",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Potomac Edison Company Section 3.0 Transmission Owner exemption applies",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Potomac Edison Company in Default (Breach not cured under Section 7.3)"
+      ],
+      "replay": {
+        "snapshot_matches": true,
+        "result_matches": true
+      },
+      "answer": [
+        "Letter of credit outstanding: up to $1,326,900",
+        "  $1,326,900 in 4 states: Potomac Edison Company Section 3.0 Transmission Owner exemption applies = no",
+        "  $0 in 4 states: Potomac Edison Company Section 3.0 Transmission Owner exemption applies = yes",
+        "PJM can draw: up to $1,326,900",
+        "  $1,326,900 in 1 states: Potomac Edison Company in Default (Breach not cured under Section 7.3) = yes and Potomac Edison Company DEA terminated under Section 8.0(ii) or (iii) = no and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = no",
+        "  $0 in 7 states: in every other state"
+      ]
+    },
+    {
+      "name": "Portfolio: Potomac Edison and ATSI DEA security (PJM 2024 Window 1)",
+      "sources": [
+        {
+          "entity": "Potomac Edison Company",
+          "projects": "b4000.11-.13, b4000.110",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-poted-regional-projects.pdf",
+          "sha256": "1ec4967238177ba2ed2f2ca2bc6aa48ef991630f09935358776deaa4ba87bdb1",
+          "pages": 24
+        },
+        {
+          "entity": "American Transmission Systems, Inc.",
+          "projects": "b3925.1-.4",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-atsi-projects.pdf",
+          "sha256": "6048a7d499b44c5a4d1bb1559ff641f05578ee5218a440facd9b06731152d58e",
+          "pages": 24
+        }
+      ],
+      "status": "COMPLETE",
+      "issues": [],
+      "metrics": {
+        "instrument_face": {
+          "maximum_cents": 784650000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "drawable": {
+          "maximum_cents": 784650000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "obligations": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        },
+        "reimbursement_debt": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        }
+      },
+      "feasible_states": 64,
+      "conditions": [
+        "atsi_default",
+        "atsi_no_fault_termination",
+        "atsi_security_exempt",
+        "poted_default",
+        "poted_no_fault_termination",
+        "poted_security_exempt"
+      ],
+      "outcomes": {
+        "instrument_face": [
+          {
+            "cents": 784650000,
+            "states": 16,
+            "requires": {
+              "atsi_security_exempt": false,
+              "poted_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 651960000,
+            "states": 16,
+            "requires": {
+              "atsi_security_exempt": false,
+              "poted_security_exempt": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 132690000,
+            "states": 16,
+            "requires": {
+              "atsi_security_exempt": true,
+              "poted_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 16,
+            "requires": {
+              "atsi_security_exempt": true,
+              "poted_security_exempt": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ],
+        "drawable": [
+          {
+            "cents": 784650000,
+            "states": 1,
+            "requires": {
+              "atsi_default": true,
+              "atsi_no_fault_termination": false,
+              "atsi_security_exempt": false,
+              "poted_default": true,
+              "poted_no_fault_termination": false,
+              "poted_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 651960000,
+            "states": 7,
+            "requires": {
+              "atsi_default": true,
+              "atsi_no_fault_termination": false,
+              "atsi_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 132690000,
+            "states": 7,
+            "requires": {
+              "poted_default": true,
+              "poted_no_fault_termination": false,
+              "poted_security_exempt": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 49,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ]
+      },
+      "findings": [
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: American Transmission Systems, Inc.: FERC determination distributing drawn funds (Section 3.1)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: American Transmission Systems, Inc.: Issued Designated Entity Letter of Credit (issuer, expiry, draw documents, amounts drawn)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: American Transmission Systems, Inc.: PJM Operating Agreement Schedule 6 Section 1.5.8 (security, selection route, re-evaluation)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: Potomac Edison Company: FERC determination distributing drawn funds (Section 3.1)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: Potomac Edison Company: Issued Designated Entity Letter of Credit (issuer, expiry, draw documents, amounts drawn)",
+        "DOCUMENT_MISMATCH: Referenced evidence unresolved: Potomac Edison Company: PJM Operating Agreement Schedule 6 Section 1.5.8 (security, selection route, re-evaluation)",
+        "DOCUMENT_MISMATCH: Underlying obligations are outside the supplied model",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: American Transmission Systems, Inc. DEA terminated under Section 8.0(ii) or (iii)",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: American Transmission Systems, Inc. in Default (Breach not cured under Section 7.3)",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Potomac Edison Company DEA terminated under Section 8.0(ii) or (iii)",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Potomac Edison Company Section 3.0 Transmission Owner exemption applies",
+        "UNRESOLVED_TRIGGER: Recorded fact remains unknown: Potomac Edison Company in Default (Breach not cured under Section 7.3)"
+      ],
+      "replay": {
+        "snapshot_matches": true,
+        "result_matches": true
+      },
+      "answer": [
+        "Letter of credit outstanding: up to $7,846,500",
+        "  $7,846,500 in 16 states: American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies = no and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = no",
+        "  $6,519,600 in 16 states: American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies = no and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = yes",
+        "  $1,326,900 in 16 states: American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies = yes and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = no",
+        "  $0 in 16 states: American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies = yes and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = yes",
+        "PJM can draw: up to $7,846,500",
+        "  $7,846,500 in 1 states: American Transmission Systems, Inc. in Default (Breach not cured under Section 7.3) = yes and American Transmission Systems, Inc. DEA terminated under Section 8.0(ii) or (iii) = no and American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies = no and Potomac Edison Company in Default (Breach not cured under Section 7.3) = yes and Potomac Edison Company DEA terminated under Section 8.0(ii) or (iii) = no and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = no",
+        "  $6,519,600 in 7 states: American Transmission Systems, Inc. in Default (Breach not cured under Section 7.3) = yes and American Transmission Systems, Inc. DEA terminated under Section 8.0(ii) or (iii) = no and American Transmission Systems, Inc. Section 3.0 Transmission Owner exemption applies = no",
+        "  $1,326,900 in 7 states: Potomac Edison Company in Default (Breach not cured under Section 7.3) = yes and Potomac Edison Company DEA terminated under Section 8.0(ii) or (iii) = no and Potomac Edison Company Section 3.0 Transmission Owner exemption applies = no",
+        "  $0 in 49 states: in every other state"
+      ]
+    }
+  ]
+}
