@@ -4,10 +4,10 @@ Week ending: 2026-10-09. Owner: Founder. Update values and evidence each Friday.
 
 | Measure | Current evidence | Target / decision |
 |---|---|---|
-| Local product | v3 state engine, Riverbend case, local extraction and manual workflow; 76 tests pass | Reproducible source-to-assessment workflow |
+| Local product | v3 state engine, Riverbend case, local extraction and manual workflow; 80 tests pass | Reproducible source-to-assessment workflow |
 | Demo assets | Narrated videos and decks cover earlier milestones only; none show Riverbend or the state engine | Record a current capture before event use |
 | State-engine AI | Development split: clauses P 80% / R 89%, financial P 13% / R 67%; held-out in docs/state-engine/release.md | Gate P â‰¥ 95%, R â‰¥ 90% |
-| Live AI extraction | qwen3:4b, local-evidence-1.3: 12/12 original corpus (informed the fix); held-out financial P 50% / R 67%; experimental | Pass on held-out; add new held-out fixtures before further tuning |
+| Live AI extraction | qwen3:4b, local-evidence-1.4 / local-clauses-1.2: 12/12 original corpus (informed the fix); held-out financial P 60% / R 100%, clauses P 88% / R 83%; experimental | Pass on held-out; add new held-out fixtures before further tuning |
 | Public demo / repo | Not deployed / not published | Signed-out access before submission |
 | Event submissions | None | Complete eligible event requirements |
 | Developer interviews | None recorded | 5 by Nov 7 |

@@ -35,7 +35,7 @@ Do not interpret a date or target as completed work. Update statuses only with a
 | P0 | Portable Ollama and local model readiness | Implemented | Loopback inference; installed digest recorded; manual workflow available offline |
 | P0 | Project-scoped extraction queue and proposals | Implemented | Atomic publication; version checks; failure/restart handling; source and amount validation |
 | P0 | Proposal editing and separate review | Implemented | Imports unverified; uncertain claim mapping; completion blocked by pending proposals |
-| P0 | Extraction quality | Experimental / held-out gate failed | 1.3: 12/12 original corpus; held-out financial P 50%, R 67% (`docs/state-engine/local-ai-held_out-evaluation.json`) |
+| P0 | Extraction quality | Experimental / held-out gate failed | 1.4 / clauses 1.2: 12/12 original corpus; held-out financial P 60%, R 100%; clauses P 88%, R 83% (`docs/state-engine/local-ai-held_out-evaluation.json`). Next: fresh held-out fixtures, then past-event phrasing and the off-topic screen's word list |
 | P0 | Launcher and source package | Implemented | Explicit ports, readiness checks, owned process cleanup and regenerated schemas |
 | P1 | Discovery preparation | Templates ready | 25 target slots, interview guide, unsent records request and reconstruction workbook |
 | P1 | Held-out extraction evaluation | Next | New permissioned fixtures, missing/contradictory clauses, adversarial instructions and long agreements |

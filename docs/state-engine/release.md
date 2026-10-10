@@ -23,18 +23,18 @@ Editing a model, fact or event revokes the review of dependent rules. Assessment
 
 ## Local clause extraction (experimental)
 
-`backend/clause_extraction.py` (prompt `local-clauses-1.1`) proposes rules and events from a document through the same local Ollama worker as financial extraction. Proposals are validated against source text, imported unverified and reviewed separately.
+`backend/clause_extraction.py` (prompt `local-clauses-1.2`) proposes rules and events from a document through the same local Ollama worker as financial extraction. Proposals are validated against source text, imported unverified and reviewed separately. Since 1.2, instruction-like sentences cannot be selected as quotations; a RELEASE or EXPIRY event whose quotation records no completed release becomes a NOTICE with an explanation; and sentences that mention no instrument, obligation or project term are withheld and listed on the job.
 
-Measured on the synthetic 40-document state corpus (`samples/state-corpus`, 20 development + 20 held-out, labels frozen by hash). The gate is precision ≥ 95%, recall ≥ 90%, and every empty case must stay empty.
+Measured on the synthetic 40-document state corpus (`samples/state-corpus`, 20 development + 20 held-out, labels frozen by hash). The gate is precision ≥ 95%, recall ≥ 90%, and every empty case must stay empty. Pipelines are named clause/financial.
 
-| Split | Task | Financial pipeline 1.2 | Financial pipeline 1.3 |
-|---|---|---|---|
-| Development | Clauses | P 80.0% / R 88.9% | P 80.0% / R 88.9% (unchanged) |
-| Development | Financial | P 13.3% / R 66.7% | P 100% (2/2) / R 66.7%; 17/17 empty cases empty |
-| Held-out | Clauses | P 75.0% / R 83.3%; 0/2 empty | P 75.0% / R 83.3%; 0/2 empty (unchanged) |
-| Held-out | Financial | P 14.3% (2/14) / R 66.7%; 6/17 empty | **P 50.0% (2/4) / R 66.7%; 15/17 empty** |
+| Split | Task | 1.1 / 1.2 | 1.1 / 1.3 | 1.2 / 1.4 |
+|---|---|---|---|---|
+| Development | Clauses | P 80.0% / R 88.9% | unchanged | P 94.4% (17/18) / R 94.4%; 2/2 empty |
+| Development | Financial | P 13.3% / R 66.7% | P 100% (2/2) / R 66.7%; 17/17 empty | P 100% (3/3) / R 100%; 17/17 empty |
+| Held-out | Clauses | P 75.0% / R 83.3%; 0/2 empty | unchanged | **P 88.2% (15/17) / R 83.3%; 2/2 empty** |
+| Held-out | Financial | P 14.3% (2/14) / R 66.7%; 6/17 empty | P 50.0% (2/4) / R 66.7%; 15/17 empty | **P 60.0% (3/5) / R 100%; 15/17 empty** |
 
-All gates still fail. The held-out 1.2 baseline was scored and committed before the 1.3 change, which was designed from the development split and the original 12-case corpus only. Remaining work: clause precision on empty documents, and financial recall, since the one missed obligation has no stated amount.
+All gates still fail. Each change was designed from the development split and the original 12-case corpus only; held-out was scored once afterwards. Held-out failures under 1.2/1.4, recorded but not tuned against: the off-topic screen withheld a genuine cap clause ("documentary demands are capped at EUR 310,000"), a regression it introduced; two past events phrased as "a draw occurred" and "paid back" were published as financial obligations; and two clause labels were confused (REPLACEMENT for IMPLICATION, PREREQUISITE for ISSUANCE). Because these are now known, the held-out split no longer counts as unseen for those patterns; new held-out fixtures are needed before the next round.
 
 Reports: `local-ai-{development,held_out}-evaluation.json` (current), `…-1.2.json` (financial pipeline 1.2) and `local-ai-development-baseline-1.0.json` (clause prompt 1.0). Clause extraction remains experimental.
 

@@ -1,12 +1,12 @@
 {
   "model": "qwen3:4b",
   "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
-  "prompt_version": "local-clauses-1.1",
+  "prompt_version": "local-clauses-1.2",
   "schema_version": "clause-proposals-1.0",
-  "financial_prompt_version": "local-evidence-1.3",
+  "financial_prompt_version": "local-evidence-1.4",
   "corpus_hash": "a5dfacb98137d98cf52a831205e5b7c7fdf447b8c3bfd9565291f5e8d3be9ee6",
   "split": "development",
-  "started_at": "2026-10-09T23:39:52.943684+00:00",
+  "started_at": "2026-10-10T00:13:43.509998+00:00",
   "notice": "Measured synthetic evaluation, not independent legal or customer validation. Missing gates retain experimental status.",
   "cases": [
     {
@@ -50,7 +50,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.859,
+        "elapsed_seconds": 1.86,
         "passed": true
       },
       "financial": {
@@ -65,7 +65,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.875,
+        "elapsed_seconds": 1.5,
         "passed": true
       },
       "resident_models": [
@@ -84,7 +84,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:44:59.6807199-04:00",
+          "expires_at": "2026-10-09T20:18:46.8619583-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -132,7 +132,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.954,
+        "elapsed_seconds": 1.437,
         "passed": true
       },
       "financial": {
@@ -147,7 +147,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.015,
+        "elapsed_seconds": 1.454,
         "passed": true
       },
       "resident_models": [
@@ -166,7 +166,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:05.7506845-04:00",
+          "expires_at": "2026-10-09T20:18:49.8621532-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -214,7 +214,7 @@
         "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.422,
+        "elapsed_seconds": 1.344,
         "passed": false
       },
       "financial": {
@@ -229,7 +229,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.828,
+        "elapsed_seconds": 1.375,
         "passed": true
       },
       "resident_models": [
@@ -248,7 +248,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:11.0756166-04:00",
+          "expires_at": "2026-10-09T20:18:52.6817726-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -296,7 +296,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.953,
+        "elapsed_seconds": 1.469,
         "passed": true
       },
       "financial": {
@@ -311,7 +311,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.766,
+        "elapsed_seconds": 1.406,
         "passed": true
       },
       "resident_models": [
@@ -330,7 +330,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:16.8922048-04:00",
+          "expires_at": "2026-10-09T20:18:55.6707595-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -378,7 +378,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.015,
+        "elapsed_seconds": 1.484,
         "passed": true
       },
       "financial": {
@@ -393,7 +393,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.141,
+        "elapsed_seconds": 1.485,
         "passed": true
       },
       "resident_models": [
@@ -412,7 +412,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:23.180652-04:00",
+          "expires_at": "2026-10-09T20:18:58.7389475-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -460,7 +460,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 2.844,
+        "elapsed_seconds": 1.406,
         "passed": true
       },
       "financial": {
@@ -475,7 +475,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.078,
+        "elapsed_seconds": 1.469,
         "passed": true
       },
       "resident_models": [
@@ -494,7 +494,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:29.2105297-04:00",
+          "expires_at": "2026-10-09T20:19:01.731326-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -542,7 +542,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.281,
+        "elapsed_seconds": 1.547,
         "passed": true
       },
       "financial": {
@@ -557,7 +557,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.969,
+        "elapsed_seconds": 1.75,
         "passed": true
       },
       "resident_models": [
@@ -576,7 +576,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:36.5701662-04:00",
+          "expires_at": "2026-10-09T20:19:05.1188022-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -624,7 +624,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.265,
+        "elapsed_seconds": 1.641,
         "passed": true
       },
       "financial": {
@@ -639,7 +639,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 4.016,
+        "elapsed_seconds": 1.812,
         "passed": true
       },
       "resident_models": [
@@ -658,7 +658,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:43.974097-04:00",
+          "expires_at": "2026-10-09T20:19:08.6817796-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -706,7 +706,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.407,
+        "elapsed_seconds": 1.609,
         "passed": true
       },
       "financial": {
@@ -721,7 +721,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.625,
+        "elapsed_seconds": 1.625,
         "passed": true
       },
       "resident_models": [
@@ -740,7 +740,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:51.1096139-04:00",
+          "expires_at": "2026-10-09T20:19:12.0380727-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -788,7 +788,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.062,
+        "elapsed_seconds": 1.594,
         "passed": true
       },
       "financial": {
@@ -803,7 +803,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.656,
+        "elapsed_seconds": 1.688,
         "passed": true
       },
       "resident_models": [
@@ -822,7 +822,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:45:56.9587499-04:00",
+          "expires_at": "2026-10-09T20:19:15.4445876-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -870,7 +870,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.578,
+        "elapsed_seconds": 1.437,
         "passed": true
       },
       "financial": {
@@ -885,7 +885,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 1.625,
+        "elapsed_seconds": 1.406,
         "passed": true
       },
       "resident_models": [
@@ -904,7 +904,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:00.2657396-04:00",
+          "expires_at": "2026-10-09T20:19:18.4153008-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -952,7 +952,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.969,
+        "elapsed_seconds": 1.765,
         "passed": true
       },
       "financial": {
@@ -994,7 +994,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.891,
+        "elapsed_seconds": 1.782,
         "passed": true
       },
       "resident_models": [
@@ -1013,7 +1013,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:04.1971504-04:00",
+          "expires_at": "2026-10-09T20:19:22.0734724-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1061,7 +1061,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 1.75,
+        "elapsed_seconds": 1.625,
         "passed": true
       },
       "financial": {
@@ -1071,7 +1071,7 @@
         "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.375,
+        "elapsed_seconds": 0.344,
         "passed": true
       },
       "resident_models": [
@@ -1090,7 +1090,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:06.4116561-04:00",
+          "expires_at": "2026-10-09T20:19:24.1240306-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1138,7 +1138,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.906,
+        "elapsed_seconds": 1.812,
         "passed": true
       },
       "financial": {
@@ -1180,7 +1180,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 5.266,
+        "elapsed_seconds": 2.094,
         "passed": true
       },
       "resident_models": [
@@ -1199,7 +1199,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:15.6783721-04:00",
+          "expires_at": "2026-10-09T20:19:28.1483009-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1247,7 +1247,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 4.875,
+        "elapsed_seconds": 1.797,
         "passed": true
       },
       "financial": {
@@ -1262,7 +1262,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 5.86,
+        "elapsed_seconds": 2.281,
         "passed": true
       },
       "resident_models": [
@@ -1281,7 +1281,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:26.4817963-04:00",
+          "expires_at": "2026-10-09T20:19:32.3273818-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1329,7 +1329,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 4.453,
+        "elapsed_seconds": 1.984,
         "passed": true
       },
       "financial": {
@@ -1344,7 +1344,7 @@
         ],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 4.625,
+        "elapsed_seconds": 1.938,
         "passed": true
       },
       "resident_models": [
@@ -1363,7 +1363,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:35.6452072-04:00",
+          "expires_at": "2026-10-09T20:19:36.3604797-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1386,7 +1386,7 @@
             "category": "EVENT",
             "label": "ACKNOWLEDGED",
             "rule_kind": null,
-            "event_type": "RELEASE",
+            "event_type": "NOTICE",
             "quote": "On 2026-10-13, the utility acknowledged receipt of the cancellation notice.",
             "interpretation": "The utility acknowledged receipt of the cancellation notice on 2026-10-13.",
             "source_page": 1,
@@ -1399,7 +1399,9 @@
                 "quote": "On 2026-10-13, the utility acknowledged receipt of the cancellation notice."
               }
             ],
-            "validation_issues": [],
+            "validation_issues": [
+              "Reclassified as a notice: the quotation does not record a completed release or expiry"
+            ],
             "unresolved_fields": [
               "target records and condition mapping",
               "operative date and governing context"
@@ -1410,9 +1412,9 @@
         "validation_issues": [],
         "screened": [],
         "error": null,
-        "matched": 0,
-        "elapsed_seconds": 3.328,
-        "passed": false
+        "matched": 1,
+        "elapsed_seconds": 1.734,
+        "passed": true
       },
       "financial": {
         "expected": [],
@@ -1421,7 +1423,7 @@
         "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.547,
+        "elapsed_seconds": 0.344,
         "passed": true
       },
       "resident_models": [
@@ -1440,7 +1442,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:39.604987-04:00",
+          "expires_at": "2026-10-09T20:19:38.5721195-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1452,38 +1454,18 @@
       "split": "development",
       "clauses": {
         "expected": [],
-        "proposals": [
+        "proposals": [],
+        "validation_issues": [],
+        "screened": [
           {
-            "category": "RULE",
-            "label": "PREREQUISITE",
-            "rule_kind": "PREREQUISITE",
-            "event_type": null,
             "quote": "The meeting room opens at nine and refreshments will be served.",
-            "interpretation": "The meeting room opens at nine and refreshments will be served.",
-            "source_page": 1,
-            "evidence": [
-              {
-                "document_id": "development-18",
-                "page": 1,
-                "start": 0,
-                "end": 63,
-                "quote": "The meeting room opens at nine and refreshments will be served."
-              }
-            ],
-            "validation_issues": [],
-            "unresolved_fields": [
-              "target records and condition mapping",
-              "operative date and governing context"
-            ],
-            "experimental": true
+            "reason": "Quotation does not concern the instruments, obligations or project"
           }
         ],
-        "validation_issues": [],
-        "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 2.875,
-        "passed": false
+        "elapsed_seconds": 1.5,
+        "passed": true
       },
       "financial": {
         "expected": [],
@@ -1492,7 +1474,7 @@
         "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 0.625,
+        "elapsed_seconds": 0.344,
         "passed": true
       },
       "resident_models": [
@@ -1511,7 +1493,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:43.1886864-04:00",
+          "expires_at": "2026-10-09T20:19:40.552004-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1559,7 +1541,7 @@
         "screened": [],
         "error": null,
         "matched": 1,
-        "elapsed_seconds": 3.25,
+        "elapsed_seconds": 1.579,
         "passed": true
       },
       "financial": {
@@ -1571,18 +1553,42 @@
             "source_contains": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
           }
         ],
-        "proposals": [],
-        "validation_issues": [],
-        "screened": [
+        "proposals": [
           {
+            "record_type": "claim",
+            "label": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified.",
+            "beneficiary": null,
+            "amount_cents": null,
+            "amount_text": null,
+            "currency": null,
+            "kind": "conditional",
             "quote": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified.",
-            "reason": "Instrument proposal does not quote an instrument provision"
+            "evidence": [
+              {
+                "document_id": "development-19",
+                "page": 1,
+                "start": 0,
+                "end": 92,
+                "quote": "If commissioning is accepted, the developer owes a payment whose amount remains unspecified."
+              }
+            ],
+            "source_page": 1,
+            "source_candidates": [
+              0
+            ],
+            "validation_issues": [
+              "Reclassified as an obligation: the quotation has payment language but no instrument",
+              "Resolve the amount from supporting evidence",
+              "Currency is unresolved or unsupported; this workbench calculates USD only"
+            ]
           }
         ],
+        "validation_issues": [],
+        "screened": [],
         "error": null,
-        "matched": 0,
-        "elapsed_seconds": 3.172,
-        "passed": false
+        "matched": 1,
+        "elapsed_seconds": 1.562,
+        "passed": true
       },
       "resident_models": [
         {
@@ -1600,7 +1606,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:49.7437824-04:00",
+          "expires_at": "2026-10-09T20:19:43.8039924-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1613,14 +1619,12 @@
       "clauses": {
         "expected": [],
         "proposals": [],
-        "validation_issues": [
-          "Instruction-like text cannot become a contract proposal"
-        ],
+        "validation_issues": [],
         "screened": [],
         "error": null,
         "matched": 0,
-        "elapsed_seconds": 3.297,
-        "passed": false
+        "elapsed_seconds": 0.0,
+        "passed": true
       },
       "financial": {
         "expected": [],
@@ -1648,7 +1652,7 @@
             "parameter_size": "4.0B",
             "quantization_level": "Q4_K_M"
           },
-          "expires_at": "2026-10-09T19:46:53.1728197-04:00",
+          "expires_at": "2026-10-09T20:19:43.8039924-04:00",
           "size_vram": 3873366343,
           "context_length": 8192,
           "runner": "llamacpp"
@@ -1656,27 +1660,27 @@
       ]
     }
   ],
-  "finished_at": "2026-10-09T23:41:53.279700+00:00",
+  "finished_at": "2026-10-10T00:14:44.055340+00:00",
   "scores": {
     "clauses": {
       "expected": 18,
-      "proposed": 20,
-      "matched": 16,
+      "proposed": 18,
+      "matched": 17,
       "empty_cases": 2,
-      "empty_passed": 0,
-      "precision": 0.8,
-      "recall": 0.8888888888888888,
+      "empty_passed": 2,
+      "precision": 0.9444444444444444,
+      "recall": 0.9444444444444444,
       "gate_passed": false
     },
     "financial": {
       "expected": 3,
-      "proposed": 2,
-      "matched": 2,
+      "proposed": 3,
+      "matched": 3,
       "empty_cases": 17,
       "empty_passed": 17,
       "precision": 1.0,
-      "recall": 0.6666666666666666,
-      "gate_passed": false
+      "recall": 1.0,
+      "gate_passed": true
     }
   },
   "release_gate_passed": false

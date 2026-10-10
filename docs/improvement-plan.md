@@ -6,7 +6,7 @@ Authored October 9, 2026, 7:30 p.m. EDT. Each phase is self-contained: open a ne
 
 - **Phase 1 done**, except a new demo video (Phase 8). Baseline commit; byte-exact `.gitattributes`; docs reconciled; `docs/state-engine/release.md`; ZIP regenerated (206 files) and verified from a clean unzip (76 tests pass, typecheck passes). Launcher fixed for Windows PowerShell 5.1: an em-dash broke parsing, and `Invoke-WebRequest` needed `-UseBasicParsing`.
 - **Phase 3 done.** Versioned migrations in `v2.migrate`, plus `test_migrations.py`. A copy of the real database replays all 14 v2 runs exactly.
-- **Phase 4 done, gate still failing.** Extraction 1.3 scores 12/12 on the original corpus (which informed the fix); held-out financial precision went from 14% to 50%. Remaining: financial recall, and new held-out fixtures before any more tuning.
+- **Phase 4 done, gate still failing.** Extraction 1.3 scores 12/12 on the original corpus (which informed the fix); held-out financial precision went from 14% to 50%. Financial 1.4 / clauses 1.2 then raised held-out financial to P 60% / R 100% and clauses to P 88% / R 83% with both empty documents empty. Remaining: new held-out fixtures before any more tuning.
 - **Phase 5 partly done.** Held-out baseline scored before tuning. Clause extraction unchanged: held-out P 75% / R 83%, with 0/2 empty cases staying empty.
 - **Phase 2 open.** Deleting `frontend/app/experience/` needs founder approval. Button `type` fixes are deferred because adding them blindly could break form submission.
 - Phases 6–7 not started.
