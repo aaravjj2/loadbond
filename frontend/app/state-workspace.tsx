@@ -186,6 +186,18 @@ export default function StateWorkspace({
               : next.models[0]?.id || "",
           );
           setDocId(next.documents.find((d: Entity) => !d.superseded)?.id || "");
+          if (process.env.NEXT_PUBLIC_LOADBOND_PUBLIC_DEMO === '1') {
+            const future = next.scenarios.find((s: Entity) => s.view === 'FUTURE');
+            const saved = next.runs.find((r: Entity) => r.scenario_id === future?.id);
+            if (saved) {
+              const full = await api('assessments/' + saved.id);
+              if (active) {
+                setRun(full);
+                setAsOf(full.snapshot.as_of);
+                setHorizon(full.snapshot.horizon_end || '');
+              }
+            }
+          }
         }
       })
       .catch((e) => {
