@@ -10,6 +10,20 @@
   },
   "status": "COMPLETE",
   "issues": [],
+  "package": [
+    {
+      "name": "pjm-sa4704-chestnut-solar-isa.pdf",
+      "sha256": "562a469fe16c42e2394e6b71fdc6266f420b655562fba44f13b04c7ba25ab969",
+      "pages": 163,
+      "source_url": "https://www.pjm.com/pjmfiles/pub/planning/project-queues/isa/aa2_165_isa.pdf"
+    },
+    {
+      "name": "pjm-oatt-212.4-excerpt.pdf",
+      "sha256": "3237b07bc790699ba9a23b648f96c2eca3e9116b3046d5283b5fef6df485da68",
+      "pages": 3,
+      "source_url": "https://www.pjm.com/pjmfiles/directory/merged-tariffs/oatt.pdf"
+    }
+  ],
   "metrics": {
     "instrument_face": {
       "maximum_cents": 211114900,

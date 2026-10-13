@@ -95,6 +95,24 @@ The draw right uses existing rule kinds: a reviewed DRAWABLE limit active on Def
 Earlier records never combine a lag with no source event, and scenarios without dated occurrences store no new
 field, so existing snapshots, reference packages and replays are unchanged.
 
+## Checked on four more filings (October 10)
+
+`samples/public-dea/run_multidoc.py` enters four further public 2024 Window 1 agreements that were not used to write the rules. The loaded proposal excerpt names competing proposers only for the Potomac Edison and ATSI needs, so for these filings that condition stays open: five conditions per agreement.
+
+| Filing | Security as printed | What the product did |
+|---|---|---|
+| [PPL Electric Utilities](https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-ppl-projects.pdf) (b3908.1, b3909.1, b3910.1; SHA-256 `1ef7261c…`) | $1,098,900 | COMPLETE, 32 states. The letter of credit is outstanding at $1,098,900 in 20 states and $0 in 12. PJM can draw $1,098,900 in 5 states, and only when Default is yes and there is no Section 8.0(ii)/(iii) termination. Replay matches. |
+| [Appalachian Power](https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-aep-apco-projects.pdf) (b4000.201–.208 and related; SHA-256 `cba94b86…`) | $4,784,100 | Same pattern, on its own amount. |
+| Those two together | up to $5,883,000 | COMPLETE, 1,024 states, in 54 ms. The stored sample still stops at 128 states; the outcome table accounts for all 1,024. PJM can draw the combined $5,883,000 in 25 states: both entities in Default and neither agreement terminated under Section 8.0(ii)/(iii). |
+| PPL, Appalachian Power, and Potomac Edison together | — | UNSUPPORTED. Fifteen open conditions exceed the 12-condition limit. The assessment returns no partial maximum and says to split the model. |
+| [BGE](https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-bge-projects.pdf) (b3906.1) and [ComEd](https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-comed-projects.pdf) (b3915.1–.3, b3916.1) | `N/A` | No dollar face was entered. Marking the instrument reviewed is rejected (422, face amount missing). The assessment stays INCOMPLETE and names the missing face. It does not treat N/A as $0. |
+
+A dated Section 8.0(ii) termination of the PPL agreement on 2027-03-01 repeats the Potomac Edison timing: the draw right ends that day, and the letter of credit stays outstanding until 2027-03-31.
+
+The outcome column lists conditions common to every state with that amount. On these filings a $0 letter of credit always has Transmission Owner = yes, while the other exemption facts still vary, so that one condition is not itself the whole exemption. The column header now says "Common to these states".
+
+The original Potomac Edison and ATSI assessments, and the Chestnut Solar ISA trial, were run again after this check. Both DEA cases stayed COMPLETE and replayed, including the 2027-03-01 termination timing and the $7,846,500 portfolio. The ISA stayed COMPLETE: security at least $2,111,149, cost obligations an estimate of $7,160,843, and the drawable amount unknown. No extraction prompt was retuned.
+
 ## Limits
 
 - Drawable equals the stated security only because the agreement states no partial-draw limit; prior draws

@@ -1,0 +1,435 @@
+{
+  "as_of": "2026-10-10",
+  "stated": [
+    {
+      "name": "PPL Electric Utilities DEA",
+      "sources": [
+        {
+          "entity": "PPL Electric Utilities Corporation",
+          "projects": "b3908.1; b3909.1; b3910.1",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-ppl-projects.pdf",
+          "sha256": "1ef7261c159ebe7e19babe5b86419b2d271ad1c9c8a93e6613fe8bc5510bff81",
+          "pages": 26,
+          "security_cents": 109890000
+        }
+      ],
+      "status": "COMPLETE",
+      "issues": [],
+      "elapsed_ms": 1.618,
+      "feasible_states": 32,
+      "dimensions": 5,
+      "states_truncated": false,
+      "metrics": {
+        "instrument_face": {
+          "maximum_cents": 109890000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "drawable": {
+          "maximum_cents": 109890000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "obligations": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        },
+        "reimbursement_debt": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        }
+      },
+      "outcomes": {
+        "instrument_face": [
+          {
+            "cents": 109890000,
+            "states": 20,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 12,
+            "requires": {
+              "ppl_transmission_owner": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ],
+        "drawable": [
+          {
+            "cents": 109890000,
+            "states": 5,
+            "requires": {
+              "ppl_default": true,
+              "ppl_no_fault_termination": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 27,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "snapshot_matches": true,
+        "result_matches": true
+      },
+      "termination_what_if": {
+        "status": "COMPLETE",
+        "envelope": [
+          {
+            "as_of": "2026-10-10",
+            "instrument_face": 109890000,
+            "drawable": 109890000
+          },
+          {
+            "as_of": "2027-03-01",
+            "instrument_face": 109890000,
+            "drawable": 0
+          },
+          {
+            "as_of": "2027-03-31",
+            "instrument_face": 0,
+            "drawable": 0
+          },
+          {
+            "as_of": "2027-06-01",
+            "instrument_face": 0,
+            "drawable": 0
+          }
+        ]
+      },
+      "answer": [
+        "Letter of credit outstanding: up to $1,098,900",
+        "  $1,098,900 in 20 states: no condition is common to every such state",
+        "  $0 in 12 states: PPL Electric Utilities Corporation is a Transmission Owner (Section 3.0 exemption) = yes",
+        "PJM can draw: up to $1,098,900",
+        "  $1,098,900 in 5 states: PPL Electric Utilities Corporation in Default (Breach not cured under Section 7.3) = yes and PPL Electric Utilities Corporation DEA terminated under Section 8.0(ii) or (iii) = no",
+        "  $0 in 27 states: no condition is common to every such state"
+      ]
+    },
+    {
+      "name": "Appalachian Power DEA",
+      "sources": [
+        {
+          "entity": "Appalachian Power Company",
+          "projects": "b4000.201-.208; b4000.210-.211; b4000.251-.252; b4000.359",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-aep-apco-projects.pdf",
+          "sha256": "cba94b861ad629325da8ed49622a3975207062465e9aa517a4e5adabf58da716",
+          "pages": 25,
+          "security_cents": 478410000
+        }
+      ],
+      "status": "COMPLETE",
+      "issues": [],
+      "elapsed_ms": 1.465,
+      "feasible_states": 32,
+      "dimensions": 5,
+      "states_truncated": false,
+      "metrics": {
+        "instrument_face": {
+          "maximum_cents": 478410000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "drawable": {
+          "maximum_cents": 478410000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "obligations": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        },
+        "reimbursement_debt": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        }
+      },
+      "outcomes": {
+        "instrument_face": [
+          {
+            "cents": 478410000,
+            "states": 20,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 12,
+            "requires": {
+              "aep_transmission_owner": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ],
+        "drawable": [
+          {
+            "cents": 478410000,
+            "states": 5,
+            "requires": {
+              "aep_default": true,
+              "aep_no_fault_termination": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 27,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "snapshot_matches": true,
+        "result_matches": true
+      },
+      "termination_what_if": null,
+      "answer": [
+        "Letter of credit outstanding: up to $4,784,100",
+        "  $4,784,100 in 20 states: no condition is common to every such state",
+        "  $0 in 12 states: Appalachian Power Company is a Transmission Owner (Section 3.0 exemption) = yes",
+        "PJM can draw: up to $4,784,100",
+        "  $4,784,100 in 5 states: Appalachian Power Company in Default (Breach not cured under Section 7.3) = yes and Appalachian Power Company DEA terminated under Section 8.0(ii) or (iii) = no",
+        "  $0 in 27 states: no condition is common to every such state"
+      ]
+    },
+    {
+      "name": "Portfolio: PPL and Appalachian Power",
+      "sources": [
+        {
+          "entity": "PPL Electric Utilities Corporation",
+          "projects": "b3908.1; b3909.1; b3910.1",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-ppl-projects.pdf",
+          "sha256": "1ef7261c159ebe7e19babe5b86419b2d271ad1c9c8a93e6613fe8bc5510bff81",
+          "pages": 26,
+          "security_cents": 109890000
+        },
+        {
+          "entity": "Appalachian Power Company",
+          "projects": "b4000.201-.208; b4000.210-.211; b4000.251-.252; b4000.359",
+          "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-aep-apco-projects.pdf",
+          "sha256": "cba94b861ad629325da8ed49622a3975207062465e9aa517a4e5adabf58da716",
+          "pages": 25,
+          "security_cents": 478410000
+        }
+      ],
+      "status": "COMPLETE",
+      "issues": [],
+      "elapsed_ms": 53.84,
+      "feasible_states": 1024,
+      "dimensions": 10,
+      "states_truncated": true,
+      "metrics": {
+        "instrument_face": {
+          "maximum_cents": 588300000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "drawable": {
+          "maximum_cents": 588300000,
+          "basis": "REVIEWED_MODEL"
+        },
+        "obligations": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        },
+        "reimbursement_debt": {
+          "maximum_cents": null,
+          "basis": "UNKNOWN"
+        }
+      },
+      "outcomes": {
+        "instrument_face": [
+          {
+            "cents": 588300000,
+            "states": 400,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 478410000,
+            "states": 240,
+            "requires": {
+              "ppl_transmission_owner": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 109890000,
+            "states": 240,
+            "requires": {
+              "aep_transmission_owner": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 144,
+            "requires": {
+              "aep_transmission_owner": true,
+              "ppl_transmission_owner": true
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ],
+        "drawable": [
+          {
+            "cents": 588300000,
+            "states": 25,
+            "requires": {
+              "aep_default": true,
+              "aep_no_fault_termination": false,
+              "ppl_default": true,
+              "ppl_no_fault_termination": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 478410000,
+            "states": 135,
+            "requires": {
+              "aep_default": true,
+              "aep_no_fault_termination": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 109890000,
+            "states": 135,
+            "requires": {
+              "ppl_default": true,
+              "ppl_no_fault_termination": false
+            },
+            "dates": [
+              "2026-10-10"
+            ]
+          },
+          {
+            "cents": 0,
+            "states": 729,
+            "requires": {},
+            "dates": [
+              "2026-10-10"
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "snapshot_matches": true,
+        "result_matches": true
+      },
+      "termination_what_if": null,
+      "answer": [
+        "Letter of credit outstanding: up to $5,883,000",
+        "  $5,883,000 in 400 states: no condition is common to every such state",
+        "  $4,784,100 in 240 states: PPL Electric Utilities Corporation is a Transmission Owner (Section 3.0 exemption) = yes",
+        "  $1,098,900 in 240 states: Appalachian Power Company is a Transmission Owner (Section 3.0 exemption) = yes",
+        "  $0 in 144 states: Appalachian Power Company is a Transmission Owner (Section 3.0 exemption) = yes and PPL Electric Utilities Corporation is a Transmission Owner (Section 3.0 exemption) = yes",
+        "PJM can draw: up to $5,883,000",
+        "  $5,883,000 in 25 states: Appalachian Power Company in Default (Breach not cured under Section 7.3) = yes and Appalachian Power Company DEA terminated under Section 8.0(ii) or (iii) = no and PPL Electric Utilities Corporation in Default (Breach not cured under Section 7.3) = yes and PPL Electric Utilities Corporation DEA terminated under Section 8.0(ii) or (iii) = no",
+        "  $4,784,100 in 135 states: Appalachian Power Company in Default (Breach not cured under Section 7.3) = yes and Appalachian Power Company DEA terminated under Section 8.0(ii) or (iii) = no",
+        "  $1,098,900 in 135 states: PPL Electric Utilities Corporation in Default (Breach not cured under Section 7.3) = yes and PPL Electric Utilities Corporation DEA terminated under Section 8.0(ii) or (iii) = no",
+        "  $0 in 729 states: no condition is common to every such state"
+      ]
+    }
+  ],
+  "over_dimension_limit": {
+    "name": "Three DEAs past the condition limit",
+    "status": "UNSUPPORTED",
+    "issues": [
+      "More than 12 independent dimensions; split the model"
+    ],
+    "sources": [
+      {
+        "entity": "PPL Electric Utilities Corporation",
+        "projects": "b3908.1; b3909.1; b3910.1",
+        "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-ppl-projects.pdf",
+        "sha256": "1ef7261c159ebe7e19babe5b86419b2d271ad1c9c8a93e6613fe8bc5510bff81",
+        "pages": 26,
+        "security_cents": 109890000
+      },
+      {
+        "entity": "Appalachian Power Company",
+        "projects": "b4000.201-.208; b4000.210-.211; b4000.251-.252; b4000.359",
+        "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-aep-apco-projects.pdf",
+        "sha256": "cba94b861ad629325da8ed49622a3975207062465e9aa517a4e5adabf58da716",
+        "pages": 25,
+        "security_cents": 478410000
+      },
+      {
+        "entity": "Potomac Edison Company",
+        "projects": "b4000.11-.13; b4000.110",
+        "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-poted-regional-projects.pdf",
+        "sha256": "1ec4967238177ba2ed2f2ca2bc6aa48ef991630f09935358776deaa4ba87bdb1",
+        "pages": 24,
+        "security_cents": 132690000
+      }
+    ],
+    "elapsed_ms": 2.469
+  },
+  "unstated": [
+    {
+      "name": "Baltimore Gas and Electric Company DEA, security printed as N/A",
+      "entity": "Baltimore Gas and Electric Company",
+      "projects": "b3906.1",
+      "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-dea-bge-projects.pdf",
+      "sha256": "9679344fe6c4d9aae3d5b4e9d7e087e141013627489692949aa0fdcd59b873ad",
+      "pages": 24,
+      "quote": "in the amount of N/A",
+      "face_cents_entered": null,
+      "review_status": 422,
+      "review_detail": "Instrument face amount is missing",
+      "status": "INCOMPLETE",
+      "issues": [
+        "Missing instrument face: Baltimore Gas and Electric Company Designated Entity Letter of Credit",
+        "Review current source-backed input: Baltimore Gas and Electric Company Designated Entity Letter of Credit"
+      ]
+    },
+    {
+      "name": "Commonwealth Edison Company DEA, security printed as N/A",
+      "entity": "Commonwealth Edison Company",
+      "projects": "b3915.1-.3; b3916.1",
+      "url": "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2024-rtep-window/2024-w1-comed-projects.pdf",
+      "sha256": "456eaa53c409972d4952be8a9be01f6d822dd4aa6496e4c307de731d407539e4",
+      "pages": 24,
+      "quote": "in the amount of N/A",
+      "face_cents_entered": null,
+      "review_status": 422,
+      "review_detail": "Instrument face amount is missing",
+      "status": "INCOMPLETE",
+      "issues": [
+        "Missing instrument face: Commonwealth Edison Company Designated Entity Letter of Credit",
+        "Review current source-backed input: Commonwealth Edison Company Designated Entity Letter of Credit"
+      ]
+    }
+  ]
+}

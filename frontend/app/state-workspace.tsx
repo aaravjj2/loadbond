@@ -952,7 +952,7 @@ export default function StateWorkspace({
                         <thead>
                           <tr>
                             <th>Amount</th>
-                            <th>Holds whenever</th>
+                            <th>Common to these states</th>
                             <th>States</th>
                           </tr>
                         </thead>
